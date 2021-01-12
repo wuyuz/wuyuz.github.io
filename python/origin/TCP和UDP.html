@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TCP和UDP | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/84.b940927c.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/103.16474d4b.js"><link rel="prefetch" href="/assets/js/104.ed58aef3.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/11.d4ec37c8.js"><link rel="prefetch" href="/assets/js/110.4144755a.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/34.8448d0fd.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/48.f591f360.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/50.b9ca2762.js"><link rel="prefetch" href="/assets/js/51.93672ee6.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/60.f40ac3ca.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/64.a98fe86e.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/80.f826f188.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/87.5f9eb9ef.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/94.0ad7c41c.js"><link rel="prefetch" href="/assets/js/95.0e5ce618.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python常用模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Python基础</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/python/origin/Python内置方法.html" class="sidebar-link">Python内置方法</a></li><li><a href="/python/origin/元类.html" class="sidebar-link">元类的深度理解</a></li><li><a href="/python/origin/函数部分.html" class="sidebar-link">函数</a></li><li><a href="/python/origin/数据类型.html" class="sidebar-link">数据类型</a></li><li><a href="/python/origin/面向对象.html" class="sidebar-link">面向对象</a></li><li><a href="/python/origin/模块和包.html" class="sidebar-link">模块和包</a></li><li><a href="/python/origin/网络基础.html" class="sidebar-link">网络基础</a></li><li><a href="/python/origin/正则表达式.html" class="sidebar-link">正则表达式</a></li><li><a href="/python/origin/异常处理.html" class="sidebar-link">异常处理</a></li><li><a href="/python/origin/TCP和UDP.html" class="active sidebar-link">TCP和UDP</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/python/origin/TCP和UDP.html#tcp和udp" class="sidebar-link">TCP和UDP</a></li><li class="sidebar-sub-header"><a href="/python/origin/TCP和UDP.html#套接字的使用-有收必有发-收发必相等" class="sidebar-link">套接字的使用  （有收必有发，收发必相等）</a></li><li class="sidebar-sub-header"><a href="/python/origin/TCP和UDP.html#socket的相关方法" class="sidebar-link">socket的相关方法</a></li><li class="sidebar-sub-header"><a href="/python/origin/TCP和UDP.html#网络基础总结" class="sidebar-link">网络基础总结</a></li><li class="sidebar-sub-header"><a href="/python/origin/TCP和UDP.html#socket解读" class="sidebar-link">socket解读</a></li></ul></li><li><a href="/python/origin/线程.html" class="sidebar-link">线程</a></li><li><a href="/python/origin/multiprocessing（上）.html" class="sidebar-link">multiprocessing（上）</a></li><li><a href="/python/origin/multiprocessing（中）.html" class="sidebar-link">multiprocessing（中）</a></li><li><a href="/python/origin/multiprocessing（下）.html" class="sidebar-link">multiprocessing（下）</a></li><li><a href="/python/origin/协程.html" class="sidebar-link">协程</a></li><li><a href="/python/origin/IO多路复用.html" class="sidebar-link">IO 多路复用</a></li><li><a href="/python/origin/C3算法.html" class="sidebar-link">C3算法</a></li><li><a href="/python/origin/yield  from语法与协程.html" class="sidebar-link">yield  from语法与协程</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Django框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flask 框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python爬虫</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="tcp和udp"><a href="#tcp和udp" class="header-anchor">#</a> TCP和UDP</h2> <ul><li><p>Socket是应用层与TCP/IP协议族通信的中间软件抽象层，它是一组接口。在设计模式中，Socket其实就是一个门面模式，它把复杂的TCP/IP协议族隐藏在Socket接口后面，对用户来说，一组简单的接口就是全部，让Socket去组织数据，以符合指定的协议。</p></li> <li><p><strong>简而言之</strong>：</p> <div class="language- extra-class"><pre class="language-text"><code>其实站在你的角度上看，socket就是一个模块。我们通过调用模块中已经实现的方法建立两个进程之间的连接和通信。
+也有人将socket说成ip+port，因为ip是用来标识互联网中的一台主机的位置，而port是用来标识这台机器上的一个应用程序。
+所以我们只要确立了ip和port就能找到一个应用程序，并且使用socket模块来与之通信。
+</code></pre></div></li> <li><p><strong>套接字得发展史</strong>： （套接字分为两类，文件类型和网络类型）</p> <ul><li><p><strong>（文件）套接字家族的名字</strong>：AF_UNIX（起源于UNIX）</p> <p>unix一切皆文件，基于文件的套接字调用的就是底层的文件系统来取数据，两个套接字进程运行在同一机器，可以通过访问同一个文件系统间接完成通信</p></li> <li><p><strong>（网络）套接字家族的名字</strong>：AF_INET</p> <p>(还有AF_INET6被用于ipv6，还有一些其他的地址家族，不过，他们要么是只用于某个平台，要么就是已经被废弃，或者是很少被使用，或者是根本没有实现，所有地址家族中，AF_INET是使用最广泛的一个，python支持很多种地址家族，但是由于我们只关心网络编程，所以大部分时候我么只使用AF_INET)</p></li></ul></li> <li><p><strong>TCP</strong>（Transmission Control Protocol）可靠的、面向连接的协议（eg:打电话）、传输效率低全双工通信（发送缓存&amp;接收缓存）、面向字节流。使用TCP的应用：Web浏览器；电子邮件、文件传输程序。</p> <p><strong>UDP</strong>（User Datagram Protocol）不可靠的、无连接的服务，传输效率高（发送前时延小），一对一、一对多、多对一、多对多、面向报文，尽最大努力服务，无拥塞控制。使用UDP的应用：域名系统 (DNS)；视频流；IP语音(VoIP)。</p></li> <li><p>具体的三次握手，四次挥手过程：</p> <ul><li><p><strong>三次握手</strong>：</p></li> <li><p>第一次握手：主机A发送位码为<strong>syn</strong>＝1,随机产生seq number=x 的数据包（以便验证服务端是否收到，收到会返回加一数）到服务器（B），客户端进入<code>SYN_SEND</code>状态，等待服务器（B）的确认；主机B由SYN=1知道，A要求建立联机；</p></li> <li><p>第二次握手：主机B收到请求后要确认联机信息，向A发送<strong>ack</strong> number(主机A的seq+1),<strong>syn=1</strong>,<strong>ack</strong>=x+1,随机产生seq=y的包,此时服务器（B）进入<code>SYN_RECV</code>状态;</p></li> <li><p>第三次握手：主机A收到后检查ack number是否正确，即第一次发送的seq number+1,以及位码ack是否为1，若正确，主机A会再发送ack number(主机B的seq+1),ack=1，主机B收到后确认seq值与ack=1则连接建立成功。客户端和服务器端都进入<code>ESTABLISHED</code>状态，完成TCP三次握手</p></li> <li><p><strong>问题一</strong>：<strong>为什么连接建立需要三次握手，而不是两次握手？</strong></p> <ul><li>答：<strong>防止失效的连接请求报文段被服务端接收，从而产生错误，也就是说要确认客户端还活着</strong>。若建立连接只需两次握手，客户端并没有太大的变化，仍然需要获得服务端的应答后才进入ESTABLISHED状态，而服务端在收到连接请求后就进入ESTABLISHED状态。此时如果网络拥塞，客户端发送的连接请求迟迟到不了服务端，客户端便超时重发请求，如果服务端正确接收并确认应答，双方便开始通信，通信结束后释放连接。此时，如果那个失效的连接请求抵达了服务端，由于只有两次握手，服务端收到请求就会进入ESTABLISHED状态，等待发送数据或主动发送数据。但此时的客户端早已进入CLOSED状态，服务端将会一直等待下去，这样浪费服务端连接资源。</li></ul></li> <li><p><strong>四次挥手</strong>：</p></li> <li><p>第一次挥手：主机1（可以使客户端，也可以是服务器端），设置<code>Sequence Number</code>和<code>Acknowledgment Number</code>，向主机2发送一个<code>FIN</code>报文段；此时，主机1进入<code>FIN_WAIT_1</code>状态；这表示主机1没有数据要发送给主机2了；</p></li> <li><p>第二次挥手：主机2收到了主机1发送的<code>FIN</code>报文段，向主机1回一个<code>ACK</code>报文段，<code>Acknowledgment Number</code>为<code>Sequence Number</code>加1；主机1进入<code>FIN_WAIT_2</code>状态；主机2告诉主机1，我也没有数据要发送了，可以进行关闭连接了；</p></li> <li><p>第三次挥手：主机2向主机1发送<code>FIN</code>报文段，请求关闭连接，同时主机2进入<code>CLOSE_WAIT</code>状态；</p></li> <li><p>第四次挥手：主机1收到主机2发送的<code>FIN</code>报文段，向主机2发送<code>ACK</code>报文段，然后主机1进入<code>TIME_WAIT</code>状态；主机2收到主机1的<code>ACK</code>报文段以后，就关闭连接；此时，主机1等待2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，主机1也可以关闭连接了</p></li> <li><p><strong>问题一：.为什么TIME_WAIT状态需要经过2MSL(最大报文段生存时间)才能返回到CLOSE状态？</strong></p></li> <li><p>答：虽然按道理，四个报文都发送完毕，我们可以直接进入CLOSE状态了，但是我们必须假象网络是不可靠的，有可以最后一个ACK丢失。所以TIME_WAIT状态就是用来重发可能丢失的ACK报文</p></li> <li><p>**问题二：client发送完最后一个ack之后，进入time_wait状态，但是他怎么知道server有没有收到这个ack呢？莫非sever也要等待一段时间，如果收到了这个ack就close，如果没有收到就再发一个fin给client？这么说server最后也有一个time_wait哦？**求解答</p> <ul><li><p>答：因为网络原因，主动关闭的一方发送的这个ACK包很可能延迟，从而触发被动连接一方重传FIN包。极端情况下，这一去一回，就是两倍的MSL时长。如果主动关闭的一方跳过TIME_WAIT直接进入CLOSED，或者在TIME_WAIT停留的时长不足两倍的MSL，那么当被动</p> <p>关闭的一方早先发出的延迟包到达后，就可能出现类似下面的问题：1.旧的TCP连接已经不存在了，系统此时只能返回RST包2.新的TCP连接被建立起来了，延迟包可能干扰新的连接，这就是为什么time_wait需要等待2MSL时长的原因。</p></li></ul></li> <li><p><strong>问题三：为什么要四次挥手？</strong></p> <ul><li><p>答：<strong>确保数据能够完整传输。</strong></p> <p>​	   当被动方收到主动方的FIN报文通知时，它仅仅表示主动方没有数据再发送给被动方了。但未必被动方所有的数据都完整的发送给了主动方，所以被动方不会马上关闭SOCKET,它可能还需要发送一些数据给主动方后，再发送FIN报文给主动方，告诉主动方同意关闭连接，所以这里的ACK报文和FIN报文多数情况下都是分开发送的</p></li></ul></li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>总结：
+TCP协议：
+   1、 面向连接\可靠\慢\对传递的数据的长短没有要求
+   2、 两台机器之间要想传递信息必须先建立连接
+   3、 之后在有了连接的基础上,进行信息的传递
+   4、可靠 : 数据不会丢失 不会重复被接收
+   5、慢 : 每一次发送的数据还要等待结果
+   6、 三次握手和四次挥手	
+UDP协议：
+    1、无连接\不可靠\快\不能传输过长的数据0
+    2、机器之间传递信息不需要建立连接 直接发就行
+    3、不可靠 : 数据有可能丢失
+    
+五层协议：
+    1、应用层       python   send(b'hello,world')
+               # socket（虚拟，对下面的进行了整合，直接使用
+    2、传输层      端口 tcp/udp协议     四层路由器  四层交换机
+    3、网络层      ip地址相关 ip协议      路由器    三层交换机
+    4、数据链路层   mac地址相关 arp协议   网卡      二层交换机
+    5、物理层       网线
+</code></pre></div><h2 id="套接字的使用-有收必有发-收发必相等"><a href="#套接字的使用-有收必有发-收发必相等" class="header-anchor">#</a> 套接字的使用  （有收必有发，收发必相等）</h2> <ul><li><p>基于TCP协议的socket使用：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#基础服务端   需要（s、b、l、a) 就可以send()、recv()</span>
+
+<span class="token keyword">import</span> socket
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8898</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">#把地址绑定到套接字</span>
+sk<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment">#监听链接</span>
+conn<span class="token punctuation">,</span>addr <span class="token operator">=</span> sk<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">#接受客户端链接</span>
+ret <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>     <span class="token comment">#接收客户端信息</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>               <span class="token comment">#打印客户端信息，需要时要解码decode</span>
+conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">b'hi'</span><span class="token punctuation">)</span>         <span class="token comment">#向客户端发送信息，编码必要时</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>             <span class="token comment">#关闭客户端套接字，不是closed</span>
+sk<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment">#关闭服务器套接字(可选)</span>
+
+<span class="token comment">#基础客服端  只需要（s、c）才可以send()、recv()</span>
+<span class="token keyword">import</span> socket
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>           <span class="token comment"># 创建客户套接字</span>
+sk<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8898</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token comment"># 尝试连接服务器，0，0，0，1是全网段，所有来防本机的都可以</span>
+sk<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">b'hello!'</span><span class="token punctuation">)</span>
+ret <span class="token operator">=</span> sk<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>         <span class="token comment"># 对话(发送/接收)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>                   <span class="token comment"># 关闭客户套接字</span>
+
+<span class="token comment">#注意，在服务端启动时，如果遇到，Address alreadly in use，则需要在bind前加sk.setsockopt(SOL_SOCKET,SO_REUSEADDR,1) 重用端口</span>
+
+<span class="token comment">#TCP的聊天版本服务端：可多连接，但是必须一对一回复</span>
+<span class="token keyword">import</span> socket
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">9001</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">,</span>addr <span class="token operator">=</span> sk<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment"># 等待用户来连接我</span>
+    <span class="token keyword">while</span>  <span class="token boolean">True</span><span class="token punctuation">:</span>
+        msg <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'&gt;&gt;&gt;'</span><span class="token punctuation">)</span>
+        conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>msg<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> msg<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'Q'</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+        content <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>  <span class="token comment"># 等待 客户端给我φ消息</span>
+        <span class="token keyword">if</span> content<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'Q'</span><span class="token punctuation">:</span> <span class="token keyword">break</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#TCP客户端：</span>
+<span class="token keyword">import</span> socket
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">9001</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    ret <span class="token operator">=</span> sk<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> ret<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'Q'</span><span class="token punctuation">:</span><span class="token keyword">break</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>
+    msg <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'&gt;&gt;&gt;'</span><span class="token punctuation">)</span>
+    sk<span class="token punctuation">.</span>send<span class="token punctuation">(</span>msg<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> msg<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'Q'</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+
+sk<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>基于UDP协议的socket的使用：（客服端和服务端都要用type=socket.SOCK_DGRAM，且客服端的sendto(内容，地址)，没有connect)</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#基础服务端  只需要（s、b）就可以recvfrom()接收地址和消息，再sendto(msg,addr)</span>
+<span class="token keyword">import</span> socket
+udp_sk<span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token builtin">type</span><span class="token operator">=</span>socket<span class="token punctuation">.</span>SOCK_DGRAM<span class="token punctuation">)</span>  <span class="token comment">#创建一个服务器的套接字</span>
+udp_sk<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">9000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>        <span class="token comment">#绑定服务器套接字</span>
+msg<span class="token punctuation">,</span>addr <span class="token operator">=</span> udp_sk<span class="token punctuation">.</span>recvfrom<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>    <span class="token comment"># 如果有from则需要addr接收地址</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+udp_sk<span class="token punctuation">.</span>sendto<span class="token punctuation">(</span><span class="token string">b'hi'</span><span class="token punctuation">,</span>addr<span class="token punctuation">)</span>                 <span class="token comment"># 对话(接收与发送)</span>
+udp_sk<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+
+<span class="token comment">#基础客服端  只需要sk、sendto(msg,add)</span>
+<span class="token keyword">import</span> socket
+ip_port<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">9000</span><span class="token punctuation">)</span>
+udp_sk<span class="token operator">=</span>socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token builtin">type</span><span class="token operator">=</span>socket<span class="token punctuation">.</span>SOCK_DGRAM<span class="token punctuation">)</span>
+udp_sk<span class="token punctuation">.</span>sendto<span class="token punctuation">(</span><span class="token string">b'hello'</span><span class="token punctuation">,</span>ip_port<span class="token punctuation">)</span>
+back_msg<span class="token punctuation">,</span>addr<span class="token operator">=</span>udp_sk<span class="token punctuation">.</span>recvfrom<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>back_msg<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>addr<span class="token punctuation">)</span>
+
+<span class="token comment">#进阶服务端</span>
+<span class="token keyword">import</span> socket
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token builtin">type</span><span class="token operator">=</span>socket<span class="token punctuation">.</span>SOCK_DGRAM<span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">9001</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    msg<span class="token punctuation">,</span>client_addr <span class="token operator">=</span> sk<span class="token punctuation">.</span>recvfrom<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>msg<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    content <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'&gt;&gt;&gt;'</span><span class="token punctuation">)</span>
+    sk<span class="token punctuation">.</span>sendto<span class="token punctuation">(</span>content<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>client_addr<span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#进阶客户端</span>
+<span class="token keyword">import</span> socket
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token builtin">type</span><span class="token operator">=</span>socket<span class="token punctuation">.</span>SOCK_DGRAM<span class="token punctuation">)</span>
+server_addr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">9001</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    content <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'&gt;&gt;&gt;'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> content<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'Q'</span><span class="token punctuation">:</span><span class="token keyword">break</span>
+    sk<span class="token punctuation">.</span>sendto<span class="token punctuation">(</span>content<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>server_addr<span class="token punctuation">)</span>
+    msg <span class="token operator">=</span> sk<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> msg<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'Q'</span><span class="token punctuation">:</span><span class="token keyword">break</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#高级QQ服务端（一对多）</span>
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> socket
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token builtin">type</span><span class="token operator">=</span>socket<span class="token punctuation">.</span>SOCK_DGRAM<span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">9001</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+user_info <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token number">1234</span><span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token string">'alex'</span><span class="token punctuation">,</span><span class="token string">'\033[1;32m'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token number">5678</span><span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token string">'宝元'</span><span class="token punctuation">,</span><span class="token string">'\033[1;31m'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    msg<span class="token punctuation">,</span>addr <span class="token operator">=</span> sk<span class="token punctuation">.</span>recvfrom<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    str_msg <span class="token operator">=</span> msg<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    dic_msg <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>str_msg<span class="token punctuation">)</span>
+    code <span class="token operator">=</span> dic_msg<span class="token punctuation">[</span><span class="token string">'code'</span><span class="token punctuation">]</span>
+    content <span class="token operator">=</span> dic_msg<span class="token punctuation">[</span><span class="token string">'msg'</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s%s : %s\033[0m'</span><span class="token operator">%</span><span class="token punctuation">(</span>user_info<span class="token punctuation">[</span>code<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>user_info<span class="token punctuation">[</span>code<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>content<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    ret <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'&gt;&gt;&gt;'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    sk<span class="token punctuation">.</span>sendto<span class="token punctuation">(</span>ret<span class="token punctuation">,</span>addr<span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#客服端</span>
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> socket
+
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token builtin">type</span><span class="token operator">=</span>socket<span class="token punctuation">.</span>SOCK_DGRAM<span class="token punctuation">)</span>
+addr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">9001</span><span class="token punctuation">)</span>
+code <span class="token operator">=</span> <span class="token number">1234</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    msg <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'&gt;&gt;&gt;'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> msg<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'Q'</span><span class="token punctuation">:</span><span class="token keyword">break</span>
+    send_msg <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'code'</span><span class="token punctuation">:</span>code<span class="token punctuation">,</span><span class="token string">'msg'</span><span class="token punctuation">:</span>msg<span class="token punctuation">}</span>
+    str_msg <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>send_msg<span class="token punctuation">)</span>
+    sk<span class="token punctuation">.</span>sendto<span class="token punctuation">(</span>str_msg<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>addr<span class="token punctuation">)</span>
+    ret <span class="token operator">=</span> sk<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> ret<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'Q'</span><span class="token punctuation">:</span><span class="token keyword">break</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token comment">#客服端远程登陆服务端（服务端，这里需要说明的是往往密码都是现在客服端加密后，再在服务端加盐，最后存入数据库</span>
+<span class="token keyword">import</span> sys
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> socket
+<span class="token keyword">import</span> hashlib
+
+<span class="token keyword">def</span> <span class="token function">get_md5</span><span class="token punctuation">(</span>username<span class="token punctuation">,</span>password<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    md5 <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>md5<span class="token punctuation">(</span>username<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    md5<span class="token punctuation">.</span>update<span class="token punctuation">(</span>password<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> md5<span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">login</span><span class="token punctuation">(</span>dic_msg<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>dic_msg<span class="token punctuation">[</span><span class="token string">'user'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dic_msg<span class="token punctuation">[</span><span class="token string">'pwd'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'userinfo'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> line <span class="token keyword">in</span> f<span class="token punctuation">:</span>
+            user<span class="token punctuation">,</span> pwd <span class="token operator">=</span> line<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'|'</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>pwd<span class="token punctuation">,</span>get_md5<span class="token punctuation">(</span>dic_msg<span class="token punctuation">[</span><span class="token string">'user'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dic_msg<span class="token punctuation">[</span><span class="token string">'pwd'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> user <span class="token operator">==</span> dic_msg<span class="token punctuation">[</span><span class="token string">'user'</span><span class="token punctuation">]</span> <span class="token keyword">and</span> pwd <span class="token operator">==</span> get_md5<span class="token punctuation">(</span>dic_msg<span class="token punctuation">[</span><span class="token string">'user'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dic_msg<span class="token punctuation">[</span><span class="token string">'pwd'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'opt'</span><span class="token punctuation">:</span><span class="token string">'login'</span><span class="token punctuation">,</span><span class="token string">'result'</span><span class="token punctuation">:</span><span class="token boolean">True</span><span class="token punctuation">}</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span><span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token string">'opt'</span><span class="token punctuation">:</span><span class="token string">'login'</span><span class="token punctuation">,</span><span class="token string">'result'</span><span class="token punctuation">:</span><span class="token boolean">False</span><span class="token punctuation">}</span>
+
+sk<span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">9001</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">,</span>addr <span class="token operator">=</span> sk<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    msg <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    dic_msg <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token builtin">hasattr</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>modules<span class="token punctuation">[</span>__name__<span class="token punctuation">]</span><span class="token punctuation">,</span>dic_msg<span class="token punctuation">[</span><span class="token string">'operate'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        ret <span class="token operator">=</span> <span class="token builtin">getattr</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>modules<span class="token punctuation">[</span>__name__<span class="token punctuation">]</span><span class="token punctuation">,</span>dic_msg<span class="token punctuation">[</span><span class="token string">'operate'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">(</span>dic_msg<span class="token punctuation">)</span>
+        content <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>ret<span class="token punctuation">)</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+        conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#客服端</span>
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> socket
+<span class="token keyword">import</span> hashlib
+
+<span class="token keyword">def</span> <span class="token function">get_md5</span><span class="token punctuation">(</span>username<span class="token punctuation">,</span>password<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    md5 <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>md5<span class="token punctuation">(</span>username<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    md5<span class="token punctuation">.</span>update<span class="token punctuation">(</span>password<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> md5<span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span>
+username <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'用户名 :'</span><span class="token punctuation">)</span>
+password <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'密  码 :'</span><span class="token punctuation">)</span>
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">9001</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+msg <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'operate'</span><span class="token punctuation">:</span><span class="token string">'login'</span><span class="token punctuation">,</span>
+       <span class="token string">'user'</span><span class="token punctuation">:</span>username<span class="token punctuation">,</span>
+       <span class="token string">'pwd'</span><span class="token punctuation">:</span>get_md5<span class="token punctuation">(</span>username<span class="token punctuation">,</span>password<span class="token punctuation">)</span><span class="token punctuation">}</span>
+str_msg <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>send<span class="token punctuation">(</span>str_msg<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+content <span class="token operator">=</span> sk<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+str_content <span class="token operator">=</span> content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+dic_content <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>str_content<span class="token punctuation">)</span>
+<span class="token keyword">if</span> dic_content<span class="token punctuation">[</span><span class="token string">'result'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'登录成功'</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'登录失败'</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul> <h2 id="socket的相关方法"><a href="#socket的相关方法" class="header-anchor">#</a> socket的相关方法</h2> <div class="language-python extra-class"><pre class="language-python"><code>服务端套接字函数
+s<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">)</span>    绑定<span class="token punctuation">(</span>主机<span class="token punctuation">,</span>端口号<span class="token punctuation">)</span>到套接字
+s<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token punctuation">)</span>  开始TCP监听
+s<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>  被动接受TCP客户的连接<span class="token punctuation">,</span><span class="token punctuation">(</span>阻塞式<span class="token punctuation">)</span>等待连接的到来
+
+客户端套接字函数
+s<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">)</span>     主动初始化TCP服务器连接
+s<span class="token punctuation">.</span>connect_ex<span class="token punctuation">(</span><span class="token punctuation">)</span>  connect<span class="token punctuation">(</span><span class="token punctuation">)</span>函数的扩展版本<span class="token punctuation">,</span>出错时返回出错码<span class="token punctuation">,</span>而不是抛出异常
+
+公共用途的套接字函数
+s<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token punctuation">)</span>            接收TCP数据
+s<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token punctuation">)</span>            发送TCP数据
+s<span class="token punctuation">.</span>sendall<span class="token punctuation">(</span><span class="token punctuation">)</span>         发送TCP数据，发送一个字符串套接字，知道所有都发完，递归版的send
+s<span class="token punctuation">.</span>recvfrom<span class="token punctuation">(</span><span class="token punctuation">)</span>        接收UDP数据
+s<span class="token punctuation">.</span>sendto<span class="token punctuation">(</span><span class="token punctuation">)</span>          发送UDP数据
+s<span class="token punctuation">.</span>getpeername<span class="token punctuation">(</span><span class="token punctuation">)</span>     连接到当前套接字的远端的地址
+s<span class="token punctuation">.</span>getsockname<span class="token punctuation">(</span><span class="token punctuation">)</span>     当前套接字的地址
+s<span class="token punctuation">.</span>getsockopt<span class="token punctuation">(</span><span class="token punctuation">)</span>      返回指定套接字的参数
+s<span class="token punctuation">.</span>setsockopt<span class="token punctuation">(</span><span class="token punctuation">)</span>      设置指定套接字的参数
+s<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>           关闭套接字
+
+面向锁的套接字方法
+s<span class="token punctuation">.</span>setblocking<span class="token punctuation">(</span><span class="token punctuation">)</span>     设置套接字的阻塞与非阻塞模式
+s<span class="token punctuation">.</span>settimeout<span class="token punctuation">(</span><span class="token punctuation">)</span>      设置阻塞套接字操作的超时时间
+s<span class="token punctuation">.</span>gettimeout<span class="token punctuation">(</span><span class="token punctuation">)</span>      得到阻塞套接字操作的超时时间
+
+面向文件的套接字的函数
+s<span class="token punctuation">.</span>fileno<span class="token punctuation">(</span><span class="token punctuation">)</span>          返回套接字的文件描述符
+s<span class="token punctuation">.</span>makefile<span class="token punctuation">(</span><span class="token punctuation">)</span>        创建一个与该套接字相关的文件
+
+<span class="token comment">#设置阻塞</span>
+<span class="token keyword">import</span> socket
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">9001</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>setblocking<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>   <span class="token comment"># blocking阻塞  setblocking设置阻塞</span>
+sk<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+conn_l <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        conn<span class="token punctuation">,</span>addr <span class="token operator">=</span> sk<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        conn_l<span class="token punctuation">.</span>append<span class="token punctuation">(</span>conn<span class="token punctuation">)</span>
+    <span class="token keyword">except</span> BlockingIOError<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> conn <span class="token keyword">in</span> conn_l<span class="token punctuation">:</span>
+            <span class="token keyword">try</span><span class="token punctuation">:</span>
+                msg <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+                conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>msg<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">except</span> BlockingIOError<span class="token punctuation">:</span>
+                <span class="token keyword">pass</span>
+
+</code></pre></div><h2 id="网络基础总结"><a href="#网络基础总结" class="header-anchor">#</a> 网络基础总结</h2> <ol><li>集线器(HUB): HUB是一个多端口的转发器.主要功能是对接收到的信号进行再生整形放大,以扩大网络的传输距离,同时把所有节点集中在以它为中心的节点上.将咱们所有的插上集线器的电脑连通起来.</li> <li>交换机(Switch): 升级版集线器.它可以为接入交换机的任意两个网络节点提供独享的电信号通路.</li> <li>网卡: 作用是接收电信号,有网络接口(用于插网线)
+网卡是局域网中连接计算机和传输介质的接口,能实现与局域网传输介质之间的物理连接和电信号匹配.</li> <li>MAC地址(物理地址): MAC地址又称为物理地址,硬件地址,用来定义网络设备的位置.
+　　　 MAC地址是网卡决定的,固定的,全球唯一的,相当于每台电脑的上网身份证.
+　　物理地址: ‎20-47-47-68-EE-DF-&gt;16进制的6个数表示,前三位厂商编号,后三位生产流水号</li> <li>多播\单播: 多播指一点对多点的通信,在IPv6中把广播看作是多播的一个特殊例子. 单播指客户端与服务器之间的点到点连接.</li> <li>广播风暴: 缺点是 --&gt;不安全,容易拥堵网络.</li> <li>IP地址: 英文是Internet Protocol Address, 指互联网协议地址. <code>IP地址是IP协议提供的一种统一的地址格式</code>,它为互联网上的每一个网络和每一台主机分配一个逻辑地址,以此来屏蔽物理地址的差异.
+   作用: 划分广播域
+　　     分类:
+　　　　　　IPv4: 4个点份十进制 (目前使用较多)
+　　　　　　IPv6: 6个冒号分十六进制</li> <li>DHCP协议: 两个作用
+　　  (1)给内部网络或网络服务供应商自动分配IP地址.
+　(2)给用户或者内部网络管理员作为对所有计算机作中央管理的手段.</li> <li>子网掩码: 计算是否属于同一网段<code>,属于同一网段的,我们称为属于同一子网.子网掩码不能单独存在,它</code>必须结合IP地址一起使用.子网掩码只有一个作用,就是将某个IP地址划分成网络地址和主机地址两部分.</li> <li>DNS服务器: 具有域名解析的作用,即把域名解析为IP地址. 默认跟着网关走. 记录着所有的域名和它网站对应的那台服务器的IP地址的对应关系,理解为一个字典.</li> <li>路由器: 是连接因特网中各局域网,广域网的设备,它会根据信道的情况自动选择和设定路由,以最优路径,按前后顺序发送信号.</li> <li>路由协议: 用于确定到达路径,计算最优路径.</li> <li>网关: <code>是一个网络连接到另一个网络的&quot;关口&quot;,也就是网络关卡.</code> 它是公网IP,也可以说是路由器的IP地址.</li> <li>NAT技术: 网络地址转换,将局域网的IP地址转换为公网(网关)的IP地址</li> <li>局域网: 也称内网</li> <li>端口:标识电脑上某个应用程序. 通过IP地址+端口--&gt;我们就能唯一确定一台电脑上的某个应用程序.</li></ol> <p>如果把IP地址比作一间房子,端口就是出入这间房子的门.真正的房子只有几个门,但是一个IP地址的端口可以有65536(即：2^16)个之多!端口是通过端口号来标记的,端口号只有整数,范围是从 0 到 65535(2^16-1). 其中0-1024是电脑内部服务使用的,不要去占用. 一般来说,自己编程时不去占用8000以内的数值.</p> <ol start="17"><li>端口映射: 访问网站时自动携带一个端口号,用于直接访问服务端</li></ol> <h2 id="socket解读"><a href="#socket解读" class="header-anchor">#</a> socket解读</h2> <ul><li><p>sk = socket.socket(socket.AF_INET,socket.SOCK_STREAM,0)</p> <div class="language- extra-class"><pre class="language-text"><code>参数一：地址簇
+　　socket.AF_INET IPv4（默认）
+　　socket.AF_INET6 IPv6
+　　socket.AF_UNIX 只能够用于单一的Unix系统进程间通信
+
+参数二：类型
+　　socket.SOCK_STREAM　　流式socket , for TCP （默认）
+　　socket.SOCK_DGRAM　　 数据报式socket , for UDP
+
+　　socket.SOCK_RAW 原始套接字，普通的套接字无法处理ICMP、IGMP等网络报文，而SOCK_RAW可以；其次，SOCK_RAW也可以处理特殊的IPv4报文；此外，利用原始套接字，可以通过IP_HDRINCL套接字选项由用户构造IP头。
+　　socket.SOCK_RDM 是一种可靠的UDP形式，即保证交付数据报但不保证顺序。SOCK_RAM用来提供对原始协议的低级访问，在需要执行某些特殊操作时使用，如发送ICMP报文。SOCK_RAM通常仅限于高级用户或管理员运行的程序使用。
+　　socket.SOCK_SEQPACKET 可靠的连续数据包服务
+
+参数三：协议
+　　0　　（默认）与特定的地址家族相关的协议,如果是 0 ，则系统就会根据地址格式和套接类别,自动选择一个合适的
+</code></pre></div></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/python/origin/异常处理.html" class="prev">
+        异常处理
+      </a></span> <span class="next"><a href="/python/origin/线程.html">
+        线程
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/84.b940927c.js" defer></script>
+  </body>
+</html>

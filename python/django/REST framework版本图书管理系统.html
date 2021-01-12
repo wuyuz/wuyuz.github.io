@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>REST framework版本图书管理系统 | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/50.b9ca2762.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/103.16474d4b.js"><link rel="prefetch" href="/assets/js/104.ed58aef3.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/11.d4ec37c8.js"><link rel="prefetch" href="/assets/js/110.4144755a.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/34.8448d0fd.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/48.f591f360.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/51.93672ee6.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/60.f40ac3ca.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/64.a98fe86e.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/80.f826f188.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/84.b940927c.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/87.5f9eb9ef.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/94.0ad7c41c.js"><link rel="prefetch" href="/assets/js/95.0e5ce618.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python常用模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Django框架</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/python/django/Web框架本质.html" class="sidebar-link">Web框架本质</a></li><li><a href="/python/django/resquest、模块层.html" class="sidebar-link">resquest、模块层</a></li><li><a href="/python/django/静态文件和ORM.html" class="sidebar-link">静态文件和ORM</a></li><li><a href="/python/django/标签、自定义标签.html" class="sidebar-link">模块层之标签、自定义标签</a></li><li><a href="/python/django/模版语法.html" class="sidebar-link">模版语法</a></li><li><a href="/python/django/模型层.html" class="sidebar-link">模型层</a></li><li><a href="/python/django/反向解析和视图函数.html" class="sidebar-link">反向解析和视图函数</a></li><li><a href="/python/django/单表操作.html" class="sidebar-link">单表操作</a></li><li><a href="/python/django/多表操作.html" class="sidebar-link">多表操作</a></li><li><a href="/python/django/中间件.html" class="sidebar-link">中间件</a></li><li><a href="/python/django/模型进阶.html" class="sidebar-link">模型进阶</a></li><li><a href="/python/django/缓存和信号.html" class="sidebar-link">缓存和信号</a></li><li><a href="/python/django/form组件.html" class="sidebar-link">form组件</a></li><li><a href="/python/django/csrf和Ajax.html" class="sidebar-link">csrf和Ajax</a></li><li><a href="/python/django/APIView使用和源码分析.html" class="sidebar-link">APIView使用和源码分析</a></li><li><a href="/python/django/REST framework之版本和解析器.html" class="sidebar-link">REST framework之版本和解析器</a></li><li><a href="/python/django/REST framework之分页和视图组件.html" class="sidebar-link">REST framework之分页和视图组件</a></li><li><a href="/python/django/REST framework之路由和渲染器.html" class="sidebar-link">REST framework之路由和渲染器</a></li><li><a href="/python/django/REST framework之序列化器.html" class="sidebar-link">REST framework之序列化器</a></li><li><a href="/python/django/REST framework版本图书管理系统.html" class="active sidebar-link">REST framework版本图书管理系统</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/python/django/REST framework版本图书管理系统.html#rest-framework版本图书管理系统" class="sidebar-link">REST framework版本图书管理系统</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flask 框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python爬虫</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="rest-framework版本图书管理系统"><a href="#rest-framework版本图书管理系统" class="header-anchor">#</a> REST framework版本图书管理系统</h2> <h3 id="drf构建后台数据"><a href="#drf构建后台数据" class="header-anchor">#</a> DRF构建后台数据</h3> <h4 id="本例的model如下"><a href="#本例的model如下" class="header-anchor">#</a> 本例的Model如下</h4> <div class="language- extra-class"><pre class="language-text"><code>from django.db import models
+
+
+class Publish(models.Model):
+    name = models.CharField(max_length=32)
+
+
+class Author(models.Model):
+    name = models.CharField(max_length=32,verbose_name='姓名')
+
+
+class Book(models.Model):
+    title = models.CharField(verbose_name='书名',max_length=56)
+    price = models.DecimalField(verbose_name='价格',max_digits=8,decimal_places=2)
+    pub_date = models.DateField(verbose_name='出版日期')
+
+    publish = models.ForeignKey(to=Publish,on_delete=models.CASCADE)
+    authors = models.ManyToManyField(to=Author)
+</code></pre></div><h4 id="注册drf"><a href="#注册drf" class="header-anchor">#</a> 注册DRF</h4> <div class="language- extra-class"><pre class="language-text"><code>INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'book.apps.BookConfig',
+    'rest_framework',
+]
+</code></pre></div><h4 id="路由分发如下"><a href="#路由分发如下" class="header-anchor">#</a> 路由分发如下</h4> <div class="language- extra-class"><pre class="language-text"><code># 查看与新增—— GET与POST
+url(r'^books/$',views.BookListView.as_view(),name='book_get_post'),
+# 修改与删除—— PUT与DELETE
+url(r'^book/(?P&lt;pk&gt;\d+)/$',views.BookView.as_view(),name='book_put_delete'),
+</code></pre></div><h4 id="视图函数如下"><a href="#视图函数如下" class="header-anchor">#</a> 视图函数如下</h4> <div class="language- extra-class"><pre class="language-text"><code>from rest_framework.views import APIView
+from rest_framework.response import Response
+
+from book import models
+from book.my_serializer import BookSerializer
+
+
+class BookListView(APIView):
+
+    def get(self, request, *args, **kwargs):
+        &quot;&quot;&quot; 获取书籍信息 &quot;&quot;&quot;       
+        # 用自定义的序列化器去实现~~~
+        all_books = models.Book.objects.all()
+        # 第一个参数是instance~是一个对象
+        # 但是all()方法查出来的是一个“对象列表”——所以需要加many=True
+        ser_obj = BookSerializer(all_books, many=True)
+        # 返回自定义序列化器的data
+        return Response(ser_obj.data)
+
+
+    def post(self, request, *args, **kwargs):
+        &quot;&quot;&quot;新增数据 返回新建的书籍的数据 json格式 &quot;&quot;&quot;
+        # 用序列化器进行校验！！！
+        # 注意：这里用的是request.data去取新增的值！！！
+        print('&gt;&gt;&gt;&gt;&gt;&gt;',request.data)
+
+        ser_book = BookSerializer(data=request.data)
+        if ser_book.is_valid():
+            ser_book.save()
+            # 校验成功并且成功保存的话~返回新增的数据！
+            return render(request,'book_list.html')
+        else:
+            print(ser_book.errors)
+            return Response(ser_book.errors)
+
+
+class BookView(APIView):
+
+    def get(self,request,pk,*args,**kwargs):
+        # 找Model对象
+        book_obj = models.Book.objects.filter(pk=pk).first()
+        # 序列化器对象——此时instance只有一个book_obj，不用加many=True了！
+        ser_obj = BookSerializer(instance=book_obj)
+        # 用Response方法返回序列化器对象的data
+        return Response(ser_obj.data)
+
+    def put(self,request,pk,*args,**kwargs):
+
+        book_obj = models.Book.objects.filter(pk=pk).first()
+        # partial=True —— 表示支持“部分提交/局部更新”
+        ser_obj = BookSerializer(instance=book_obj,data=request.data,partial=True)
+        if ser_obj.is_valid():
+            ser_obj.save()
+            return Response(ser_obj.data)
+        else:
+            return Response(ser_obj.errors)
+
+    # 删除方法不需要用序列化器了
+    def delete(self,request,pk,*args,**kwargs):
+        obj = models.Book.objects.filter(pk=pk).first()
+        if obj:
+            obj.delete()
+            return Response({'msg':'删除成功！'})
+        else:
+            return Response({&quot;error&quot;:'数据不存在！'})
+</code></pre></div><h4 id="自定义的序列化器代码如下"><a href="#自定义的序列化器代码如下" class="header-anchor">#</a> 自定义的序列化器代码如下</h4> <div class="language- extra-class"><pre class="language-text"><code># -*- coding:utf-8 -*-
+from rest_framework import serializers
+
+from book import models
+
+class PublishSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
+    name = serializers.CharField()
+
+
+class AuthorSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    name = serializers.CharField()
+
+
+class BookSerializer(serializers.Serializer):
+    # 与Book中的属性对应上
+    # id 也需要～后面编辑与删除用得到~~设置read_only，添加的时候不必填
+    id = serializers.IntegerField(read_only=True)
+    title = serializers.CharField()
+    price = serializers.DecimalField(max_digits=8,decimal_places=2)
+    pub_date = serializers.DateField()
+
+    # 外键的~这个字段其实存的是id~~注意这里是publish_id——数据库中存储的字段~~但是这种方式只能拿到id值
+    # publish_id = serializers.IntegerField()
+
+    # 多对一 外键关联~
+    # 如果我们想拿publish的name的话，就需要交给上一个序列化器PublishSerializer去处理
+    # 提交的时候~~不用填这个，所以设置required=False
+    # 只有get请求要他而post请求不用它~所以设置 read_only=True
+    publish = PublishSerializer(required=False,read_only=True)
+    # 多对多~
+    # 只有get请求要他而post请求不用它：read_only=True
+    # 下面必须有一个 get_字段名 的方法对应！
+    authors = serializers.SerializerMethodField(read_only=True)
+
+    # post提交用这个字段~是int类型的
+    # get请求不要他~~设置 write_only=True
+    post_publish = serializers.IntegerField(write_only=True)
+    # post提交用这个字段~是一个ListField~列表里是数字
+    # get请求不要他~~设置 write_only=True
+    post_authors = serializers.ListField(write_only=True)
+
+    # 多对多关系查找authors用到的方法——与上面的SerializerMethodField对应
+    def get_authors(self,obj):
+        # 注意~obj是Book对象！！
+        # print(obj)
+        # 基于对象的跨表查询~注意是多个对象了~many应该设置为True
+        ser_obj = AuthorSerializer(obj.authors.all(),many=True)
+        return ser_obj.data
+
+
+    # POST方式增加数据需要
+    def create(self, validated_data):
+        # post提交的时候~~重写create方法
+        # post提交给的数据应该是这种格式的
+        # 注意后面那两个是post_publish、post_authors~专门用于提交的字段
+        &quot;&quot;&quot;
+         {
+            &quot;title&quot;: &quot;西游记&quot;,
+            &quot;price&quot;: 12.20,
+            &quot;pub_date&quot;: &quot;2019-12-22T10:10:11Z&quot;,
+            &quot;post_publish&quot;: 1,
+            &quot;post_authors&quot;: [1,2]
+        }
+        &quot;&quot;&quot;
+        print('validated_data&gt;&gt;&gt;',validated_data)
+        book_obj = models.Book.objects.create(
+            title=validated_data.get('title'),
+            price=validated_data.get('price'),
+            pub_date=validated_data.get('pub_date'),
+            publish_id=validated_data.get('post_publish'),
+        )
+        # 多对多插入数据~~基于对象的跨表查询
+        # 注意用set方法存多对多关系的数据
+        book_obj.authors.set(validated_data.get('post_authors'))
+        return book_obj
+
+    # PUT请求修改数据需要写的方法
+    def update(self, instance, validated_data):
+        # 如果取到了就用修改的~~如果没有就用原来的数据
+        instance.title = validated_data.get('title',instance.title)
+        instance.prince = validated_data.get('price',instance.price)
+        instance.pub_date = validated_data.get('pub_date',instance.pub_date)
+        # 上面设置了post_publish为write_only了~所以修改要用post_publish
+        instance.publish_id = validated_data.get('post_publish',instance.publish_id)
+        # 先save~然后再处理一下多对多关系的数据
+        instance.save()
+        # 基于对象的跨表查询~~注意用set方法存多对多关系的数据
+        # 如果没有的话需要用all方法取出所有对象~~
+        # # 上面设置了post_authors为write_only了~所以修改要用post_authors
+        instance.authors.set(validated_data.get('post_authors',instance.authors.all()))
+        # 最后记得把instance 返回
+        return instance
+</code></pre></div><h4 id="在drf自带的页面进行数据的增删改查测试"><a href="#在drf自带的页面进行数据的增删改查测试" class="header-anchor">#</a> 在DRF自带的页面进行数据的增删改查测试</h4> <p>至此DRF就写好了，我们可以根据路由去访问对应的页面进行数据的增删改查操作（需要注意，必须先在settings中注册了rest_framework后才能访问DRF自带的页面）</p> <p>DRF自带的页面是这样的：</p> <p>当然，我们不能让用户看这样的页面，这就需要前端请求DRF构建好的数据进行标签的构建了。</p> <h3 id="前端请求drf构建好的数据并构建页面效果"><a href="#前端请求drf构建好的数据并构建页面效果" class="header-anchor">#</a> 前端请求DRF构建好的数据并构建页面效果</h3> <h4 id="测试路由如下"><a href="#测试路由如下" class="header-anchor">#</a> 测试路由如下</h4> <div class="language- extra-class"><pre class="language-text"><code># 书籍展示的页面
+url(r'^book_list/$',views.book_list,name='book_list'),
+# 添加书籍的页面
+url(r'^add_book_view/$',views.add_book,name='add_book_view'),# 编辑书籍的展示页面~~
+url(r'edit_book_view/(?P&lt;pk&gt;\d+)/$',views.edit_book,name='edit_book'),
+</code></pre></div><h4 id="视图函数如下-2"><a href="#视图函数如下-2" class="header-anchor">#</a> 视图函数如下</h4> <p>视图函数非常简单，再加上是进行数据测试，所以这里的视图函数只负责返回页面。</p> <p>数据的操作全部是用ajax与js做的。</p> <div class="language- extra-class"><pre class="language-text"><code># 展示 书籍列表
+def book_list(request):
+    return render(request,'book_list.html')
+
+# 展示 添加书籍页面
+def add_book(request):
+    return render(request,'add_book.html')
+
+# 编辑书籍的展示页面
+def edit_book(request,pk):
+    return render(request,'edit_book.html')
+</code></pre></div><h4 id="所有页面的母版"><a href="#所有页面的母版" class="header-anchor">#</a> 所有页面的母版</h4> <h4 id="书籍展示页面及删除书籍的功能"><a href="#书籍展示页面及删除书籍的功能" class="header-anchor">#</a> 书籍展示页面及删除书籍的功能</h4> <p>书籍展示发送的是get请求。</p> <p>删除书籍发送的是delete请求。</p> <div class="language- extra-class"><pre class="language-text"><code>{% extends 'base.html' %}
+
+{% block title %}
+    主页
+{% endblock title %}
+
+
+{% block pannel-body %}
+
+    {% csrf_token %}
+    &lt;a id=&quot;add_book&quot; href=&quot;{% url 'add_book_view' %}&quot; class=&quot;btn btn-success pull-right&quot;&gt;添加书籍&lt;/a&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;div id=&quot;div_table&quot; class=&quot;table-responsive&quot; style=&quot;text-align: center&quot;&gt;
+        &lt;table id=&quot;table&quot; class=&quot;table table-striped table-bordered table-hover table-condensed&quot;&gt;
+            &lt;thead&gt;
+            &lt;tr class=&quot;success&quot;&gt;
+                &lt;th&gt;编号&lt;/th&gt;
+                &lt;th&gt;书籍名称&lt;/th&gt;
+                &lt;th&gt;价格&lt;/th&gt;
+                &lt;th&gt;出版日期&lt;/th&gt;
+                &lt;th&gt;出版社&lt;/th&gt;
+                &lt;th&gt;作者&lt;/th&gt;
+                &lt;th&gt;操作&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;/thead&gt;
+            {# 委托的父级标签用tbody #}
+            &lt;tbody id=&quot;tbody&quot;&gt;
+
+
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+
+
+{% endblock pannel-body %}
+
+{% block script %}
+    &lt;script&gt;
+
+        // 格式化时间的函数
+        function formatDate(time) {
+            var date = new Date(time);
+
+            var year = date.getFullYear(),
+                month = date.getMonth() + 1,//月份是从0开始的
+                day = date.getDate(),
+                hour = date.getHours(),
+                min = date.getMinutes(),
+                sec = date.getSeconds();
+            var newTime = year + '-' +
+                month + '-' +
+                day + ' ' +
+                hour + ':' +
+                min + ':' +
+                sec;
+            return newTime;
+        }
+
+        // 页面加载自动触发ajax请求～向DRF获取所有数据并在前端渲染
+        $(document).ready(function () {
+            $.ajax({
+                url: '/books/',
+                type: 'get',
+                success: function (data) {
+                    console.log(data, typeof (data));
+                    // data是一个object
+                    for (var i = 0; i &lt; data.length; i++) {
+                        // data[i]是一个个自定义对象
+                        //console.log(data[i],typeof(data[i]));
+
+                        var tr = document.createElement('tr');
+                        var td_num = document.createElement('td');
+                        // 提前把编号写进tr中去 注意同时将id也加进去
+                        td_num.innerHTML = (i + 1) + '&lt;span class=&quot;book_pk&quot; style=&quot;display: none&quot;&gt;' + data[i].id + '&lt;/span&gt; &lt;/td&gt;';
+                        //这时tr的第一个元素就是一个个的编号——并且里面的span标签带着每个数据的id
+                        tr.append(td_num);
+
+                        for (var j in data[i]) {
+                            //console.log(j);
+                            // 不用填id字段
+                            if (j === 'id') {
+                                continue;
+                            }
+                            // 新建一个td标签，把遍历的数据加进去
+                            var td = document.createElement('td');
+
+                            //格式化一下出版日期的格式
+                            if (j === 'pub_date') {
+                                data[i][j] = formatDate(data[i][j]);
+                            }
+
+                            //展示出版社的名字
+                            if (j === 'publish') {
+                                data[i][j] = data[i][j]['name'];
+                            }
+                            //展示作者的名字
+                            if (j === 'authors') {
+                                //console.log(data[i][j]);
+                                var authors = '';
+                                for (var k in data[i][j]) {
+                                    authors += data[i][j][k]['name'] + ' ';
+                                }
+                                data[i][j] = authors;
+                            }
+
+                            td.append(data[i][j]);
+                            tr.append(td);
+
+                        }
+
+                        //循环完，最后把编辑与删除按钮添加进去
+                        var tdd = document.createElement('td');
+                        tdd.innerHTML = '&lt;td&gt;&lt;a class=&quot;btn btn-primary edit_book&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;span&gt;编辑&lt;/span&gt;\n' +
+                            '&lt;/a&gt;&lt;a class=&quot;btn btn-danger del_book&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-remove&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;span&gt;删除&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;';
+
+                        tr.append(tdd);
+
+                        // 最后将tr加到tbody中
+                        $('#tbody').append(tr);
+
+                    }
+                }
+            })
+        });
+
+        // 删除按钮的点击事件
+        // 用委托实现
+        // 这里也可以加一个&quot;模态对话框&quot;～给用户一个确认删除删除的提示
+        $('#tbody').on('click', '.del_book', function () {
+            // 找到这本书对应的id～
+            // console.log($(this).parent().parent().find('.book_pk').text());
+            var book_id = $(this).parent().parent().find('.book_pk').text();
+            $.ajax({
+                url: '/book/' + book_id + '/',
+                type: 'delete',
+                success: function (data) {
+                    location.href = '/book_list/';
+                }
+            })
+        });
+
+        // 编辑按钮的点击事件
+        // 用委托实现
+        $('#tbody').on('click', '.edit_book', function () {
+            // 找到这本书对应的id～
+            var book_id = $(this).parent().parent().find('.book_pk').text();
+            $.ajax({
+              url:'/book/'+book_id+'/',
+              type:'put',
+              success:function (data) {
+                  // data是待编辑书籍的数据
+                  console.log(data,typeof(data));
+                  // 序列化数据
+                  data_json = JSON.stringify(data);
+                  // 将数据存到session中
+                  sessionStorage.edit_book_data = data_json;
+                  // 跳转到编辑书籍页面
+                  location.href = '/edit_book_view/' + book_id +'/';
+              }
+            })
+        })
+
+
+    &lt;/script&gt;
+
+{% endblock script %}
+</code></pre></div><h4 id="添加书籍页面"><a href="#添加书籍页面" class="header-anchor">#</a> 添加书籍页面</h4> <p>添加书籍发送的是post请求。</p> <div class="language- extra-class"><pre class="language-text"><code>{% extends 'base.html' %}
+
+{% block title %}
+    主页
+{% endblock title %}
+
+
+{% block pannel-body %}
+
+    &lt;div class=&quot;col-md-8 col-md-offset-2&quot;&gt;
+        &lt;h2 class=&quot;text-center&quot;&gt;添加书籍&lt;/h2&gt;
+        &lt;div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;book_name&quot;&gt;书籍名称&lt;/label&gt;
+                &lt;input type=&quot;text&quot; id=&quot;book_name&quot; class=&quot;form-control&quot; placeholder=&quot;书籍名称&quot;
+                       autocomplete=&quot;off&quot;&gt;
+                &lt;span class=&quot;help-block&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;price&quot;&gt;价格&lt;/label&gt;
+                &lt;input type=&quot;number&quot; id=&quot;price&quot; class=&quot;form-control&quot; placeholder=&quot;价格&quot;
+                       autocomplete=&quot;off&quot;&gt;
+                &lt;span class=&quot;help-block&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;pub_date&quot;&gt;出版日期&lt;/label&gt;
+                &lt;input type=&quot;date&quot; id=&quot;pub_date&quot; class=&quot;form-control&quot; placeholder=&quot;出版日期&quot;&gt;
+                &lt;span class=&quot;help-block&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;&quot;&gt;出版社&lt;/label&gt;
+                &lt;select id=&quot;publish&quot; class=&quot;form-control&quot;&gt;
+                    &lt;option value=&quot;1&quot;&gt;苹果出版社&lt;/option&gt;
+                    &lt;option value=&quot;2&quot;&gt;西瓜出版社&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;&quot;&gt;作者&lt;/label&gt;
+                &lt;select name=&quot;authors&quot; id=&quot;authors&quot; class=&quot;form-control&quot; multiple&gt;
+                    &lt;option value=&quot;1&quot;&gt;whw&lt;/option&gt;
+                    &lt;option value=&quot;2&quot;&gt;naruto&lt;/option&gt;
+                    &lt;option value=&quot;3&quot;&gt;sasuke&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;h4 id=&quot;add_error&quot; class=&quot;pull-left&quot; style=&quot;color:red;margin-top: 0&quot;&gt;&lt;/h4&gt;
+                &lt;input id=&quot;confirm_add&quot; type=&quot;button&quot; class=&quot;btn btn-success pull-right&quot; value=&quot;确认添加&quot;&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+{% endblock pannel-body %}
+
+{% block script %}
+    &lt;script&gt;
+        {# 确认按钮 #}
+        $('#confirm_add').click(function () {
+            {#console.log(123123);#}
+            var title = $('#book_name').val();
+            var price = $('#price').val();
+            var pub_date = $('#pub_date').val();
+            // 下拉列表被选中的这样选取
+            var publish = $('#publish option:selected').val();
+
+            //ajax操作
+            $.ajax({
+                url: '{% url &quot;book_get_post&quot; %}',
+                type: 'post',
+
+                data: {
+                    title: title,
+                    price: price,
+                    pub_date: pub_date,
+                    //pub_date: &quot;2019-08-02T09:35:13.064532Z&quot;,
+                    post_publish: publish,
+                    //post_authors: authors,
+                    post_authors: $('#authors').val(),
+                },
+                // 传数组
+                traditional: true,
+
+                success: function (data) {
+                    console.log(data);
+                    //alert('添加成功！');
+                    location.href = '{% url &quot;book_list&quot; %}';
+                }
+            })
+
+        });
+
+
+    &lt;/script&gt;
+
+{% endblock script %}
+</code></pre></div><h4 id="编辑书籍页面"><a href="#编辑书籍页面" class="header-anchor">#</a> 编辑书籍页面</h4> <p>编辑书籍这里需要说一下过程：</p> <p>（1）首先我在书籍展示那里点击“编辑”的时候，先把当前点击的书籍的信息取出来，然后序列化，最后将序列化的数据存在session中。</p> <p>（2）然后在编辑页面从session中获取当前需要编辑的书籍的信息并把这些信息显示在前端的input框中。</p> <p>（3）最后根据用户输入的数据保存书籍信息。</p> <div class="language- extra-class"><pre class="language-text"><code>{% extends 'base.html' %}
+
+{% block title %}
+    主页
+{% endblock title %}
+
+
+{% block pannel-body %}
+
+    &lt;div class=&quot;col-md-8 col-md-offset-2&quot;&gt;
+        &lt;h2 class=&quot;text-center&quot;&gt;编辑书籍&lt;/h2&gt;
+        &lt;div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;book_name&quot;&gt;书籍名称&lt;/label&gt;
+                &lt;input type=&quot;text&quot; id=&quot;book_name&quot; class=&quot;form-control&quot; placeholder=&quot;书籍名称&quot;
+                       autocomplete=&quot;off&quot;&gt;
+                &lt;span class=&quot;help-block&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;price&quot;&gt;价格&lt;/label&gt;
+                &lt;input type=&quot;number&quot; id=&quot;price&quot; class=&quot;form-control&quot; placeholder=&quot;价格&quot;
+                       autocomplete=&quot;off&quot;&gt;
+                &lt;span class=&quot;help-block&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;pub_date&quot;&gt;出版日期&lt;/label&gt;
+                &lt;input type=&quot;date&quot; id=&quot;pub_date&quot; class=&quot;form-control&quot; placeholder=&quot;出版日期&quot;&gt;
+                &lt;span class=&quot;help-block&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;&quot;&gt;出版社&lt;/label&gt;
+                &lt;select id=&quot;publish&quot; class=&quot;form-control&quot;&gt;
+                    &lt;option value=&quot;1&quot;&gt;苹果出版社&lt;/option&gt;
+                    &lt;option value=&quot;2&quot;&gt;西瓜出版社&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;&quot;&gt;作者&lt;/label&gt;
+                &lt;select name=&quot;authors&quot; id=&quot;authors&quot; class=&quot;form-control&quot; multiple&gt;
+                    &lt;option value=&quot;1&quot;&gt;whw&lt;/option&gt;
+                    &lt;option value=&quot;2&quot;&gt;naruto&lt;/option&gt;
+                    &lt;option value=&quot;3&quot;&gt;sasuke&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;h4 id=&quot;add_error&quot; class=&quot;pull-left&quot; style=&quot;color:red;margin-top: 0&quot;&gt;&lt;/h4&gt;
+                &lt;input id=&quot;confirm_add&quot; type=&quot;button&quot; class=&quot;btn btn-success pull-right&quot; value=&quot;确认编辑&quot;&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+{% endblock pannel-body %}
+
+{% block script %}
+    &lt;script&gt;
+
+
+        // 页面加载后将session中的数据写到上面的标签中
+        $(document).ready(function () {
+
+            // 获取session中的数据
+            var data_session = sessionStorage['edit_book_data'];
+            // 记得反序列化一下
+            var data = JSON.parse(data_session);
+            console.log(data, typeof (data));
+            // 取出edit_book_id 把它设置为全局的变量！后面ajax提交的时候会用到
+            edit_book_id = data['id'];
+
+            // 将数据填在上面的input框中~注意是val方法！
+            $('#book_name').val(data['title']);
+            $('#price').val(data['price']);
+            $('#pub_date').val(data['pub_date']);
+            $('#publish').val(data['publish']['id']);
+            // 让之前的作者名被选中
+            var arr_val = [];
+            for(var i in data['authors']){
+                //console.log(data['authors'][i]['id']);
+                arr_val.push(data['authors'][i]['id'])
+            }
+            // console.log(arr_val); [1,2]
+            // 把数组传给复选框的val～让之前的作者被选中
+            $('#authors').val(arr_val);
+
+        });
+
+
+        // 确认编辑按钮
+        $('#confirm_add').click(function () {
+            var title = $('#book_name').val();
+            var price = $('#price').val();
+            var pub_date = $('#pub_date').val();
+            // 下拉列表被选中的这样选取
+            var publish = $('#publish option:selected').val();
+
+            //ajax操作
+            $.ajax({
+                url: '/book/'+edit_book_id+'/',
+                type: 'put',
+                data: {
+                    title: title,
+                    price: price,
+                    pub_date: pub_date,
+                    //pub_date: &quot;2019-08-02T09:35:13.064532Z&quot;,
+                    post_publish: publish,
+                    //post_authors: authors,
+                    post_authors: $('#authors').val(),
+                },
+                // 传数组～
+                traditional: true,
+
+                success: function (data) {
+                    console.log(data);
+                    //alert('添加成功！');
+                    location.href = '{% url &quot;book_list&quot; %}';
+                }
+            })
+
+        });
+
+    &lt;/script&gt;
+
+{% endblock script %}
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/python/django/REST framework之序列化器.html" class="prev">
+        REST framework之序列化器
+      </a></span> <span class="next"><a href="/python/flask/Werkzeug讲解.html">
+        Werkzeug 讲解
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/50.b9ca2762.js" defer></script>
+  </body>
+</html>

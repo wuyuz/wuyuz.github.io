@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>模型层 | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/60.f40ac3ca.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/103.16474d4b.js"><link rel="prefetch" href="/assets/js/104.ed58aef3.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/11.d4ec37c8.js"><link rel="prefetch" href="/assets/js/110.4144755a.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/34.8448d0fd.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/48.f591f360.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/50.b9ca2762.js"><link rel="prefetch" href="/assets/js/51.93672ee6.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/64.a98fe86e.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/80.f826f188.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/84.b940927c.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/87.5f9eb9ef.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/94.0ad7c41c.js"><link rel="prefetch" href="/assets/js/95.0e5ce618.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python常用模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Django框架</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/python/django/Web框架本质.html" class="sidebar-link">Web框架本质</a></li><li><a href="/python/django/resquest、模块层.html" class="sidebar-link">resquest、模块层</a></li><li><a href="/python/django/静态文件和ORM.html" class="sidebar-link">静态文件和ORM</a></li><li><a href="/python/django/标签、自定义标签.html" class="sidebar-link">模块层之标签、自定义标签</a></li><li><a href="/python/django/模版语法.html" class="sidebar-link">模版语法</a></li><li><a href="/python/django/模型层.html" class="active sidebar-link">模型层</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/python/django/模型层.html#模型层" class="sidebar-link">模型层</a></li><li class="sidebar-sub-header"><a href="/python/django/模型层.html#模型加参" class="sidebar-link">模型加参</a></li></ul></li><li><a href="/python/django/反向解析和视图函数.html" class="sidebar-link">反向解析和视图函数</a></li><li><a href="/python/django/单表操作.html" class="sidebar-link">单表操作</a></li><li><a href="/python/django/多表操作.html" class="sidebar-link">多表操作</a></li><li><a href="/python/django/中间件.html" class="sidebar-link">中间件</a></li><li><a href="/python/django/模型进阶.html" class="sidebar-link">模型进阶</a></li><li><a href="/python/django/缓存和信号.html" class="sidebar-link">缓存和信号</a></li><li><a href="/python/django/form组件.html" class="sidebar-link">form组件</a></li><li><a href="/python/django/csrf和Ajax.html" class="sidebar-link">csrf和Ajax</a></li><li><a href="/python/django/APIView使用和源码分析.html" class="sidebar-link">APIView使用和源码分析</a></li><li><a href="/python/django/REST framework之版本和解析器.html" class="sidebar-link">REST framework之版本和解析器</a></li><li><a href="/python/django/REST framework之分页和视图组件.html" class="sidebar-link">REST framework之分页和视图组件</a></li><li><a href="/python/django/REST framework之路由和渲染器.html" class="sidebar-link">REST framework之路由和渲染器</a></li><li><a href="/python/django/REST framework之序列化器.html" class="sidebar-link">REST framework之序列化器</a></li><li><a href="/python/django/REST framework版本图书管理系统.html" class="sidebar-link">REST framework版本图书管理系统</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flask 框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python爬虫</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="模型层"><a href="#模型层" class="header-anchor">#</a> 模型层</h2> <p>通过讲mysql的系统，翻译一遍，在django中通过创建model去和数据库中的表进行一一映射，并且通过ORM封装 的处理方式去练习这一到习题，并写出如下的解题答案</p> <h4 id="_1-数据库准备"><a href="#_1-数据库准备" class="header-anchor">#</a> 1.数据库准备</h4> <p>在model中定义数据库,其中的性别，男的存1，女的存0。</p> <div class="language- extra-class"><pre class="language-text"><code>class Student(models.Model):
+    stuname = models.CharField(max_length=20)
+    stusex = models.BooleanField()
+    stubirth = models.DateField()
+    stutel = models.CharField(max_length=255)
+
+    class Meta:
+        db_table = 'student'
+</code></pre></div><h4 id="_2-数据库迁移"><a href="#_2-数据库迁移" class="header-anchor">#</a> 2.数据库迁移</h4> <div class="language- extra-class"><pre class="language-text"><code>python manage.py makemigrations
+python manage.py migrate
+</code></pre></div><h4 id="_3-数据插入"><a href="#_3-数据插入" class="header-anchor">#</a> 3. 数据插入</h4> <h5 id="_3-1-使用表单form提交post请求数据"><a href="#_3-1-使用表单form提交post请求数据" class="header-anchor">#</a> 3.1 使用表单form提交post请求数据</h5> <div class="language- extra-class"><pre class="language-text"><code>&lt;form action=&quot;/app/addStu/&quot; method=&quot;post&quot;&gt;
+    stuname: &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
+    stusex: &lt;input type=&quot;text&quot; name=&quot;sex&quot;&gt;
+    stubirth: &lt;input type=&quot;date&quot; name=&quot;birth&quot;&gt;
+    stutel: &lt;input type=&quot;text&quot; name=&quot;tel&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+&lt;/form&gt;
+</code></pre></div><h5 id="_3-2-获取post请求-获取请求数据-并且创建数据"><a href="#_3-2-获取post请求-获取请求数据-并且创建数据" class="header-anchor">#</a> 3.2 获取post请求，获取请求数据，并且创建数据</h5> <h5 id="方法1-获取类对象进行save-保存"><a href="#方法1-获取类对象进行save-保存" class="header-anchor">#</a> 方法1：获取类对象进行save()保存</h5> <div class="language- extra-class"><pre class="language-text"><code>stu = Student()  #得到一个对象，即记录
+stu.stuname = stuname
+stu.stusex = sex
+stu.stubirth = birth
+stu.stutel = tel
+stu.save()
+</code></pre></div><h5 id="方法2-使用create-方法"><a href="#方法2-使用create-方法" class="header-anchor">#</a> 方法2：使用create()方法</h5> <div class="language- extra-class"><pre class="language-text"><code>Student.objects.create(stuname=stuname, 
+                        stusex=sex,
+                        stubirth=birth, 
+                        stutel=tel)
+</code></pre></div><h5 id="方法3-使用初始化"><a href="#方法3-使用初始化" class="header-anchor">#</a> 方法3：使用初始化</h5> <div class="language-python extra-class"><pre class="language-python"><code>在Student模型中重构__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>方法，添加如下代码
+
+<span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> birth<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> sex<span class="token operator">=</span><span class="token boolean">None</span>，tel<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token builtin">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    self<span class="token punctuation">.</span>stuname <span class="token operator">=</span> name
+    self<span class="token punctuation">.</span>stubirth <span class="token operator">=</span> birth 
+    self<span class="token punctuation">.</span>stusex <span class="token operator">=</span> sex
+    self<span class="token punctuation">.</span>stutel <span class="token operator">=</span> tel
+
+<span class="token comment"># 视图函数中定义创建学习信息的方法为：</span>
+stu <span class="token operator">=</span> Student<span class="token punctuation">(</span><span class="token string">'小草'</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">12331244323</span><span class="token punctuation">)</span>
+stu<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span> 复习 <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+
+<span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'儿子'</span>  <span class="token comment"># 当有了init函数时，相当于有了实例，所以此时的name时'儿子'</span>
+    name <span class="token operator">=</span> <span class="token string">'父级'</span>  <span class="token comment"># 当没有init时，打印'父级',此时A()回去执行父级object的init返回一个空间</span>
+        
+obj_1 <span class="token operator">=</span> A<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 区分在这个括号，判断到底能不能实例化，但始终儿子会继承父级的东西</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>obj_1<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>A<span class="token punctuation">.</span>name<span class="token punctuation">)</span>  <span class="token comment"># 父级</span>
+
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token comment">#详细讲解</span>
+<span class="token comment">#models.py 文件中</span>
+<span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models
+
+<span class="token keyword">class</span> <span class="token class-name">Class</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment">#添加了init函数</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name   
+        
+    name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+    
+<span class="token comment">#此时对应的views.py文件</span>
+<span class="token keyword">def</span> <span class="token function">add_class</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    
+    <span class="token comment"># 方法一：在class中没有__init__时，此时他将会回到Model的init中执行</span>
+    class_obj <span class="token operator">=</span> models<span class="token punctuation">.</span>Class<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    class_obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Pyhton20期'</span>
+    class_obj<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># 方法二： 在class中设置了__init__ 初始化函数时，我们可以通过</span>
+    class_obj <span class="token operator">=</span> models<span class="token punctuation">.</span>Class<span class="token punctuation">(</span><span class="token string">'linux 20期'</span><span class="token punctuation">)</span> <span class="token comment">#使用了</span>
+    class_obj<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">'添加成功'</span><span class="token punctuation">)</span>
+
+<span class="token comment">#可能这里会有点模糊：name和self.name 怎么就联系在一起了？ 其实在我们通过Class()方式来创建一条记录的时候，就是对类进行了一次实例化，也就是说，其本身就是一个实例化过程，最开始程序进入Class类，加载了name字段（在父类Model中初始化字段，对字段进行约束），也就是说在这时候就已经有了self.name,那么我就就可以在init后对self.name进行覆盖：</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Class</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name    <span class="token comment"># 放在init之前无效</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 这里会重置、分配name字段，之后实例化的self.name 就可以用于赋值</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'123'</span>   <span class="token comment"># 也就是说使用这种方法赋值，必须放在init后面，且，所有赋值的原理都是如此</span>
+            
+    name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+</code></pre></div><p>注意：重构<strong>init</strong>方法的时候，一定要使用super().<strong>init</strong>()，否则会报studen对象没有_state的属性。</p> <h4 id="_4-查询所有的学生信息"><a href="#_4-查询所有的学生信息" class="header-anchor">#</a> 4. 查询所有的学生信息</h4> <p>使用all()方法获取所有的数据</p> <div class="language- extra-class"><pre class="language-text"><code>Student.objects.all()
+</code></pre></div><h4 id="_4-查询所有女学生的姓名和出生日期"><a href="#_4-查询所有女学生的姓名和出生日期" class="header-anchor">#</a> 4. 查询所有女学生的姓名和出生日期</h4> <div class="language- extra-class"><pre class="language-text"><code>Student.objects.filter(stusex=0)
+或者
+Student.objects.exclude(stusex=1)
+</code></pre></div><p>其中：</p> <p>filter():返回符合条件的数据</p> <p>exclude():过滤掉符合条件的数据</p> <h4 id="_5-查询所有的学生-按照id从大到小排序"><a href="#_5-查询所有的学生-按照id从大到小排序" class="header-anchor">#</a> 5.查询所有的学生，按照id从大到小排序</h4> <div class="language- extra-class"><pre class="language-text"><code>Student.objects.all().order_by('-id')
+</code></pre></div><p>其中：</p> <p>order_by('id'):表示按照id升序的排列</p> <p>order_by('-id'):表示按照id降序的排列</p> <h4 id="_6-查询所有的学生信息-并序列化"><a href="#_6-查询所有的学生信息-并序列化" class="header-anchor">#</a> 6. 查询所有的学生信息，并序列化</h4> <div class="language- extra-class"><pre class="language-text"><code>Student.objects.all().values()
+Student.objects.all().values('s_name', 's_age')
+</code></pre></div><h4 id="_7-查询所有80后学生的姓名、性别和出生日期-筛选"><a href="#_7-查询所有80后学生的姓名、性别和出生日期-筛选" class="header-anchor">#</a> 7.查询所有80后学生的姓名、性别和出生日期(筛选)</h4> <div class="language- extra-class"><pre class="language-text"><code>Student.objects.filter(stubirth__gte='1980-01-01', 
+                        stubirth__lte='1990-01-01')
+</code></pre></div><h4 id="_8-查询名字中有王字的学生的姓名-模糊-like-小-like-小-like-小"><a href="#_8-查询名字中有王字的学生的姓名-模糊-like-小-like-小-like-小" class="header-anchor">#</a> 8.查询名字中有王字的学生的姓名(模糊)，like '%小%'， like '小%'，like '%小'</h4> <div class="language- extra-class"><pre class="language-text"><code>Student.objects.filter(s_name__contains='小')
+Student.objects.filter(s_name__startswith='小')
+Student.objects.filter(s_name__endswith='小')
+</code></pre></div><h4 id="_9-查询id等于1-2的学生信息"><a href="#_9-查询id等于1-2的学生信息" class="header-anchor">#</a> 9.查询id等于1,2的学生信息</h4> <div class="language- extra-class"><pre class="language-text"><code># select * from student where id in (1,2)
+stus = Student.objects.filter(id__in=[1,2])
+</code></pre></div><h4 id="_10-获取id为1的信息-get-和filter-的使用"><a href="#_10-获取id为1的信息-get-和filter-的使用" class="header-anchor">#</a> 10. 获取id为1的信息，get()和filter()的使用</h4> <div class="language- extra-class"><pre class="language-text"><code>Student.objects.filter(id=1)
+Student.objects.get(id=1)
+Student.objects.get(pk=1)
+
+# get获取不到数据会直接报错, filter获取不到数据是返回空
+stus = Student.objects.get(pk=5)
+Student.objects.filter(id=5)
+
+# get只能返回一个数据，返回多个会报错
+Student.objects.get(s_age=15) # 前提条件：数据库中s_age为15的数据有多条
+</code></pre></div><h4 id="_11-获取所有学生-按照id降序-中第一个-最后一个学生信息"><a href="#_11-获取所有学生-按照id降序-中第一个-最后一个学生信息" class="header-anchor">#</a> 11.获取所有学生(按照id降序)中第一个/最后一个学生信息</h4> <div class="language- extra-class"><pre class="language-text"><code># 获取按照id降序的第一个学生信息
+Student.objects.all().order_by('-id')[0]
+Student.objects.all().order_by('-id').first()
+# 获取所有学生(按照id降序)中最后一个学生信息
+Student.objects.all().order_by('-id').last()
+</code></pre></div><h2 id="模型加参"><a href="#模型加参" class="header-anchor">#</a> 模型加参</h2> <p>1.建表</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Grade</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment">#班级名称</span>
+    g_name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> unique<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        db_table <span class="token operator">=</span> <span class="token string">'grade'</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">StudentInfo</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment">#学生信息：地址和电话</span>
+    address <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    phone <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">11</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        db_table <span class="token operator">=</span> <span class="token string">'stu_info'</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 长度为10，且唯一不能为空的姓名s_name字段  CharField - 字符串类型</span>
+    s_name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> unique<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    <span class="token comment"># IntegerField - 整型字段</span>
+    age <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">18</span><span class="token punctuation">)</span>
+    <span class="token comment"># auto_now_add：表示第一次创建数据时，自动默认为创建的时间</span>
+    create_time <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>auto_now_add<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token comment"># auto_now: 表示修改时,自动更新为修改时间</span>
+    operate_time <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>auto_now<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token comment"># 是否删除</span>
+    is_delete <span class="token operator">=</span> models<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token comment"># 定义浮点数总长度3位,小数点后1位(decimal_places=1)</span>
+    yuwen <span class="token operator">=</span> models<span class="token punctuation">.</span>DecimalField<span class="token punctuation">(</span>max_digits<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> decimal_places<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    math <span class="token operator">=</span> models<span class="token punctuation">.</span>DecimalField<span class="token punctuation">(</span>max_digits<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> decimal_places<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token comment"># 一对一：定义在关联的两个模型中的任何一方都可以；地址和学生是一一对应的，排除兄弟情况</span>
+    stuinfo <span class="token operator">=</span> models<span class="token punctuation">.</span>OneToOneField<span class="token punctuation">(</span>StudentInfo<span class="token punctuation">,</span> related_name<span class="token operator">=</span><span class="token string">'stu'</span><span class="token punctuation">,</span> on_delete<span class="token operator">=</span>models<span class="token punctuation">.</span>CASCADE<span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token comment"># 一对多：只能定义在‘多’的一方，一个班级对应多个学生</span>
+    grade <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>Grade<span class="token punctuation">,</span> related_name<span class="token operator">=</span><span class="token string">'stu'</span><span class="token punctuation">,</span> on_delete<span class="token operator">=</span>models<span class="token punctuation">.</span>CASCADE<span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        db_table <span class="token operator">=</span> <span class="token string">'student'</span>
+</code></pre></div><p>2.数据库迁移</p> <div class="language- extra-class"><pre class="language-text"><code>python manage.py makemigrations
+python manage.py migrate
+</code></pre></div><h5 id="模型对应关系描述如下"><a href="#模型对应关系描述如下" class="header-anchor">#</a> 模型对应关系描述如下：</h5> <p>1：1    一对一 OneToOneField ：两方都可以
+1：N  一对多 ForeignKey ：只能写在多的一方
+M：N 多对多 ManyToManyField  会自动建一个中间表 ：两方都可以</p> <h5 id="在views-py文件中"><a href="#在views-py文件中" class="header-anchor">#</a> 在views.py文件中</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">add_stu_info</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'GET'</span><span class="token punctuation">:</span>
+        <span class="token comment"># 向拓展表中添加信息</span>
+        stu_info <span class="token operator">=</span> StudentInfo<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">#这里是实例直接执行了Model中的__init__,我们也可以自己定义__init__</span>
+        stu_info<span class="token punctuation">.</span>phone <span class="token operator">=</span> <span class="token string">'13545455433'</span>
+        stu_info<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        s_id <span class="token operator">=</span> stu_info<span class="token punctuation">.</span><span class="token builtin">id</span>
+        stu <span class="token operator">=</span> Student<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>s_name<span class="token operator">=</span><span class="token string">'小明'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>first<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment"># 第一种写法: 学生对象.OneToOneField管理对象 = 关联对象,这就相当于stuinfo是一个连接外表的外键，指向与外表的一条记录，这里的stu_info，相当于一条记录，下面的方法相当于讲小明这条记录，与刚创建的stu_info记录的主键进行了绑定</span>
+        stu<span class="token punctuation">.</span>stuinfo <span class="token operator">=</span> stu_info
+        <span class="token comment"># 第二种写法: 学生对象.OneToOneField字段 = 关联对象.id，这个就相当于对每个字段进行赋值了：student_id = '2'，记主键之间的绑定</span>
+        stu<span class="token punctuation">.</span>stuinfo_id <span class="token operator">=</span> stu_info<span class="token punctuation">.</span><span class="token builtin">id</span>
+        stu<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">'添加拓展表信息'</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">sel_stuinfo_by_stu</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'GET'</span><span class="token punctuation">:</span>
+        <span class="token comment"># 通过学生信息找拓展表信息</span>
+        stu <span class="token operator">=</span> Student<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>s_name<span class="token operator">=</span><span class="token string">'小明'</span><span class="token punctuation">)</span>
+        <span class="token comment"># StudentInfo.objects.get(pk=stu.stuinfo_id)  # 等价于stu.stuinfo，都是找主键</span>
+        <span class="token comment"># 学生对象(stu).OneToOneField字段(stuinfo)</span>
+        stu<span class="token punctuation">.</span>stuinfo
+        <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">'获取拓展表信息成功'</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">sel_stu_by_info</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'GET'</span><span class="token punctuation">:</span>
+        <span class="token comment"># 通过拓展表中的手机号码找学生信息</span>
+        stuinfo <span class="token operator">=</span> StudentInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>phone<span class="token operator">=</span><span class="token string">'13545455433'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>first<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment"># stu = Student.objects.filter(stuinfo=stuinfo)  #通过学生表的关联表找</span>
+        <span class="token comment"># stu = Student.objects.filter(stuinfo_id=stuinfo.id)  # 通过一个student_id修改</span>
+        <span class="token comment"># print(stu)</span>
+        
+        <span class="token comment"># 拓展表对象.关联的模型名称小写</span>
+        <span class="token comment"># stu = stuinfo.student  # 和上面两步一样，这步很简单，已经知道stuinfo了，让其.student</span>
+        <span class="token comment"># 定义related_name参数, 拓展表对象.related_name值</span>
+        stu <span class="token operator">=</span> stuinfo<span class="token punctuation">.</span>stu  <span class="token comment"># 这的stu是onetonoe字段的related_name参数,它和上面那步是互斥的</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>stu<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">'通过拓展表信息查询学生表信息'</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">add_grade</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'GET'</span><span class="token punctuation">:</span>
+        <span class="token comment"># 添加班级信息, 并给学生分配班级</span>
+        names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Python班级'</span><span class="token punctuation">,</span> <span class="token string">'Java班级'</span><span class="token punctuation">,</span> <span class="token string">'Php班级'</span><span class="token punctuation">,</span> <span class="token string">'C++班级'</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> name <span class="token keyword">in</span> names<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> Grade<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>g_name<span class="token operator">=</span>name<span class="token punctuation">)</span><span class="token punctuation">.</span>exists<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                Grade<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>creat<span class="token punctuation">(</span>g_name<span class="token operator">=</span>name<span class="token punctuation">)</span>
+        <span class="token comment"># 分配班级</span>
+        stus <span class="token operator">=</span> Student<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>pk_in<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        g <span class="token operator">=</span> Grade<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>g_name<span class="token operator">=</span><span class="token string">'Python班级'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>first<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> stu <span class="token keyword">in</span> stus<span class="token punctuation">:</span>
+            stu<span class="token punctuation">.</span>grade <span class="token operator">=</span> g
+            <span class="token comment"># stu.grade_id = g.id</span>
+            stu<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">'添加班级和学生信息'</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">sel_grade_by_stu</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'GET'</span><span class="token punctuation">:</span>
+        <span class="token comment"># 通过学生查询班级信息</span>
+        stu <span class="token operator">=</span> Student<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>s_name<span class="token operator">=</span><span class="token string">'小明'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>first<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        g <span class="token operator">=</span> stu<span class="token punctuation">.</span>grade
+        <span class="token keyword">print</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span>
+        <span class="token comment"># 班级查询学生</span>
+        stus <span class="token operator">=</span> g<span class="token punctuation">.</span>student_set<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 和下面一样</span>
+        stus <span class="token operator">=</span> g<span class="token punctuation">.</span>stu<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 定义了related_name='stu'，但是用了related_name之后,就不能用_set了</span>
+
+        <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">'通过学生查询班级成功'</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="多对多"><a href="#多对多" class="header-anchor">#</a> 多对多</h4> <p>先声明两个类Course, Student</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Course</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    c_name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> unique<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        <span class="token comment"># 指定表名</span>
+        db_table <span class="token operator">=</span> <span class="token string">'course'</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 长度为10，且唯一不能为空的姓名s_name字段  CharField - 字符串类型</span>
+    s_name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> unique<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    <span class="token comment"># IntegerField - 整型字段</span>
+    age <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">18</span><span class="token punctuation">)</span>
+    <span class="token comment"># auto_now_add：表示第一次创建数据时，自动默认为创建的时间</span>
+    create_time <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>auto_now_add<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token comment"># auto_now: 表示修改时,自动更新为修改时间</span>
+    operate_time <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>auto_now<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token comment"># 是否删除</span>
+    is_delete <span class="token operator">=</span> models<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token comment"># 定义浮点数总长度3位,小数点后1位(decimal_places=1)</span>
+    yuwen <span class="token operator">=</span> models<span class="token punctuation">.</span>DecimalField<span class="token punctuation">(</span>max_digits<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> decimal_places<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    math <span class="token operator">=</span> models<span class="token punctuation">.</span>DecimalField<span class="token punctuation">(</span>max_digits<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> decimal_places<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 多对多</span>
+    course <span class="token operator">=</span> models<span class="token punctuation">.</span>ManyToManyField<span class="token punctuation">(</span>Course<span class="token punctuation">,</span> related_name<span class="token operator">=</span><span class="token string">'stu'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        db_table <span class="token operator">=</span> <span class="token string">'student'</span>
+</code></pre></div><p>views.py文件中</p> <div class="language- extra-class"><pre class="language-text"><code>def add_course(request):
+    if request.method == 'GET':
+        # 添加课程信息
+        names = ['大学语文', '日语', '数电', '模电']
+        for name in names:
+            cou = Course()
+            cou.c_name = name
+            cou.save()
+
+        return HttpResponse('添加课程成功')
+
+
+def sel_cou_by_stu(request):
+    if request.method == 'GET':
+        # 查询id为1的学生所选择的课程信息
+        stu = Student.objects.get(pk=1)
+        # 学生查找课程
+        stu.course
+
+        # 课程查询学生
+        cou = Course.objexts.get(pk=1)
+        cou.student_set.all()  # student是小写的类名, 没有related_name之前可以用
+        cou.stu.all()
+        return HttpResponse('多对多的查询成功')
+
+
+def add_del_stu_cou(request):
+    if request.method == 'GET':
+        # 增删中间表的信息
+        # 给小王分配'日语', '数电', '模电'
+        stu = Student.objects.filter(s_name='小明').first()
+        cou1 = Course.objects.get(c_name='日语')
+        cou2 = Course.objects.get(c_name='数电')
+        cou3 = Course.objects.get(c_name='模电')
+        # 新增中间表数据
+        stu.course.add(cou1)
+        stu.course.add(cou2)
+        stu.course.add(cou3)  # add方法加入课程(flask中用的append), 此时中间表就有信息了
+        # cou1.stu.add(学生对象)  # 和上面一样的
+
+        # 删除中间表数据  stu.course此时有3门课程
+        stu.course.remove(cou2)
+        stu.course.remove(cou3)  # 此时删掉了数电和模电课程
+        return HttpResponse('操作中间表信息成功')
+
+
+def on_delete_stu(request):
+    if request.method == 'GET':
+        # 演示删除, on_delete参数的效果
+        stuinfo = StudentInfo.objects.get(id=6)
+        stuinfo.delete()
+        # models.CASCADE 表示:主键所在行的数据被删, 外键所在行的数据也会被删
+        # models.PROTECT 表示:主键有对应的外键数据时, 不让删除主键的数据
+        # models.SET_NULL 表示:主键删除, 外键置空
+        # 常用的就上面三个
+        return HttpResponse('on_delete演示成功')
+</code></pre></div><h3 id="模型关联关系"><a href="#模型关联关系" class="header-anchor">#</a> 模型关联关系</h3> <h4 id="一对一"><a href="#一对一" class="header-anchor">#</a> 一对一</h4> <div class="language- extra-class"><pre class="language-text"><code>class A():
+    id = modules.IntegerFiled()
+
+class B():
+    aa = mldels.OneToOneField(A, on_delete=models.CASCADE, null=True,related_name='cc')
+</code></pre></div><ul><li>OneToOneField(关联模型)</li> <li>模型定义
+<ul><li>关联名 = models.OneToOneField(关联的表名, related_name = '关系名', on_delete=models.CASCADE, null=True)</li></ul></li> <li>已知 A 对象 a 查询 B 对象
+<ul><li>当 related_name 没定义时: a.b</li> <li>当 related_name = 'cc'时: a.cc</li></ul></li> <li>已知 B 对象 b 查询 A 对象 b.aa</li> <li>一对一:定义在关联的两个模型中的任意一方都可以</li></ul> <h4 id="一对多"><a href="#一对多" class="header-anchor">#</a> 一对多</h4> <div class="language- extra-class"><pre class="language-text"><code>class A():
+    id
+
+class B():
+    aa = models.ForeignKey(A, on_delete=models.CASCADE, null=True,related_name='cc')
+</code></pre></div><ul><li>ForeignKey(关联模型)</li> <li>模型定义
+<ul><li>aa = ForeignKey(A)</li></ul></li> <li>已知 A 对象 a，查询 B 对象
+<ul><li>当 related_name 没定义时:  a.b_set</li> <li>当 related_name = 'cc'时: a.cc</li></ul></li> <li>已知 B 对象 b 查询 A 对象 b.aa</li> <li>一对多:定义在'多'的一方</li></ul> <h4 id="多对多-2"><a href="#多对多-2" class="header-anchor">#</a> 多对多</h4> <ul><li>course = models.ManyToManyField(Course 要进行关联的表的名字,related_name='stu') 会自动生成中间文件，中间文件的表名为 course</li> <li>查询 id 为 1 的学生课程信息</li> <li>stu = Student.objects.get(pk=1)</li> <li>学生查询课程
+<ul><li>stu.course</li></ul></li> <li>课程查询学生
+<ul><li>cou = Course.objects(pk=1)</li> <li>当 related_name 没定义时: cou.student_set.all()</li> <li>当 related_name 定义时: cou.stu.all()</li></ul></li> <li>增加中间表信息
+<ul><li>stu = Student.objects.filter(s_name = '小明').first()</li> <li>cou1 = Course.objects.get(c_name='日语')</li> <li>stu.course.add(cou1)</li></ul></li> <li>删除中间表信息
+<ul><li>stu.course.remove(cou1)</li></ul></li> <li>on_delete 参数
+<ul><li>models.CASCADE 表示: 主键所在行的数据被删，外键所在行的数据也会被删</li> <li>models.PROTECT 表示: 主键有对应的外键数据时，不让删除主键的数据</li> <li>models.SET_NULL 表示: 主键删除，外键置空</li></ul></li> <li>注意: ManyToManyFiled 定义的字段定义在任何一个关联模型中都可以</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/python/django/模版语法.html" class="prev">
+        模版语法
+      </a></span> <span class="next"><a href="/python/django/反向解析和视图函数.html">
+        反向解析和视图函数
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/60.f40ac3ca.js" defer></script>
+  </body>
+</html>

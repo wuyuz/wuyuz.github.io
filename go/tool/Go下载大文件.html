@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Go下载大文件io.Copy | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/34.8448d0fd.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/103.16474d4b.js"><link rel="prefetch" href="/assets/js/104.ed58aef3.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/11.d4ec37c8.js"><link rel="prefetch" href="/assets/js/110.4144755a.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/48.f591f360.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/50.b9ca2762.js"><link rel="prefetch" href="/assets/js/51.93672ee6.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/60.f40ac3ca.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/64.a98fe86e.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/80.f826f188.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/84.b940927c.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/87.5f9eb9ef.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/94.0ad7c41c.js"><link rel="prefetch" href="/assets/js/95.0e5ce618.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link router-link-active">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link router-link-active">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Go常用模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Go基础知识</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Go应用实例</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/go/tool/文件操作.html" class="sidebar-link">文件操作</a></li><li><a href="/go/tool/数据库相关.html" class="sidebar-link">数据库相关</a></li><li><a href="/go/tool/Go与redis.html" class="sidebar-link">Go与redis</a></li><li><a href="/go/tool/Go与WebSocket.html" class="sidebar-link">Go与WebSocket</a></li><li><a href="/go/tool/Go与MongoDB.html" class="sidebar-link">Go与MongoDB</a></li><li><a href="/go/tool/Go发送SMTP邮件.html" class="sidebar-link">Go发送SMTP邮件</a></li><li><a href="/go/tool/Go下载大文件.html" class="active sidebar-link">Go下载大文件io.Copy</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/go/tool/Go下载大文件.html#go下载大文件io-copy" class="sidebar-link">Go下载大文件io.Copy</a></li><li class="sidebar-sub-header"><a href="/go/tool/Go下载大文件.html#io-copy-方法" class="sidebar-link">io.Copy() 方法</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Go设计模式</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Go源码解析</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Go微服务网关</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="go下载大文件io-copy"><a href="#go下载大文件io-copy" class="header-anchor">#</a> Go下载大文件io.Copy</h2> <p>使用 Go 语言下载一个文件，大家一般会怎么做呢，比如，我们要下载 https://www.twle.cn/static/i/img1.jpg 这张图片。</p> <p>前面的部分，想必很多人都一样，使用 <code>net/http</code> 包下的 <code>http.Get()</code> 方法创建一个到远程图片的请求。</p> <p>代码一般如下</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;net/http&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    imgUrl <span class="token operator">:=</span> <span class="token string">&quot;https://www.twle.cn/static/i/img1.jpg&quot;</span>
+
+    <span class="token comment">// Get the data</span>
+    resp<span class="token punctuation">,</span> err <span class="token operator">:=</span> http<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span>imgUrl<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> err
+    <span class="token punctuation">}</span>
+    <span class="token keyword">defer</span> resp<span class="token punctuation">.</span>Body<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>但接下来呢 ？ 实现方式就有很多了</p> <p>最常见的应该是使用 <code>io/ioutil</code> 包下的 <code>io.WriteFile()</code> 函数直接将响应写入到一个文件中</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;io/ioutil&quot;</span>
+    <span class="token string">&quot;net/http&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    imgUrl <span class="token operator">:=</span> <span class="token string">&quot;https://www.twle.cn/static/i/img1.jpg&quot;</span>
+
+    <span class="token comment">// Get the data</span>
+    resp<span class="token punctuation">,</span> err <span class="token operator">:=</span> http<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span>imgUrl<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        <span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">defer</span> resp<span class="token punctuation">.</span>Body<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    data<span class="token punctuation">,</span> err <span class="token operator">:=</span> ioutil<span class="token punctuation">.</span><span class="token function">ReadAll</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>Body<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        <span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    ioutil<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span><span class="token string">&quot;img1.jpg&quot;</span><span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token number">0644</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>大家有没有发现这种实现方式有一个弱点？ 我们需要使用 <code>ioutil.ReadAll(resp.Body)</code> 先将所有的响应读出来放到内存中。如果文件太大，那么就会消耗很多内存。这样是不明智的。</p> <p>幸好，<code>io</code> 包提供了 <code>io.Copy()</code> 方法，该方法实现了两个文件句柄之间的拷贝。</p> <h2 id="io-copy-方法"><a href="#io-copy-方法" class="header-anchor">#</a> io.Copy() 方法</h2> <p><code>io.Copy()</code> 方法实现了两个文件指针之间的内容拷贝。该方法的原型如下</p> <div class="language- extra-class"><pre class="language-text"><code>func Copy(dst Writer, src Reader) (written int64, err error)
+</code></pre></div><p><code>io.Copy()</code> 方法将副本从 <code>src</code> 复制到 <code>dst</code> ，直到 <code>src</code> 达到文件末尾 ( EOF ) 或发生错误，然后返回复制的字节数和复制时遇到的第一个错误（ 如果有 ）</p> <p>有了这个函数，我们就省去了先把内容读取到内存，然后将内存中的内容写到文件的过程，于是，我们的代码就可以改成如下方式</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;io&quot;</span>
+    <span class="token string">&quot;net/http&quot;</span>
+    <span class="token string">&quot;os&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    imgUrl <span class="token operator">:=</span> <span class="token string">&quot;https://www.twle.cn/static/i/img1.jpg&quot;</span>
+
+    <span class="token comment">// Get the data</span>
+    resp<span class="token punctuation">,</span> err <span class="token operator">:=</span> http<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span>imgUrl<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        <span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">defer</span> resp<span class="token punctuation">.</span>Body<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 创建一个文件用于保存</span>
+    out<span class="token punctuation">,</span> err <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">Create</span><span class="token punctuation">(</span><span class="token string">&quot;img1.jpg&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        <span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">defer</span> out<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 然后将响应流和文件流对接起来</span>
+    <span class="token boolean">_</span><span class="token punctuation">,</span> err <span class="token operator">=</span> io<span class="token punctuation">.</span><span class="token function">Copy</span><span class="token punctuation">(</span>out<span class="token punctuation">,</span> resp<span class="token punctuation">.</span>Body<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        <span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/go/tool/Go发送SMTP邮件.html" class="prev">
+        Go发送SMTP邮件
+      </a></span> <span class="next"><a href="/go/go-mode/设计模式.html">
+        设计模式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/34.8448d0fd.js" defer></script>
+  </body>
+</html>

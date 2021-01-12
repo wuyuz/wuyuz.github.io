@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>创建型模式 | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/104.ed58aef3.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/103.16474d4b.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/11.d4ec37c8.js"><link rel="prefetch" href="/assets/js/110.4144755a.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/34.8448d0fd.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/48.f591f360.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/50.b9ca2762.js"><link rel="prefetch" href="/assets/js/51.93672ee6.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/60.f40ac3ca.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/64.a98fe86e.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/80.f826f188.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/84.b940927c.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/87.5f9eb9ef.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/94.0ad7c41c.js"><link rel="prefetch" href="/assets/js/95.0e5ce618.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python常用模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Django框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flask 框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python爬虫</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Python设计模式</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/python/python-mode/创建型模式.html" class="active sidebar-link">创建型模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/python/python-mode/创建型模式.html#创建型模式" class="sidebar-link">创建型模式</a></li><li class="sidebar-sub-header"><a href="/python/python-mode/创建型模式.html#抽象工厂模式-abstract-factory" class="sidebar-link">抽象工厂模式 (Abstract factory)</a></li><li class="sidebar-sub-header"><a href="/python/python-mode/创建型模式.html#单例模式-singleton-pattern" class="sidebar-link">单例模式 (Singleton pattern)</a></li><li class="sidebar-sub-header"><a href="/python/python-mode/创建型模式.html#工厂模式-factory-method-pattern" class="sidebar-link">工厂模式(factory method pattern)</a></li><li class="sidebar-sub-header"><a href="/python/python-mode/创建型模式.html#生成器模式-builder-pattern" class="sidebar-link">生成器模式(Builder pattern)</a></li><li class="sidebar-sub-header"><a href="/python/python-mode/创建型模式.html#原型模式-prototype-pattern" class="sidebar-link">原型模式(prototype pattern)</a></li></ul></li><li><a href="/python/python-mode/行为型模式.html" class="sidebar-link">行为型模式</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="创建型模式"><a href="#创建型模式" class="header-anchor">#</a> 创建型模式</h2> <h2 id="抽象工厂模式-abstract-factory"><a href="#抽象工厂模式-abstract-factory" class="header-anchor">#</a> 抽象工厂模式 (Abstract factory)</h2> <p>提供一个接口, 用于创建相关或依赖对象的家族, 而不需要指定具体类。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token triple-quoted-string string">&quot;&quot;&quot;Implementation of the abstract factory pattern&quot;&quot;&quot;</span>
+<span class="token keyword">import</span> random
+
+
+<span class="token keyword">class</span> <span class="token class-name">PetShop</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;A pet shop&quot;&quot;&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> animal_factory<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;pet_factory is our abstract factory.
+        We can set it at will.&quot;&quot;&quot;</span>
+
+        self<span class="token punctuation">.</span>pet_factory <span class="token operator">=</span> animal_factory
+
+    <span class="token keyword">def</span> <span class="token function">show_pet</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;Creates and shows a pet using the
+        abstract factory&quot;&quot;&quot;</span>
+
+        pet <span class="token operator">=</span> self<span class="token punctuation">.</span>pet_factory<span class="token punctuation">.</span>get_pet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;This is a lovely&quot;</span><span class="token punctuation">,</span> pet<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;It says&quot;</span><span class="token punctuation">,</span> pet<span class="token punctuation">.</span>speak<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;It eats&quot;</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>pet_factory<span class="token punctuation">.</span>get_food<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># Stuff that our factory makes</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">speak</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;woof&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;Dog&quot;</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Cat</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">speak</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;meow&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;Cat&quot;</span>
+
+
+<span class="token comment"># Factory classes</span>
+
+<span class="token keyword">class</span> <span class="token class-name">DogFactory</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">get_pet</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> Dog<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">get_food</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;dog food&quot;</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">CatFactory</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">get_pet</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> Cat<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">get_food</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;cat food&quot;</span>
+
+
+<span class="token comment"># Create the proper family</span>
+<span class="token keyword">def</span> <span class="token function">get_factory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Let's be dynamic!&quot;&quot;&quot;</span>
+    <span class="token keyword">return</span> random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span><span class="token punctuation">[</span>DogFactory<span class="token punctuation">,</span> CatFactory<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># Show pets with various factories</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&quot;__main__&quot;</span><span class="token punctuation">:</span>
+    shop <span class="token operator">=</span> PetShop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 通过get_factory函数来获取不同的工厂类</span>
+        shop<span class="token punctuation">.</span>pet_factory <span class="token operator">=</span> get_factory<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        shop<span class="token punctuation">.</span>show_pet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;=&quot;</span> <span class="token operator">*</span> <span class="token number">20</span><span class="token punctuation">)</span>
+
+</code></pre></div><h2 id="单例模式-singleton-pattern"><a href="#单例模式-singleton-pattern" class="header-anchor">#</a> 单例模式 (Singleton pattern)</h2> <p>确保一个类只有一个实例, 并提供全局访问点。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">S</span><span class="token punctuation">:</span>
+    instance <span class="token operator">=</span> <span class="token boolean">None</span>
+
+    <span class="token keyword">def</span> <span class="token function">__new__</span><span class="token punctuation">(</span>cls<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> S<span class="token punctuation">.</span>instance <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            S<span class="token punctuation">.</span>instance <span class="token operator">=</span> <span class="token builtin">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__new__<span class="token punctuation">(</span>cls<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+
+s1 <span class="token operator">=</span> S<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+s2 <span class="token operator">=</span> S<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="工厂模式-factory-method-pattern"><a href="#工厂模式-factory-method-pattern" class="header-anchor">#</a> 工厂模式(factory method pattern)</h2> <p>定义了一个创建对象的接口, 但由子类决定要实例化的类是哪一个。工厂方法让类把实例化推迟到子类。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">GreekGetter</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;A simple localizer a la gettext&quot;&quot;&quot;</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>trans <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span>dog<span class="token operator">=</span><span class="token string">&quot;σκύλος&quot;</span><span class="token punctuation">,</span> cat<span class="token operator">=</span><span class="token string">&quot;γάτα&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> msgid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;We'll punt if we don't have a translation&quot;&quot;&quot;</span>          
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>trans<span class="token punctuation">[</span>msgid<span class="token punctuation">]</span>
+        <span class="token keyword">except</span> KeyError<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token builtin">str</span><span class="token punctuation">(</span>msgid<span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">EnglishGetter</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Simply echoes the msg ids&quot;&quot;&quot;</span>     
+    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> msgid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token builtin">str</span><span class="token punctuation">(</span>msgid<span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">get_localizer</span><span class="token punctuation">(</span>language<span class="token operator">=</span><span class="token string">&quot;English&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;The factory method&quot;&quot;&quot;</span>
+    <span class="token comment"># 根据传入的language来决定要实例的是哪一个类</span>
+    languages <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span>English<span class="token operator">=</span>EnglishGetter<span class="token punctuation">,</span> Greek<span class="token operator">=</span>GreekGetter<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> languages<span class="token punctuation">[</span>language<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Create our localizers</span>
+e<span class="token punctuation">,</span> g <span class="token operator">=</span> get_localizer<span class="token punctuation">(</span><span class="token string">&quot;English&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> get_localizer<span class="token punctuation">(</span><span class="token string">&quot;Greek&quot;</span><span class="token punctuation">)</span>
+<span class="token comment"># Localize some text</span>
+<span class="token keyword">for</span> msgid <span class="token keyword">in</span> <span class="token string">&quot;dog parrot cat bear&quot;</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>get<span class="token punctuation">(</span>msgid<span class="token punctuation">)</span><span class="token punctuation">,</span> g<span class="token punctuation">.</span>get<span class="token punctuation">(</span>msgid<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><p>另一个简单的例子</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token boolean">None</span>
+        self<span class="token punctuation">.</span>gender <span class="token operator">=</span> <span class="token boolean">None</span>
+
+    <span class="token keyword">def</span> <span class="token function">getName</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>name
+
+    <span class="token keyword">def</span> <span class="token function">getGender</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>gender
+
+<span class="token keyword">class</span> <span class="token class-name">Male</span><span class="token punctuation">(</span>Person<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">&quot;Hello Mr.&quot;</span> <span class="token operator">+</span> name
+
+<span class="token keyword">class</span> <span class="token class-name">Female</span><span class="token punctuation">(</span>Person<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">&quot;Hello Miss.&quot;</span> <span class="token operator">+</span> name
+
+<span class="token keyword">class</span> <span class="token class-name">Factory</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">getPerson</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> gender<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> gender <span class="token operator">==</span> ‘M'<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> Male<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> gender <span class="token operator">==</span> <span class="token string">'F'</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> Female<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    factory <span class="token operator">=</span> Factory<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    person <span class="token operator">=</span> factory<span class="token punctuation">.</span>getPerson<span class="token punctuation">(</span><span class="token string">&quot;Chetan&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;M&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="生成器模式-builder-pattern"><a href="#生成器模式-builder-pattern" class="header-anchor">#</a> 生成器模式(Builder pattern)</h2> <p>使用生成器模式封装一个产品的构造过程, 并允许按步骤构造。将一个复杂对象的构建与它的表示分离, 使得同样的构建过程可以创建不同的表示。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> abc <span class="token keyword">import</span> ABCMeta<span class="token punctuation">,</span> abstractmethod
+
+
+<span class="token keyword">class</span> <span class="token class-name">Builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    __metaclass__ <span class="token operator">=</span> ABCMeta
+
+    <span class="token decorator annotation punctuation">@abstractmethod</span>
+    <span class="token keyword">def</span> <span class="token function">draw_left_arm</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+    <span class="token decorator annotation punctuation">@abstractmethod</span>
+    <span class="token keyword">def</span> <span class="token function">draw_right_arm</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+    <span class="token decorator annotation punctuation">@abstractmethod</span>
+    <span class="token keyword">def</span> <span class="token function">draw_left_foot</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+    <span class="token decorator annotation punctuation">@abstractmethod</span>
+    <span class="token keyword">def</span> <span class="token function">draw_right_foot</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+    <span class="token decorator annotation punctuation">@abstractmethod</span>
+    <span class="token keyword">def</span> <span class="token function">draw_head</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+    <span class="token decorator annotation punctuation">@abstractmethod</span>
+    <span class="token keyword">def</span> <span class="token function">draw_body</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Thin</span><span class="token punctuation">(</span>Builder<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">draw_left_arm</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">'画左手'</span>
+
+    <span class="token keyword">def</span> <span class="token function">draw_right_arm</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">'画右手'</span>
+
+    <span class="token keyword">def</span> <span class="token function">draw_left_foot</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">'画左脚'</span>
+
+    <span class="token keyword">def</span> <span class="token function">draw_right_foot</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">'画右脚'</span>
+
+    <span class="token keyword">def</span> <span class="token function">draw_head</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">'画头'</span>
+
+    <span class="token keyword">def</span> <span class="token function">draw_body</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">'画瘦身体'</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Fat</span><span class="token punctuation">(</span>Builder<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">draw_left_arm</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">'画左手'</span>
+
+    <span class="token keyword">def</span> <span class="token function">draw_right_arm</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">'画右手'</span>
+
+    <span class="token keyword">def</span> <span class="token function">draw_left_foot</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">'画左脚'</span>
+
+    <span class="token keyword">def</span> <span class="token function">draw_right_foot</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">'画右脚'</span>
+
+    <span class="token keyword">def</span> <span class="token function">draw_head</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">'画头'</span>
+
+    <span class="token keyword">def</span> <span class="token function">draw_body</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">'画胖身体'</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Director</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> person<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>person<span class="token operator">=</span>person
+
+    <span class="token keyword">def</span> <span class="token function">draw</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>person<span class="token punctuation">.</span>draw_left_arm<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>person<span class="token punctuation">.</span>draw_right_arm<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>person<span class="token punctuation">.</span>draw_left_foot<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>person<span class="token punctuation">.</span>draw_right_foot<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>person<span class="token punctuation">.</span>draw_head<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>person<span class="token punctuation">.</span>draw_body<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    thin<span class="token operator">=</span>Thin<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    fat<span class="token operator">=</span>Fat<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    director_thin<span class="token operator">=</span>Director<span class="token punctuation">(</span>thin<span class="token punctuation">)</span>
+    director_thin<span class="token punctuation">.</span>draw<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    director_fat<span class="token operator">=</span>Director<span class="token punctuation">(</span>fat<span class="token punctuation">)</span>
+    director_fat<span class="token punctuation">.</span>draw<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="原型模式-prototype-pattern"><a href="#原型模式-prototype-pattern" class="header-anchor">#</a> 原型模式(prototype pattern)</h2> <p>用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。原型模式本质就是克隆对象，所以在对象初始化操作比较复杂的情况下，很实用，能大大降低耗时，提高性能，因为“不用重新初始化对象，而是动态地获得对象运行时的状态”。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> copy
+<span class="token keyword">from</span> collections <span class="token keyword">import</span> OrderedDict
+
+
+<span class="token keyword">class</span> <span class="token class-name">Book</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> authors<span class="token punctuation">,</span> price<span class="token punctuation">,</span> <span class="token operator">**</span>rest<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">'''rest的例子有：出版商、长度、标签、出版日期'''</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>authors <span class="token operator">=</span> authors
+        self<span class="token punctuation">.</span>price <span class="token operator">=</span> price  <span class="token comment"># 单位为美元</span>
+        self<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>update<span class="token punctuation">(</span>rest<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        mylist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        ordered <span class="token operator">=</span> OrderedDict<span class="token punctuation">(</span><span class="token builtin">sorted</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> ordered<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            mylist<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'{}: {}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> ordered<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token string">'price'</span><span class="token punctuation">:</span>
+                mylist<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'$'</span><span class="token punctuation">)</span>
+            mylist<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>mylist<span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Prototype</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>objects <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">register</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> identifier<span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>objects<span class="token punctuation">[</span>identifier<span class="token punctuation">]</span> <span class="token operator">=</span> obj
+
+    <span class="token keyword">def</span> <span class="token function">unregister</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> identifier<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">del</span> self<span class="token punctuation">.</span>objects<span class="token punctuation">[</span>identifier<span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">clone</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> identifier<span class="token punctuation">,</span> <span class="token operator">**</span>attr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        found <span class="token operator">=</span> self<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>identifier<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> found<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">'Incorrect object identifier: {}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>identifier<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        obj <span class="token operator">=</span> copy<span class="token punctuation">.</span>deepcopy<span class="token punctuation">(</span>found<span class="token punctuation">)</span>
+        obj<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>update<span class="token punctuation">(</span>attr<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> obj
+
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    b1 <span class="token operator">=</span> Book<span class="token punctuation">(</span><span class="token string">'The C Programming Language'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'Brian W. Kernighan'</span><span class="token punctuation">,</span> <span class="token string">'Dennis M.Ritchie'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              price<span class="token operator">=</span><span class="token number">118</span><span class="token punctuation">,</span> publisher<span class="token operator">=</span><span class="token string">'Prentice Hall'</span><span class="token punctuation">,</span> length<span class="token operator">=</span><span class="token number">228</span><span class="token punctuation">,</span> publication_date<span class="token operator">=</span><span class="token string">'1978-02-22'</span><span class="token punctuation">,</span>
+              tags<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'programming'</span><span class="token punctuation">,</span> <span class="token string">'algorithms'</span><span class="token punctuation">,</span> <span class="token string">'data structures'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    prototype <span class="token operator">=</span> Prototype<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    cid <span class="token operator">=</span> <span class="token string">'k&amp;r-first'</span>
+    prototype<span class="token punctuation">.</span>register<span class="token punctuation">(</span>cid<span class="token punctuation">,</span> b1<span class="token punctuation">)</span>
+    b2 <span class="token operator">=</span> prototype<span class="token punctuation">.</span>clone<span class="token punctuation">(</span>cid<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'The C Programming Language(ANSI)'</span><span class="token punctuation">,</span> price<span class="token operator">=</span><span class="token number">48.99</span><span class="token punctuation">,</span>
+                         length<span class="token operator">=</span><span class="token number">274</span><span class="token punctuation">,</span> publication_date<span class="token operator">=</span><span class="token string">'1988-04-01'</span><span class="token punctuation">,</span> edition<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token punctuation">(</span>b1<span class="token punctuation">,</span> b2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;ID b1 : {} != ID b2 : {}&quot;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>b1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">id</span><span class="token punctuation">(</span>b2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+<span class="token triple-quoted-string string">&quot;&quot;&quot;
+&gt;&gt;&gt; python3 prototype.py
+authors: ('Brian W. Kernighan', 'Dennis M. Ritchie')
+length: 228
+name: The C Programming Language
+price: 118$
+publication_date: 1978-02-22
+publisher: Prentice Hall
+tags: ('C', 'programming', 'algorithms', 'data structures')
+
+
+authors: ('Brian W. Kernighan', 'Dennis M. Ritchie')
+edition: 2
+length: 274
+name: The C Programming Language (ANSI)
+price: 48.99$
+publication_date: 1988-04-01
+publisher: Prentice Hall
+tags: ('C', 'programming', 'algorithms', 'data structures')
+
+ID b1 : 140004970829304 != ID b2 : 140004970829472
+&quot;&quot;&quot;</span>    
+</code></pre></div><p>简单例子</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> copy
+
+
+<span class="token keyword">class</span> <span class="token class-name">Prototype</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>_objects <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">def</span> <span class="token function">register_object</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;Register an object&quot;&quot;&quot;</span>
+        self<span class="token punctuation">.</span>_objects<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> obj
+
+    <span class="token keyword">def</span> <span class="token function">unregister_object</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;Unregister an object&quot;&quot;&quot;</span>
+        <span class="token keyword">del</span> self<span class="token punctuation">.</span>_objects<span class="token punctuation">[</span>name<span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">clone</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> <span class="token operator">**</span>attr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;Clone a registered object and update inner attributes dictionary&quot;&quot;&quot;</span>
+        obj <span class="token operator">=</span> copy<span class="token punctuation">.</span>deepcopy<span class="token punctuation">(</span>self<span class="token punctuation">.</span>_objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        obj<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>update<span class="token punctuation">(</span>attr<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> obj
+
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+    a <span class="token operator">=</span> A<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    prototype <span class="token operator">=</span> Prototype<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    prototype<span class="token punctuation">.</span>register_object<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>
+    b <span class="token operator">=</span> prototype<span class="token punctuation">.</span>clone<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>a<span class="token punctuation">,</span> b<span class="token punctuation">.</span>b<span class="token punctuation">,</span> b<span class="token punctuation">.</span>c<span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/python/spider/爬虫面试案例.html" class="prev">
+        爬虫面试案例
+      </a></span> <span class="next"><a href="/python/python-mode/行为型模式.html">
+        行为型模式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/104.ed58aef3.js" defer></script>
+  </body>
+</html>

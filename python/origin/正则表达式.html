@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>正则表达式 | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/95.0e5ce618.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/103.16474d4b.js"><link rel="prefetch" href="/assets/js/104.ed58aef3.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/11.d4ec37c8.js"><link rel="prefetch" href="/assets/js/110.4144755a.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/34.8448d0fd.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/48.f591f360.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/50.b9ca2762.js"><link rel="prefetch" href="/assets/js/51.93672ee6.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/60.f40ac3ca.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/64.a98fe86e.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/80.f826f188.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/84.b940927c.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/87.5f9eb9ef.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/94.0ad7c41c.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python常用模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Python基础</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/python/origin/Python内置方法.html" class="sidebar-link">Python内置方法</a></li><li><a href="/python/origin/元类.html" class="sidebar-link">元类的深度理解</a></li><li><a href="/python/origin/函数部分.html" class="sidebar-link">函数</a></li><li><a href="/python/origin/数据类型.html" class="sidebar-link">数据类型</a></li><li><a href="/python/origin/面向对象.html" class="sidebar-link">面向对象</a></li><li><a href="/python/origin/模块和包.html" class="sidebar-link">模块和包</a></li><li><a href="/python/origin/网络基础.html" class="sidebar-link">网络基础</a></li><li><a href="/python/origin/正则表达式.html" class="active sidebar-link">正则表达式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/python/origin/正则表达式.html#正则表达式" class="sidebar-link">正则表达式</a></li><li class="sidebar-sub-header"><a href="/python/origin/正则表达式.html#re模块" class="sidebar-link">re模块</a></li></ul></li><li><a href="/python/origin/异常处理.html" class="sidebar-link">异常处理</a></li><li><a href="/python/origin/TCP和UDP.html" class="sidebar-link">TCP和UDP</a></li><li><a href="/python/origin/线程.html" class="sidebar-link">线程</a></li><li><a href="/python/origin/multiprocessing（上）.html" class="sidebar-link">multiprocessing（上）</a></li><li><a href="/python/origin/multiprocessing（中）.html" class="sidebar-link">multiprocessing（中）</a></li><li><a href="/python/origin/multiprocessing（下）.html" class="sidebar-link">multiprocessing（下）</a></li><li><a href="/python/origin/协程.html" class="sidebar-link">协程</a></li><li><a href="/python/origin/IO多路复用.html" class="sidebar-link">IO 多路复用</a></li><li><a href="/python/origin/C3算法.html" class="sidebar-link">C3算法</a></li><li><a href="/python/origin/yield  from语法与协程.html" class="sidebar-link">yield  from语法与协程</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Django框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flask 框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python爬虫</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="正则表达式"><a href="#正则表达式" class="header-anchor">#</a> 正则表达式</h2> <ul><li><p><strong>应用场景</strong>：1.检测某一段字符串是否符合规则</p> <p>​	 			  2.从某一段文字中找到符合规则的内容</p></li> <li><p><strong>字符组[</strong> ]  ：在同一个位置可能出现的各种字符组成了一个字符组，在正则表达式中用[ ]表示</p> <ol><li>数字： [0-9]</li> <li>字母：小写[a-z]、大写[A-Z ]、大小写<code>[A-Za-z]</code>、数字和大小写字母[A-Z0-9a-z]</li> <li>注意：在字符组中 - 是有特殊意义的，如果我们想取消这个横杠的特殊意义，需要使用时要使用\转义</li></ol></li> <li><p>字符组之外的其他带有特殊规则的元字符：</p> <div class="language- extra-class"><pre class="language-text"><code>正则模块
+正则表达式
+元字符 ：
+    .   匹配除了回车以外的所有字符
+   \w   数字字母下划线
+   \d   数字
+   \n \s \t 回车 空格 和 tab
+    ^    必须出现在一个正则表达式的最开始，匹配开头
+    $    必须出现在一个正则表达式的最后，匹配结尾
+    |  或
+         a|b   要么取左边的要么取右边的
+         ()|() 分组中的或 一定是长的在前面 短的在后面
+    []   在同一个位置上可能出现的所有字符都放在组里
+    [^]  在同一个位置上不能出现的所有字符都放在组里
+    ()   对于一整个组做量词约束 ； python 分组优先
+量词 ：
+    *   0次或多次
+    +   1次或多次
+    ？  0次或1次
+    {}  具体的 {n}，{n，m},{n,}
+问号的用法
+惰性匹配 : 量词+? 表示使用惰性匹配
+分组优先 findall split  ；取消分组优先 (?:。。)
+分组命名 (?P&lt;name&gt;...)
+</code></pre></div></li> <li><p><strong>元字符</strong>：匹配的是一个字符的内容   量词：表示的是匹配的次数</p></li> <li><p><strong>贪婪匹配</strong>： 默认的 尽可能多的匹配   如：a.*以a开头的任意一个字符都可以被匹配出来</p></li> <li><p><strong>惰性匹配</strong>：也叫做非贪婪匹配  如： a.*?x 从a开始匹配，匹配任意长度的字符没遇到一个x就会停下来，而贪婪匹配就会一直匹配到最后一个x</p> <div class="language-python extra-class"><pre class="language-python"><code>abc   <span class="token comment"># 测试数据</span>
+bc    <span class="token comment"># 测试数据</span>
+
+a<span class="token operator">*</span><span class="token punctuation">.</span>c  <span class="token comment"># 正则规则1，表示a可出现可不出现</span>
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token comment">#结果：abc 、 bc</span>
+
+a<span class="token punctuation">.</span><span class="token operator">*</span>c   <span class="token comment">#正则规则2</span>
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token comment">#结果：abc</span>
+</code></pre></div></li></ul> <hr> <h2 id="re模块"><a href="#re模块" class="header-anchor">#</a> re模块</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> re 
+   <span class="token comment"># 根据正则规则从一段内容中查找结果</span>
+   <span class="token comment"># findall返回所有满足匹配条件的结果，放在一个列表中</span>
+ret <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'\d+'</span><span class="token punctuation">,</span><span class="token string">'alex223yuan'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>   <span class="token comment">#['223']</span>
+
+   <span class="token comment">#search 只匹配第一个满足条件的结果对象，通过对象的group()方法取出</span>
+   <span class="token comment">#如果没有匹配到，会返回None，再group()会报错</span>
+ret <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'\d+'</span><span class="token punctuation">,</span><span class="token string">'alex123yuan234'</span><span class="token punctuation">)</span>  <span class="token comment"># &lt;re.Match object; span=(4, 7), match='123'&gt;</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment"># 123</span>
+
+	<span class="token comment"># match 用法和search一样，但是只会从开头匹配，类似于从头到尾的match，没有返回None，再group()报错</span>
+ret <span class="token operator">=</span> re<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">'\d+'</span><span class="token punctuation">,</span><span class="token string">'123asf'</span><span class="token punctuation">)</span>   <span class="token comment">#&lt;re.Match object; span=(0, 3), match='123'&gt;</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 123 </span>
+
+<span class="token comment">#match可以被替代么? 可以</span>
+<span class="token comment">#re.search('^\d+','alexyuan') == re.match('\d+','123alex')</span>
+
+<span class="token comment"># 将数字替换成'sb'</span>
+ret <span class="token operator">=</span> re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">'\d+'</span><span class="token punctuation">,</span><span class="token string">'sb'</span><span class="token punctuation">,</span><span class="token string">'alex84wusir73'</span><span class="token punctuation">)</span>    <span class="token comment"># 默认替换所有 返回alexsbwusirsb</span>
+ret <span class="token operator">=</span> re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">'\d+'</span><span class="token punctuation">,</span><span class="token string">'sb'</span><span class="token punctuation">,</span><span class="token string">'alex84wusir73'</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 写了1表示替换一次 返回alexsbwusir73</span>
+
+ret <span class="token operator">=</span> re<span class="token punctuation">.</span>subn<span class="token punctuation">(</span><span class="token string">'\d'</span><span class="token punctuation">,</span> <span class="token string">'H'</span><span class="token punctuation">,</span> <span class="token string">'eva3egon4yuan4'</span><span class="token punctuation">)</span> <span class="token comment">#将数字替换成'H'，返回元组(替换的结果,替换了多少次)</span>
+ret <span class="token operator">=</span> re<span class="token punctuation">.</span>subn<span class="token punctuation">(</span><span class="token string">'\d+'</span><span class="token punctuation">,</span><span class="token string">'sb'</span><span class="token punctuation">,</span><span class="token string">'alex84wusir73'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>  <span class="token comment"># ('alexsbwusirsb', 2) 结果还会匹配的次数</span>
+
+obj <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">'\d{3}'</span><span class="token punctuation">)</span>  <span class="token comment">#将正则表达式编译成为一个正则表达式对象（预编译），规则要匹配的是3个数字</span>
+ret <span class="token operator">=</span> obj<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'abc123eeee'</span><span class="token punctuation">)</span> <span class="token comment">#正则表达式对象调用search，参数为待匹配的字符串</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">#结果 ： 123</span>
+
+<span class="token comment"># 节省空间</span>
+ret <span class="token operator">=</span> re<span class="token punctuation">.</span>finditer<span class="token punctuation">(</span><span class="token string">'\d'</span><span class="token punctuation">,</span> <span class="token string">'ds3sy4784a'</span><span class="token punctuation">)</span>   <span class="token comment">#finditer返回一个存放匹配结果的迭代器</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>  <span class="token comment"># &lt;callable_iterator object at 0x10195f940&gt;</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">next</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">#查看第一个结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">next</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">#查看第二个结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">[</span>i<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> ret<span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">#查看剩余的左右结果</span>
+
+ret <span class="token operator">=</span> re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\d+'</span><span class="token punctuation">,</span><span class="token string">'alex84wusir73yuan'</span><span class="token punctuation">)</span>  <span class="token comment"># 以匹配对象分隔，返回一个列表</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>  <span class="token comment">#['alex', 'wusir', 'yuan']</span>
+
+ret <span class="token operator">=</span> re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'(\d+)'</span><span class="token punctuation">,</span><span class="token string">'alex84wusir73yuan'</span><span class="token punctuation">)</span>  <span class="token comment"># 以匹配对象分隔，返回一个列表,加括号时，会取出数字</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>  <span class="token comment">#['alex', '84', 'wusir', '73', 'yuan']</span>
+</code></pre></div><ul><li><strong>findall的优先级查询</strong>：</li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> re
+<span class="token comment"># 只有findall会优先选择括号里面的，需要用?:取消优先，可以通过这个特性匹配而不取那个结果</span>
+ret <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'www.(baidu|oldboy).com'</span><span class="token punctuation">,</span> <span class="token string">'www.oldboy.com'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>  <span class="token comment"># ['oldboy'] 这是因为findall会优先把匹配结果组里内容返回,如果想要匹配结果,取消权限即可</span>
+
+ret <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'www.(?:baidu|oldboy).com'</span><span class="token punctuation">,</span> <span class="token string">'www.oldboy.com'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>  <span class="token comment"># ['www.oldboy.com'] 使用?:来取消分组优先</span>
+
+
+ret<span class="token operator">=</span>re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&quot;\d+&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;eva3egon4yuan&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span> <span class="token comment">#结果 ： ['eva', 'egon', 'yuan']</span>
+ret<span class="token operator">=</span>re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&quot;(\d+)&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;eva3egon4yuan&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span> <span class="token comment">#结果 ： ['eva', '3', 'egon', '4', 'yuan']</span>
+
+<span class="token comment">#在匹配部分加上（）之后所切出的结果是不同的，</span>
+<span class="token comment">#没有（）的没有保留所匹配的项，但是有（）的却能够保留了匹配的项，</span>
+<span class="token comment">#这个在某些需要保留匹配部分的使用过程是非常重要的。</span>
+
+<span class="token comment"># 注意点：</span>
+ret <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'\d{4}(?P&lt;ta n\d{1,2}(?P=tag)\d{1,2}'</span><span class="token punctuation">,</span><span class="token string">'2011-10-22'</span><span class="token punctuation">)</span>
+ret1 <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'\d{4}(?:[\.\-\+@])\d{1,2}(?:[\.\-\+@])\d{1,2}'</span><span class="token punctuation">,</span><span class="token string">'2011-10-22'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>  <span class="token comment"># ['-']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret1<span class="token punctuation">)</span>  <span class="token comment"># ['2011-10-22']</span>
+<span class="token comment"># findall里面分组命名与取消分组优先 不能共存</span>
+<span class="token comment"># 用search可以解决分组命名与取消分组优先问题</span>
+ret3 <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'(?P&lt;year&gt;\d{4})(?P&lt;tag&gt;[\.\-\+@])\d{1,2}(?P=tag)\d{1,2}'</span><span class="token punctuation">,</span><span class="token string">'2011-10-22'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret3<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 2011-10-22</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret3<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">'year'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 2011</span>
+
+</code></pre></div><ol><li>匹配最里层括号：  (<code>[^()]+</code> ) #表示括号内都是非括号的字符组成</li> <li>匹配在运算表达式字符串中带有负号的数(这个必须用分组括住，不然显示不正确)：(-?\d+(?:.\d+)?)</li> <li>匹配乘除: \d+(.\d+)?[*/]-?\d+(.\d+)?</li> <li>匹配嘴里层没有括号：<code>count ='1-2*((60-30+(-9-2*5/3+7/3*99/4*2998+10*568/14)*(-40/5))-(-4*3)/(16-3*2))' ret = re.search(r'\([^()]+\)',count)</code></li> <li>分别取出1年的12个月（^(0?[1-9]|1[0-2])$）</li></ol> <p>注意平时要用到的参数：</p> <div class="language-python extra-class"><pre class="language-python"><code>flags有很多可选值：
+    re<span class="token punctuation">.</span>I<span class="token punctuation">(</span>IGNORECASE<span class="token punctuation">)</span>忽略大小写，括号内是完整的写法n
+    re<span class="token punctuation">.</span>M<span class="token punctuation">(</span>MULTILINE<span class="token punctuation">)</span>多行模式，改变<span class="token operator">^</span>和$的行为
+    re<span class="token punctuation">.</span>S<span class="token punctuation">(</span>DOTALL<span class="token punctuation">)</span>点可以匹配任意字符，包括换行符 ，常用
+    re<span class="token punctuation">.</span>L<span class="token punctuation">(</span>LOCALE<span class="token punctuation">)</span>做本地化识别的匹配，表示特殊字符集 \w<span class="token punctuation">,</span> \W<span class="token punctuation">,</span> \b<span class="token punctuation">,</span> \B<span class="token punctuation">,</span> \s<span class="token punctuation">,</span> \S 依赖于当前环境，不推荐使用
+    re<span class="token punctuation">.</span>U<span class="token punctuation">(</span>UNICODE<span class="token punctuation">)</span> 使用\w \W \s \S \d \D使用取决于<span class="token builtin">unicode</span>定义的字符属性。在python3中默认使用该flag
+    re<span class="token punctuation">.</span>X<span class="token punctuation">(</span>VERBOSE<span class="token punctuation">)</span>冗长模式，该模式下pattern字符串可以是多行的，忽略空白字符，并可以添加注释
+    
+    
+使用案列<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> re
+a <span class="token operator">=</span> <span class="token triple-quoted-string string">&quot;&quot;&quot;sdfkhellolsdlfsdfiooefo:
+877898989worldafdsf&quot;&quot;&quot;</span>
+b <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'hello(.*?)world'</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span>
+c <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'hello(.*?)world'</span><span class="token punctuation">,</span>a<span class="token punctuation">,</span>re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'b is '</span> <span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+
+<span class="token comment"># 输出结果：</span>
+<span class="token comment"># b is  []</span>
+<span class="token comment"># c is  ['lsdlfsdfiooefo:\n877898989']</span>
+</code></pre></div><ul><li><p>**分组()**的注意事项:</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token number">1</span><span class="token punctuation">.</span>  findall   <span class="token comment">#会优先显示分组中的内容  取消分组优先 (?:正则)</span>
+
+<span class="token number">2</span><span class="token punctuation">.</span>  s <span class="token operator">=</span> <span class="token string">'123alex234wusir'</span>
+	ret <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'(\d+).*?(\d+)'</span><span class="token punctuation">,</span>s<span class="token punctuation">)</span>  <span class="token comment">#group(2)  结果 234</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 123</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    
+	ret <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'(\d+)\w+(\d+)\w+(\w)'</span><span class="token punctuation">,</span>s<span class="token punctuation">)</span>  <span class="token comment">#优先返回括号里面的</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 123</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># group(2)  结果 4  贪婪匹配</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># r  贪婪匹配</span>
+
+<span class="token number">3</span><span class="token punctuation">.</span> <span class="token comment">#分组命名  (?P&lt;NAME&gt;正则) 在爬虫时常用： 只适用于match和search，因为findall是列表</span>
+    ret <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'\d+(?P&lt;name&gt;.*?)\d+'</span><span class="token punctuation">,</span>s<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># alex</span>
+
+	<span class="token comment"># 特殊用法，双端匹配</span>
+    ret <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'&lt;(?P&lt;tag&gt;\w+)&gt;.*&lt;/(?P=tag)&gt;'</span><span class="token punctuation">,</span><span class="token string">'&lt;h1&gt;wahaha&lt;/h2&gt;&lt;/h1&gt;&lt;/h3&gt;'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># &lt;h1&gt;wahaha&lt;/h2&gt;&lt;/h1&gt;</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">'tag'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment"># h1</span>
+
+<span class="token number">4</span><span class="token punctuation">.</span> <span class="token comment">#引用分组  法1：(?P=name)     法二：\1 \2 适用于search和findall</span>
+    pattern <span class="token operator">=</span> <span class="token string">r'&lt;(\w+)&gt;(\w+)&lt;/(\1)&gt;'</span>
+    	<span class="token comment">#\1 直接表示了第一个()里的内容, 这个没有tab,没有组名,直接用数字表达了,但是需要在字符			串前加上一个r, 对\1转义</span>
+    ret <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span><span class="token string">'&lt;a&gt;wahaha&lt;/a&gt;'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>  <span class="token comment">#[('a', 'wahaha', 'a')]</span>
+
+    s <span class="token operator">=</span> <span class="token string">'&lt;a&gt;wahaha&lt;/a&gt;'</span>
+    pattern <span class="token operator">=</span> <span class="token string">r'&lt;(\w+)&gt;(\w+)&lt;/(\1)&gt;'</span> <span class="token comment">#\1 直接表示了第一个()里的内容, 这个没有tab,没有组名,直接用数字表达了,但是需要在字符串前加上一个r, 对\1转义</span>
+    ret <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span>s<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">#&lt;a&gt;wahaha&lt;/a&gt;</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment"># wahaha</span>
+    
+<span class="token comment">#注意</span>
+<span class="token keyword">import</span> re
+ret<span class="token operator">=</span>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'\d+?7'</span><span class="token punctuation">,</span><span class="token string">'123455677ewr7'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">#12345567  注意这里?号不能单独出现在最前面，要么加'.'</span>
+ret1<span class="token operator">=</span>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'.?7'</span><span class="token punctuation">,</span><span class="token string">'123455677ewr7'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">#123455677</span>
+ret3<span class="token operator">=</span>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'\w*7'</span><span class="token punctuation">,</span><span class="token string">'123455677ewr7'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">#67</span>
+ret2<span class="token operator">=</span>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'\d+7'</span><span class="token punctuation">,</span><span class="token string">'123455677ewr7'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">#123455677ewr7</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">,</span>ret2<span class="token punctuation">,</span>ret1<span class="token punctuation">,</span>ret3<span class="token punctuation">)</span>
+
+</code></pre></div></li> <li><p><strong>正则的应用</strong></p> <div class="language-python extra-class"><pre class="language-python"><code> <span class="token comment">#爬虫应用</span>
+<span class="token keyword">import</span> re
+<span class="token keyword">import</span> json
+<span class="token keyword">from</span> urllib<span class="token punctuation">.</span>request <span class="token keyword">import</span> urlopen
+
+<span class="token keyword">def</span> <span class="token function">getPage</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    response <span class="token operator">=</span> urlopen<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> response<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">parsePage</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    com <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span>
+        <span class="token string">'&lt;div class=&quot;item&quot;&gt;.*?&lt;div class=&quot;pic&quot;&gt;.*?&lt;em .*?&gt;(?P&lt;id&gt;\d+).*?&lt;span class=&quot;title&quot;&gt;(?P&lt;title&gt;.*?)&lt;/span&gt;'</span>
+        <span class="token string">'.*?&lt;span class=&quot;rating_num&quot; .*?&gt;(?P&lt;rating_num&gt;.*?)&lt;/span&gt;.*?&lt;span&gt;(?P&lt;comment_num&gt;.*?)评价&lt;/span&gt;'</span><span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+
+    ret <span class="token operator">=</span> com<span class="token punctuation">.</span>finditer<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> ret<span class="token punctuation">:</span>
+        <span class="token keyword">yield</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;id&quot;</span><span class="token punctuation">:</span> i<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;title&quot;</span><span class="token punctuation">:</span> i<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;rating_num&quot;</span><span class="token punctuation">:</span> i<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">&quot;rating_num&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;comment_num&quot;</span><span class="token punctuation">:</span> i<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">&quot;comment_num&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    url <span class="token operator">=</span> <span class="token string">'https://movie.douban.com/top250?start=%s&amp;filter='</span> <span class="token operator">%</span> num
+    response_html <span class="token operator">=</span> getPage<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    ret <span class="token operator">=</span> parsePage<span class="token punctuation">(</span>response_html<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>
+    f <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;move_info7&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">&quot;utf8&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> obj <span class="token keyword">in</span> ret<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+        data <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>data <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span><span class="token punctuation">)</span>
+    f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+count <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    main<span class="token punctuation">(</span>count<span class="token punctuation">)</span>
+    count <span class="token operator">+=</span> <span class="token number">25</span>
+</code></pre></div></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/python/origin/网络基础.html" class="prev">
+        网络基础
+      </a></span> <span class="next"><a href="/python/origin/异常处理.html">
+        异常处理
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/95.0e5ce618.js" defer></script>
+  </body>
+</html>

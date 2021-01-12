@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>multiprocessing（中） | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/87.5f9eb9ef.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/103.16474d4b.js"><link rel="prefetch" href="/assets/js/104.ed58aef3.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/11.d4ec37c8.js"><link rel="prefetch" href="/assets/js/110.4144755a.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/34.8448d0fd.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/48.f591f360.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/50.b9ca2762.js"><link rel="prefetch" href="/assets/js/51.93672ee6.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/60.f40ac3ca.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/64.a98fe86e.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/80.f826f188.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/84.b940927c.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/94.0ad7c41c.js"><link rel="prefetch" href="/assets/js/95.0e5ce618.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python常用模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Python基础</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/python/origin/Python内置方法.html" class="sidebar-link">Python内置方法</a></li><li><a href="/python/origin/元类.html" class="sidebar-link">元类的深度理解</a></li><li><a href="/python/origin/函数部分.html" class="sidebar-link">函数</a></li><li><a href="/python/origin/数据类型.html" class="sidebar-link">数据类型</a></li><li><a href="/python/origin/面向对象.html" class="sidebar-link">面向对象</a></li><li><a href="/python/origin/模块和包.html" class="sidebar-link">模块和包</a></li><li><a href="/python/origin/网络基础.html" class="sidebar-link">网络基础</a></li><li><a href="/python/origin/正则表达式.html" class="sidebar-link">正则表达式</a></li><li><a href="/python/origin/异常处理.html" class="sidebar-link">异常处理</a></li><li><a href="/python/origin/TCP和UDP.html" class="sidebar-link">TCP和UDP</a></li><li><a href="/python/origin/线程.html" class="sidebar-link">线程</a></li><li><a href="/python/origin/multiprocessing（上）.html" class="sidebar-link">multiprocessing（上）</a></li><li><a href="/python/origin/multiprocessing（中）.html" class="active sidebar-link">multiprocessing（中）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/python/origin/multiprocessing（中）.html#multiprocessing-中" class="sidebar-link">multiprocessing（中）</a></li><li class="sidebar-sub-header"><a href="/python/origin/multiprocessing（中）.html#进程同步-锁" class="sidebar-link">进程同步（锁）</a></li><li class="sidebar-sub-header"><a href="/python/origin/multiprocessing（中）.html#二、队列和管道" class="sidebar-link">二、队列和管道</a></li><li class="sidebar-sub-header"><a href="/python/origin/multiprocessing（中）.html#生产者消费者模型" class="sidebar-link">生产者消费者模型</a></li><li class="sidebar-sub-header"><a href="/python/origin/multiprocessing（中）.html#joinablequeue-队列" class="sidebar-link">JoinableQueue 队列</a></li><li class="sidebar-sub-header"><a href="/python/origin/multiprocessing（中）.html#管道" class="sidebar-link">管道</a></li></ul></li><li><a href="/python/origin/multiprocessing（下）.html" class="sidebar-link">multiprocessing（下）</a></li><li><a href="/python/origin/协程.html" class="sidebar-link">协程</a></li><li><a href="/python/origin/IO多路复用.html" class="sidebar-link">IO 多路复用</a></li><li><a href="/python/origin/C3算法.html" class="sidebar-link">C3算法</a></li><li><a href="/python/origin/yield  from语法与协程.html" class="sidebar-link">yield  from语法与协程</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Django框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flask 框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python爬虫</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="multiprocessing-中"><a href="#multiprocessing-中" class="header-anchor">#</a> multiprocessing（中）</h2> <h2 id="进程同步-锁"><a href="#进程同步-锁" class="header-anchor">#</a> 进程同步（锁）</h2> <ul><li><p>通过之前的学习，我们千方百计实现了程序的异步，让多个任务可以同时在几个进程中并发处理，他们之间的运行没有顺序，一旦开启也不受我们控制。尽管并发编程让我们能更加充分的利用IO资源，但是也给我们带来了新的问题：进程之间数据不共享,但是共享同一套文件系统,所以访问同一个文件,或同一个打印终端,是没有问题的，而<strong>共享带来的是竞争，竞争带来的结果就是错乱，如何控制，就是加锁处理。</strong></p></li> <li><p><strong>案例1</strong>、多个进程抢占输出资源，导致打印混乱实例</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> os
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> random
+<span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Process<span class="token punctuation">,</span>Lock
+
+<span class="token keyword">def</span> <span class="token function">work</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s: %s is running'</span> <span class="token operator">%</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s:%s is done'</span> <span class="token operator">%</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        p<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>work<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        p<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 看结果：通过结果可以看出两个问题：</span>
+问题一：每个进程中work函数的第一个打印就不是按照我们<span class="token keyword">for</span>循环的<span class="token number">0</span><span class="token operator">-</span><span class="token number">4</span>的顺序来打印的
+问题二：我们发现，每个work进程中有两个打印，但是我们看到所有进程中第一个打印的顺序为<span class="token number">0</span><span class="token operator">-</span><span class="token number">2</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span><span class="token number">4</span><span class="token operator">-</span><span class="token number">3</span>，但是第二个打印没有按照这个顺序，变成了<span class="token number">2</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">3</span><span class="token operator">-</span><span class="token number">4</span>，说明我们一个进程中的程序的执行顺序都混乱了。
+<span class="token comment">#问题的解决方法，第二个问题加锁来解决，第一个问题是没有办法解决的，因为进程开到了内核，有操作系统来决定进程的调度，我们自己控制不了</span>
+<span class="token comment"># 0: 9560 is running</span>
+<span class="token comment"># 2: 13824 is running</span>
+<span class="token comment"># 1: 7476 is running</span>
+<span class="token comment"># 4: 11296 is running</span>
+<span class="token comment"># 3: 14364 is running</span>
+
+<span class="token comment"># 2:13824 is done</span>
+<span class="token comment"># 1:7476 is done</span>
+<span class="token comment"># 0:9560 is done</span>
+<span class="token comment"># 3:14364 is done</span>
+<span class="token comment"># 4:11296 is done</span>
+
+通过加锁解决第二个问题：
+<span class="token comment">#由并发变成了串行,牺牲了运行效率,但避免了竞争</span>
+<span class="token keyword">def</span> <span class="token function">work</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>lock<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment">#加锁，保证每次只有一个进程在执行锁里面的程序，这一段程序对于所有写上这个锁的进程，大家都变成了串行</span>
+    lock<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s: %s is running'</span> <span class="token operator">%</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s:%s is done'</span> <span class="token operator">%</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">#解锁，解锁之后其他进程才能去执行自己的程序</span>
+    lock<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">#注意这里可以使用with上下位处理的形式，并且这里的with还为我们实现了报错处理机制，如果使用上面的方式，一旦报错，子进程将称为孤儿进程</span>
+   <span class="token comment"># with lock:</span>
+        <span class="token comment">#print('%s: %s is running' %(n,os.getpid()))</span>
+   		<span class="token comment">#time.sleep(1)</span>
+    	<span class="token comment">#print('%s:%s is done' %(n,os.getpid()))</span>
+        
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    lock<span class="token operator">=</span>Lock<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        p<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>work<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>lock<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        p<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#打印结果：</span>
+<span class="token comment"># 2: 10968 is running</span>
+<span class="token comment"># 2:10968 is done</span>
+<span class="token comment"># 0: 7932 is running</span>
+<span class="token comment"># 0:7932 is done</span>
+<span class="token comment"># 4: 4404 is running</span>
+<span class="token comment"># 4:4404 is done</span>
+<span class="token comment"># 1: 12852 is running</span>
+<span class="token comment"># 1:12852 is done</span>
+<span class="token comment"># 3: 980 is running</span>
+<span class="token comment"># 3:980 is done</span>
+
+<span class="token comment">#结果分析：（自己去多次运行一下，看看结果，我拿出其中一个结果来看）通过结果我们可以看出，多进程刚开始去执行的时候，每次运行，首先打印出来哪个进程的程序是不固定的，但是我们解决了上面打印混乱示例代码的第二个问题，那就是同一个进程中的两次打印都是先完成的，然后才切换到下一个进程去，打印下一个进程中的两个打印结果，说明我们控制住了同一进程中的代码执行顺序，如果涉及到多个进程去操作同一个数据或者文件的时候，就不担心数据算错或者文件中的内容写入混乱了。</span>
+</code></pre></div></li> <li><p><strong>锁的应用场景</strong>:  当多个进程需要操作同一个文件/数据库的时候 ,会产生数据不安全,我们应该使用锁来避免多个进程同时修改一个文件。</p></li> <li><p><strong>特点</strong>：</p> <p>1.牺牲了效率 保证了数据的安全
+2.用户就会觉得很慢 体验很差</p> <hr> <p><strong>案例</strong>2：并发运行，效率高，但是竞争同一个文件，导致数据混乱</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#注意：首先在当前文件目录下创建一个名为db的文件，文件db的内容为：{&quot;count&quot;:1}，只有这一行数据,并且注意，每次运行完了之后，文件中的1变成了0，你需要手动将0改为1，然后在去运行代码。注意一定要用双引号，不然json无法识别</span>
+
+<span class="token comment">#未加锁版本</span>
+<span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Process<span class="token punctuation">,</span>Lock
+<span class="token keyword">import</span> time<span class="token punctuation">,</span>json<span class="token punctuation">,</span>random
+<span class="token comment">#查看剩余票数</span>
+<span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    dic<span class="token operator">=</span>json<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'db'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#打开文件，直接load文件中的内容，拿到文件中的包含剩余票数的字典</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\033[43m剩余票数%s\033[0m'</span> <span class="token operator">%</span>dic<span class="token punctuation">[</span><span class="token string">'count'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment">#抢票</span>
+    dic<span class="token operator">=</span>json<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'db'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">)</span>   <span class="token comment">#模拟读数据的网络延迟，那么进程之间的切换，导致所有人拿到的字典都是{&quot;count&quot;: 1}，也就是每个人都拿到了这一票。</span>
+    <span class="token keyword">if</span> dic<span class="token punctuation">[</span><span class="token string">'count'</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">:</span>
+        dic<span class="token punctuation">[</span><span class="token string">'count'</span><span class="token punctuation">]</span><span class="token operator">-=</span><span class="token number">1</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.2</span><span class="token punctuation">)</span>   <span class="token comment">#模拟写数据的网络延迟</span>
+        json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>dic<span class="token punctuation">,</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'db'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#最终结果导致，每个人显示都抢到了票，这就出现了问题~（多进程操作）</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\033[43m购票成功\033[0m'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">task</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    search<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment">#模拟并发100个客户端抢票</span>
+        p<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>task<span class="token punctuation">)</span>
+        p<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#看结果分析：由于网络延迟等原因使得进程切换，导致每个人都抢到了这最后一张票</span>
+<span class="token comment"># 剩余票数1</span>
+<span class="token comment"># 剩余票数1</span>
+<span class="token comment"># 剩余票数1</span>
+<span class="token comment"># 购票成功</span>
+<span class="token comment"># 购票成功</span>
+<span class="token comment"># 购票成功</span>
+
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token comment">#加锁版本，保证数据安全</span>
+<span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    dic<span class="token operator">=</span>json<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'db'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#打开文件，直接load文件中的内容，拿到文件中的包含剩余票数的字典</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\033[43m剩余票数%s\033[0m'</span> <span class="token operator">%</span>dic<span class="token punctuation">[</span><span class="token string">'count'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment">#抢票</span>
+    dic<span class="token operator">=</span>json<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'db'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">)</span>   <span class="token comment">#模拟读数据的网络延迟，那么进程之间的切换，导致所有人拿到的字典都是{&quot;count&quot;: 1}，也就是每个人都拿到了这一票。</span>
+    <span class="token keyword">if</span> dic<span class="token punctuation">[</span><span class="token string">'count'</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">:</span>
+        dic<span class="token punctuation">[</span><span class="token string">'count'</span><span class="token punctuation">]</span><span class="token operator">-=</span><span class="token number">1</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.2</span><span class="token punctuation">)</span>   <span class="token comment">#模拟写数据的网络延迟</span>
+        json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>dic<span class="token punctuation">,</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'db'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token comment">#最终结果导致，每个人显示都抢到现了问题~</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\033[43m购票成功\033[0m'</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'sorry，没票了亲！'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">task</span><span class="token punctuation">(</span>lock<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    search<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    lock<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">#因为抢票的时候是发生数据变化的时候，所以我们将锁加到这里，也就是修改文件位置</span>
+    get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    lock<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+    <span class="token comment">#with lock:   #简单版本，上下文处理</span>
+    	<span class="token comment">#get()</span>
+    <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    lock <span class="token operator">=</span> Lock<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#创建一个锁</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment">#模拟并发100个客户端抢票</span>
+        p<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>task<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>lock<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#将锁作为参数传给task函数</span>
+        p<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#看结果分析：只有一个人抢到了票</span>
+<span class="token comment"># 剩余票数1</span>
+<span class="token comment"># 剩余票数1</span>
+<span class="token comment"># 剩余票数1</span>
+<span class="token comment"># 购票成功   #幸运的人儿</span>
+<span class="token comment"># sorry，没票了亲！</span>
+<span class="token comment"># sorry，没票了亲！</span>
+</code></pre></div></li> <li><p>进程锁的总结：</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>加锁可以保证多个进程修改同一块数据时，同一时间只能有一个任务可以进行修改，即串行的修改，没错，速度是慢了，但牺牲了速度却保证了数据安全。
+虽然可以用文件共享数据实现进程间通信，但问题是：
+	1.效率低（共享数据基于文件，而文件是硬盘上的数据）
+	2.需要自己加锁处理
+
+因此我们最好找寻一种解决方案能够兼顾：
+	1、效率高（多个进程共享一块内存的数据）
+	2、帮我们处理好锁问题。
+这就是mutiprocessing模块为我们提供的基于消息的IPC通信机制：队列和管道
+</code></pre></div><h2 id="二、队列和管道"><a href="#二、队列和管道" class="header-anchor">#</a> 二、队列和管道</h2> <ul><li><p>我们通过上面的学习知道锁其实是基于文件的基础上实现的，也就是当我们要读写一个数据时，需要涉及到使用锁，来约束多个进程之间的秩序 但是效率底，所以我们想改变这种文件类型的操作，那么我们将学习使用基于socket和管道实现的高效方式：<strong>队列</strong>。</p></li> <li><p>队列和管道都是将数据存放于内存中。</p> <ul><li><strong>队列又是基于（管道+锁）实现的</strong>，可以让我们从复杂的锁问题中解脱出来，我们应该尽量避免使用共享数据，尽可能使用消息传递和队列，避免处理复杂的同步和锁问题，而且在进程数目增多时，往往可以获得更好的可获展性。</li></ul></li> <li><p><strong>IPC通信机制</strong>：Inter Process Communication，<code>进程间通信或者跨进程通信，</code>是指两个进程之间进行数据交换的过程。IPC不是某个系统所独有的，任何一个操作系统都需要有相应的IPC机制，比如Windows上可以通过剪贴板、管道和邮槽等来进行进程间通信，而Linux上可以通过命名共享内容、信号量等来进行进程间通信。Android它也有自己的进程间通信方式，Android建构在Linux基础上，继承了一部分Linux的通信方式</p></li> <li><p>进程彼此之间互相隔离，要实现进程间通信（IPC），multiprocessing模块支持两种形式：<strong>队列和管道</strong>，这两种方式都是使用消息传递的。队列就像一个特殊的列表，但是可以设置固定长度，并且从前面插入数据，从后面取出数据，先进先出</p></li> <li><p>队列的创建方式：</p> <div class="language-python extra-class"><pre class="language-python"><code>Queue<span class="token punctuation">(</span><span class="token punctuation">[</span>maxsize<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#创建共享的进程队列。</span>
+参数 ：maxsize是队列中允许的最大项数。如果省略此参数，则无大小限制。底层队列使用管道和锁实现。
+</code></pre></div></li> <li><p>队列需要记住的方法是：</p> <div class="language-python extra-class"><pre class="language-python"><code>q <span class="token operator">=</span> Queue<span class="token punctuation">(</span><span class="token punctuation">[</span>maxsize<span class="token punctuation">]</span><span class="token punctuation">)</span> 
+创建共享的进程队列。maxsize是队列中允许的最大项数。如果省略此参数，则无大小限制。底层队列使用管道和锁定实现。另外，还需要运行支持线程以便队列中的数据传输到底层管道中。 
+Queue的实例q具有以下方法：
+
+q<span class="token punctuation">.</span>get<span class="token punctuation">(</span> <span class="token punctuation">[</span> block <span class="token punctuation">[</span> <span class="token punctuation">,</span>timeout <span class="token punctuation">]</span> <span class="token punctuation">]</span> <span class="token punctuation">)</span> 
+返回q中的一个项目。如果q为空，此方法将阻塞，直到队列中有项目可用为止。block用于控制阻塞行为，默认为<span class="token boolean">True</span><span class="token punctuation">.</span> 如果设置为<span class="token boolean">False</span>，将引发Queue<span class="token punctuation">.</span>Empty异常（定义在Queue模块中）。timeout是可选超时时间，用在阻塞模式中。如果在制定的时间间隔内没有项目变为可用，将引发Queue<span class="token punctuation">.</span>Empty异常。如果没有值就会等到天荒地老
+
+q<span class="token punctuation">.</span>get_nowait<span class="token punctuation">(</span> <span class="token punctuation">)</span> 
+同q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>方法。
+
+q<span class="token punctuation">.</span>put<span class="token punctuation">(</span>item <span class="token punctuation">[</span><span class="token punctuation">,</span> block <span class="token punctuation">[</span><span class="token punctuation">,</span>timeout <span class="token punctuation">]</span> <span class="token punctuation">]</span> <span class="token punctuation">)</span> 
+将item放入队列。如果队列已满，此方法将阻塞至有空间可用为止。block控制阻塞行为，默认为<span class="token boolean">True</span>。如果设置为<span class="token boolean">False</span>，将引发Queue<span class="token punctuation">.</span>Empty异常（定义在Queue库模块中）。timeout指定在阻塞模式中等待可用空间的时间长短。超时后将引发Queue<span class="token punctuation">.</span>Full异常。如果设置了最大的容量，put只能一直等
+
+q<span class="token punctuation">.</span>qsize<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+返回队列中目前项目的正确数量。此函数的结果并不可靠，因为在返回结果和在稍后程序中使用结果之间，队列中可能添加或删除了项目。在某些系统上，此方法可能引发NotImplementedError异常。
+
+q<span class="token punctuation">.</span>empty<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+如果调用此方法时 q为空，返回<span class="token boolean">True</span>。如果其他进程或线程正在往队列中添加项目，结果是不可靠的。也就是说，在返回和使用结果之间，队列中可能已经加入新的项目。
+
+q<span class="token punctuation">.</span>full<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+如果q已满，返回为<span class="token boolean">True</span><span class="token punctuation">.</span> 由于线程的存在，结果也可能是不可靠的（参考q<span class="token punctuation">.</span>empty（）方法）。。
+
+q<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+关闭队列，防止队列中加入更多数据。调用此方法时，后台线程将继续写入那些已入队列但尚未写入的数据，但将在此方法完成时马上关闭。如果q被垃圾收集，将自动调用此方法。关闭队列不会在队列使用者中生成任何类型的数据结束信号或异常。例如，如果某个使用者正被阻塞在get（）操作上，关闭生产者中的队列不会导致get（）方法返回错误。
+
+q<span class="token punctuation">.</span>cancel_join_thread<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+不会再进程退出时自动连接后台线程。这可以防止join_thread<span class="token punctuation">(</span><span class="token punctuation">)</span>方法阻塞。
+
+q<span class="token punctuation">.</span>join_thread<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+连接队列的后台线程。此方法用于在调用q<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>方法后，等待所有队列项被消耗。默认情况下，此方法由不是q的原始创建者的所有进程调用。调用q<span class="token punctuation">.</span>cancel_join_thread<span class="token punctuation">(</span><span class="token punctuation">)</span>方法可以禁止这种行为
+</code></pre></div></li> <li><p><strong>队列代码实例</strong>：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Queue <span class="token comment"># 此Queue 是进程队列，区别于from queue import Queue</span>
+q<span class="token operator">=</span>Queue<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment">#创建一个队列对象，队列长度为3</span>
+
+<span class="token comment">#put ,get ,put_nowait,get_nowait,full,empty</span>
+q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>   <span class="token comment">#往队列中添加数据</span>
+q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token comment"># q.put(4)   # 如果队列已经满了，程序就会停在这里，等待数据被别人取走，再将数据放入队列。</span>
+             <span class="token comment"># 如果队列中的数据一直不被取走，程序就会永远停在这里。天荒地老</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    q<span class="token punctuation">.</span>put_nowait<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>   <span class="token comment"># 可以使用put_nowait，如果队列满了不会阻塞，但是会因为队列满了而报错。</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>  <span class="token comment"># 因此我们可以用一个try语句来处理这个错误。这样程序不会一直阻塞下去，但是会丢掉这个消息。</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'队列已经满了'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 因此，我们再放入数据之前，可以先看一下队列的状态，如果已经满了，就不继续put了。</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>full<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#查看是否满了，满了返回True，不满返回False</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">#取出数据</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># print(q.get()) # 同put方法一样，如果队列已经空了，那么继续取就会出现阻塞。天荒地老</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    q<span class="token punctuation">.</span>get_nowait<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment"># 可以使用get_nowait，如果队列满了不会阻塞，但是会因为没取到值而报错。</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span> <span class="token comment"># 因此我们可以用一个try语句来处理这个错误。这样程序不会一直阻塞下去。</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'队列已经空了'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#空了</span>
+
+<span class="token comment">#例1、看下面的队列的时候 按照编号看</span>
+<span class="token keyword">import</span> time
+<span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Process<span class="token punctuation">,</span> Queue
+
+<span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># q = Queue() #9. 我们在主进程中开启了一个q，如果我们在子进程中的函数里面再开一个q，那么你下面q.put('姑娘，多少钱~')添加到了新创建的这q里里面了</span>
+    q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token string">'姑娘，多少钱~'</span><span class="token punctuation">)</span>  <span class="token comment">#4.调用主函数中p进程传递过来的进程参数 put函数为向队列中添加一条数据。</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>qsize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#6.查看队列中有多少条数据了 # 2 这里有不确定性，有时候这里为1</span>
+
+<span class="token keyword">def</span> <span class="token function">f2</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'》》》》》》》》'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">#5.取数据</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    q <span class="token operator">=</span> Queue<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#1.创建一个Queue对象</span>
+    q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token string">'小鬼'</span><span class="token punctuation">)</span>
+    p <span class="token operator">=</span> Process<span class="token punctuation">(</span>target<span class="token operator">=</span>f<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#2.创建一个进程</span>
+    p2 <span class="token operator">=</span> Process<span class="token punctuation">(</span>target<span class="token operator">=</span>f2<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#3.创建一个进程</span>
+    p<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    p2<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>qsize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">#7.如果阻塞一点时间，就会出现主进程运行太快，导致我们在子进程中查看qsize为1个。</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#结果：姑娘，多少钱~</span>
+    p<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+ <span class="token comment"># 以上代码证明这个队列是可以实现进程之间的数据共享的</span>
+
+<span class="token comment">#例2、一个复杂一点的例子</span>
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> multiprocessing
+<span class="token comment"># 向queue中输入数据的函数</span>
+<span class="token keyword">def</span> <span class="token function">inputQ</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    info <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'(put):'</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>asctime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    queue<span class="token punctuation">.</span>put<span class="token punctuation">(</span>info<span class="token punctuation">)</span>
+<span class="token comment"># 向queue中输出数据的函数</span>
+<span class="token keyword">def</span> <span class="token function">outputQ</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    info <span class="token operator">=</span> queue<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'%s%s\033[32m%s\033[0m'</span><span class="token operator">%</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'(get):'</span><span class="token punctuation">,</span>info<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment">#windows下，如果开启的进程比较多的话，程序会崩溃，为了防止这个问题，使用freeze_support()方法来解决。知道就行啦</span>
+    multiprocessing<span class="token punctuation">.</span>freeze_support<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    record1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>   <span class="token comment"># store input processes</span>
+    record2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>   <span class="token comment"># store output processes</span>
+    queue <span class="token operator">=</span> multiprocessing<span class="token punctuation">.</span>Queue<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+    <span class="token comment"># 输入进程</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span>，<span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  
+        process <span class="token operator">=</span> multiprocessing<span class="token punctuation">.</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>inputQ<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>queue<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        process<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        record1<span class="token punctuation">.</span>append<span class="token punctuation">(</span>process<span class="token punctuation">)</span>
+    <span class="token comment"># 输出进程</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        process <span class="token operator">=</span> multiprocessing<span class="token punctuation">.</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>outputQ<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>queue<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        process<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        record2<span class="token punctuation">.</span>append<span class="token punctuation">(</span>process<span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> p <span class="token keyword">in</span> record1<span class="token punctuation">:</span>p<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> p <span class="token keyword">in</span> record2<span class="token punctuation">:</span>p<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        
+  <span class="token comment">#队列是进程安全的：同一时间只能一个进程拿到队列中的一个数据，你拿到了一个数据，这个数据别人就拿不到了。</span>
+</code></pre></div></li></ul> <h2 id="生产者消费者模型"><a href="#生产者消费者模型" class="header-anchor">#</a> 生产者消费者模型</h2> <ul><li>在并发编程中使用生产者和消费者模式能够解决绝大多数并发问题。该模式通过平衡生产线程和消费线程的工作能力来提高程序的整体处理数据的速度，来是整个生产和消费达到最大化和平衡。</li> <li><strong>为什么要使用生产者和消费者模型</strong>：
+<ul><li>在进程世界里，生产者就是生产数据的进程，消费者就是消费数据的进程2。在多线程开发当中，如果生产者处理速度很快，而消费者处理速度很慢，那么生产者就必须等待消费者处理完，才能继续生产数据。同样的道理，如果消费者的处理能力大于生产者，那么消费者就必须等待生产者。为了解决这个问题于是引入了生产者和消费者模式。</li></ul></li> <li>什么是生产者消费者模型：
+<ul><li>生产者消费者模式是通过一个容器来解决生产者和消费者的<strong>强耦合问题</strong>。生产者和消费者彼此之间不直接通讯，而通过阻塞队列来进行通讯，所以生产者生产完数据之后不用等待消费者处理，直接扔给阻塞队列，消费者不找生产者要数据，而是直接从阻塞队列里取，阻塞队列就相当于一个缓冲区，平衡了生产者和消费者的处理能力，并且我可以根据生产速度和消费速度来均衡一下多少个生产者可以为多少个消费者提供足够的服务，就可以开多进程等等，而这些进程都是到阻塞队列或者说是缓冲区中去获取或者添加数据。</li></ul></li></ul> <p><img src="https://img2018.cnblogs.com/blog/988061/201809/988061-20180920163222371-1293192246.png" alt="img"></p> <ul><li><p>基于队列来实现一个生产者消费者模型：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#生产者消费者模型总结</span>
+    <span class="token comment">#程序中有两类角色</span>
+        一类负责生产数据（生产者）
+        一类负责处理数据（消费者）  
+    <span class="token comment">#引入生产者消费者模型为了解决的问题是：</span>
+        平衡生产者与消费者之间的工作能力，从而提高程序整体处理数据的速度   
+    <span class="token comment">#如何实现：</span>
+        生产者<span class="token operator">&lt;</span><span class="token operator">-</span> <span class="token operator">-</span><span class="token operator">&gt;</span>队列<span class="token operator">&lt;</span>— —<span class="token operator">&gt;</span>消费者
+    <span class="token comment">#生产者消费者模型实现类程序的解耦和</span>
+<span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Process<span class="token punctuation">,</span>Queue
+<span class="token keyword">import</span> time<span class="token punctuation">,</span>random<span class="token punctuation">,</span>os
+<span class="token keyword">def</span> <span class="token function">consumer</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        res<span class="token operator">=</span>q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\033[45m%s 吃 %s\033[0m'</span> <span class="token operator">%</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">producer</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span>，<span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        res<span class="token operator">=</span><span class="token string">'包子%s'</span> <span class="token operator">%</span>i
+        q<span class="token punctuation">.</span>put<span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\033[44m%s 生产了 %s\033[0m'</span> <span class="token operator">%</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    q<span class="token operator">=</span>Queue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">#生产者们:即厨师们</span>
+    p1<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>producer<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">#消费者们:即吃货们</span>
+    c1<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>consumer<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    p1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#开始</span>
+    c1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'主'</span><span class="token punctuation">)</span>  <span class="token comment">#但是这里有个问题，while True的子进程并未结束，通过上面基于队列的生产者消费者代码示例，我们发现一个问题：主进程永远不会结束，原因是：生产者p在生产完后就结束了，但是消费者c在取空了q之后，则一直处于死循环中且卡在q.get()这一步。</span>
+ 
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+ <span class="token comment">#改进版本，解决方式无非是让生产者在生产完毕后，往队列中再发一个结束信号，这样消费者在接收到结束信号后就可以break出死循环：子进程生产者在生产完毕后发送结束信号None。</span>
+<span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Process<span class="token punctuation">,</span>Queue
+<span class="token keyword">import</span> time<span class="token punctuation">,</span>random<span class="token punctuation">,</span>os
+<span class="token keyword">def</span> <span class="token function">consumer</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        res<span class="token operator">=</span>q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> res <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span><span class="token keyword">break</span> <span class="token comment">#收到结束信号则结束</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\033[45m%s 吃 %s\033[0m'</span> <span class="token operator">%</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">producer</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span>，<span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        res<span class="token operator">=</span><span class="token string">'包子%s'</span> <span class="token operator">%</span>i
+        q<span class="token punctuation">.</span>put<span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\033[44m%s 生产了 %s\033[0m'</span> <span class="token operator">%</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">)</span> <span class="token comment">#在自己的子进程的最后加入一个结束信号，表示发出生产者个数的None，但是如果生产者小于消费者时还是不够</span>
+    
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    q<span class="token operator">=</span>Queue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">#生产者们:即厨师们</span>
+    p1<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>producer<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">#消费者们:即吃货们</span>
+    c1<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>consumer<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">#开始</span>
+    p1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    c1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'主'</span><span class="token punctuation">)</span>
+<span class="token comment">#注意：结束信号None，不一定要由生产者发，主进程里同样可以发，但主进程需要等生产者结束后才应该发送该信号</span>
+
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> random
+<span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Process<span class="token punctuation">,</span>Queue
+<span class="token keyword">def</span> <span class="token function">producer</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span>，<span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment">#不能是 put(0) 就会直接结束一个进程因为if not food</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        food <span class="token operator">=</span> <span class="token string">'泔水%s'</span><span class="token operator">%</span>i
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s生产了%s'</span><span class="token operator">%</span><span class="token punctuation">(</span><span class="token string">'taibai'</span><span class="token punctuation">,</span>food<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        q<span class="token punctuation">.</span>put<span class="token punctuation">(</span>food<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">consumer</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        food <span class="token operator">=</span> q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment"># food = 食物/None</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> food <span class="token punctuation">:</span> <span class="token keyword">break</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s 吃了 %s'</span><span class="token operator">%</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>food<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    q <span class="token operator">=</span> Queue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    p1 <span class="token operator">=</span> Process<span class="token punctuation">(</span>target<span class="token operator">=</span>producer<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    p1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    c1 <span class="token operator">=</span> Process<span class="token punctuation">(</span>target<span class="token operator">=</span>consumer<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token string">'alex'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    c1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    c2 <span class="token operator">=</span> Process<span class="token punctuation">(</span>target<span class="token operator">=</span>consumer<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token string">'wusir'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    c2<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    p1<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">#必须等待p1执行完</span>
+    q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">)</span> <span class="token comment"># 这里需要注意的是，又有几个消费者（while True）就要发几次None，否则会出现孤儿进程</span>
+    q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+<span class="token comment">#但上述解决方式，在有多个生产者和多个消费者时，由于队列我们说了是进程安全的，我一个进程拿走了结束信号，另外一个进程就拿不到了，还需要多发送一个结束信号，有几个取数据的进程就要发送几个结束信号，我们则需要用一个很low的方式去解决。</span>
+
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Process<span class="token punctuation">,</span>Queue
+<span class="token keyword">import</span> random
+<span class="token keyword">import</span> time
+<span class="token keyword">def</span> <span class="token function">producer</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 处理数据延迟</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        data<span class="token operator">=</span> <span class="token string">'data  %s'</span><span class="token operator">%</span>i
+        q<span class="token punctuation">.</span>put<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'生产者 %s 生产了数据: %s'</span><span class="token operator">%</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">consumer</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        data<span class="token operator">=</span> q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> data <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>  <span class="token comment">#当接受到None是跳出循环</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\033[31;1m %s 消费完了 \033[0m'</span><span class="token operator">%</span>name<span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'消费者 %s 收到数据: %s'</span><span class="token operator">%</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    q<span class="token operator">=</span>Queue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    pro_name<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'alex'</span><span class="token punctuation">,</span><span class="token string">'wusir'</span><span class="token punctuation">,</span><span class="token string">'wang'</span><span class="token punctuation">]</span>
+    con_name<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'aaa'</span><span class="token punctuation">,</span><span class="token string">'bb'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">,</span><span class="token string">'ddd'</span><span class="token punctuation">]</span>
+    pro_lis<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> pro_name<span class="token punctuation">:</span>  <span class="token comment"># 将所有的生产者写入列表，并且启动</span>
+        p<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>producer<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>q<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        p<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        pro_lis<span class="token punctuation">.</span>append<span class="token punctuation">(</span>p<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> con_name<span class="token punctuation">:</span>  <span class="token comment"># 启动消费者的进程</span>
+        p<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>consumer<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>q<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        p<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> pro_lis<span class="token punctuation">:</span>  <span class="token comment"># 等待每个进程阻塞，知道结束完</span>
+        i<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  	<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>con_name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment">#发送四个None结束相应的消费者</span>
+        q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+
+</code></pre></div></li></ul> <h2 id="joinablequeue-队列"><a href="#joinablequeue-队列" class="header-anchor">#</a> JoinableQueue 队列</h2> <ul><li><div class="language- extra-class"><pre class="language-text"><code>JoinableQueue([maxsize])：这就像是一个Queue对象，但队列允许项目的使用者通知生成者项目已经被成功处理。通知进程是使用共享的信号和条件变量来实现的。
+#参数介绍：
+    maxsize是队列中允许最大项数，省略则无大小限制。    
+　 #方法介绍：
+    JoinableQueue的实例p除了与Queue对象相同的方法之外还具有：
+    q.task_done()：使用者使用此方法发出信号，表示q.get()的返回项目已经被处理。如果调用此方法的次数大于从队列中删除项目的数量，将引发ValueError异常
+    q.join():生产者调用此方法进行阻塞，直到队列中所有的项目均被处理。阻塞将持续到队列中的每个项目均调用q.task_done（）方法为止，也就是队列中的数据全部被get拿走了。
+</code></pre></div></li> <li><p><strong>使用JoinableQueue实现生产消费者模型</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Process<span class="token punctuation">,</span>JoinableQueue
+<span class="token keyword">import</span> time<span class="token punctuation">,</span>random<span class="token punctuation">,</span>os
+<span class="token keyword">def</span> <span class="token function">consumer</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        res<span class="token operator">=</span>q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment"># time.sleep(random.randint(1,3))</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\033[45m%s 吃 %s\033[0m'</span> <span class="token operator">%</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        q<span class="token punctuation">.</span>task_done<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#向q.join()发送一次信号,证明一个数据已经被取走并执行完了，减一</span>
+
+<span class="token keyword">def</span> <span class="token function">producer</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>q<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>：
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        res<span class="token operator">=</span><span class="token string">'%s%s'</span> <span class="token operator">%</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>i<span class="token punctuation">)</span>
+        q<span class="token punctuation">.</span>put<span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\033[44m%s 生产了 %s\033[0m'</span> <span class="token operator">%</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getpid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s生产结束'</span><span class="token operator">%</span>name<span class="token punctuation">)</span>
+    q<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>         <span class="token comment">#生产完毕，使用此方法进行阻塞，直到队列中所有项目均被处理。</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s生产结束~~~~~~'</span><span class="token operator">%</span>name<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    q<span class="token operator">=</span>JoinableQueue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">#生产者们:即厨师们</span>
+    p1<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>producer<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'包子'</span><span class="token punctuation">,</span>q<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    p2<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>producer<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'骨头'</span><span class="token punctuation">,</span>q<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    p3<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>producer<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'泔水'</span><span class="token punctuation">,</span>q<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">#消费者们:即吃货们</span>
+    c1<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>consumer<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    c2<span class="token operator">=</span>Process<span class="token punctuation">(</span>target<span class="token operator">=</span>consumer<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    c1<span class="token punctuation">.</span>daemon<span class="token operator">=</span><span class="token boolean">True</span> <span class="token comment">#如果不加守护，那么主进程结束不了，但是加了守护之后，必须确保生产者的内容生产完并且被处理完了，所有必须还要在主进程给生产者设置join，才能确保生产者生产的任务被执行完了，并且能够确保守护进程在所有任务执行完成之后才随着主进程的结束而结束。</span>
+    c2<span class="token punctuation">.</span>daemon<span class="token operator">=</span><span class="token boolean">True</span>
+
+    <span class="token comment">#开始</span>
+    p_l<span class="token operator">=</span><span class="token punctuation">[</span>p1<span class="token punctuation">,</span>p2<span class="token punctuation">,</span>p3<span class="token punctuation">,</span>c1<span class="token punctuation">,</span>c2<span class="token punctuation">]</span>
+    <span class="token keyword">for</span> p <span class="token keyword">in</span> p_l<span class="token punctuation">:</span> p<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    p1<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#我要确保你的生产者进程结束了，生产者进程的结束标志着你生产的所有的人任务都已经被处理完了</span>
+    p2<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    p3<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'主'</span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># 主进程等---&gt;p1,p2,p3等----&gt;c1,c2</span>
+    <span class="token comment"># p1,p2,p3结束了,证明c1,c2肯定全都收完了p1,p2,p3发到队列的数据</span>
+    <span class="token comment"># 因而c1,c2也没有存在的价值了,不需要继续阻塞在进程中影响主进程了。应该随着主进程的结束而结束,所以设置成守护进程就可以了。</span>
+</code></pre></div><p><img src="C:%5CUsers%5Cwanglixing%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1555421072044.png" alt="1555421072044"></p></li></ul> <h2 id="管道"><a href="#管道" class="header-anchor">#</a> 管道</h2> <ul><li><p>进程间通信（IPC）方式二：管道（不推荐使用，了解即可），会导致数据不安全的情况出现，后面我们会说到为什么会带来数据 不安全的问题。</p> <ul><li><p>管道介绍：</p> <div class="language- extra-class"><pre class="language-text"><code>#创建管道的类：
+Pipe([duplex]):在进程之间创建一条管道，并返回元组（conn1,conn2）,其中conn1，conn2表示管道两端的连接对象，强调一点：必须在产生Process对象之前产生管道
+#参数介绍：
+dumplex:默认管道是全双工的，如果将duplex射成False，conn1只能用于接收，conn2只能用于发送。
+#主要方法：
+    conn1.recv():接收conn2.send(obj)发送的对象。如果没有消息可接收，recv方法会一直阻塞。如果连接的另外一端已经关闭，那么recv方法会抛出EOFError。
+    conn1.send(obj):通过连接发送对象。obj是与序列化兼容的任意对象
+ #其他方法：
+conn1.close():关闭连接。如果conn1被垃圾回收，将自动调用此方法
+conn1.fileno():返回连接使用的整数文件描述符
+conn1.poll([timeout]):如果连接上的数据可用，返回True。timeout指定等待的最长时限。如果省略此参数，方法将立即返回结果。如果将timeout射成None，操作将无限期地等待数据到达。
+ 
+conn1.recv_bytes([maxlength]):接收c.send_bytes()方法发送的一条完整的字节消息。maxlength指定要接收的最大字节数。如果进入的消息，超过了这个最大值，将引发IOError异常，并且在连接上无法进行进一步读取。如果连接的另外一端已经关闭，再也不存在任何数据，将引发EOFError异常。
+conn.send_bytes(buffer [, offset [, size]])：通过连接发送字节数据缓冲区，buffer是支持缓冲区接口的任意对象，offset是缓冲区中的字节偏移量，而size是要发送字节数。结果数据以单条消息的形式发出，然后调用c.recv_bytes()函数进行接收    
+ 
+conn1.recv_bytes_into(buffer [, offset]):接收一条完整的字节消息，并把它保存在buffer对象中，该对象支持可写入的缓冲区接口（即bytearray对象或类似的对象）。offset指定缓冲区中放置消息处的字节位移。返回值是收到的字节数。如果消息长度大于可用的缓冲区空间，将引发BufferTooShort异常。
+</code></pre></div></li> <li><p>管道的使用</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Process<span class="token punctuation">,</span> Pipe
+<span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">&quot;Hello 妹妹&quot;</span><span class="token punctuation">)</span> <span class="token comment">#子进程发送了消息</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    parent_conn<span class="token punctuation">,</span> child_conn <span class="token operator">=</span> Pipe<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#建立管道，拿到管道的两端，双工通信方式，两端都可以收发消息</span>
+    p <span class="token operator">=</span> Process<span class="token punctuation">(</span>target<span class="token operator">=</span>f<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>child_conn<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#将管道的一段给子进程</span>
+    p<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#开启子进程</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>parent_conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#主进程接受了消息</span>
+    p<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="https://img2018.cnblogs.com/blog/988061/201809/988061-20180921153111478-850184201.png" alt="img"></p></li> <li><p>应该特别注意管道端点的正确管理问题。<strong>如果是生产者或消费者中都没有使用管道的某个端点，就应将它关闭</strong>。这也说明了为何在<strong>生产者中关闭了管道的输出端，在消费者中关闭管道的输入端</strong>。如果忘记执行这些步骤，程序可能在消费者中的recv（）操作上挂起（就是阻塞）。管道是由操作系统进行引用计数的，必须在所有进程中关闭管道的相同一端就会能生成EOFError异常。因此，在生产者中关闭管道不会有任何效果，除非消费者也关闭了相同的管道端点。</p> <ul><li><p>以下会触发EOFError报错</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Process<span class="token punctuation">,</span> Pipe
+
+<span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>parent_conn<span class="token punctuation">,</span>child_conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment">#parent_conn.close() #不写close将不会引发EOFError</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>child_conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span> EOFError<span class="token punctuation">:</span>
+            child_conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    parent_conn<span class="token punctuation">,</span> child_conn <span class="token operator">=</span> Pipe<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    p <span class="token operator">=</span> Process<span class="token punctuation">(</span>target<span class="token operator">=</span>f<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>parent_conn<span class="token punctuation">,</span>child_conn<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    p<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    child_conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    parent_conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span>
+    parent_conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    p<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>    
+    
+ <span class="token comment">#主进程将管道的两端都传送给子进程，子进程和主进程共用管道的两种报错情况，都是在recv接收的时候报错的：</span>
+　　　　<span class="token number">1</span><span class="token punctuation">.</span>主进程和子进程中的管道的相同一端都关闭了，出现EOFError；
+　　　　<span class="token number">2</span><span class="token punctuation">.</span>如果你管道的一端在主进程和子进程中都关闭了，但是你还用这个关闭的一端去接收消息，那么就会出现OSError；
+　　　　所以你关闭管道的时候，就容易出现问题，需要将所有只用这个管道的进程中的两端全部关闭才行。当然也可以通过异常捕获（<span class="token keyword">try</span>：<span class="token keyword">except</span> EOFerror）来处理。
+　　　　虽然我们在主进程和子进程中都打印了一下conn1一端的对象，发现两个不再同一个地址，但是子进程中的管道和主进程中的管道还是可以通信的，因为管道是同一套，系统能够记录
+</code></pre></div><p></p></li></ul></li></ul></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/python/origin/multiprocessing（上）.html" class="prev">
+        multiprocessing（上）
+      </a></span> <span class="next"><a href="/python/origin/multiprocessing（下）.html">
+        multiprocessing（下）
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/87.5f9eb9ef.js" defer></script>
+  </body>
+</html>

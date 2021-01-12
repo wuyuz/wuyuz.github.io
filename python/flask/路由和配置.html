@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>路由和配置 | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/80.f826f188.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/103.16474d4b.js"><link rel="prefetch" href="/assets/js/104.ed58aef3.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/11.d4ec37c8.js"><link rel="prefetch" href="/assets/js/110.4144755a.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/34.8448d0fd.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/48.f591f360.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/50.b9ca2762.js"><link rel="prefetch" href="/assets/js/51.93672ee6.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/60.f40ac3ca.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/64.a98fe86e.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/84.b940927c.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/87.5f9eb9ef.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/94.0ad7c41c.js"><link rel="prefetch" href="/assets/js/95.0e5ce618.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python常用模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Django框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Flask 框架</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/python/flask/Werkzeug讲解.html" class="sidebar-link">Werkzeug 讲解</a></li><li><a href="/python/flask/路由和配置.html" class="active sidebar-link">路由和配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/python/flask/路由和配置.html#路由和配置" class="sidebar-link">路由和配置</a></li><li class="sidebar-sub-header"><a href="/python/flask/路由和配置.html#相应的模板-模板语法" class="sidebar-link">相应的模板（模板语法）</a></li><li class="sidebar-sub-header"><a href="/python/flask/路由和配置.html#路由系统" class="sidebar-link">路由系统</a></li><li class="sidebar-sub-header"><a href="/python/flask/路由和配置.html#反向解析" class="sidebar-link">反向解析</a></li></ul></li><li><a href="/python/flask/模板、请求与响应.html" class="sidebar-link">模板、请求与响应</a></li><li><a href="/python/flask/蓝图、请求扩展和中间件.html" class="sidebar-link">蓝图、请求扩展和中间件</a></li><li><a href="/python/flask/数据库连接池.html" class="sidebar-link">数据库连接池</a></li><li><a href="/python/flask/SQLAlchmey.html" class="sidebar-link">SQLAlchmey</a></li><li><a href="/python/flask/WTForms.html" class="sidebar-link">WTForms</a></li><li><a href="/python/flask/信号.html" class="sidebar-link">信号</a></li><li><a href="/python/flask/应用上下文.html" class="sidebar-link">应用上下文</a></li><li><a href="/python/flask/内置session理解.html" class="sidebar-link">内置session理解</a></li><li><a href="/python/flask/经典的编程思想.html" class="sidebar-link">经典的编程思想</a></li><li><a href="/python/flask/请求上下文源码分析.html" class="sidebar-link">请求上下文源码分析</a></li><li><a href="/python/flask/上下文管理准备工作.html" class="sidebar-link">上下文管理准备工作</a></li><li><a href="/python/flask/上下文管理源码分析.html" class="sidebar-link">上下文管理源码分析</a></li><li><a href="/python/flask/Flask回顾.html" class="sidebar-link">Flask开发规范和RESTful</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python爬虫</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="路由和配置"><a href="#路由和配置" class="header-anchor">#</a> 路由和配置</h2> <h4 id="主流web框架的介绍"><a href="#主流web框架的介绍" class="header-anchor">#</a> 主流Web框架的介绍</h4> <ul><li><h5 id="django"><a href="#django" class="header-anchor">#</a> Django</h5> <ul><li>优点：组件和功能齐全、教科书式框架、</li> <li>缺点：占资源、创建复杂度较高、</li></ul></li> <li><h5 id="flask"><a href="#flask" class="header-anchor">#</a> Flask:</h5> <ul><li>优点：轻、快，一切从简能省则省</li> <li>缺点：先天不足（原生组件少）、第三方组件稳定性较差（一旦不向下兼容，组件失效）</li> <li>Flask的session中的机制是：<strong>交由客户端保存机制</strong></li></ul></li> <li><h5 id="tornado"><a href="#tornado" class="header-anchor">#</a> Tornado:</h5> <ul><li>优点：异步非阻塞框架，单线程执行多任务</li></ul></li></ul> <h4 id="flask安装"><a href="#flask安装" class="header-anchor">#</a> Flask安装</h4> <ul><li><h5 id="创建虚拟环境"><a href="#创建虚拟环境" class="header-anchor">#</a> 创建虚拟环境</h5> <div class="language-python extra-class"><pre class="language-python"><code> <span class="token comment">#方式一：使用命令安装</span>
+<span class="token number">1</span>、安装virtualenv：若要使用python虚拟环境进行开发，首先需要下载virtualenv
+命令：pip3 install virtualenv
+
+<span class="token number">2</span>、创建虚拟环境：
+命令：virtualenv venv<span class="token punctuation">(</span>文件名<span class="token punctuation">)</span>
+
+ <span class="token comment">#方式二：使用pycharm安装</span>
+<span class="token number">1</span>、在一个窗口点击编译器，新建编译器，选择新建虚拟环境，选择好位置，点击生成编译的语言，最后生成即可
+
+<span class="token number">2</span>、安装flask：pip3 install flask
+</code></pre></div></li> <li><h5 id="安装flask时携带的三大组件"><a href="#安装flask时携带的三大组件" class="header-anchor">#</a> 安装flask时携带的三大组件</h5> <div class="language- extra-class"><pre class="language-text"><code>1、jinjia2：模板渲染语法，是Django的渲染语法template的爸爸
+2、MarkupSafe：markupsafe是jinja2的依赖项，通过它来向浏览器返回合格的转义的字节流
+3、Werkzeug：是Python的WSGI规范的实用函数库
+</code></pre></div></li> <li><h5 id="werkzeug与其他满足wsgi库的比较"><a href="#werkzeug与其他满足wsgi库的比较" class="header-anchor">#</a> Werkzeug与其他满足WSGI库的比较</h5> <div class="language-python extra-class"><pre class="language-python"><code> <span class="token comment">#Werkzeug本质是Socket服务端，其用于接收http请求并对请求进行预处理，然后触发Flask框架，开发人员基于Flask框架提供的功能对请求进行相应的处理，并返回给用户，如果要返回给用户复杂的内容时，需要借助jinja2模板来实现对模板的处理，即：将模板和数据进行渲染，将渲染后的字符串返回给用户浏览器</span>
+
+ <span class="token comment">#Werkzeug版本的消息收发</span>
+<span class="token keyword">from</span> werkzeug<span class="token punctuation">.</span>wrappers <span class="token keyword">import</span> Request<span class="token punctuation">,</span>Response
+
+<span class="token decorator annotation punctuation">@Request<span class="token punctuation">.</span>application</span>
+<span class="token keyword">def</span> <span class="token function">hello</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> Response<span class="token punctuation">(</span><span class="token string">'Hello World'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token keyword">from</span> werkzeug<span class="token punctuation">.</span>serving <span class="token keyword">import</span> run_simple
+    run_simple<span class="token punctuation">(</span><span class="token string">'localhost'</span><span class="token punctuation">,</span><span class="token number">4000</span><span class="token punctuation">,</span>hello<span class="token punctuation">)</span>
+ 
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+ <span class="token comment">#wsgiref版本的消息收发</span>
+<span class="token keyword">from</span> wsgiref<span class="token punctuation">.</span>simple_server <span class="token keyword">import</span> make_server
+
+<span class="token keyword">def</span> <span class="token function">runserver</span><span class="token punctuation">(</span>environ<span class="token punctuation">,</span> start_response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    start_response<span class="token punctuation">(</span><span class="token string">'200 OK'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'Content-Type'</span><span class="token punctuation">,</span><span class="token string">'text/html'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>byte<span class="token punctuation">(</span><span class="token string">'&lt;h1&gt;Hello world&lt;/h1&gt;'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&quot;__main__&quot;</span>&quot;<span class="token punctuation">:</span>
+	httped <span class="token operator">=</span> make_server<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token number">8000</span><span class="token punctuation">,</span> runserver<span class="token punctuation">)</span>
+	httped<span class="token punctuation">.</span>serve_forever<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+ <span class="token comment">#本质的本质还是socket</span>
+<span class="token keyword">import</span> socket
+<span class="token keyword">from</span> threading <span class="token keyword">import</span> Thread
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8001</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#默认浏览器端口8001</span>
+sk<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    from_b_msg <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    str_msg <span class="token operator">=</span> from_b_msg<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">b'HTTP/1.1 200 ok \r\n\r\n'</span><span class="token punctuation">)</span> 
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">b'hello'</span><span class="token punctuation">)</span>
+ 
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">,</span>addr <span class="token operator">=</span> sk<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    t <span class="token operator">=</span> Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>func<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>conn<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#实现并发</span>
+    t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>   
+</code></pre></div></li></ul> <h4 id="启动flask项目"><a href="#启动flask项目" class="header-anchor">#</a> 启动flask项目</h4> <ul><li><h5 id="_8行代码"><a href="#_8行代码" class="header-anchor">#</a> 8行代码</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>  <span class="token comment">#实例化Flask对象，__name__本地执行是__main__</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>  <span class="token comment">#装饰器执行v = app.route('/') ,将函数名传入v中最后返回封装了hello的函数，以备后面调用</span>
+<span class="token keyword">def</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> request<span class="token punctuation">.</span>args<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;World&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f'Hello, </span><span class="token interpolation"><span class="token punctuation">{</span>escape<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">!'</span></span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li><h5 id="分析"><a href="#分析" class="header-anchor">#</a> 分析</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token number">1</span>、通过Flask实例化：查看Flask的源码
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>
+            self<span class="token punctuation">,</span>
+            import_name<span class="token punctuation">,</span>   <span class="token comment"># 导入的名字</span>
+         	<span class="token comment">#远程静态文件所用的Host地址,默认为空</span>
+            static_url_path<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>  
+       		<span class="token comment">#静态文件路径默认当前项目中的static目录</span>
+            static_folder<span class="token operator">=</span><span class="token string">&quot;static&quot;</span><span class="token punctuation">,</span> 
+        	<span class="token comment">#远程静态文件所用的Host地址,默认为空</span>
+            static_host<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>
+        	<span class="token comment"># host_matching是否开启host主机位匹配,是要与static_host一起使用,如果配置了static_host, 则必须赋值为True；</span>
+        	<span class="token comment"># 这里要说明一下,@app.route(&quot;/&quot;,host=&quot;localhost:5000&quot;) 就必须要这样写</span>
+            host_matching<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>
+       		<span class="token comment"># 理论上来说是用来限制SERVER_NAME子域名的,但是目前还没有感觉出来区别在哪里</span>
+            subdomain_matching<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>
+            template_folder<span class="token operator">=</span><span class="token string">&quot;templates&quot;</span><span class="token punctuation">,</span> <span class="token comment">#模板文件</span>
+        	<span class="token comment"># 指向另一个Flask实例的路径</span>
+            instance_path<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>
+            instance_relative_config<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>
+        	<span class="token comment"># 主模块所在的目录的绝对路径,默认项目目录</span>
+            root_path<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">:</span>
+        
+<span class="token number">2</span>、@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>将<span class="token string">'/'</span>和函数index的对应关系添加到路由中，类似个字典
+    <span class="token punctuation">{</span>
+        <span class="token string">'/'</span><span class="token punctuation">:</span>index
+  <span class="token punctuation">}</span>
+    
+<span class="token number">3</span>、app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>：监听请求，如果有用户请求到来，就执行app的__call__方法
+	<span class="token number">3.1</span>、点击run函数跳转源码：
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+        run_simple<span class="token punctuation">(</span>host<span class="token punctuation">,</span> port<span class="token punctuation">,</span> self<span class="token punctuation">,</span> <span class="token operator">**</span>options<span class="token punctuation">)</span> <span class="token comment"># 在这里的第三个参数self也就是我们所说的实例化app，由上面的werkzeug实例我们知道，第三个参数会加括号执行，也就是触发了对象的__call__()方法，Django的wsgi中也是执行的__call__方法</span>
+</code></pre></div></li> <li><h5 id="配置flask的静态文件"><a href="#配置flask的静态文件" class="header-anchor">#</a> 配置Flask的静态文件</h5> <div class="language-python extra-class"><pre class="language-python"><code>   app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">,</span>   <span class="token comment">#导入本模块</span>
+   				template_folder<span class="token operator">=</span><span class="token string">'templates'</span><span class="token punctuation">,</span>  <span class="token comment">#指定模板文件目录</span>
+   				static_url_path<span class="token operator">=</span><span class="token string">'/static/'</span><span class="token punctuation">,</span>  <span class="token comment">#指定静态文件别名，相当于Djagno的STATIC_URL</span>
+   				static_folder<span class="token operator">=</span><span class="token string">'static'</span><span class="token punctuation">)</span>  <span class="token comment"># 指定静态文件位置</span>
+
+  <span class="token comment">#使用静态文件</span>
+<span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">&quot;{{ url_for('static',filename='1.png') }}&quot;</span><span class="token operator">/</span><span class="token operator">&gt;</span> <span class="token comment">#方式一：反向解析</span>
+<span class="token operator">&lt;</span>img src<span class="token operator">=</span> <span class="token string">&quot;/static/1.png&quot;</span><span class="token operator">/</span><span class="token operator">&gt;</span>  <span class="token comment"># 方式二</span>
+</code></pre></div></li></ul></li></ul> <h4 id="应用的demo"><a href="#应用的demo" class="header-anchor">#</a> 应用的Demo</h4> <ul><li><p>简单的登陆验证</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> escape<span class="token punctuation">,</span>render_template<span class="token punctuation">,</span>request<span class="token punctuation">,</span>redirect
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span><span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>method<span class="token operator">==</span><span class="token string">'GET'</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>query_string<span class="token punctuation">)</span>  <span class="token comment"># url中的数据都在此</span>
+        <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'login.html'</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        user <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">)</span>
+        pwd <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'pwd'</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> user <span class="token operator">==</span> <span class="token string">'alex'</span> <span class="token keyword">and</span> pwd <span class="token operator">==</span> <span class="token string">'123'</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> redirect<span class="token punctuation">(</span><span class="token string">'https://www.baidu.com'</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'login.html'</span><span class="token punctuation">,</span>error<span class="token operator">=</span><span class="token string">'用户或密码错误'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul> <h4 id="添加验证登陆的案列"><a href="#添加验证登陆的案列" class="header-anchor">#</a> 添加验证登陆的案列</h4> <ul><li><h5 id="主逻辑的代码"><a href="#主逻辑的代码" class="header-anchor">#</a> 主逻辑的代码</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> escape<span class="token punctuation">,</span> render_template<span class="token punctuation">,</span> request<span class="token punctuation">,</span> redirect<span class="token punctuation">,</span> session<span class="token punctuation">,</span> url_for
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span>debug <span class="token operator">=</span> <span class="token boolean">True</span>  <span class="token comment"># 可以自动重启，可以生成浏览器的报错信息</span>
+app<span class="token punctuation">.</span>secret_key<span class="token operator">=</span><span class="token string">&quot;adfaew@##$@&quot;</span>  <span class="token comment"># 配置服务器的密钥，通过它和存入客户端的session进行位运算后序列胡=化，可以得到相应的session字典，没有它，将无法生成session</span>
+
+USERS <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token number">1</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token string">'gender'</span><span class="token punctuation">:</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'text'</span><span class="token punctuation">:</span> <span class="token string">'本人性格开朗、稳重、有活力,待人热情、真诚;工作认真负责,积极主动,能吃苦耐劳,'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token number">2</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'李四'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token string">'gender'</span><span class="token punctuation">:</span> <span class="token string">'女'</span><span class="token punctuation">,</span> <span class="token string">'text'</span><span class="token punctuation">:</span> <span class="token string">'本人性格开朗、稳重、有活力,待人热情、真诚;工作认真负责,积极主动,能吃苦耐劳,'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token number">3</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'王五'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token string">'gender'</span><span class="token punctuation">:</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token string">'text'</span><span class="token punctuation">:</span> <span class="token string">'本人性格开朗、稳重、有活力,待人热情、真诚;工作认真负责,积极主动,能吃苦耐劳,'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token number">4</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'续七'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token string">'gender'</span><span class="token punctuation">:</span> <span class="token string">'女'</span><span class="token punctuation">,</span> <span class="token string">'text'</span><span class="token punctuation">:</span> <span class="token string">'本人性格开朗、稳重、有活力,待人热情、真诚;工作认真负责,积极主动,能吃苦耐劳,'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">import</span> functools
+<span class="token keyword">def</span> <span class="token function">wapper</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token decorator annotation punctuation">@functools<span class="token punctuation">.</span>wraps</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span>  <span class="token comment">#在没有起别名的情况下使用它</span>
+    <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        user <span class="token operator">=</span> session<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'user_info'</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> user<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> redirect<span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> inner
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/index'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 必须写method，否则路径毫无意义</span>
+<span class="token decorator annotation punctuation">@wapper</span>  <span class="token comment"># 通过装饰器实现验证</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    user <span class="token operator">=</span> session<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'user_info'</span><span class="token punctuation">)</span>  <span class="token comment"># session中获取相应的参数</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> user<span class="token punctuation">:</span>
+        url <span class="token operator">=</span> url_for<span class="token punctuation">(</span><span class="token string">'login'</span><span class="token punctuation">)</span>  <span class="token comment"># 使用url_for反向生成路径</span>
+        <span class="token keyword">return</span> redirect<span class="token punctuation">(</span>url<span class="token punctuation">)</span>  <span class="token comment"># 跳转页面</span>
+    <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">,</span> user_dict<span class="token operator">=</span>USERS<span class="token punctuation">)</span>  <span class="token comment"># render_template相当于django中的render，用户渲染模板</span>
+
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/detail/&lt;int:nid&gt;'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 使用&lt;int:int&gt; 指定传入参数的类型</span>
+<span class="token keyword">def</span> <span class="token function">detail</span><span class="token punctuation">(</span>nid<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 当使用反向时，可以传参数url_for('别名',nid=123} 必须时关键字参数</span>
+    user <span class="token operator">=</span> session<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'user_info'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> user<span class="token punctuation">:</span>
+        url <span class="token operator">=</span> url_for<span class="token punctuation">(</span><span class="token string">'login'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> redirect<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    info <span class="token operator">=</span> USERS<span class="token punctuation">.</span>get<span class="token punctuation">(</span>nid<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'detail.html'</span><span class="token punctuation">,</span> info<span class="token operator">=</span>info<span class="token punctuation">)</span>
+
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span> <span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> endpoint<span class="token operator">=</span><span class="token string">'login'</span><span class="token punctuation">)</span>  <span class="token comment"># endpoint 相当于取别名</span>
+<span class="token keyword">def</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'GET'</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>query_string<span class="token punctuation">)</span>  <span class="token comment"># url中的数据都在此</span>
+        <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'login.html'</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+
+        user <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">)</span>
+        pwd <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'pwd'</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> user <span class="token operator">==</span> <span class="token string">'alex'</span> <span class="token keyword">and</span> pwd <span class="token operator">==</span> <span class="token string">'123'</span><span class="token punctuation">:</span>
+            session<span class="token punctuation">[</span><span class="token string">'user_info'</span><span class="token punctuation">]</span> <span class="token operator">=</span> user  <span class="token comment"># 设置session</span>
+            <span class="token keyword">return</span> redirect<span class="token punctuation">(</span><span class="token string">'/index'</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'login.html'</span><span class="token punctuation">,</span> error<span class="token operator">=</span><span class="token string">'用户或密码错误'</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><h2 id="相应的模板-模板语法"><a href="#相应的模板-模板语法" class="header-anchor">#</a> 相应的模板（模板语法）</h2> <div class="language-html extra-class"><pre class="language-html"><code> #index.html文件中
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>用户列表<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>1px<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!--   for循环中支持加括号，调用方法     --&gt;</span>
+        {% for k, v in user_dict.items() %}
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>{{k}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+            <span class="token comment">&lt;!-- 字典支持python语法 --&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>{{v.name}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>{{v['name']}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>{{v.get('name')}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>{{v.gender}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/detail/{{k}}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>查看详细<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+        {%endfor%}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+
+--------------------------------------------
+ #detail.html文件
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>详细信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    {{info.name}}
+    {{info.text}}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li></ul> <h4 id="flask-配置文件"><a href="#flask-配置文件" class="header-anchor">#</a> Flask 配置文件</h4> <ul><li><p>Flask的默认配置</p> <div class="language-python extra-class"><pre class="language-python"><code>flask中的配置文件是一个flask<span class="token punctuation">.</span>config<span class="token punctuation">.</span>Config对象（继承字典）<span class="token punctuation">,</span>默认配置为：
+ <span class="token comment">#: Default configuration parameters.</span>
+    default_config <span class="token operator">=</span> ImmutableDict<span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token string">'ENV'</span><span class="token punctuation">:</span>                                  <span class="token boolean">None</span><span class="token punctuation">,</span>
+        <span class="token string">'DEBUG'</span><span class="token punctuation">:</span>                                <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token comment">#编辑环境</span>
+        <span class="token string">'TESTING'</span><span class="token punctuation">:</span>                              <span class="token boolean">False</span><span class="token punctuation">,</span><span class="token comment">#上线前测试，日志打印</span>
+        <span class="token string">'PROPAGATE_EXCEPTIONS'</span><span class="token punctuation">:</span>                 <span class="token boolean">None</span><span class="token punctuation">,</span>
+        <span class="token string">'PRESERVE_CONTEXT_ON_EXCEPTION'</span><span class="token punctuation">:</span>        <span class="token boolean">None</span><span class="token punctuation">,</span>
+        <span class="token string">'SECRET_KEY'</span><span class="token punctuation">:</span>                           <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token comment"># 密钥设置，Flask使用这个密钥来对cookies和别的东西进行签名。</span>
+        <span class="token string">'PERMANENT_SESSION_LIFETIME'</span><span class="token punctuation">:</span>           timedelta<span class="token punctuation">(</span>days<span class="token operator">=</span><span class="token number">31</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment"># session过期时间，默认设置31天，注意默认是化为秒，必须设置day</span>
+        <span class="token string">'USE_X_SENDFILE'</span><span class="token punctuation">:</span>                       <span class="token boolean">False</span><span class="token punctuation">,</span>
+        <span class="token string">'SERVER_NAME'</span><span class="token punctuation">:</span>                          <span class="token boolean">None</span><span class="token punctuation">,</span><span class="token comment">#当前所出的域名</span>
+        <span class="token string">'APPLICATION_ROOT'</span><span class="token punctuation">:</span>                     <span class="token string">'/'</span><span class="token punctuation">,</span>
+        <span class="token string">'SESSION_COOKIE_NAME'</span><span class="token punctuation">:</span>                  <span class="token string">'session'</span><span class="token punctuation">,</span><span class="token comment">#就是交给客户端存储缓存的名字，可以通过浏览器的F12中Aplication中cookies中查看</span>
+        <span class="token string">'SESSION_COOKIE_DOMAIN'</span><span class="token punctuation">:</span>                <span class="token boolean">None</span><span class="token punctuation">,</span>
+        <span class="token string">'SESSION_COOKIE_PATH'</span><span class="token punctuation">:</span>                  <span class="token boolean">None</span><span class="token punctuation">,</span>
+        <span class="token string">'SESSION_COOKIE_HTTPONLY'</span><span class="token punctuation">:</span>              <span class="token boolean">True</span><span class="token punctuation">,</span>
+        <span class="token string">'SESSION_COOKIE_SECURE'</span><span class="token punctuation">:</span>                <span class="token boolean">False</span><span class="token punctuation">,</span>
+        <span class="token string">'SESSION_COOKIE_SAMESITE'</span><span class="token punctuation">:</span>              <span class="token boolean">None</span><span class="token punctuation">,</span>
+        <span class="token string">'SESSION_REFRESH_EACH_REQUEST'</span><span class="token punctuation">:</span>         <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token comment"># 每登陆一次都要刷新session</span>
+        <span class="token string">'MAX_CONTENT_LENGTH'</span><span class="token punctuation">:</span>                   <span class="token boolean">None</span><span class="token punctuation">,</span>
+        <span class="token string">'SEND_FILE_MAX_AGE_DEFAULT'</span><span class="token punctuation">:</span>            timedelta<span class="token punctuation">(</span>hours<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">'TRAP_BAD_REQUEST_ERRORS'</span><span class="token punctuation">:</span>              <span class="token boolean">None</span><span class="token punctuation">,</span>
+        <span class="token string">'TRAP_HTTP_EXCEPTIONS'</span><span class="token punctuation">:</span>                 <span class="token boolean">False</span><span class="token punctuation">,</span>
+        <span class="token string">'EXPLAIN_TEMPLATE_LOADING'</span><span class="token punctuation">:</span>             <span class="token boolean">False</span><span class="token punctuation">,</span>
+        <span class="token string">'PREFERRED_URL_SCHEME'</span><span class="token punctuation">:</span>                 <span class="token string">'http'</span><span class="token punctuation">,</span>
+        <span class="token string">'JSON_AS_ASCII'</span><span class="token punctuation">:</span>                        <span class="token boolean">True</span><span class="token punctuation">,</span>
+        <span class="token string">'JSON_SORT_KEYS'</span><span class="token punctuation">:</span>                       <span class="token boolean">True</span><span class="token punctuation">,</span>
+        <span class="token string">'JSONIFY_PRETTYPRINT_REGULAR'</span><span class="token punctuation">:</span>          <span class="token boolean">False</span><span class="token punctuation">,</span>
+        <span class="token string">'JSONIFY_MIMETYPE'</span><span class="token punctuation">:</span>                     <span class="token string">'application/json'</span><span class="token punctuation">,</span><span class="token comment">#配置返回的相应头的Content-Type,如果浏览器识别不了，就会下载响应体</span>
+        <span class="token string">'TEMPLATES_AUTO_RELOAD'</span><span class="token punctuation">:</span>                <span class="token boolean">None</span><span class="token punctuation">,</span>  <span class="token comment"># 模板改完后会自动加载</span>
+        <span class="token string">'MAX_COOKIE_SIZE'</span><span class="token punctuation">:</span> <span class="token number">4093</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul> <p>​		通过上面的案例我们知道如secret_key、app.debug = True... 当配置文件一多，代码看上去就不整洁，所以我们需要统一配置</p> <ul><li><p><strong>方式一</strong>：字典的添加键值对</p> <div class="language-python extra-class"><pre class="language-python"><code>app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span>config<span class="token punctuation">[</span><span class="token string">'DEBUG'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>  
+
+PS： <span class="token number">1</span>、由于Config对象本质上是字典，所以还可以使用app<span class="token punctuation">.</span>config<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+	 <span class="token number">2</span>、上面的app<span class="token punctuation">.</span>debug<span class="token operator">=</span><span class="token boolean">True</span>的当时不适用于其他参数配置，因为它是通过方法可以设置的，最常用的还是app<span class="token punctuation">.</span>config<span class="token punctuation">[</span><span class="token string">'DEBUG'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>  
+</code></pre></div></li> <li><p><strong>方式二</strong>：添加settings.py</p> <div class="language-python extra-class"><pre class="language-python"><code> <span class="token comment"># 现在项目目录下创建一个settings.py文件，在settings.py文件中</span>
+DEBUG <span class="token operator">=</span> <span class="token boolean">True</span>
+SECRET_KEY <span class="token operator">=</span> <span class="token string">&quot;ASDFSASDF&quot;</span>
+
+ <span class="token comment"># 在app.py文件中导入settings.py的配置</span>
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span>config<span class="token punctuation">.</span>from_pyfile<span class="token punctuation">(</span><span class="token string">'settings.py'</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre></div><ul><li><h5 id="from-pyfile源码"><a href="#from-pyfile源码" class="header-anchor">#</a> from_pyfile源码</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token number">1</span>、先通过传入的字符串，拼接路径，找到相应的文件
+<span class="token number">2</span>、读取文件中的内容，进行编译，添加到config文件中
+	<span class="token keyword">exec</span><span class="token punctuation">(</span><span class="token builtin">compile</span><span class="token punctuation">(</span>config_file<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> filename<span class="token punctuation">,</span> <span class="token string">&quot;exec&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> d<span class="token punctuation">.</span>__dict__<span class="token punctuation">)</span>
+</code></pre></div></li></ul></li> <li><p><strong>方式三</strong>：在settings.py中写类，通过继承实现</p> <div class="language-python extra-class"><pre class="language-python"><code> <span class="token comment"># 在settings.py文件中</span>
+<span class="token keyword">class</span> <span class="token class-name">Config</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    SECRET_KEY <span class="token operator">=</span> <span class="token string">&quot;SDFFDEEEF&quot;</span>
+    DEBUG <span class="token operator">=</span> <span class="token boolean">False</span>
+    TESTING <span class="token operator">=</span> <span class="token boolean">False</span>
+    DATABASE_URI <span class="token operator">=</span> <span class="token string">'sqlite://:memory:'</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ProductionConfig</span><span class="token punctuation">(</span>Config<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    DATABASE_URI <span class="token operator">=</span> <span class="token string">'mysql://user@localhost/foo'</span>
+
+<span class="token keyword">class</span> <span class="token class-name">DevelopmentConfig</span><span class="token punctuation">(</span>Config<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    DEBUG <span class="token operator">=</span> <span class="token boolean">True</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TestingConfig</span><span class="token punctuation">(</span>Config<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    TESTING <span class="token operator">=</span> <span class="token boolean">True</span>
+    
+ <span class="token comment"># 在app中通过.from_object实现启用</span>
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span>config<span class="token punctuation">.</span>from_object<span class="token punctuation">(</span><span class="token string">'settings.TestingConfig'</span><span class="token punctuation">)</span>  <span class="token comment"># 从sys.path开始往下写路径</span>
+</code></pre></div><ul><li><h5 id="from-object源码"><a href="#from-object源码" class="header-anchor">#</a> from_object源码</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token number">1</span>、点击from_object查看源码
+<span class="token keyword">def</span> <span class="token function">from_object</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+   <span class="token keyword">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> string_types<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment">#如果传入的额是字符串</span>
+       obj <span class="token operator">=</span> import_string<span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+   <span class="token keyword">for</span> key <span class="token keyword">in</span> <span class="token builtin">dir</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+       <span class="token keyword">if</span> key<span class="token punctuation">.</span>isupper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">getattr</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> key<span class="token punctuation">)</span>  <span class="token comment"># 反射</span>
+             
+<span class="token number">2</span>、查看import_string ，django也使用过import_string
+   在函数中先进行切割
+   import_name <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>import_name<span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">&quot;:&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;.&quot;</span><span class="token punctuation">)</span>
+   最后返回相应的函数
+   <span class="token keyword">return</span> <span class="token builtin">getattr</span><span class="token punctuation">(</span>module<span class="token punctuation">,</span> obj_name<span class="token punctuation">)</span>
+</code></pre></div></li></ul></li> <li><h5 id="其他导入方式"><a href="#其他导入方式" class="header-anchor">#</a> 其他导入方式</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token number">1</span>、    app<span class="token punctuation">.</span>config<span class="token punctuation">.</span>from_envvar<span class="token punctuation">(</span><span class="token string">&quot;环境变量名称&quot;</span><span class="token punctuation">)</span>
+        环境变量的值为python文件名称名称，内部调用from_pyfile方法
+  
+<span class="token number">2</span>、    app<span class="token punctuation">.</span>config<span class="token punctuation">.</span>from_json<span class="token punctuation">(</span><span class="token string">&quot;json文件名称&quot;</span><span class="token punctuation">)</span>
+        JSON文件名称，必须是json格式，因为内部会执行json<span class="token punctuation">.</span>loads
+ 
+<span class="token number">3</span>、    app<span class="token punctuation">.</span>config<span class="token punctuation">.</span>from_mapping<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'DEBUG'</span><span class="token punctuation">:</span><span class="token boolean">True</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+         字典格式
+    
+PS<span class="token punctuation">:</span> settings<span class="token punctuation">.</span>py文件默认路径要放在程序root_path目录，如果instance_relative_config为<span class="token boolean">True</span>，则就是instance_path目录
+ <span class="token comment">#还记得Flask类中的init函数中的这两个参数就是用来配置root目录的</span>
+</code></pre></div></li></ul> <h2 id="路由系统"><a href="#路由系统" class="header-anchor">#</a> 路由系统</h2> <ul><li><h5 id="路由的写法"><a href="#路由的写法" class="header-anchor">#</a> 路由的写法</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span> <span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> endpoint<span class="token operator">=</span><span class="token string">'login'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'GET'</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>query_string<span class="token punctuation">)</span>  <span class="token comment"># url中的数据都在此</span>
+        <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'login.html'</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span><span class="token keyword">pass</span>
+</code></pre></div></li> <li><h5 id="源码分析"><a href="#源码分析" class="header-anchor">#</a> 源码分析</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token number">1</span>、点击route函数查看源码
+ <span class="token keyword">def</span> <span class="token function">route</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> rule<span class="token punctuation">,</span> <span class="token operator">**</span>options<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment">#rule是路径规则’/‘，其他的都在option中</span>
+       <span class="token keyword">def</span> <span class="token function">decorator</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment">#f为被装饰的函数</span>
+           endpoint <span class="token operator">=</span> options<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token string">&quot;endpoint&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span> <span class="token comment">#删除并获得别名</span>
+           self<span class="token punctuation">.</span>add_url_rule<span class="token punctuation">(</span>rule<span class="token punctuation">,</span> endpoint<span class="token punctuation">,</span> f<span class="token punctuation">,</span> <span class="token operator">**</span>options<span class="token punctuation">)</span> <span class="token comment">#添加匹配规则</span>
+           <span class="token keyword">return</span> f   <span class="token comment">#self还是app </span>
+       <span class="token keyword">return</span> decorator <span class="token comment">#返回了个函数，装饰器,闭包</span>
+    
+ <span class="token comment"># 总结：</span>
+<span class="token number">1</span>、因为给route函数传了参数，且加了括号，也是说直接就返回了decorator函数，此后将被装饰的login当参数f传递给decorator
+
+<span class="token number">2</span>、此时就相当于：
+    <span class="token decorator annotation punctuation">@decorator</span>
+    <span class="token keyword">def</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">pass</span>
+    
+<span class="token number">3</span>、分别在装饰器中获取别名，执行app中的add_url_rule方法，主要还是这里添加路由的对应关系：源码中的一句话
+Basically this example<span class="token punctuation">:</span><span class="token punctuation">:</span>
+            <span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+            <span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">pass</span>
+Is equivalent to the following<span class="token punctuation">:</span><span class="token punctuation">:</span>
+            <span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">pass</span>
+            app<span class="token punctuation">.</span>add_url_rule<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token string">'index'</span><span class="token punctuation">,</span> index<span class="token punctuation">)</span>
+If the view_func <span class="token keyword">is</span> <span class="token keyword">not</span> provided you will need to connect the endpoint
+to a view function like so<span class="token punctuation">:</span>
+            app<span class="token punctuation">.</span>view_functions<span class="token punctuation">[</span><span class="token string">'index'</span><span class="token punctuation">]</span> <span class="token operator">=</span> index
+
+    <span class="token number">3.2</span>：如果没有传入别名：
+    	<span class="token keyword">if</span> endpoint <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>  <span class="token comment"># view_func是我们的视图函数名</span>
+            endpoint <span class="token operator">=</span> _endpoint_from_view_func<span class="token punctuation">(</span>view_func<span class="token punctuation">)</span> <span class="token comment">#帮我们生成别名</span>
+            
+    <span class="token number">3.3</span><span class="token punctuation">:</span>打开_endpoint_from_view_func函数
+  <span class="token keyword">def</span> <span class="token function">_endpoint_from_view_func</span><span class="token punctuation">(</span>view_func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+      <span class="token keyword">return</span> view_func<span class="token punctuation">.</span>__name__  <span class="token comment">#函数名，也就是说，默认的别名就是函数名，如果重名会报错overwriting</span>
+
+  <span class="token comment">#self.view_functions = {}  此字典用户存储视图函数和对应的别名，也是通过它来添加存储对应关系的</span>
+        
+<span class="token number">4</span>、最后返回函数原函数的名字f<span class="token operator">=</span>login
+</code></pre></div><ul><li><h5 id="补习装饰器"><a href="#补习装饰器" class="header-anchor">#</a> 补习装饰器</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">warpper</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'sdfasdf'</span><span class="token punctuation">,</span>f<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> f
+    <span class="token keyword">return</span> inner
+
+<span class="token decorator annotation punctuation">@warpper</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment"># 执行后返回inner，此时将func函数当参数传入f</span>
+<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'1234234'</span><span class="token punctuation">)</span>
+func<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token comment">#sdfasdf &lt;function func at 0x000001F1828B2AE8&gt;</span>
+  <span class="token comment">#1234234</span>
+</code></pre></div></li></ul></li> <li><p>通过研究源码我们可以理解了，最主要的一个函数是add_url_rule()，那么我们可不可以这样写函数？可以的</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">'测试'</span>
+app<span class="token punctuation">.</span>add_url_rule<span class="token punctuation">(</span><span class="token string">'/test'</span><span class="token punctuation">,</span><span class="token string">'n2'</span><span class="token punctuation">,</span>test<span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">#也是可以的</span>
+</code></pre></div></li></ul> <h4 id="路由系统之cbv"><a href="#路由系统之cbv" class="header-anchor">#</a> 路由系统之CBV</h4> <ul><li><h5 id="简单实例cbv的写法"><a href="#简单实例cbv的写法" class="header-anchor">#</a> 简单实例CBV的写法</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> request<span class="token punctuation">,</span> url_for<span class="token punctuation">,</span>views
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span>config<span class="token punctuation">.</span>from_object<span class="token punctuation">(</span><span class="token string">'settings.TestingConfig'</span><span class="token punctuation">)</span> 
+
+<span class="token keyword">def</span> <span class="token function">auth</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'before'</span><span class="token punctuation">)</span>
+        result <span class="token operator">=</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'after'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> result
+    <span class="token keyword">return</span> inner
+
+<span class="token keyword">class</span> <span class="token class-name">IndexView</span><span class="token punctuation">(</span>views<span class="token punctuation">.</span>View<span class="token punctuation">)</span><span class="token punctuation">:</span>
+     methods <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">]</span>
+     decorators <span class="token operator">=</span> <span class="token punctuation">[</span>auth<span class="token punctuation">,</span> <span class="token punctuation">]</span>
+
+     <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+         <span class="token keyword">return</span> <span class="token string">'Index.GET'</span>
+
+     <span class="token keyword">def</span> <span class="token function">post</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+         <span class="token keyword">return</span> <span class="token string">'Index.POST'</span>
+
+app<span class="token punctuation">.</span>add_url_rule<span class="token punctuation">(</span><span class="token string">'/index1'</span><span class="token punctuation">,</span> view_func<span class="token operator">=</span>IndexView<span class="token punctuation">.</span>as_view<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'index1'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># name=endpoint，这里的name相当于别名，和django是有区别的</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+ <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>  
+ <span class="token comment">#带参数的CBV</span>
+<span class="token keyword">class</span> <span class="token class-name">DetailView</span><span class="token punctuation">(</span>views<span class="token punctuation">.</span>MethodView<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    methods <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'POST'</span><span class="token punctuation">,</span><span class="token string">'GET'</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>nid<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment">#将具体的参数写在响应的函数参数中</span>
+        info <span class="token operator">=</span> USERS<span class="token punctuation">.</span>get<span class="token punctuation">(</span>nid<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'detail.html'</span><span class="token punctuation">,</span>info<span class="token operator">=</span>info<span class="token punctuation">)</span>
+
+b_detail<span class="token punctuation">.</span>add_url_rule<span class="token punctuation">(</span><span class="token string">'/detail/&lt;int:nid&gt;'</span><span class="token punctuation">,</span>view_func<span class="token operator">=</span>DetailView<span class="token punctuation">.</span>as_view<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'detail'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+</code></pre></div><ul><li><h5 id="cbv源码分析"><a href="#cbv源码分析" class="header-anchor">#</a> CBV源码分析</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token number">1</span>、进入as_view<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>进入后加载一个view函数：知识加载，as_view结束即返回此函数
+ <span class="token keyword">def</span> <span class="token function">view</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+     self <span class="token operator">=</span> view<span class="token punctuation">.</span>view_class<span class="token punctuation">(</span><span class="token operator">*</span>class_args<span class="token punctuation">,</span> <span class="token operator">**</span>class_kwargs<span class="token punctuation">)</span> <span class="token comment">#view_class就是当前写的类</span>
+     <span class="token keyword">return</span> self<span class="token punctuation">.</span>dispatch_request<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>  <span class="token comment">#同样有dispatch，也就是我们的自定义类中，如果没有，就去继承的MethodView中找，也是使用的反射</span>
+    
+<span class="token number">2</span>、紧接着给view函数赋值__name__<span class="token punctuation">,</span>相当别名，第一个参数name
+<span class="token keyword">if</span> cls<span class="token punctuation">.</span>decorators<span class="token punctuation">:</span>  <span class="token comment">#有装饰器</span>
+     view<span class="token punctuation">.</span>__name__ <span class="token operator">=</span> name  <span class="token comment">#赋值别名</span>
+     view<span class="token punctuation">.</span>__module__ <span class="token operator">=</span> cls<span class="token punctuation">.</span>__module__ 
+     <span class="token keyword">for</span> decorator <span class="token keyword">in</span> cls<span class="token punctuation">.</span>decorators<span class="token punctuation">:</span>
+         view <span class="token operator">=</span> decorator<span class="token punctuation">(</span>view<span class="token punctuation">)</span> <span class="token comment">#将我们写的装饰器一层一层的套在view上</span>
+        
+<span class="token number">3</span>、接着给view添加属性
+view<span class="token punctuation">.</span>view_class <span class="token operator">=</span> cls  <span class="token comment">#将我们写的类赋值给view_class</span>
+view<span class="token punctuation">.</span>__name__ <span class="token operator">=</span> name   <span class="token comment">#别名，传入的</span>
+view<span class="token punctuation">.</span>__doc__ <span class="token operator">=</span> cls<span class="token punctuation">.</span>__doc__
+view<span class="token punctuation">.</span>__module__ <span class="token operator">=</span> cls<span class="token punctuation">.</span>__module__
+view<span class="token punctuation">.</span>methods <span class="token operator">=</span> cls<span class="token punctuation">.</span>methods   <span class="token comment">#去自己写的类中取methods</span>
+view<span class="token punctuation">.</span>provide_automatic_options <span class="token operator">=</span> cls<span class="token punctuation">.</span>provide_automatic_options
+<span class="token keyword">return</span> view   <span class="token comment">#最后将view函数返回</span>
+</code></pre></div><ul><li><p>函数知识补充：</p> <div class="language-python extra-class"><pre class="language-python"><code> <span class="token comment">#函数也可以.属性，一起皆对象</span>
+<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'ok'</span><span class="token punctuation">)</span>
+func<span class="token punctuation">.</span>xxx <span class="token operator">=</span><span class="token number">2</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>func<span class="token punctuation">.</span>xxx<span class="token punctuation">)</span> <span class="token comment">#2</span>
+</code></pre></div></li></ul></li></ul></li> <li><h5 id="一般不继承view-一般继承methodview"><a href="#一般不继承view-一般继承methodview" class="header-anchor">#</a> 一般不继承View，一般继承MethodView</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span>views<span class="token punctuation">,</span>redirect<span class="token punctuation">,</span>url_for  <span class="token comment"># 导入views 基础类</span>
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+
+<span class="token comment"># 定义装饰器</span>
+<span class="token keyword">def</span> <span class="token function">auth_decorator</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'装饰器'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> inner
+
+
+CBV 添加 装饰器 和 指定 请求方法
+<span class="token keyword">class</span> <span class="token class-name">IndexView</span><span class="token punctuation">(</span>views<span class="token punctuation">.</span>MethodView<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    methods <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'POST'</span><span class="token punctuation">,</span><span class="token string">'GET'</span><span class="token punctuation">]</span>      <span class="token comment"># 指定允许的 请求方法</span>
+    decorators <span class="token operator">=</span> <span class="token punctuation">[</span>auth_decorator<span class="token punctuation">]</span> <span class="token comment"># 所有方法都加上 装饰器</span>
+    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> redirect<span class="token punctuation">(</span>url_for<span class="token punctuation">(</span><span class="token string">'home'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">post</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'POST'</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">HomeView</span><span class="token punctuation">(</span>views<span class="token punctuation">.</span>MethodView<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'Home'</span>
+
+app<span class="token punctuation">.</span>add_url_rule<span class="token punctuation">(</span><span class="token string">'/index'</span><span class="token punctuation">,</span>view_func<span class="token operator">=</span>IndexView<span class="token punctuation">.</span>as_view<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'index'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
+app<span class="token punctuation">.</span>add_url_rule<span class="token punctuation">(</span><span class="token string">'/home'</span><span class="token punctuation">,</span>view_func<span class="token operator">=</span>HomeView<span class="token punctuation">.</span>as_view<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'home'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># CBV 只能通过这种方式 </span>
+    <span class="token comment"># view_func = IndexView.as_view(name='index') # 指定 反向解析的name</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul> <h4 id="app-route和app-add-url-rule的参数"><a href="#app-route和app-add-url-rule的参数" class="header-anchor">#</a> @app.route和app.add_url_rule的参数</h4> <h5 id="常见参数总览"><a href="#常见参数总览" class="header-anchor">#</a> 常见参数总览</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">route</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> rule<span class="token punctuation">,</span> <span class="token operator">**</span>options<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">pass</span>  <span class="token comment">#options还有很多</span>
+
+<span class="token number">1</span>、rule<span class="token punctuation">,</span>                       URL规则
+<span class="token number">2</span>、view_func<span class="token punctuation">,</span>                  视图函数名称
+<span class="token number">3</span>、defaults<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>              默认值<span class="token punctuation">,</span>当URL中无参数，函数需要参数时，使用defaults<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'k'</span><span class="token punctuation">:</span><span class="token string">'v'</span><span class="token punctuation">}</span>为函数提供参数
+<span class="token number">4</span>、endpoint<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>              名称，用于反向生成URL，即： url_for<span class="token punctuation">(</span><span class="token string">'名称'</span><span class="token punctuation">)</span>
+<span class="token number">5</span>、methods<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>               允许的请求方式，如：<span class="token punctuation">[</span><span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;POST&quot;</span><span class="token punctuation">]</span>       
+<span class="token number">6</span>、strict_slashes<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>        对URL最后的 <span class="token operator">/</span> 符号是否严格要求，
+<span class="token number">7</span>、redirect_to<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>           重定向到指定地址如@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/index/&lt;int:nid&gt;'</span><span class="token punctuation">,</span>redirect_to<span class="token operator">=</span><span class="token string">'/home/&lt;nid&gt;'</span><span class="token punctuation">)</span>
+<span class="token number">8</span>、subdomain<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>             子域名访问
+</code></pre></div><ul><li><p><strong>小提示</strong>：</p> <div class="language- extra-class"><pre class="language-text"><code>	使用了redirect_to后，浏览器接受的308，永久重定向，也就是根本不会进入视图就进行了重定向，区别于redirect会进入到视图函数
+</code></pre></div></li> <li><p>使用default设置默认参数</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span>DEBUG <span class="token operator">=</span> <span class="token boolean">True</span>
+app<span class="token punctuation">.</span>secret_key <span class="token operator">=</span> <span class="token string">'@WFSFFSdf'</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>endpoint<span class="token operator">=</span><span class="token string">'n1'</span><span class="token punctuation">,</span>defaults<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'nid'</span><span class="token punctuation">:</span><span class="token number">88</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span>nid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token builtin">str</span><span class="token punctuation">(</span>nid<span class="token punctuation">)</span>  <span class="token comment">#页面返回88</span>
+
+<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>将老页面指向新页面使用redirect_to</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/index'</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>endpoint<span class="token operator">=</span><span class="token string">'n1'</span><span class="token punctuation">,</span>redirect_to<span class="token operator">=</span><span class="token string">'/index2'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span>nid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">'公司老页面'</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/index2'</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>endpoint<span class="token operator">=</span><span class="token string">'n2'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">index2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">'公司新页面'</span>
+
+<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>配置子域名</p> <div class="language-python extra-class"><pre class="language-python"><code> <span class="token comment"># 当域名需要解析的时候，会先在本地找域名解析，也就是我们电脑的C:\Windows\System32\drivers\etc\hosts的文件下查找对应关系，要是没有才通过网上的域名解析找对应的ip，下面我们在hosts中添加两条记录，linux的相关配置文件在etc/hosts/</span>
+	<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span>      www<span class="token punctuation">.</span>wanglixing<span class="token punctuation">.</span>com
+	<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span>      admin<span class="token punctuation">.</span>wanglixing<span class="token punctuation">.</span>com
+	<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span> 	   buy<span class="token punctuation">.</span>wanglixing<span class="token punctuation">.</span>com
+ 
+<span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> views<span class="token punctuation">,</span> url_for
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>import_name<span class="token operator">=</span>__name__<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span>config<span class="token punctuation">[</span><span class="token string">'SERVER_NAME'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'wanglixing.com:9000'</span> <span class="token comment"># 配置域名</span>
+
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span> subdomain<span class="token operator">=</span><span class="token string">&quot;admin&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">static_index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Flask supports static subdomains
+    This is available at static.your-domain.tld&quot;&quot;&quot;</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;static.your-domain.tld&quot;</span>
+
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">&quot;/dynamic&quot;</span><span class="token punctuation">,</span> subdomain<span class="token operator">=</span><span class="token string">&quot;&lt;username&gt;&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">username_index</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Dynamic subdomains are also supported
+    Try going to user1.your-domain.tld/dynamic&quot;&quot;&quot;</span>
+    <span class="token keyword">return</span> username <span class="token operator">+</span> <span class="token string">&quot;.your-domain.tld&quot;</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>strict_slashes=None 对URL最后的/符号是否严格要求</p> <div class="language-python extra-class"><pre class="language-python"><code>        <span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/index'</span><span class="token punctuation">,</span>strict_slashes<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>，
+            访问 http<span class="token punctuation">:</span><span class="token operator">//</span>www<span class="token punctuation">.</span>xx<span class="token punctuation">.</span>com<span class="token operator">/</span>index<span class="token operator">/</span> 或 http<span class="token punctuation">:</span><span class="token operator">//</span>www<span class="token punctuation">.</span>xx<span class="token punctuation">.</span>com<span class="token operator">/</span>index均可
+                
+        <span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/index'</span><span class="token punctuation">,</span>strict_slashes<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+            仅访问 http<span class="token punctuation">:</span><span class="token operator">//</span>www<span class="token punctuation">.</span>xx<span class="token punctuation">.</span>com<span class="token operator">/</span>index 
+</code></pre></div></li></ul> <h4 id="使用装饰器进行校验的方法"><a href="#使用装饰器进行校验的方法" class="header-anchor">#</a> 使用装饰器进行校验的方法</h4> <ul><li><p>**方法一：**通过装饰器</p> <div class="language-python extra-class"><pre class="language-python"><code>
+        <span class="token keyword">def</span> <span class="token function">auth</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'before'</span><span class="token punctuation">)</span>
+                result <span class="token operator">=</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'after'</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span> result
+        <span class="token keyword">return</span> inner
+
+        <span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/index.html'</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span><span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>endpoint<span class="token operator">=</span><span class="token string">'index'</span><span class="token punctuation">)</span>
+        <span class="token decorator annotation punctuation">@auth</span>
+        <span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token string">'Index'</span>
+</code></pre></div></li> <li><p>**方法二：**通过CBV内置装饰器</p> <div class="language-python extra-class"><pre class="language-python"><code>        <span class="token keyword">def</span> <span class="token function">auth</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'before'</span><span class="token punctuation">)</span>
+                result <span class="token operator">=</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'after'</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span> result
+        <span class="token keyword">return</span> inner
+
+        <span class="token keyword">class</span> <span class="token class-name">IndexView</span><span class="token punctuation">(</span>views<span class="token punctuation">.</span>View<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            methods <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">]</span>
+            decorators <span class="token operator">=</span> <span class="token punctuation">[</span>auth<span class="token punctuation">,</span> <span class="token punctuation">]</span>
+
+            <span class="token keyword">def</span> <span class="token function">dispatch_request</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Index'</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token string">'Index!'</span>
+
+        app<span class="token punctuation">.</span>add_url_rule<span class="token punctuation">(</span><span class="token string">'/index'</span><span class="token punctuation">,</span> view_func<span class="token operator">=</span>IndexView<span class="token punctuation">.</span>as_view<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'index'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># name=endpoint</span>
+</code></pre></div></li></ul> <h5 id="路由系统、扩展"><a href="#路由系统、扩展" class="header-anchor">#</a> 路由系统、扩展</h5> <ul><li><h5 id="常用的路径参数传递"><a href="#常用的路径参数传递" class="header-anchor">#</a> 常用的路径参数传递</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/user/&lt;变量名字&gt;'</span><span class="token punctuation">)</span>   <span class="token comment"># 表示传入的参数是字符串，默认string，字符串可以接受一切参数，如数字、</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/post/&lt;int:post_id&gt;'</span><span class="token punctuation">)</span>  <span class="token comment"># 表示传入的参数是int</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/post/&lt;float:post_id&gt;'</span><span class="token punctuation">)</span>  <span class="token comment">#表示传入的参数是float</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/post/&lt;path:path&gt;'</span><span class="token punctuation">)</span>     <span class="token comment">#传入的参数是路径</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span> <span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><p>常用路由系统有以上五种，所有的路由系统都是基于一下对应关系来处理：</p> <div class="language- extra-class"><pre class="language-text"><code>DEFAULT_CONVERTERS = {
+    'default':          UnicodeConverter,
+    'string':           UnicodeConverter,
+    'any':              AnyConverter,
+    'path':             PathConverter,
+    'int':              IntegerConverter,
+    'float':            FloatConverter,
+    'uuid':             UUIDConverter,
+}
+</code></pre></div><p>如果没有指定具体的数据类型，那么默认就是使用<code>string</code>数据类型。&lt;字符串&gt;</p></li> <li><p>1、<code>int</code>数据类型只能传递<code>int</code>类型。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/article/&lt;int:id&gt;/'</span><span class="token punctuation">)</span>
+<span class="token comment"># 注意&lt;类型:id&gt;这个后面的id受冒号前面类型的约束</span>
+<span class="token keyword">def</span> <span class="token function">article</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">)</span> 
+    <span class="token keyword">return</span> <span class="token string">'ok'</span>
+</code></pre></div></li> <li><p>2、<code>float</code>数据类型只能传递<code>float</code>类型。</p></li> <li><p>3、<code>path</code>数据类型和<code>string</code>有点类似，都是可以接收任意的字符串，但是<code>path</code>可以接收路径，也就是说可以包含斜杠。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/p/&lt;path:path&gt;'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">path</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token comment"># 输入网址http://127.0.0.1:5000/p/path/aaaa  打印path/aaaa 是把path/aaaa整个看成是一个整体了</span>
+    <span class="token keyword">return</span> <span class="token string">'path ok'</span>
+</code></pre></div></li> <li><p>4、<code>uuid</code>数据类型只能接收符合<code>uuid</code>的字符串。<code>uuid</code>是一个全宇宙都唯一的字符串，一般可以用来作为表的主键。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/u/&lt;uuid:user_id&gt;/'</span><span class="token punctuation">)</span> <span class="token comment"># http://127.0.0.1:5000/u/046d7d41-c809-488e-a517-dd87291e8c4e/</span>
+<span class="token keyword">def</span> <span class="token function">uu</span><span class="token punctuation">(</span>user_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>user_id<span class="token punctuation">)</span> <span class="token comment"># 046d7d41-c809-488e-a517-dd87291e8c4e</span>
+    <span class="token keyword">return</span> <span class="token string">'uuid ok'</span>
+<span class="token keyword">import</span> uuid
+<span class="token keyword">print</span><span class="token punctuation">(</span>uuid<span class="token punctuation">.</span>uuid4<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>6、<code>any</code>数据类型可以在一个<code>url</code>中指定多个路径。例如：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 如果有两个网址：/blog/&lt;id&gt;/  /article/&lt;id&gt;怎么实现一个app.route访问两个url的问题？</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/&lt;any(blog,article):url_path&gt;/&lt;id&gt;/'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">detail</span><span class="token punctuation">(</span>url_path<span class="token punctuation">,</span><span class="token builtin">id</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> url_path <span class="token operator">==</span> <span class="token string">'blog'</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'博客详情：%s'</span> <span class="token operator">%</span> <span class="token builtin">id</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'博客详情：%s'</span> <span class="token operator">%</span> <span class="token builtin">id</span>
+</code></pre></div></li> <li><h5 id="自定义转换器类"><a href="#自定义转换器类" class="header-anchor">#</a> 自定义转换器类</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> views<span class="token punctuation">,</span> url_for
+<span class="token keyword">from</span> werkzeug<span class="token punctuation">.</span>routing <span class="token keyword">import</span> BaseConverter
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>import_name<span class="token operator">=</span>__name__<span class="token punctuation">)</span>
+
+<span class="token comment"># 必须继承BaseConverter</span>
+<span class="token keyword">class</span> <span class="token class-name">RegexConverter</span><span class="token punctuation">(</span>BaseConverter<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;
+    自定义URL匹配正则表达式
+    &quot;&quot;&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token builtin">map</span><span class="token punctuation">,</span> regex<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment">#map表示传入的第一个参数，regex表示我们的规则</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>RegexConverter<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>regex <span class="token operator">=</span> regex
+
+    <span class="token keyword">def</span> <span class="token function">to_python</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        路由匹配时，匹配成功后传递给视图函数中参数的值
+        :param value:
+        :return:
+        &quot;&quot;&quot;</span>
+        <span class="token keyword">return</span> <span class="token builtin">int</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">to_url</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        使用url_for反向生成URL时，传递的参数经过该方法处理，返回的值用于生成URL中的参数
+        :param value:
+        :return:
+        &quot;&quot;&quot;</span>
+        val <span class="token operator">=</span> <span class="token builtin">super</span><span class="token punctuation">(</span>RegexConverter<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>to_url<span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> val
+
+
+<span class="token comment"># 添加到flask中,注册进去</span>
+app<span class="token punctuation">.</span>url_map<span class="token punctuation">.</span>converters<span class="token punctuation">[</span><span class="token string">'regex'</span><span class="token punctuation">]</span> <span class="token operator">=</span> RegexConverter
+
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/index/&lt;regex(&quot;\d+&quot;):nid&gt;'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span>nid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>url_for<span class="token punctuation">(</span><span class="token string">'index'</span><span class="token punctuation">,</span> nid<span class="token operator">=</span><span class="token string">'888'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string">'Index'</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+</code></pre></div></li></ul> <p><strong>自定义URL转换器的方式总结</strong></p> <ol><li><p>实现一个类，继承自<code>BaseConverter</code>。</p></li> <li><p>在自定义的类中，重写<code>regex</code>，也就是这个变量的正则表达式。</p></li> <li><p>将自定义的类，映射到<code>app.url_map.converters</code>上。比如：</p> <div class="language-python extra-class"><pre class="language-python"><code>app<span class="token punctuation">.</span>url_map<span class="token punctuation">.</span>converters<span class="token punctuation">[</span><span class="token string">'tel'</span><span class="token punctuation">]</span> <span class="token operator">=</span> TelephoneConverter
+</code></pre></div></li></ol> <ul><li><p><strong>to_python 和 to_url的作用</strong></p> <div class="language- extra-class"><pre class="language-text"><code>to_python的作用：这个方法的返回值，将会传递到view函数中作为参数。
+
+to_url的作用：这个方法的返回值，将会在调用url_for函数的时候生成符合要求的URL形式。
+</code></pre></div></li> <li><h5 id="举例说明"><a href="#举例说明" class="header-anchor">#</a> 举例说明</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span>url_for
+<span class="token keyword">from</span> werkzeug<span class="token punctuation">.</span>routing <span class="token keyword">import</span> BaseConverter
+
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+
+<span class="token comment"># 一个url中，含有手机号码的变量，必须限定这个变量的字符串格式满足手机号码的格式</span>
+<span class="token keyword">class</span> <span class="token class-name">TelephoneConveter</span><span class="token punctuation">(</span>BaseConverter<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    regex <span class="token operator">=</span> <span class="token string">r'1[85734]\d{9}'</span>
+
+<span class="token comment"># 用户在访问/posts/a+b/ 分别提取a和b两个版块</span>
+<span class="token keyword">class</span> <span class="token class-name">ListConverter</span><span class="token punctuation">(</span>BaseConverter<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">to_python</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># 这个地方的value就是请求地址根据参数类型传进来的值</span>
+        <span class="token keyword">return</span> value<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'+'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">to_url</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+        <span class="token comment"># return &quot;hello&quot;</span>
+
+app<span class="token punctuation">.</span>url_map<span class="token punctuation">.</span>converters<span class="token punctuation">[</span><span class="token string">'tel'</span><span class="token punctuation">]</span> <span class="token operator">=</span> TelephoneConveter
+app<span class="token punctuation">.</span>url_map<span class="token punctuation">.</span>converters<span class="token punctuation">[</span><span class="token string">'list'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ListConverter
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">hello_world</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'='</span><span class="token operator">*</span><span class="token number">30</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>url_for<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">,</span>boards<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># /posts/a+b</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'='</span><span class="token operator">*</span><span class="token number">30</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string">'Hello World!'</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/user/&lt;string:user_id&gt;/'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">user_profile</span><span class="token punctuation">(</span>user_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">'您输入的user_id为：%s'</span> <span class="token operator">%</span> user_id
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/telephone/&lt;tel:my_tel&gt;/'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">my_tel</span><span class="token punctuation">(</span>my_tel<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">'您的手机号码是：%s'</span> <span class="token operator">%</span> my_tel
+
+<span class="token comment"># http://127.0.0.1:5000/posts/a+b</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/posts/&lt;list:boards&gt;/'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">posts</span><span class="token punctuation">(</span>boards<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>boards<span class="token punctuation">)</span> <span class="token comment"># ['a', 'b']</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;您提交的板块是：%s&quot;</span> <span class="token operator">%</span> boards
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul> <h4 id="接收用户传递的参数"><a href="#接收用户传递的参数" class="header-anchor">#</a> 接收用户传递的参数</h4> <ol><li><p>第一种：使用path的形式（将参数嵌入到路径中），就是上面讲的。</p></li> <li><p>第二种：使用查询字符串的方式，就是通过<code>?key=value</code>的形式传递的。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 请求网址：http://127.0.0.1:5000/d/?wd=python</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/d/'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">d</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    wd <span class="token operator">=</span> request<span class="token punctuation">.</span>args<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'wd'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string">'您通过查询字符串的方式传递的参数是：%s'</span> <span class="token operator">%</span> wd
+</code></pre></div></li> <li><p>如果你的这个页面的想要做<code>SEO</code>优化，就是被搜索引擎搜索到，那么推荐使用第一种形式（path的形式）。如果不在乎搜索引擎优化，那么就可以使用第二种（查询字符串的形式）。</p></li></ol> <h2 id="反向解析"><a href="#反向解析" class="header-anchor">#</a> 反向解析</h2> <ul><li><h5 id="url-for的基本使用"><a href="#url-for的基本使用" class="header-anchor">#</a> <code>url_for</code>的基本使用</h5> <p><code>url_for</code>的理解：通常是通过 <code>/</code>来找到视图函数<code>hello_word</code>，<code>url_for</code>的作用就是通过视图函数<code>hello_word</code>来反向的找到<code>/</code>。<code>url_for</code>第一个参数，应该是视图函数的名字的字符串。后面的参数就是传递给<code>url</code>。
+如果传递的参数之前在<code>url</code>中已经定义了，那么这个参数就会被当成<code>path</code>的形式给
+<code>url</code>。如果这个参数之前没有在<code>url</code>中定义，那么将变成查询字符串的形式放到<code>url</code>中。</p> <div class="language-python extra-class"><pre class="language-python"><code>form flask <span class="token keyword">import</span> Flask
+<span class="token keyword">from</span> flask <span class="token keyword">import</span> url_for
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+
+<span class="token comment"># http://127.0.0.1:5000/</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">hello_word</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>url_for<span class="token punctuation">(</span><span class="token string">'list'</span><span class="token punctuation">,</span> page<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># /list/1/</span>
+  <span class="token keyword">return</span> <span class="token string">'Hello World'</span>
+
+<span class="token comment"># http://127.0.0.1:5000/list/</span>
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/list/&lt;page&gt;/'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">list</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  	<span class="token keyword">print</span><span class="token punctuation">(</span>url_for<span class="token punctuation">(</span><span class="token string">'my_list'</span><span class="token punctuation">,</span> page<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> count<span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 构建出来的url：/post/list/2/?count=6</span>
+    <span class="token keyword">return</span> <span class="token string">'list'</span>
+  
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/post/list/&lt;page&gt;/'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">my_list</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">'my list'</span>
+
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+无参数
+    app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span>method<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span><span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>endpoint<span class="token operator">=</span><span class="token string">'login'</span><span class="token punctuation">)</span>
+
+    视图
+        <span class="token keyword">return</span> redirect<span class="token punctuation">(</span>url_for<span class="token punctuation">(</span><span class="token string">'login'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    模板
+        <span class="token operator">&lt;</span>form action<span class="token operator">=</span><span class="token string">'{{url_for(&quot;login&quot;)}}'</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">&gt;</span>
+
+
+有参数
+    app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/index/&lt;int:nid&gt;'</span><span class="token punctuation">,</span>method<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span><span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>endpoint<span class="token operator">=</span><span class="token string">'index'</span><span class="token punctuation">)</span>
+
+    视图
+        <span class="token keyword">return</span> redirect<span class="token punctuation">(</span>url_for<span class="token punctuation">(</span><span class="token string">'index'</span><span class="token punctuation">,</span>nid<span class="token operator">=</span><span class="token number">111</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    模板
+        <span class="token operator">&lt;</span>form action<span class="token operator">=</span><span class="token string">'{{url_for(&quot;index&quot;,nid=111)}}'</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">&gt;</span>
+</code></pre></div></li> <li><h5 id="为什么需要url-for"><a href="#为什么需要url-for" class="header-anchor">#</a> 为什么需要<code>url_for</code></h5> <ul><li><p>将来如果修改了<code>URL</code>，但没有修改该URL对应的函数名，就不用到处去替换URL了。</p></li> <li><p><code>url_for</code>会自动的处理那些特殊的字符，不需要手动去处理。</p> <div class="language-python extra-class"><pre class="language-python"><code>url <span class="token operator">=</span> url_for<span class="token punctuation">(</span><span class="token string">'login'</span><span class="token punctuation">,</span><span class="token builtin">next</span><span class="token operator">=</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+	<span class="token comment"># 会自动的将/编码，不需要手动去处理。</span>
+	<span class="token comment"># url=/login/?next=%2F</span>
+</code></pre></div></li></ul></li></ul> <p><strong>强烈建议以后在使用url的时候，使用<code>url_for</code>来反转url。</strong></p> <h3 id="url中需要注意的点"><a href="#url中需要注意的点" class="header-anchor">#</a> URL中需要注意的点</h3> <ul><li><p><strong>在局域网中让其他电脑访问我的网站</strong></p> <p>如果想在同一个局域网下的其他电脑访问自己电脑上的Flask网站，那么可以设置<code>host='0.0.0.0'</code>才能访问得到。</p> <div class="language-python extra-class"><pre class="language-python"><code>app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">)</span>
+
+指定端口号：
+Flask项目，默认使用`<span class="token number">5000</span>`端口。如果想更换端口，那么可以设置`port<span class="token operator">=</span><span class="token number">9000</span>`。
+</code></pre></div></li> <li><p><strong>url唯一</strong>：在定义url的时候，一定要记得在最后加一个斜杠。</p> <ul><li>如果不加斜杠，那么在浏览器中访问这个url的时候，浏览器会自动加斜杠，那么就访问不到。这样用户体验不太好。</li> <li>搜索引擎会将不加斜杠的和加斜杠的视为两个不同的url。而其实加和不加斜杠的都是同一个url，那么就会给搜索引擎造成一个误解。加了斜杠，就不会出现没有斜杠的情况。</li></ul></li></ul> <h4 id="get请求和post请求"><a href="#get请求和post请求" class="header-anchor">#</a> GET请求和POST请求</h4> <ul><li><p>在网络请求中有许多请求方式，比如：GET、POST、DELETE、PUT请求等。那么最常用的就是<code>GET</code>和<code>POST</code>请求了。</p> <div class="language- extra-class"><pre class="language-text"><code>1. GET请求：只会在服务器上获取资源，不会更改服务器的状态。这种请求方式推荐使用GET请求。
+
+2. `POST`请求：会给服务器提交一些数据或者文件。一般POST请求是会对服务器的状态产生影响，那么这种请求推荐使用POST请求。
+
+3. 关于参数传递：
+   GET请求：把参数放到url中，通过`?xx=xxx`的形式传递的。因为会把参数放到url中，所以如果视力好，一眼就能看到你传递给服务器的参数。这样不太安全。
+   POST请求：把参数放到`Form Data`中。会把参数放到`Form Data`中，避免了被偷瞄的风险，但是如果别人想要偷看你的密码，那么其实可以通过抓包的形式。因为POST请求可以提交一些数据给服务器，比如可以发送文件，那么这就增加了很大的风险。所以POST请求，对于那些有经验的黑客来讲，其实是更不安全的。
+   
+4. 在`Flask`中，`route`方法，默认将只能使用`GET`的方式请求这个url，如果想要设置自己的请求方式，那么应该传递一个`methods`参数。
+</code></pre></div></li></ul> <h4 id="装饰器报错-别名重复原因即解决办法"><a href="#装饰器报错-别名重复原因即解决办法" class="header-anchor">#</a> 装饰器报错/别名重复原因即解决办法</h4> <ul><li><h5 id="常见装饰器报错实例"><a href="#常见装饰器报错实例" class="header-anchor">#</a> 常见装饰器报错实例</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span>render_template
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">war</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        ret <span class="token operator">=</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ret
+    <span class="token keyword">return</span> inner
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token decorator annotation punctuation">@war</span>
+<span class="token keyword">def</span> <span class="token function">home</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">'家目录'</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/index'</span><span class="token punctuation">)</span>
+<span class="token decorator annotation punctuation">@war</span>
+<span class="token keyword">def</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment">#不仅只有在home视图函数名时，装饰器返回的时inner，在没有配置函数别名的时候，默认以函数名为别名，所以报错同名inner</span>
+    <span class="token keyword">return</span> <span class="token string">'家目录'</span>
+
+<span class="token keyword">if</span> __name__  <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+  <span class="token comment">#AssertionError: View function mapping is overwriting an existing endpoint function: inner</span>
+</code></pre></div></li> <li><p>视图函数名重复报错</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">home</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">'家目录'</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/index'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">home</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">'家目录'</span>
+    
+ <span class="token comment">#AssertionError: View function mapping is overwriting an existing endpoint function: home</span>
+</code></pre></div></li> <li><h5 id="两种方法解决"><a href="#两种方法解决" class="header-anchor">#</a> 两种方法解决</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token number">1</span>、在装饰器中使用wrap，使在源码中取__name__时，依旧指向原本函数的名字
+<span class="token keyword">from</span> functools <span class="token keyword">import</span>  wraps
+<span class="token keyword">def</span> <span class="token function">war</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token decorator annotation punctuation">@wraps</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        ret <span class="token operator">=</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ret
+    <span class="token keyword">return</span> inner
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token decorator annotation punctuation">@war</span>
+<span class="token keyword">def</span> <span class="token function">home</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">'家目录'</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/index'</span><span class="token punctuation">)</span>
+<span class="token decorator annotation punctuation">@war</span>
+<span class="token keyword">def</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  
+    <span class="token keyword">return</span> <span class="token string">'家目录'</span>
+
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token number">2</span>、使用别名，在route中添加endpoint
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span>endpoint<span class="token operator">=</span><span class="token string">'n1'</span><span class="token punctuation">)</span>
+<span class="token decorator annotation punctuation">@war</span>
+<span class="token keyword">def</span> <span class="token function">home</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">'家目录'</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/index'</span><span class="token punctuation">,</span>endpoint<span class="token operator">=</span><span class="token string">'n2'</span><span class="token punctuation">)</span>
+<span class="token decorator annotation punctuation">@war</span>
+<span class="token keyword">def</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment">#不仅只有在home视图函数名时，装饰器返回的时inner，在没有配置函数别名的时候，默认以函数名为别名，所以报错同名inner</span>
+    <span class="token keyword">return</span> <span class="token string">'家目录'</span>
+</code></pre></div></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/python/flask/Werkzeug讲解.html" class="prev">
+        Werkzeug 讲解
+      </a></span> <span class="next"><a href="/python/flask/模板、请求与响应.html">
+        模板、请求与响应
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/80.f826f188.js" defer></script>
+  </body>
+</html>

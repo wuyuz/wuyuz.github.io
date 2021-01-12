@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>静态文件和ORM | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/64.a98fe86e.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/103.16474d4b.js"><link rel="prefetch" href="/assets/js/104.ed58aef3.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/11.d4ec37c8.js"><link rel="prefetch" href="/assets/js/110.4144755a.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/34.8448d0fd.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/48.f591f360.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/50.b9ca2762.js"><link rel="prefetch" href="/assets/js/51.93672ee6.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/60.f40ac3ca.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/80.f826f188.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/84.b940927c.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/87.5f9eb9ef.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/94.0ad7c41c.js"><link rel="prefetch" href="/assets/js/95.0e5ce618.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python常用模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Django框架</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/python/django/Web框架本质.html" class="sidebar-link">Web框架本质</a></li><li><a href="/python/django/resquest、模块层.html" class="sidebar-link">resquest、模块层</a></li><li><a href="/python/django/静态文件和ORM.html" class="active sidebar-link">静态文件和ORM</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/python/django/静态文件和ORM.html#静态文件和orm" class="sidebar-link">静态文件和ORM</a></li><li class="sidebar-sub-header"><a href="/python/django/静态文件和ORM.html#静态文件" class="sidebar-link">静态文件</a></li><li class="sidebar-sub-header"><a href="/python/django/静态文件和ORM.html#orm-object-relation-mapping" class="sidebar-link">ORM （Object relation mapping)</a></li></ul></li><li><a href="/python/django/标签、自定义标签.html" class="sidebar-link">模块层之标签、自定义标签</a></li><li><a href="/python/django/模版语法.html" class="sidebar-link">模版语法</a></li><li><a href="/python/django/模型层.html" class="sidebar-link">模型层</a></li><li><a href="/python/django/反向解析和视图函数.html" class="sidebar-link">反向解析和视图函数</a></li><li><a href="/python/django/单表操作.html" class="sidebar-link">单表操作</a></li><li><a href="/python/django/多表操作.html" class="sidebar-link">多表操作</a></li><li><a href="/python/django/中间件.html" class="sidebar-link">中间件</a></li><li><a href="/python/django/模型进阶.html" class="sidebar-link">模型进阶</a></li><li><a href="/python/django/缓存和信号.html" class="sidebar-link">缓存和信号</a></li><li><a href="/python/django/form组件.html" class="sidebar-link">form组件</a></li><li><a href="/python/django/csrf和Ajax.html" class="sidebar-link">csrf和Ajax</a></li><li><a href="/python/django/APIView使用和源码分析.html" class="sidebar-link">APIView使用和源码分析</a></li><li><a href="/python/django/REST framework之版本和解析器.html" class="sidebar-link">REST framework之版本和解析器</a></li><li><a href="/python/django/REST framework之分页和视图组件.html" class="sidebar-link">REST framework之分页和视图组件</a></li><li><a href="/python/django/REST framework之路由和渲染器.html" class="sidebar-link">REST framework之路由和渲染器</a></li><li><a href="/python/django/REST framework之序列化器.html" class="sidebar-link">REST framework之序列化器</a></li><li><a href="/python/django/REST framework版本图书管理系统.html" class="sidebar-link">REST framework版本图书管理系统</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flask 框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python爬虫</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="静态文件和orm"><a href="#静态文件和orm" class="header-anchor">#</a> 静态文件和ORM</h2> <h2 id="静态文件"><a href="#静态文件" class="header-anchor">#</a> 静态文件</h2> <ul><li><p>当我们要在html中引用js、css、img……（静态文件时），就需要进行静态文件的规范并使用。下面我们就讲django的静态文件进行配置</p></li> <li><p><strong>第一步</strong>：在setting进行修改</p> <div class="language-python extra-class"><pre class="language-python"><code>STACIC_URL <span class="token operator">=</span> <span class="token string">'/xxx/'</span> <span class="token comment">#别名随便写，在下面我们拼接后路径后，这个别名就代表下面拼接的路径了，但是前端html、和外界以后都是通过这个别名来访问我们拼接的路径，这样对外就隐藏了我们静态文件的名字。</span>
+
+STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctuation">[</span>
+    os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span><span class="token string">'jingtai'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">#注意别忘了写逗号,第二个参数就是项目中你存放静态文件的文件夹名称（与应用同级）</span>
+<span class="token punctuation">]</span>
+</code></pre></div></li> <li><p><strong>第二步</strong>：具体的使用，在static.html文件中（<strong>第一种方式</strong>）</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/static/css/1.css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>   //引用css文件
+{# <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/jintai/css/1.css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span> 失效#}
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>c1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token punctuation">&gt;</span></span>如果引用了别名，通过jintai引入css，反而不行（失效）<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/static/js/1.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">   <span class="token comment">//引用js文件</span>
+
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>配置URL和视图函数后：</p></li> <li><p><strong>第二种引入方式</strong>：上面，我们通过在setting中设置别名，将所有静态文件路径与之拼接。其实，之前拼接路径的列表可以存储多条路径，这样我们可以实现，讲多个静态文件夹整合在一个别名下，然后通过具体的下一级目录进行拼接查找，即可找到相应的静态文件。下面我们将使用：</p> <p><strong>{% load static %}</strong> 来动态加载别名（常用），也就是说即使你的配置的static的名字随便变化了，此方法会自动找别名</p> <div class="language-html extra-class"><pre class="language-html"><code>{% load static %}
+&lt;img src=&quot;{% static &quot;/images/hi.jpg&quot; %}&quot; alt=&quot;Hi!&quot; /&gt;  //引入img
+
+#引用js文件
+{% load static %}
+&lt;script src=&quot;{% static &quot;/mytest.js&quot; %}&quot;&gt;<span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+#某个文件多处被用到可以存为一个变量，使用as取别名
+{% load static %}
+{% static &quot;/images/hi.jpg&quot; as myphoto %}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{{ myphoto }}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>img</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>修改static.html文件：注意{% load static %} 必须在引用之前就可以</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    {% load static %}
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static &quot;/css/1.css&quot; %}&quot;&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li> <li><p><strong>方式三</strong>: 使用{% get_static_prefix %} 来获取别名前缀，再拼接路径，和第二种方法类似</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    {% load static %}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{% get_static_prefix%}css/1.css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>  //这主意中间没有空格
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+//或则取别名
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    {% load static %}
+    {% get_static_prefix as STATIC_PREFIX %}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{{ STATIC_PREFIX  }}css/1.css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li></ul> <h5 id="多个静态文件的配置和查找顺序"><a href="#多个静态文件的配置和查找顺序" class="header-anchor">#</a> 多个静态文件的配置和查找顺序</h5> <ul><li><p>当我们需要多个静态文件时，需要注意统一的别名只能时static，这个别名代表了所有 你的已经写在列表里（配置）的文件名，相当于给你的静态文件装进一个黑箱中，用的时候django给你取。</p></li> <li><p>静态文件是有执行顺序的，依次查找黑箱中的静态文件，如果我用到一个图片名，多个静态文件都有，此时就会触发最前一个静态文件里的此图片。</p> <p><img src="C:%5CUsers%5Cwanglixing%5CDesktop%5C%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%8D%E4%B9%A0%5CDjango%5Cgif%5C1560306877214.png" alt="1560306877214"></p></li></ul> <hr> <h2 id="orm-object-relation-mapping"><a href="#orm-object-relation-mapping" class="header-anchor">#</a> ORM （Object relation mapping)</h2> <ul><li><p><strong>ORM</strong>，全称是object relation mapping。翻译过来，就是对象关系映射。</p> <p>要知道：再程序开发一个领域可以分为：应用开发人员/数据库管理人员；前者通过编程语言实现应用，而后者是通过sql语句进行数据库操作，那么要求一个应用开发人员去写sql语句，就会显得很吃力，但是我们可以写程序啊，那么ORM就是一个映射数据库的一个模型。</p> <div class="language- extra-class"><pre class="language-text"><code>官方：MVC框架中包括一个重要的部分，就是ORM，它实现了数据模型与数据库的解耦，即数据模型的设计不需要依赖于特定的数据库，通过简单的配置就可以轻松更换数据库，这极大的减轻了开发人员的工作量，不需要面对因数据库变更而导致的无效劳动
+
+ORM是“对象-关系-映射”的简称。（Object Relational Mapping，简称ORM）(将来会学一个sqlalchemy，是和他很像的，但是django的orm没有独立出来让别人去使用，虽然功能比sqlalchemy更强大，但是别人用不了)
+</code></pre></div></li> <li><p><strong>ORM的作用</strong>：</p> <div class="language- extra-class"><pre class="language-text"><code>ORM可以实现不写sql语句，就可以实现操作数据库。
+
+通过pymysql，就是Mysql给Python提供的接口。早期的接口叫mysqldb （python3.4后就没有者模块了）
+</code></pre></div></li> <li><p><strong>ORM的核心</strong>：用python类操作表，用对象操作记录。</p> <div class="language- extra-class"><pre class="language-text"><code>ORM把相应的类和属性操作，转换为sql语句，来操作数据库。它做了一个翻译的过程！学习ORM，就是用什么语法，能翻译成什么样的sql语句。
+</code></pre></div></li> <li><h5 id="orm的优点"><a href="#orm的优点" class="header-anchor">#</a> ORM的优点</h5> <div class="language- extra-class"><pre class="language-text"><code>1.符合python语法。
+
+2.自己写的sql语句，效率不够高。因为它直接传参，就可以使用了。
+
+3. 不需要自己写SQL，对于类的操作，会转换成相应的SQL语句，来操作数据库。(核心功能)
+
+4.它不属于硬编码，它不针对于MySQL。比如公司发展了，需要换成oracle数据库。（可以对多种数据库进行操作）
+	如果项目中的sql语句写死了（或者数据库迁移），那么项目中的所有的sql语句，都得更换。如果用了ORM，只需要改一处，
+直接修改setting.py中的数据库引擎，换成oracle，就可以了。这样，方便数据库迭代，这是它最大的优点。
+</code></pre></div></li> <li><h5 id="orm的缺点"><a href="#orm的缺点" class="header-anchor">#</a> ORM的缺点</h5> <div class="language- extra-class"><pre class="language-text"><code>1.执行效率低。看上图，它是从上层到下层的操作。它有一个翻译的过程。所以不如直接写SQL（原生sql），操作的执行效率低。
+但是影响不大。真遇到这种请情况，优化SQL就可以了。效率问题，跟SQL有很大的关系。
+2、不用担心：ORM还提供了，执行原生SQL的接口。可以直接执行原生SQL。
+</code></pre></div></li> <li><p><strong>建议</strong>：刚开始写ORM时，一定要对应SQL语句，去写ORM</p> <p>从上图中可以知道，class的类属性和字段是对应的。 [decimal(10,2)表示最大长度为10位。小数点2位。那么整数部分，最大只能有8位。]</p> <div class="language- extra-class"><pre class="language-text"><code>            ORM引擎
+python -------   --------&gt; sql
+
+类名                        表名
+属性变量                    字段
+属性值                      约束条件
+
+对象                        一条记录
+
+比如save()，就可以增加一条记录。所以是对象对应一条记录。
+</code></pre></div></li> <li><p>名言警句：</p> <div class="language- extra-class"><pre class="language-text"><code>早期，会经历很多碰壁的过程，这样你就能成长！
+先创建表，分模块来创建表。
+到了写代码的时候，反而是最简单的。
+比如一个商城项目，设计表，梳理流程，花了2个月。写代码，几个星期就完成了。
+</code></pre></div></li></ul> <h5 id="具体操作"><a href="#具体操作" class="header-anchor">#</a> 具体操作</h5> <ul><li><p><strong>第一步</strong>：配置环境：Pycharm的Mysql环境 + setting的数据库配置</p> <ul><li><p>Pycharm的Mysql环境 ：</p></li> <li><p>之后点击Mysql，进入输入连接的库、密码、用户名……（就可以连接了）</p></li> <li><p>设置好Pycharm后，修改setting文件的databases，默认django使用的是sqlite3数据库，我们现在要设置为Mysql数据库。</p> <div class="language-python extra-class"><pre class="language-python"><code>DATABASES <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'default'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">'ENGINE'</span><span class="token punctuation">:</span> <span class="token string">'django.db.backends.mysql'</span><span class="token punctuation">,</span>   <span class="token comment"># 数据库引擎mysql</span>
+        <span class="token string">'NAME'</span><span class="token punctuation">:</span> <span class="token string">'db1'</span><span class="token punctuation">,</span>       <span class="token comment"># 你要存储数据的库名，事先要创建之</span>
+        <span class="token string">'USER'</span><span class="token punctuation">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>      <span class="token comment"># 数据库用户名</span>
+        <span class="token string">'PASSWORD'</span><span class="token punctuation">:</span> <span class="token string">'123'</span><span class="token punctuation">,</span>      <span class="token comment"># 密码</span>
+        <span class="token string">'HOST'</span><span class="token punctuation">:</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span> <span class="token comment"># 主机</span>
+        <span class="token string">'PORT'</span><span class="token punctuation">:</span> <span class="token string">'3306'</span><span class="token punctuation">,</span>      <span class="token comment"># 数据库使用的端口</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>安装pymsql模块：需要安装两个模块</p> <p><strong>首先是注册app</strong>：修改mysite下的settings.py文件里面的**<code>INSTALLED_APPS</code>**,添加自己的项目名字到里面，否则数据库不知道给哪个项目添加表。</p> <div class="language-python extra-class"><pre class="language-python"><code> <span class="token comment">#django连接MySQL，使用的是pymysql模块，必须得安装2个模块。否则后面会创建表不成功！或者提示no module named MySQLdb </span>
+pip3 install pymysql
+pip3 install mysqlclient
+</code></pre></div></li> <li><p>在应用目录下的_<em>init</em>_.py文件中添加以下代码（我们这里是在应用 app文件下，设置的）</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> pymysql
+pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#启动项目，会报错：no module named MySQLdb 。这是因为django默认你导入的驱动是MySQLdb，可是MySQLdb 对于py3有很大问题，所以我们需要的驱动是PyMySQL。（也就是收到设置驱动式mysql）</span>
+</code></pre></div></li></ul></li> <li><p><strong>第二步</strong>：在应用下找到主角---models.py，在里面创建模型</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models
+
+<span class="token keyword">class</span> <span class="token class-name">Book</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment">#注销此类，在makemigrations，再提交就会删除ci'biao</span>
+     <span class="token builtin">id</span><span class="token operator">=</span>models<span class="token punctuation">.</span>AutoField<span class="token punctuation">(</span>primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment"># 如果表里面没有写主键，表里面会自动生成一个自增主键字段，叫做id字段，orm要求每个表里面必须要写一个主键</span>
+     title<span class="token operator">=</span>models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">32</span><span class="token punctuation">)</span>  <span class="token comment"># 和varchar(32)是一样的，32个字符</span>
+     state<span class="token operator">=</span>models<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span><span class="token punctuation">)</span>
+     pub_date<span class="token operator">=</span>models<span class="token punctuation">.</span>DateField<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment"># 必须存这种格式&quot;2018-12-12&quot;</span>
+     price<span class="token operator">=</span>models<span class="token punctuation">.</span>DecimalField<span class="token punctuation">(</span>max_digits<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">,</span>decimal_places<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment"># max_digits最大位数，decimal_places小数部分占多少位</span>
+     publish<span class="token operator">=</span>models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">32</span><span class="token punctuation">)</span>
+<span class="token comment">#ORM没法创建数据库，它只能操作表！  </span>
+</code></pre></div></li> <li><p>接下来要在pycharm的teminal中通过命令创建数据库的表了。有2条命令，分别是：</p> <div class="language-python extra-class"><pre class="language-python"><code>  <span class="token operator">&gt;</span> python manage<span class="token punctuation">.</span>py makemigrations   <span class="token comment">#生成记录，每次修改了models里面的内容或者添加了新的app，新的app里面写了models里面的内容，都要执行这两条,这将在应用migrations文件下生成：0001_initial.py文件，这里面就是记录你本次操作。</span>
+  
+  <span class="token operator">&gt;</span> python manage<span class="token punctuation">.</span>py migrate     <span class="token comment">#执行上面这个语句的记录来创建表，生成的表名字前面会自带应用的名字，例如：你的book表在mysql里面叫做app01_book表,提交执行数据库创建</span>
+</code></pre></div></li> <li><p>关于同步指令的执行简单原理:</p> <div class="language- extra-class"><pre class="language-text"><code>     在执行python manager.py makemigrations 时django 会在相应的 app 的migration文件夹下面生成 一个python脚本文件，在执行 python manager.py migrate 时 django才会生成数据库表，那么django是如何生成数据库表的呢？
+     django是根据 migration下面的脚本文件来生成数据表的
+     每个migration文件夹下面有多个脚本，那么django是如何知道该执行那个文件的呢，django有一张django-migrations表，表中记录了，已经执行的脚本，那么表中没有的就是还没执行的脚本，则执行migrate的时候就只执行表中没有记录的那些脚本。
+      1、有时在执行 migrate 的时候如果发现没有生成相应的表，可以看看在 django-migrations表中看看 脚本是否已经执行了，
+      2、可以删除 django-migrations 表中的记录 和 数据库中相应的 表 ， 然后重新 执行
+</code></pre></div></li> <li><p>通过pycharm提供的功能来执行manage.py相关的指令：</p> <p>在这个终端里，你就可以不用输入：python manage.py -opt了，直接输入：makemigrations/migrate就行了</p></li> <li><p><strong>注意:</strong> 如果想打印orm转换过程中的sql，需要在settings中进行如下配置：</p> <div class="language-python extra-class"><pre class="language-python"><code>  <span class="token comment">#在setting中添加这一段，就会让所有的提交数据库时，出现sql语句</span>
+  LOGGING <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token string">'version'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token string">'disable_existing_loggers'</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span>
+      <span class="token string">'handlers'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          <span class="token string">'console'</span><span class="token punctuation">:</span><span class="token punctuation">{</span>
+              <span class="token string">'level'</span><span class="token punctuation">:</span><span class="token string">'DEBUG'</span><span class="token punctuation">,</span>
+              <span class="token string">'class'</span><span class="token punctuation">:</span><span class="token string">'logging.StreamHandler'</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">'loggers'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          <span class="token string">'django.db.backends'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+              <span class="token string">'handlers'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'console'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token string">'propagate'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+              <span class="token string">'level'</span><span class="token punctuation">:</span><span class="token string">'DEBUG'</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>还有一种可以查看执行时的sql语句</p> <div class="language-python extra-class"><pre class="language-python"><code>  <span class="token keyword">from</span> app01 <span class="token keyword">import</span> models
+  
+  <span class="token keyword">def</span> <span class="token function">add_book</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      book_obj <span class="token operator">=</span> models<span class="token punctuation">.</span>Book<span class="token punctuation">(</span>title<span class="token operator">=</span><span class="token string">'python'</span><span class="token punctuation">,</span>price<span class="token operator">=</span><span class="token number">123</span><span class="token punctuation">,</span>pub_date<span class="token operator">=</span><span class="token string">'2012-12-12'</span><span class="token punctuation">,</span>publish<span class="token operator">=</span><span class="token string">'人民出版社'</span><span class="token punctuation">)</span>
+      book_obj<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> connection  <span class="token comment">#通过这种方式也能查看执行的sql语句</span>
+      <span class="token keyword">print</span><span class="token punctuation">(</span>connection<span class="token punctuation">.</span>queries<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">'ok'</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><h5 id="更多字段和参数"><a href="#更多字段和参数" class="header-anchor">#</a> 更多字段和参数</h5> <ul><li><p>每个字段有一些特有的参数，例如，CharField需要max_length参数来指定<code>VARCHAR</code>数据库字段的大小。还有一些适用于所有字段的通用参数。 这些参数在文档中有详细定义，这里我们只简单介绍一些最常用的。</p></li> <li><h5 id="常用字段"><a href="#常用字段" class="header-anchor">#</a> 常用字段</h5> <div class="language- extra-class"><pre class="language-text"><code>&lt;1&gt; CharField
+        字符串字段, 用于较短的字符串.
+        CharField 要求必须有一个参数 max_length, 用于从数据库层和Django校验层限制该字段所允许的最大字符数.
+ 
+&lt;2&gt; IntegerField
+       #用于保存一个整数.范围是-2147483648 ~ 2147483648
+ 
+&lt;3&gt; FloatField
+        一个浮点数. 必须 提供两个参数:
+         
+        参数    描述
+        max_digits    总位数(不包括小数点和符号)
+        decimal_places    小数位数
+                举例来说, 要保存最大值为 999 (小数点后保存2位),你要这样定义字段:
+                 
+                models.FloatField(..., max_digits=5, decimal_places=2)
+                要保存最大值一百万(小数点后保存10位)的话,你要这样定义:
+                 
+                models.FloatField(..., max_digits=17, decimal_places=10) #max_digits大于等于17就能存储百万以上的数
+                
+                admin 用一个文本框(&lt;input type=&quot;text&quot;&gt;)表示该字段保存的数据.
+ 
+&lt;4&gt; AutoField
+        一个 IntegerField, 添加记录时它会自动增长. 你通常不需要直接使用这个字段;
+        自定义一个主键：my_id=models.AutoField(primary_key=True)
+        如果你不指定主键的话,系统会自动添加一个主键字段到你的 model，也就是id.
+        一个models类中不能有两个AutoField
+ 
+&lt;5&gt; BooleanField
+        A true/false field. admin 用 checkbox 来表示此类字段.
+ 
+&lt;6&gt; TextField
+        一个容量很大的文本字段.
+        admin 用一个 &lt;textarea&gt; (文本区域)表示该字段数据.(一个多行编辑框).
+ 
+&lt;7&gt; EmailField
+        一个带有检查Email合法性的 CharField,不接受 maxlength 参数.
+  
+&lt;8&gt; DateField
+        一个日期字段. 共有下列额外的可选参数:
+        Argument    描述
+        auto_now    当对象被保存时,自动将该字段的值设置为当前时间.通常用于表示 &quot;last-modified&quot; 时间戳.
+        auto_now_add    当对象首次被创建时,自动将该字段的值设置为当前时间.通常用于表示对象创建时间.都是设置为True（仅仅在admin中有意义...)
+ 
+&lt;9&gt; DateTimeField
+         一个日期时间字段. 类似 DateField 支持同样的附加选项.它是继承DateField，也就是说也可以使用auto_now、auto_now_add
+ 
+&lt;10&gt; ImageField
+        类似 FileField, 不过要校验上传对象是否是一个合法图片.#它有两个可选参数:height_field和width_field,
+        如果提供这两个参数,则图片将按提供的高度和宽度规格保存.  
+        
+&lt;11&gt; FileField
+     一个文件上传字段.
+     要求一个必须有的参数: upload_to, 一个用于保存上载文件的本地文件系统路径. 这个路径必须包含 strftime #formatting,
+     该格式将被上载文件的 date/time
+     替换(so that uploaded files don't fill up the given directory).
+     admin 用一个&lt;input type=&quot;file&quot;&gt;部件表示该字段保存的数据(一个文件上传部件) .
+ 
+     注意：在一个 model 中使用 FileField 或 ImageField 需要以下步骤:
+            （1）在你的 settings 文件中, 定义一个完整路径给 MEDIA_ROOT 以便让 Django在此处保存上传文件.
+            (出于性能考虑,这些文件并不保存到数据库.) 定义MEDIA_URL 作为该目录的公共 URL. 要确保该目录对
+             WEB服务器用户帐号是可写的.
+            （2） 在你的 model 中添加 FileField 或 ImageField, 并确保定义了 upload_to 选项,以告诉 Django
+             使用 MEDIA_ROOT 的哪个子目录保存上传文件.你的数据库中要保存的只是文件的路径(相对于 MEDIA_ROOT).
+             出于习惯你一定很想使用 Django 提供的 get_&lt;#fieldname&gt;_url 函数.举例来说,如果你的 ImageField
+             叫作 mug_shot, 你就可以在模板中以 {{ object.#get_mug_shot_url }} 这样的方式得到图像的绝对路径.
+ 
+&lt;12&gt; URLField
+      用于保存 URL. 若 verify_exists 参数为 True (默认), 给定的 URL 会预先检查是否存在( 即URL是否被有效装入且
+      没有返回404响应).
+      admin 用一个 &lt;input type=&quot;text&quot;&gt; 文本框表示该字段保存的数据(一个单行编辑框)
+ 
+&lt;13&gt; NullBooleanField
+       类似 BooleanField, 不过允许 NULL 作为其中一个选项. 推荐使用这个字段而不要用 BooleanField 加 null=True 选项
+       admin 用一个选择框 &lt;select&gt; (三个可选择的值: &quot;Unknown&quot;, &quot;Yes&quot; 和 &quot;No&quot; ) 来表示这种字段数据.
+ 
+&lt;14&gt; SlugField
+       &quot;Slug&quot; 是一个报纸术语. slug 是某个东西的小小标记(短签), 只包含字母,数字,下划线和连字符.#它们通常用于URLs
+       若你使用 Django 开发版本,你可以指定 maxlength. 若 maxlength 未指定, Django 会使用默认长度: 50.  #在
+       以前的 Django 版本,没有任何办法改变50 这个长度.
+       这暗示了 db_index=True.
+       它接受一个额外的参数: prepopulate_from, which is a list of fields from which to auto-#populate
+       the slug, via JavaScript,in the object's admin form: models.SlugField
+       (prepopulate_from=(&quot;pre_name&quot;, &quot;name&quot;))prepopulate_from 不接受 DateTimeFields.
+ 
+&lt;13&gt; XMLField
+        一个校验值是否为合法XML的 TextField,必须提供参数: schema_path, 它是一个用来校验文本的 RelaxNG schema #的文件系统路径.
+ 
+&lt;14&gt; FilePathField
+        可选项目为某个特定目录下的文件名. 支持三个特殊的参数, 其中第一个是必须提供的.
+        参数    描述
+        path    必需参数. 一个目录的绝对文件系统路径. FilePathField 据此得到可选项目.
+        Example: &quot;/home/images&quot;.
+        match    可选参数. 一个正则表达式, 作为一个字符串, FilePathField 将使用它过滤文件名. 
+        注意这个正则表达式只会应用到 base filename 而不是
+        路径全名. Example: &quot;foo.*\.txt^&quot;, 将匹配文件 foo23.txt 却不匹配 bar.txt 或 foo23.gif.
+        recursive可选参数.要么 True 要么 False. 默认值是 False. 是否包括 path 下面的全部子目录.
+        这三个参数可以同时使用.
+        match 仅应用于 base filename, 而不是路径全名. 那么,这个例子:
+        FilePathField(path=&quot;/home/images&quot;, match=&quot;foo.*&quot;, recursive=True)
+        ...会匹配 /home/images/foo.gif 而不匹配 /home/images/foo/bar.gif
+ 
+&lt;15&gt; IPAddressField
+        一个字符串形式的 IP 地址, (i.e. &quot;24.124.1.30&quot;).
+&lt;16&gt; CommaSeparatedIntegerField
+        用于存放逗号分隔的整数值. 类似 CharField, 必须要有maxlength参数.
+</code></pre></div></li></ul></li> <li><h5 id="参数说明"><a href="#参数说明" class="header-anchor">#</a> 参数说明</h5> <div class="language- extra-class"><pre class="language-text"><code>  (1)null  如果为True，Django 将用NULL 来在数据库中存储空值。 默认值是 False.
+   
+  (1)blank    如果为True，该字段允许不填(admin管理表单中，表单允许不填)。默认为False。
+  	要注意，这与 null 不同。null纯粹是数据库范畴的，而 blank 是数据验证范畴的。
+  如果一个字段的blank=True，表单的验证将允许该字段是空值。如果字段的blank=False，该字段就是必填的。
+   
+  (2)default
+  	字段的默认值。可以是一个值或者可调用对象。如果可调用 ，每有新对象被创建它都会被调用，如果你的字段没有设置可以为空，那么将来如果我们后添加一个字段，这个字段就要给一个default值
+   
+  (3)primary_key
+  	如果为True，那么这个字段就是模型的主键。如果你没有指定任何一个字段的primary_key=True，
+  Django 就会自动添加一个IntegerField字段做为主键，所以除非你想覆盖默认的主键行为，
+  否则没必要设置任何一个字段的primary_key=True。
+   
+  (4)unique   如果该值设置为 True, 这个数据字段的值在整张表中必须是唯一的
+   
+  (5)choices   由二元组组成的一个可迭代对象（例如，列表或元组），用来给字段提供选择项。 如果设置了choices ，默认的表单将是一个选择框而不是标准的文本框，&lt;br&gt;而且这个选择框的选项就是choices 中的选项。
+  
+  (6)db_index
+  　　如果db_index=True 则代表着为此字段设置数据库索引。DatetimeField、DateField、TimeField这个三个时间字段，都可以设置如下属性。
+  
+  (7)auto_now_add
+      配置auto_now_add=True，创建数据记录的时候会把当前时间添加到数据库。
+  
+  (8)auto_now
+      配置上auto_now=True，每次更新数据记录的时候会更新该字段，标识这条记录最后一次的修改时间。
+      
+  (9)  db_column           数据库中字段的列名
+  (10) unique_for_date     数据库中字段【日期】部分是否可以建立唯一索引
+  (11) unique_for_month    数据库中字段【月】部分是否可以建立唯一索引
+</code></pre></div></li> <li><h5 id="自定义一个char类型字段"><a href="#自定义一个char类型字段" class="header-anchor">#</a> 自定义一个char类型字段</h5> <div class="language-python extra-class"><pre class="language-python"><code>  <span class="token comment">#自定义有char类型</span>
+  <span class="token keyword">class</span> <span class="token class-name">MyCharField</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Field<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> max_length<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+          self<span class="token punctuation">.</span>max_length <span class="token operator">=</span> max_length
+          <span class="token builtin">super</span><span class="token punctuation">(</span>MyCharField<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>max_length<span class="token operator">=</span>max_length<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+   
+      <span class="token keyword">def</span> <span class="token function">db_type</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> connection<span class="token punctuation">)</span><span class="token punctuation">:</span>
+          <span class="token triple-quoted-string string">&quot;&quot;&quot;
+          限定生成数据库表的字段类型为char，长度为max_length指定的值
+          &quot;&quot;&quot;</span>
+          <span class="token keyword">return</span> <span class="token string">'char(%s)'</span> <span class="token operator">%</span> self<span class="token punctuation">.</span>max_length  <span class="token comment"># 返回的是自己写的名字char(25),这里可以也可以返回return 'varchar(%s)'%self.max_length</span>
+      
+  <span class="token comment">#使用自定义char类型在字段</span>
+  <span class="token keyword">class</span> <span class="token class-name">Class</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token builtin">id</span> <span class="token operator">=</span> models<span class="token punctuation">.</span>AutoField<span class="token punctuation">(</span>primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+      title <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">25</span><span class="token punctuation">)</span>
+      <span class="token comment"># 使用自定义的char类型的字段</span>
+      cname <span class="token operator">=</span> MyCharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">25</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p><strong>Model Meta参数</strong>：</p> <div class="language-python extra-class"><pre class="language-python"><code>  <span class="token keyword">class</span> <span class="token class-name">UserInfo</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      nid <span class="token operator">=</span> models<span class="token punctuation">.</span>AutoField<span class="token punctuation">(</span>primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+      username <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">32</span><span class="token punctuation">)</span>
+   
+      <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+          <span class="token comment"># 数据库中生成的表名称 默认 app名称 + 下划线 + 类名</span>
+          db_table <span class="token operator">=</span> <span class="token string">&quot;table_name&quot;</span>
+   
+          <span class="token comment"># admin中显示的表名称</span>
+          verbose_name <span class="token operator">=</span> <span class="token string">'个人信息'</span>
+   
+          <span class="token comment"># verbose_name加s</span>
+          verbose_name_plural <span class="token operator">=</span> <span class="token string">'所有用户信息'</span>
+   
+          <span class="token comment"># 联合索引 </span>
+          index_together <span class="token operator">=</span> <span class="token punctuation">[</span>
+              <span class="token punctuation">(</span><span class="token string">&quot;pub_date&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;deadline&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>   <span class="token comment"># 应为两个存在的字段</span>
+          <span class="token punctuation">]</span>
+   
+          <span class="token comment"># 联合唯一索引</span>
+          unique_together <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">&quot;driver&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;restaurant&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">)</span>   <span class="token comment"># 应为两个存在的字段</span>
+          
+   <span class="token comment">#补充：配置元信息的重要性？当我们在别的项目中需要使用到我们之前项目的数据库时，知道了数据库密码、接口等还不都，在models中的类默认在执行迁移的时候会生成的项目名_表名，显然和我们数据库中的要使用的表名不一致，会自动创建新表，此时，我们就需要使用元信息了，让我们的表名和数据库中的一致即可。（不需要迁移，就可以使用）       </span>
+</code></pre></div></li> <li><p><strong>使用choices参数</strong>：该参数接收一个可迭代的列表或元组（基本单位为二元组）。如果指定了该参数，在实例化该模型时，该字段只能取选项列表中的值。且需要注意的是这个可选列表的第一个值会被显示，要想显示第二个值，需要使用 <code>get_FOO_display()</code></p> <div class="language-python extra-class"><pre class="language-python"><code>   <span class="token comment">#models.py文件</span>
+  <span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models
+  <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      SHIRT_SIZES <span class="token operator">=</span> <span class="token punctuation">(</span>
+          <span class="token punctuation">(</span><span class="token string">'S'</span><span class="token punctuation">,</span> <span class="token string">'Small'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">(</span><span class="token string">'M'</span><span class="token punctuation">,</span> <span class="token string">'Medium'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">(</span><span class="token string">'L'</span><span class="token punctuation">,</span> <span class="token string">'Large'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span>
+      name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">60</span><span class="token punctuation">)</span>
+      shirt_size <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> choices<span class="token operator">=</span>SHIRT_SIZES<span class="token punctuation">)</span>
+  
+      <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+  <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> p <span class="token operator">=</span> Person<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;Fred Flintstone&quot;</span><span class="token punctuation">,</span> shirt_size<span class="token operator">=</span><span class="token string">&quot;L&quot;</span><span class="token punctuation">)</span>
+  <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> p<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> p<span class="token punctuation">.</span>shirt_size
+  <span class="token string">'L'</span>
+  <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> p<span class="token punctuation">.</span>get_shirt_size_display<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token string">'Large'</span>    
+</code></pre></div></li> <li><p><strong>备注名</strong>：(verbose_name:常用于admin中显示字段)</p> <ul><li><p>除了 <a href="https://docs.djangoproject.com/zh-hans/2.1/ref/models/fields/#django.db.models.ForeignKey" target="_blank" rel="noopener noreferrer"><code>ForeignKey</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> ， <a href="https://docs.djangoproject.com/zh-hans/2.1/ref/models/fields/#django.db.models.ManyToManyField" target="_blank" rel="noopener noreferrer"><code>ManyToManyField</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 和 <a href="https://docs.djangoproject.com/zh-hans/2.1/ref/models/fields/#django.db.models.OneToOneField" target="_blank" rel="noopener noreferrer"><code>OneToOneField</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> ，任何字段类型都接收一个可选的参数 <a href="https://docs.djangoproject.com/zh-hans/2.1/ref/models/fields/#django.db.models.Field.verbose_name" target="_blank" rel="noopener noreferrer"><code>verbose_name</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> ，如果未指定该参数值， Django 会自动使用该字段的属性名作为该参数值，并且把下划线转换为空格。</p> <div class="language- extra-class"><pre class="language-text"><code>first_name = models.CharField(&quot;person's first name&quot;, max_length=30)  #在该例中，备注名为 &quot;person's first name&quot;,这个备注名也就是之前每个字段配置的'verbose_name'，可以查看Field的源码的init,默认在第一个位置上传参
+  
+first_name = models.CharField(max_length=30) # 在该例中：备注名为 &quot;first name&quot;
+</code></pre></div></li> <li><p><a href="https://docs.djangoproject.com/zh-hans/2.1/ref/models/fields/#django.db.models.ForeignKey" target="_blank" rel="noopener noreferrer"><code>ForeignKey</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>, <a href="https://docs.djangoproject.com/zh-hans/2.1/ref/models/fields/#django.db.models.ManyToManyField" target="_blank" rel="noopener noreferrer"><code>ManyToManyField</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> and <a href="https://docs.djangoproject.com/zh-hans/2.1/ref/models/fields/#django.db.models.OneToOneField" target="_blank" rel="noopener noreferrer"><code>OneToOneField</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 接收的第一个参数为模型的类名，后面可以添加一个 <a href="https://docs.djangoproject.com/zh-hans/2.1/ref/models/fields/#django.db.models.Field.verbose_name" target="_blank" rel="noopener noreferrer"><code>verbose_name</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 参数：</p> <div class="language-python extra-class"><pre class="language-python"><code>  poll <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>
+      Poll<span class="token punctuation">,</span>
+      on_delete<span class="token operator">=</span>models<span class="token punctuation">.</span>CASCADE<span class="token punctuation">,</span>
+      verbose_name<span class="token operator">=</span><span class="token string">&quot;the related poll&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span>
+  sites <span class="token operator">=</span> models<span class="token punctuation">.</span>ManyToManyField<span class="token punctuation">(</span>Site<span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">&quot;list of sites&quot;</span><span class="token punctuation">)</span>
+  place <span class="token operator">=</span> models<span class="token punctuation">.</span>OneToOneField<span class="token punctuation">(</span>
+      Place<span class="token punctuation">,</span>
+      on_delete<span class="token operator">=</span>models<span class="token punctuation">.</span>CASCADE<span class="token punctuation">,</span>
+      verbose_name<span class="token operator">=</span><span class="token string">&quot;related place&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span>
+</code></pre></div></li></ul></li> <li><h5 id="多表关系和参数"><a href="#多表关系和参数" class="header-anchor">#</a> 多表关系和参数</h5> <div class="language-python extra-class"><pre class="language-python"><code>  ForeignKey<span class="token punctuation">(</span>ForeignObject<span class="token punctuation">)</span> <span class="token comment"># ForeignObject(RelatedField)</span>
+      to<span class="token punctuation">,</span>                 <span class="token comment"># 要进行关联的表名</span>
+      to_field<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>      <span class="token comment"># 要关联的表中的字段名称</span>
+      on_delete<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>     <span class="token comment"># 当删除关联表中的数据时，当前表与其关联的行的行为</span>
+                          <span class="token operator">-</span> models<span class="token punctuation">.</span>CASCADE，删除关联数据，与之关联也删除
+                          <span class="token operator">-</span> models<span class="token punctuation">.</span>DO_NOTHING，删除关联数据，引发错误IntegrityError
+                          <span class="token operator">-</span> models<span class="token punctuation">.</span>PROTECT，删除关联数据，引发错误ProtectedError
+                          <span class="token operator">-</span> models<span class="token punctuation">.</span>SET_NULL，删除关联数据，与之关联的值设置为null（前提FK字段需要设置为可空）
+                          <span class="token operator">-</span> models<span class="token punctuation">.</span>SET_DEFAULT，删除关联数据，与之关联的值设置为默认值（前提FK字段需要设置默认值）
+                          <span class="token operator">-</span> models<span class="token punctuation">.</span>SET，删除关联数据，
+                                 a<span class="token punctuation">.</span> 与之关联的值设置为指定值，设置：models<span class="token punctuation">.</span>SET<span class="token punctuation">(</span>值<span class="token punctuation">)</span>
+                                 b<span class="token punctuation">.</span> 与之关联的值设置为可执行对象的返回值，设置：models<span class="token punctuation">.</span>SET<span class="token punctuation">(</span>可执行对象<span class="token punctuation">)</span>
+   
+                                      <span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                                          <span class="token keyword">return</span> <span class="token number">10</span>
+   
+                                      <span class="token keyword">class</span> <span class="token class-name">MyModel</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                                          user <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>
+                                              to<span class="token operator">=</span><span class="token string">&quot;User&quot;</span><span class="token punctuation">,</span>
+                                              to_field<span class="token operator">=</span><span class="token string">&quot;id&quot;</span>
+                                              on_delete<span class="token operator">=</span>models<span class="token punctuation">.</span>SET<span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">)</span>
+      related_name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>          <span class="token comment"># 反向操作时，使用的字段名，用于代替 【表名_set】 如： obj.表名_set.all()</span>
+      related_query_name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>    <span class="token comment"># 反向操作时，使用的连接前缀，用于替换【表名】     如： models.UserGroup.objects.filter(表名__字段名=1).values('表名__字段名')</span>
+      limit_choices_to<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>      <span class="token comment"># 在Admin或ModelForm中显示关联数据时，提供的条件：</span>
+                                  <span class="token comment"># 如：</span>
+                          <span class="token operator">-</span> limit_choices_to<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'nid__gt'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span>
+                          <span class="token operator">-</span> limit_choices_to<span class="token operator">=</span><span class="token keyword">lambda</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">'nid__gt'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span>
+   
+                          <span class="token keyword">from</span> django<span class="token punctuation">.</span>db<span class="token punctuation">.</span>models <span class="token keyword">import</span> Q
+                          <span class="token operator">-</span> limit_choices_to<span class="token operator">=</span>Q<span class="token punctuation">(</span>nid__gt<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+                          <span class="token operator">-</span> limit_choices_to<span class="token operator">=</span>Q<span class="token punctuation">(</span>nid<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">|</span> Q<span class="token punctuation">(</span>nid__gt<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+                          <span class="token operator">-</span> limit_choices_to<span class="token operator">=</span><span class="token keyword">lambda</span> <span class="token punctuation">:</span> Q<span class="token punctuation">(</span>Q<span class="token punctuation">(</span>nid<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">|</span> Q<span class="token punctuation">(</span>nid__gt<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> Q<span class="token punctuation">(</span>caption<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">)</span>
+      db_constraint<span class="token operator">=</span><span class="token boolean">True</span>          <span class="token comment"># 是否在数据库中创建外键约束</span>
+      parent_link<span class="token operator">=</span><span class="token boolean">False</span>           <span class="token comment"># 在Admin中是否显示关联数据</span>
+   
+   
+  OneToOneField<span class="token punctuation">(</span>ForeignKey<span class="token punctuation">)</span>
+      to<span class="token punctuation">,</span>                 <span class="token comment"># 要进行关联的表名</span>
+      to_field<span class="token operator">=</span><span class="token boolean">None</span>       <span class="token comment"># 要关联的表中的字段名称</span>
+      on_delete<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>     <span class="token comment"># 当删除关联表中的数据时，当前表与其关联的行的行为</span>
+   
+                          <span class="token comment">###### 对于一对一 ######</span>
+                          <span class="token comment"># 1. 一对一其实就是 一对多 + 唯一索引</span>
+                          <span class="token comment"># 2.当两个类之间有继承关系时，默认会创建一个一对一字段</span>
+                          <span class="token comment"># 如下会在A表中额外增加一个c_ptr_id列且唯一：</span>
+                                  <span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                                      nid <span class="token operator">=</span> models<span class="token punctuation">.</span>AutoField<span class="token punctuation">(</span>primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+                                      part <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+   
+                                  <span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">(</span>C<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                                      <span class="token builtin">id</span> <span class="token operator">=</span> models<span class="token punctuation">.</span>AutoField<span class="token punctuation">(</span>primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+                                      code <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+   
+  ManyToManyField<span class="token punctuation">(</span>RelatedField<span class="token punctuation">)</span>
+      to<span class="token punctuation">,</span>                         <span class="token comment"># 要进行关联的表名</span>
+      related_name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>          <span class="token comment"># 反向操作时，使用的字段名，用于代替 【表名_set】 如： obj.表名_set.all()</span>
+      related_query_name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>    <span class="token comment"># 反向操作时，使用的连接前缀，用于替换【表名】     如： models.UserGroup.objects.filter(表名__字段名=1).values('表名__字段名')</span>
+      limit_choices_to<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>      <span class="token comment"># 在Admin或ModelForm中显示关联数据时，提供的条件：</span>
+                                  <span class="token comment"># 如：</span>
+                                      <span class="token operator">-</span> limit_choices_to<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'nid__gt'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span>
+                                      <span class="token operator">-</span> limit_choices_to<span class="token operator">=</span><span class="token keyword">lambda</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">'nid__gt'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span>
+   
+                                      <span class="token keyword">from</span> django<span class="token punctuation">.</span>db<span class="token punctuation">.</span>models <span class="token keyword">import</span> Q
+                                      <span class="token operator">-</span> limit_choices_to<span class="token operator">=</span>Q<span class="token punctuation">(</span>nid__gt<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+                                      <span class="token operator">-</span> limit_choices_to<span class="token operator">=</span>Q<span class="token punctuation">(</span>nid<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">|</span> Q<span class="token punctuation">(</span>nid__gt<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+                                      <span class="token operator">-</span> limit_choices_to<span class="token operator">=</span><span class="token keyword">lambda</span> <span class="token punctuation">:</span> Q<span class="token punctuation">(</span>Q<span class="token punctuation">(</span>nid<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">|</span> Q<span class="token punctuation">(</span>nid__gt<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> Q<span class="token punctuation">(</span>caption<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">)</span>
+      symmetrical<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>           <span class="token comment"># 仅用于多对多自关联时，symmetrical用于指定内部是否创建反向操作的字段</span>
+                                  <span class="token comment"># 做如下操作时，不同的symmetrical会有不同的可选字段</span>
+                                      models<span class="token punctuation">.</span>BB<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+   
+                                      <span class="token comment"># 可选字段有：code, id, m1</span>
+                                          <span class="token keyword">class</span> <span class="token class-name">BB</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   
+                                          code <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+                                          m1 <span class="token operator">=</span> models<span class="token punctuation">.</span>ManyToManyField<span class="token punctuation">(</span><span class="token string">'self'</span><span class="token punctuation">,</span>symmetrical<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+   
+                                      <span class="token comment"># 可选字段有: bb, code, id, m1</span>
+                                          <span class="token keyword">class</span> <span class="token class-name">BB</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   
+                                          code <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+                                          m1 <span class="token operator">=</span> models<span class="token punctuation">.</span>ManyToManyField<span class="token punctuation">(</span><span class="token string">'self'</span><span class="token punctuation">,</span>symmetrical<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+   
+      through<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>               <span class="token comment"># 自定义第三张表时，使用字段用于指定关系表</span>
+      through_fields<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>        <span class="token comment"># 自定义第三张表时，使用字段用于指定关系表中那些字段做多对多关系表</span>
+                                      <span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models
+   
+                                      <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                                          name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">)</span>
+   
+                                      <span class="token keyword">class</span> <span class="token class-name">Group</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                                          name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">128</span><span class="token punctuation">)</span>
+                                          members <span class="token operator">=</span> models<span class="token punctuation">.</span>ManyToManyField<span class="token punctuation">(</span>
+                                              Person<span class="token punctuation">,</span>
+                                              through<span class="token operator">=</span><span class="token string">'Membership'</span><span class="token punctuation">,</span>
+                                              through_fields<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'group'</span><span class="token punctuation">,</span> <span class="token string">'person'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                          <span class="token punctuation">)</span>
+   
+                                      <span class="token keyword">class</span> <span class="token class-name">Membership</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                                          group <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>Group<span class="token punctuation">,</span> on_delete<span class="token operator">=</span>models<span class="token punctuation">.</span>CASCADE<span class="token punctuation">)</span>
+                                          person <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>Person<span class="token punctuation">,</span> on_delete<span class="token operator">=</span>models<span class="token punctuation">.</span>CASCADE<span class="token punctuation">)</span>
+                                          inviter <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>
+                                              Person<span class="token punctuation">,</span>
+                                              on_delete<span class="token operator">=</span>models<span class="token punctuation">.</span>CASCADE<span class="token punctuation">,</span>
+                                              related_name<span class="token operator">=</span><span class="token string">&quot;membership_invites&quot;</span><span class="token punctuation">,</span>
+                                          <span class="token punctuation">)</span>
+                                          invite_reason <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">64</span><span class="token punctuation">)</span>
+      db_constraint<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>         <span class="token comment"># 是否在数据库中创建外键约束</span>
+      db_table<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>              <span class="token comment"># 默认创建第三张表时，数据库中表的名称</span>
+</code></pre></div></li> <li><h5 id="auto-new-你需要知道的事"><a href="#auto-new-你需要知道的事" class="header-anchor">#</a> auto_new 你需要知道的事</h5> <div class="language-python extra-class"><pre class="language-python"><code>  <span class="token comment">#当需要更新时间的时候，我们尽量通过datetime模块来创建当前时间，并保存或者更新到数据库里面，看下面的分析：</span>
+  假如我们的表结构是这样的
+  
+  <span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      username <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">255</span><span class="token punctuation">,</span> unique<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'用户名'</span><span class="token punctuation">)</span>
+      is_active <span class="token operator">=</span> models<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'激活状态'</span><span class="token punctuation">)</span>
+  
+  <span class="token comment">#那么我们修改用户名和状态可以使用如下两种方法：</span>
+  
+  <span class="token comment">#方法一：update() 批量修改表记录</span>
+  	User<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>update<span class="token punctuation">(</span>username<span class="token operator">=</span><span class="token string">'nick'</span><span class="token punctuation">,</span>is_active<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+  
+  <span class="token comment">#方法二：原始办法，相对慢，因为会重新赋值该记录每个字段值  </span>
+      _t <span class="token operator">=</span> User<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token builtin">id</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+      _t<span class="token punctuation">.</span>username<span class="token operator">=</span><span class="token string">'nick'</span>
+      _t<span class="token punctuation">.</span>is_active<span class="token operator">=</span><span class="token boolean">True</span>
+      _t<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  
+  <span class="token comment">#方法一适合更新一批数据，类似于mysql语句update user set username='nick' where id = 1 </span>
+  <span class="token comment">#方法二适合更新一条数据，也只能更新一条数据，当只有一条数据更新时推荐使用此方法，另外此方法还有一个好处，我们接着往下看</span>
+  
+  具有auto_now属性字段的更新
+  我们通常会给表添加三个默认字段 
+  <span class="token operator">-</span> 自增ID，这个django已经默认加了，就像上边的建表语句，虽然只写了username和is_active两个字段，但表建好后也会有一个默认的自增<span class="token builtin">id</span>字段 
+  <span class="token operator">-</span> 创建时间，用来标识这条记录的创建时间，具有auto_now_add属性，创建记录时会自动填充当前时间到此字段 
+  <span class="token operator">-</span> 修改时间，用来标识这条记录最后一次的修改时间，具有auto_now属性，当记录发生变化时填充当前时间到此字段
+  
+  就像下边这样的表结构：
+  <span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      create_time <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>auto_now_add<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'创建时间'</span><span class="token punctuation">)</span>
+      update_time <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>auto_now<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'更新时间'</span><span class="token punctuation">)</span>
+      username <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">255</span><span class="token punctuation">,</span> unique<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'用户名'</span><span class="token punctuation">)</span>
+      is_active <span class="token operator">=</span> models<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'激活状态'</span><span class="token punctuation">)</span>
+  
+  当表有字段具有auto_now属性且你希望他能自动更新时，必须使用上边方法二的更新，不然auto_now字段不会更新，也就是：
+  
+  _t <span class="token operator">=</span> User<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token builtin">id</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+  _t<span class="token punctuation">.</span>username<span class="token operator">=</span><span class="token string">'nick'</span>
+  _t<span class="token punctuation">.</span>is_active<span class="token operator">=</span><span class="token boolean">True</span>
+  _t<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  
+  json<span class="token operator">/</span><span class="token builtin">dict</span>类型数据更新字段
+  目前主流的web开放方式都讲究前后端分离，分离之后前后端交互的数据格式大都用通用的jason型，那么如何用最少的代码方便的更新json格式数据到数据库呢？同样可以使用如下两种方法：
+  
+  方法一：
+      data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'username'</span><span class="token punctuation">:</span><span class="token string">'nick'</span><span class="token punctuation">,</span><span class="token string">'is_active'</span><span class="token punctuation">:</span><span class="token string">'0'</span><span class="token punctuation">}</span>
+      User<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token operator">**</span>data<span class="token punctuation">)</span>
+  
+  同样这种方法不能自动更新具有auto_now属性字段的值
+  通常我们再变量前加一个星号<span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span>表示这个变量是元组<span class="token operator">/</span>列表，加两个星号表示这个参数是字典
+  方法二：
+      data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'username'</span><span class="token punctuation">:</span><span class="token string">'nick'</span><span class="token punctuation">,</span><span class="token string">'is_active'</span><span class="token punctuation">:</span><span class="token string">'0'</span><span class="token punctuation">}</span>
+      _t <span class="token operator">=</span> User<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token builtin">id</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+      _t<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token operator">**</span>data<span class="token punctuation">)</span>
+      _t<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  
+  方法二和方法一同样无法自动更新auto_now字段的值
+  注意这里使用到了一个__dict__方法
+  方法三：
+      _t <span class="token operator">=</span> User<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token builtin">id</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+      _t<span class="token punctuation">.</span>role<span class="token operator">=</span>Role<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token builtin">id</span><span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+      _t<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><h5 id="附orm与数据库-sql-实际字段对应关系"><a href="#附orm与数据库-sql-实际字段对应关系" class="header-anchor">#</a> 附ORM与数据库（sql）实际字段对应关系</h5> <div class="language- extra-class"><pre class="language-text"><code>	'AutoField': 	  				'integer AUTO_INCREMENT',
+    'BigAutoField':					'bigint AUTO_INCREMENT',
+    'BinaryField': 					'longblob',
+    'BooleanField': 				'bool',
+    'CharField': 					'varchar(%(max_length)s)',
+    'CommaSeparatedIntegerField': 	'varchar(%(max_length)s)',
+    'DateField': 					'date',
+    'DateTimeField': 				'datetime',
+    'DecimalField': 				'numeric(%(max_digits)s, %(decimal_places)s)',
+    'DurationField': 				'bigint',
+    'FileField': 					'varchar(%(max_length)s)',
+    'FilePathField': 				'varchar(%(max_length)s)',
+    'FloatField': 					'double precision',
+    'IntegerField': 				'integer',
+    'BigIntegerField':				'bigint',
+    'IPAddressField': 				'char(15)',
+    'GenericIPAddressField': 		'char(39)',
+    'NullBooleanField': 			'bool',
+    'OneToOneField': 				'integer',
+    'PositiveIntegerField': 		'integer UNSIGNED',
+    'PositiveSmallIntegerField': 	'smallint UNSIGNED',
+    'SlugField': 					'varchar(%(max_length)s)',
+    'SmallIntegerField': 			'smallint',
+    'TextField': 					'longtext',
+    'TimeField': 					'time',
+    'UUIDField': 					'char(32)',
+</code></pre></div></li> <li><h5 id="注意"><a href="#注意" class="header-anchor">#</a> 注意</h5> <div class="language- extra-class"><pre class="language-text"><code>我们通过与mysql建立连接，操作mysql数据时，其实是创建了一个临时对话框，就比如我们通过Pycharm来操作数据库（migrate操作等时，会打印一个警告：
+</code></pre></div><p>这涉及到mysql的sql_mode设置的相关知识：<a href="https://www.cnblogs.com/clschao/articles/9962347.html" target="_blank" rel="noopener noreferrer">详细解释<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language- extra-class"><pre class="language-text"><code> sql_mode是个很容易被忽视的变量,默认值是空值,在这种设置下是可以允许一些非法操作的,比如允许一些非法数据的插入。在生产环境必须将这个值设置为严格模式,所以开发、测试环境的数据库也必须要设置,这样在开发测试阶段就可以发现问题.
+ 
+ sql model 常用来解决下面几类问题：
+　　(1) 通过设置sql mode, 可以完成不同严格程度的数据校验，有效地保障数据准备性。
+
+　　(2) 通过设置sql model 为宽松模式，来保证大多数sql符合标准的sql语法，这样应用在不同数据库之间进行迁移时，则不需要对业务sql 进行较大的修改。
+
+　　(3) 在不同数据库之间进行数据迁移之前，通过设置SQL Mode 可以使MySQL 上的数据更方便地迁移到目标数据库中。
+　　
+解决模式设置和修改(以解决上述问题为例)：
+	方式一：先执行select @@sql_mode,复制查询出来的值并将其中的NO_ZERO_IN_DATE,NO_ZERO_DATE删除，然后执行set sql_mode = '修改后的值'或者set session sql_mode='修改后的值';，例如：set session sql_mode='STRICT_TRANS_TABLES';改为严格模式
+        此方法只在当前会话中生效，关闭当前会话就不生效了。
+
+    方式二：先执行select @@global.sql_mode,复制查询出来的值并将其中的NO_ZERO_IN_DATE,NO_ZERO_DATE删除，然后执行set global sql_mode = '修改后的值'。
+        此方法在当前服务中生效，重新MySQL服务后失效
+
+ 
+    方法三：在mysql的安装目录下，或my.cnf文件(windows系统是my.ini文件)，新增 sql_mode = ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION，
+        添加my.cnf如下：
+        [mysqld]
+        sql_mode=ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER
+        然后重启mysql。从方法永久有效
+</code></pre></div><ul><li><p>在Django中也可以通过设置数据库配置来完成解决上述问题：setting中</p> <div class="language-python extra-class"><pre class="language-python"><code>DATABASES <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'default'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">'ENGINE'</span><span class="token punctuation">:</span> <span class="token string">'django.db.backends.mysql'</span><span class="token punctuation">,</span>
+        <span class="token string">'NAME'</span><span class="token punctuation">:</span> <span class="token string">'mxshop'</span><span class="token punctuation">,</span>
+        <span class="token string">'HOST'</span><span class="token punctuation">:</span> <span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>
+        <span class="token string">'PORT'</span><span class="token punctuation">:</span> <span class="token string">'3306'</span><span class="token punctuation">,</span>
+        <span class="token string">'USER'</span><span class="token punctuation">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+        <span class="token string">'PASSWORD'</span><span class="token punctuation">:</span> <span class="token string">'123'</span><span class="token punctuation">,</span>
+        <span class="token string">'OPTIONS'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>  <span class="token comment">#设置严格模式</span>
+            <span class="token string">&quot;init_command&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;SET default_storage_engine='INNODB'&quot;</span><span class="token punctuation">,</span>
+　　　　　　　<span class="token comment">#'init_command': &quot;SET sql_mode='STRICT_TRANS_TABLES'&quot;,</span>
+
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+DATABASES<span class="token punctuation">[</span><span class="token string">'default'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'OPTIONS'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'init_command'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;SET sql_mode='STRICT_TRANS_TABLES'&quot;</span>
+</code></pre></div></li></ul></li></ul> <h4 id="orm-操作"><a href="#orm-操作" class="header-anchor">#</a> ORM 操作</h4> <ul><li><p><strong>基本操作</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 增</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>create<span class="token punctuation">(</span>c1<span class="token operator">=</span><span class="token string">'xx'</span><span class="token punctuation">,</span> c2<span class="token operator">=</span><span class="token string">'oo'</span><span class="token punctuation">)</span>   <span class="token comment"># 增加一条数据，可以接受字典类型数据 **kwargs</span>
+
+obj <span class="token operator">=</span> models<span class="token punctuation">.</span>Tb1<span class="token punctuation">(</span>c1<span class="token operator">=</span><span class="token string">'xx'</span><span class="token punctuation">,</span> c2<span class="token operator">=</span><span class="token string">'oo'</span><span class="token punctuation">)</span>  <span class="token comment">#法二</span>
+obj<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+ 
+<span class="token comment"># 查</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token builtin">id</span><span class="token operator">=</span><span class="token number">123</span><span class="token punctuation">)</span>  <span class="token comment"># 获取单条数据，不存在则报错（不建议）</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 获取全部</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'seven'</span><span class="token punctuation">)</span>  <span class="token comment"># 获取指定条件的数据</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>exclude<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'seven'</span><span class="token punctuation">)</span>  <span class="token comment"># 去除指定条件的数据</span>
+ 
+ 
+<span class="token comment"># 删</span>
+<span class="token comment"># models.Tb1.objects.filter(name='seven').delete()  # 删除指定条件的数据</span>
+ 
+ 
+<span class="token comment"># 改</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'seven'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>update<span class="token punctuation">(</span>gender<span class="token operator">=</span><span class="token string">'0'</span><span class="token punctuation">)</span>   <span class="token comment"># 将指定条件的数据更新，均支持 **kwargs</span>
+
+obj <span class="token operator">=</span> models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token builtin">id</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+obj<span class="token punctuation">.</span>c1 <span class="token operator">=</span> <span class="token string">'111'</span>
+obj<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment"># 修改单条数据</span>
+
+
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>进阶<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token comment"># 获取个数</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'seven'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 大于，小于</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>id__gt<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>               <span class="token comment"># 获取id大于1的值</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>id__gte<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>              <span class="token comment"># 获取id大于等于1的值</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>id__lt<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>              <span class="token comment"># 获取id小于10的值</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>id__lte<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>             <span class="token comment"># 获取id小于10的值</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>id__lt<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> id__gt<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>    <span class="token comment"># 获取id大于1 且 小于10的值</span>
+
+<span class="token comment"># 成员判断in</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>id__in<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment"># 获取id等于11、22、33的数据</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>exclude<span class="token punctuation">(</span>id__in<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># not in</span>
+
+<span class="token comment"># 是否为空 isnull</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>pub_date__isnull<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 包括contains</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>name__contains<span class="token operator">=</span><span class="token string">&quot;ven&quot;</span><span class="token punctuation">)</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>name__icontains<span class="token operator">=</span><span class="token string">&quot;ven&quot;</span><span class="token punctuation">)</span> <span class="token comment"># icontains大小写不敏感</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>exclude<span class="token punctuation">(</span>name__icontains<span class="token operator">=</span><span class="token string">&quot;ven&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 范围range</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>id__range<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment"># 范围bettwen and</span>
+
+<span class="token comment"># 其他类似</span>
+startswith，istartswith<span class="token punctuation">,</span> endswith<span class="token punctuation">,</span> iendswith<span class="token punctuation">,</span>
+
+<span class="token comment"># 排序order by</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'seven'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>order_by<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span>    <span class="token comment"># asc</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'seven'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>order_by<span class="token punctuation">(</span><span class="token string">'-id'</span><span class="token punctuation">)</span>   <span class="token comment"># desc</span>
+
+<span class="token comment"># 分组group by</span>
+<span class="token keyword">from</span> django<span class="token punctuation">.</span>db<span class="token punctuation">.</span>models <span class="token keyword">import</span> Count<span class="token punctuation">,</span> Min<span class="token punctuation">,</span> Max<span class="token punctuation">,</span> Sum
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>c1<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>annotate<span class="token punctuation">(</span>c<span class="token operator">=</span>Count<span class="token punctuation">(</span><span class="token string">'num'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#SELECT &quot;app01_tb1&quot;.&quot;id&quot;, COUNT(&quot;app01_tb1&quot;.&quot;num&quot;) AS &quot;c&quot; FROM &quot;app01_tb1&quot; WHERE &quot;app01_tb1&quot;.&quot;c1&quot; = 1 GROUP BY &quot;app01_tb1&quot;.&quot;id&quot;   筛选出c1=1的按照id进行分组，最后求出有多少个'num'</span>
+
+<span class="token comment"># limit 、offset</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">:</span><span class="token number">20</span><span class="token punctuation">]</span>
+
+<span class="token comment"># regex正则匹配，iregex 不区分大小写</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>title__regex<span class="token operator">=</span><span class="token string">r'^(An?|The) +'</span><span class="token punctuation">)</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>title__iregex<span class="token operator">=</span><span class="token string">r'^(an?|the) +'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># date</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>pub_date__date<span class="token operator">=</span>datetime<span class="token punctuation">.</span>date<span class="token punctuation">(</span><span class="token number">2005</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>pub_date__date__gt<span class="token operator">=</span>datetime<span class="token punctuation">.</span>date<span class="token punctuation">(</span><span class="token number">2005</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># year</span>
+models<span class="token punctuation">.</span>Tb1objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>pub_date__year<span class="token operator">=</span><span class="token number">2005</span><span class="token punctuation">)</span>
+models<span class="token punctuation">.</span>Tb1objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>pub_date__year__gte<span class="token operator">=</span><span class="token number">2005</span><span class="token punctuation">)</span>
+
+<span class="token comment"># month</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>pub_date__month<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>pub_date__month__gte<span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">)</span>
+
+<span class="token comment"># day</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>pub_date__day<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>pub_date__day__gte<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+
+<span class="token comment"># week_day</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>pub_date__week_day<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>pub_date__week_day__gte<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token comment"># hour</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>timestamp__hour<span class="token operator">=</span><span class="token number">23</span><span class="token punctuation">)</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>time__hour<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>timestamp__hour__gte<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+
+<span class="token comment"># minute</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>timestamp__minute<span class="token operator">=</span><span class="token number">29</span><span class="token punctuation">)</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>time__minute<span class="token operator">=</span><span class="token number">46</span><span class="token punctuation">)</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>timestamp__minute__gte<span class="token operator">=</span><span class="token number">29</span><span class="token punctuation">)</span>
+
+<span class="token comment"># second</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>timestamp__second<span class="token operator">=</span><span class="token number">31</span><span class="token punctuation">)</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>time__second<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+models<span class="token punctuation">.</span>Tb1<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>timestamp__second__gte<span class="token operator">=</span><span class="token number">31</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><h5 id="高级操作"><a href="#高级操作" class="header-anchor">#</a> 高级操作</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># extra</span>
+<span class="token comment"># 在QuerySet的基础上继续执行子语句：</span>
+extra<span class="token punctuation">(</span>self<span class="token punctuation">,</span> select<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> where<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> params<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> tables<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> order_by<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> select_params<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+
+<span class="token comment"># select和select_params是一组，where和params是一组，tables用来设置from哪个表</span>
+Entry<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>extra<span class="token punctuation">(</span>select<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'new_id'</span><span class="token punctuation">:</span> <span class="token string">&quot;select col from sometable where othercol &gt; %s&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span> select_params<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+Entry<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>extra<span class="token punctuation">(</span>where<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'headline=%s'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> params<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'Lennon'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+Entry<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>extra<span class="token punctuation">(</span>where<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;foo='a' OR bar = 'a'&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;baz = 'a'&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+Entry<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>extra<span class="token punctuation">(</span>select<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'new_id'</span><span class="token punctuation">:</span> <span class="token string">&quot;select id from tb where id &gt; %s&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span> select_params<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">,</span> order_by<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'-nid'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment">#举个例子：</span>
+models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>extra<span class="token punctuation">(</span>
+                    select<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'newid'</span><span class="token punctuation">:</span><span class="token string">'select count(1) from app01_usertype where id&gt;%s'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    select_params<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    where <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'age&gt;%s'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    params<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    order_by<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'-age'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    tables<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'app01_usertype'</span><span class="token punctuation">]</span>
+                <span class="token punctuation">)</span>
+                <span class="token triple-quoted-string string">&quot;&quot;&quot;
+                select 
+                    app01_userinfo.id,
+                    (select count(1) from app01_usertype where id&gt;1) as newid
+                from app01_userinfo,app01_usertype
+                where 
+                    app01_userinfo.age &gt; 18
+                order by 
+                    app01_userinfo.age desc
+                &quot;&quot;&quot;</span>
+
+
+<span class="token comment"># 执行原生SQL</span>
+<span class="token comment"># 更高灵活度的方式执行原生SQL语句</span>
+<span class="token comment"># from django.db import connection, connections</span>
+<span class="token comment"># cursor = connection.cursor()  # cursor = connections['default'].cursor()</span>
+<span class="token comment"># cursor.execute(&quot;&quot;&quot;SELECT * from auth_user where id = %s&quot;&quot;&quot;, [1])</span>
+<span class="token comment"># row = cursor.fetchone()</span>
+</code></pre></div></li> <li><p>QuerySet相关方法</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">##################################################################</span>
+<span class="token comment"># PUBLIC METHODS THAT ALTER ATTRIBUTES AND RETURN A NEW QUERYSET #</span>
+<span class="token comment">##################################################################</span>
+
+<span class="token keyword">def</span> <span class="token function">all</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+    <span class="token comment"># 获取所有的数据对象</span>
+
+<span class="token keyword">def</span> <span class="token function">filter</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+    <span class="token comment"># 条件查询</span>
+    <span class="token comment"># 条件可以是：参数，字典，Q</span>
+
+<span class="token keyword">def</span> <span class="token function">exclude</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+    <span class="token comment"># 条件查询</span>
+    <span class="token comment"># 条件可以是：参数，字典，Q</span>
+
+<span class="token keyword">def</span> <span class="token function">select_related</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>fields<span class="token punctuation">)</span>
+    性能相关：表之间进行join连表操作，一次性获取关联的数据。
+
+    总结：
+    <span class="token number">1</span><span class="token punctuation">.</span> select_related主要针一对一和多对一关系进行优化。
+    <span class="token number">2</span><span class="token punctuation">.</span> select_related使用SQL的JOIN语句进行优化，通过减少SQL查询的次数来进行优化、提高性能。
+
+<span class="token keyword">def</span> <span class="token function">prefetch_related</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>lookups<span class="token punctuation">)</span>
+    性能相关：多表连表操作时速度会慢，使用其执行多次SQL查询在Python代码中实现连表操作。
+
+    总结：
+    <span class="token number">1</span><span class="token punctuation">.</span> 对于多对多字段（ManyToManyField）和一对多字段，可以使用prefetch_related<span class="token punctuation">(</span><span class="token punctuation">)</span>来进行优化。
+    <span class="token number">2</span><span class="token punctuation">.</span> prefetch_related<span class="token punctuation">(</span><span class="token punctuation">)</span>的优化方式是分别查询每个表，然后用Python处理他们之间的关系。
+
+<span class="token keyword">def</span> <span class="token function">annotate</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+    <span class="token comment"># 用于实现聚合group by查询</span>
+
+    <span class="token keyword">from</span> django<span class="token punctuation">.</span>db<span class="token punctuation">.</span>models <span class="token keyword">import</span> Count<span class="token punctuation">,</span> Avg<span class="token punctuation">,</span> Max<span class="token punctuation">,</span> Min<span class="token punctuation">,</span> Sum
+
+    v <span class="token operator">=</span> models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token string">'u_id'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>annotate<span class="token punctuation">(</span>uid<span class="token operator">=</span>Count<span class="token punctuation">(</span><span class="token string">'u_id'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># SELECT u_id, COUNT(ui) AS `uid` FROM UserInfo GROUP BY u_id</span>
+
+    v <span class="token operator">=</span> models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token string">'u_id'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>annotate<span class="token punctuation">(</span>uid<span class="token operator">=</span>Count<span class="token punctuation">(</span><span class="token string">'u_id'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>uid__gt<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token comment"># SELECT u_id, COUNT(ui_id) AS `uid` FROM UserInfo GROUP BY u_id having count(u_id) &gt; 1</span>
+
+    v <span class="token operator">=</span> models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token string">'u_id'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>annotate<span class="token punctuation">(</span>uid<span class="token operator">=</span>Count<span class="token punctuation">(</span><span class="token string">'u_id'</span><span class="token punctuation">,</span>distinct<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>uid__gt<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token comment"># SELECT u_id, COUNT( DISTINCT ui_id) AS `uid` FROM UserInfo GROUP BY u_id having count(u_id) &gt; 1</span>
+
+<span class="token keyword">def</span> <span class="token function">distinct</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>field_names<span class="token punctuation">)</span>
+    <span class="token comment"># 用于distinct去重</span>
+    models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token string">'nid'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>distinct<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># select distinct nid from userinfo</span>
+
+    注：只有在PostgreSQL中才能使用distinct进行去重
+
+<span class="token keyword">def</span> <span class="token function">order_by</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>field_names<span class="token punctuation">)</span>
+    <span class="token comment"># 用于排序</span>
+    models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>order_by<span class="token punctuation">(</span><span class="token string">'-id'</span><span class="token punctuation">,</span><span class="token string">'age'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">extra</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> select<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> where<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> params<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> tables<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> order_by<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> select_params<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+    <span class="token comment"># 构造额外的查询条件或者映射，如：子查询</span>
+
+    Entry<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>extra<span class="token punctuation">(</span>select<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'new_id'</span><span class="token punctuation">:</span> <span class="token string">&quot;select col from sometable where othercol &gt; %s&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span> select_params<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    Entry<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>extra<span class="token punctuation">(</span>where<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'headline=%s'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> params<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'Lennon'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    Entry<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>extra<span class="token punctuation">(</span>where<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;foo='a' OR bar = 'a'&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;baz = 'a'&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    Entry<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>extra<span class="token punctuation">(</span>select<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'new_id'</span><span class="token punctuation">:</span> <span class="token string">&quot;select id from tb where id &gt; %s&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span> select_params<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">,</span> order_by<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'-nid'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+ <span class="token keyword">def</span> <span class="token function">reverse</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 倒序</span>
+    models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>order_by<span class="token punctuation">(</span><span class="token string">'-nid'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reverse<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># 注：如果存在order_by，reverse则是倒序，如果多个排序则一一倒序</span>
+
+
+ <span class="token keyword">def</span> <span class="token function">defer</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>fields<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>defer<span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span><span class="token string">'id'</span><span class="token punctuation">)</span>
+    或
+    models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">.</span>defer<span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span><span class="token string">'id'</span><span class="token punctuation">)</span>
+    <span class="token comment">#映射中排除某列数据</span>
+
+ <span class="token keyword">def</span> <span class="token function">only</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>fields<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment">#仅取某个表中的数据</span>
+     models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>only<span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span><span class="token string">'id'</span><span class="token punctuation">)</span>
+     或
+     models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">.</span>only<span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span><span class="token string">'id'</span><span class="token punctuation">)</span>
+
+ <span class="token keyword">def</span> <span class="token function">using</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> alias<span class="token punctuation">)</span><span class="token punctuation">:</span>
+     指定使用的数据库，参数为别名（setting中的设置）
+
+
+<span class="token comment">##################################################</span>
+<span class="token comment"># PUBLIC METHODS THAT RETURN A QUERYSET SUBCLASS #</span>
+<span class="token comment">##################################################</span>
+
+<span class="token keyword">def</span> <span class="token function">raw</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> raw_query<span class="token punctuation">,</span> params<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> translations<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> using<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 执行原生SQL</span>
+    models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>raw<span class="token punctuation">(</span><span class="token string">'select * from userinfo'</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 如果SQL是其他表时，必须将名字设置为当前UserInfo对象的主键列名</span>
+    models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>raw<span class="token punctuation">(</span><span class="token string">'select id as nid from 其他表'</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 为原生SQL设置参数</span>
+    models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>raw<span class="token punctuation">(</span><span class="token string">'select id as nid from userinfo where nid&gt;%s'</span><span class="token punctuation">,</span> params<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 将获取的到列名转换为指定列名</span>
+    name_map <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'first'</span><span class="token punctuation">:</span> <span class="token string">'first_name'</span><span class="token punctuation">,</span> <span class="token string">'last'</span><span class="token punctuation">:</span> <span class="token string">'last_name'</span><span class="token punctuation">,</span> <span class="token string">'bd'</span><span class="token punctuation">:</span> <span class="token string">'birth_date'</span><span class="token punctuation">,</span> <span class="token string">'pk'</span><span class="token punctuation">:</span> <span class="token string">'id'</span><span class="token punctuation">}</span>
+    Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>raw<span class="token punctuation">(</span><span class="token string">'SELECT * FROM some_other_table'</span><span class="token punctuation">,</span> translations<span class="token operator">=</span>name_map<span class="token punctuation">)</span>
+
+    <span class="token comment"># 指定数据库</span>
+    models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>raw<span class="token punctuation">(</span><span class="token string">'select * from userinfo'</span><span class="token punctuation">,</span> using<span class="token operator">=</span><span class="token string">&quot;default&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token comment">################### 原生SQL ###################</span>
+    <span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> connection<span class="token punctuation">,</span> connections
+    cursor <span class="token operator">=</span> connection<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># cursor = connections['default'].cursor()</span>
+    cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token triple-quoted-string string">&quot;&quot;&quot;SELECT * from auth_user where id = %s&quot;&quot;&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    row <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># fetchall()/fetchmany(..)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">values</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>fields<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 获取每行数据为字典格式</span>
+
+<span class="token keyword">def</span> <span class="token function">values_list</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>fields<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 获取每行数据为元祖</span>
+
+<span class="token keyword">def</span> <span class="token function">dates</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> field_name<span class="token punctuation">,</span> kind<span class="token punctuation">,</span> order<span class="token operator">=</span><span class="token string">'ASC'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 根据时间进行某一部分进行去重查找并截取指定内容</span>
+    <span class="token comment"># kind只能是：&quot;year&quot;（年）, &quot;month&quot;（年-月）, &quot;day&quot;（年-月-日）</span>
+    <span class="token comment"># order只能是：&quot;ASC&quot;  &quot;DESC&quot;</span>
+    <span class="token comment"># 并获取转换后的时间</span>
+        <span class="token operator">-</span> year <span class="token punctuation">:</span> 年<span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">01</span>
+        <span class="token operator">-</span> month<span class="token punctuation">:</span> 年<span class="token operator">-</span>月<span class="token operator">-</span><span class="token number">01</span>
+        <span class="token operator">-</span> day  <span class="token punctuation">:</span> 年<span class="token operator">-</span>月<span class="token operator">-</span>日
+
+    models<span class="token punctuation">.</span>DatePlus<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>dates<span class="token punctuation">(</span><span class="token string">'ctime'</span><span class="token punctuation">,</span><span class="token string">'day'</span><span class="token punctuation">,</span><span class="token string">'DESC'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">datetimes</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> field_name<span class="token punctuation">,</span> kind<span class="token punctuation">,</span> order<span class="token operator">=</span><span class="token string">'ASC'</span><span class="token punctuation">,</span> tzinfo<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 根据时间进行某一部分进行去重查找并截取指定内容，将时间转换为指定时区时间</span>
+    <span class="token comment"># kind只能是 &quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;hour&quot;, &quot;minute&quot;, &quot;second&quot;</span>
+    <span class="token comment"># order只能是：&quot;ASC&quot;  &quot;DESC&quot;</span>
+    <span class="token comment"># tzinfo时区对象</span>
+    models<span class="token punctuation">.</span>DDD<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>datetimes<span class="token punctuation">(</span><span class="token string">'ctime'</span><span class="token punctuation">,</span><span class="token string">'hour'</span><span class="token punctuation">,</span>tzinfo<span class="token operator">=</span>pytz<span class="token punctuation">.</span>UTC<span class="token punctuation">)</span>
+    models<span class="token punctuation">.</span>DDD<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>datetimes<span class="token punctuation">(</span><span class="token string">'ctime'</span><span class="token punctuation">,</span><span class="token string">'hour'</span><span class="token punctuation">,</span>tzinfo<span class="token operator">=</span>pytz<span class="token punctuation">.</span>timezone<span class="token punctuation">(</span><span class="token string">'Asia/Shanghai'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;
+    pip3 install pytz
+    import pytz
+    pytz.all_timezones
+    pytz.timezone(‘Asia/Shanghai’)
+    &quot;&quot;&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">none</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 空QuerySet对象</span>
+
+
+<span class="token comment">####################################</span>
+<span class="token comment"># METHODS THAT DO DATABASE QUERIES #</span>
+<span class="token comment">####################################</span>
+
+<span class="token keyword">def</span> <span class="token function">aggregate</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token comment"># 聚合函数，获取字典类型聚合结果</span>
+   <span class="token keyword">from</span> django<span class="token punctuation">.</span>db<span class="token punctuation">.</span>models <span class="token keyword">import</span> Count<span class="token punctuation">,</span> Avg<span class="token punctuation">,</span> Max<span class="token punctuation">,</span> Min<span class="token punctuation">,</span> Sum
+   result <span class="token operator">=</span> models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>aggregate<span class="token punctuation">(</span>k<span class="token operator">=</span>Count<span class="token punctuation">(</span><span class="token string">'u_id'</span><span class="token punctuation">,</span> distinct<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">,</span> n<span class="token operator">=</span>Count<span class="token punctuation">(</span><span class="token string">'nid'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+   <span class="token operator">==</span><span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span><span class="token string">'k'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'n'</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">}</span>
+
+<span class="token keyword">def</span> <span class="token function">count</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token comment"># 获取个数</span>
+
+<span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token comment"># 获取单个对象</span>
+
+<span class="token keyword">def</span> <span class="token function">create</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token comment"># 创建对象</span>
+
+<span class="token keyword">def</span> <span class="token function">bulk_create</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> objs<span class="token punctuation">,</span> batch_size<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 批量插入</span>
+    <span class="token comment"># batch_size表示一次插入的个数</span>
+    objs <span class="token operator">=</span> <span class="token punctuation">[</span>
+        models<span class="token punctuation">.</span>DDD<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'r11'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        models<span class="token punctuation">.</span>DDD<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'r22'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+    models<span class="token punctuation">.</span>DDD<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>bulk_create<span class="token punctuation">(</span>objs<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">get_or_create</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> defaults<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 如果存在，则获取，否则，创建</span>
+    <span class="token comment"># defaults 指定创建时，其他字段的值</span>
+    obj<span class="token punctuation">,</span> created <span class="token operator">=</span> models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get_or_create<span class="token punctuation">(</span>username<span class="token operator">=</span><span class="token string">'root1'</span><span class="token punctuation">,</span> defaults<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'email'</span><span class="token punctuation">:</span> <span class="token string">'1111111'</span><span class="token punctuation">,</span><span class="token string">'u_id'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'t_id'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">update_or_create</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> defaults<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 如果存在，则更新，否则，创建</span>
+    <span class="token comment"># defaults 指定创建时或更新时的其他字段</span>
+    obj<span class="token punctuation">,</span> created <span class="token operator">=</span> models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>update_or_create<span class="token punctuation">(</span>username<span class="token operator">=</span><span class="token string">'root1'</span><span class="token punctuation">,</span> defaults<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'email'</span><span class="token punctuation">:</span> <span class="token string">'1111111'</span><span class="token punctuation">,</span><span class="token string">'u_id'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'t_id'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">first</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token comment"># 获取第一个</span>
+
+<span class="token keyword">def</span> <span class="token function">last</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token comment"># 获取最后一个</span>
+
+<span class="token keyword">def</span> <span class="token function">in_bulk</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> id_list<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token comment"># 根据主键ID进行查找</span>
+   id_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">]</span>
+   models<span class="token punctuation">.</span>DDD<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>in_bulk<span class="token punctuation">(</span>id_list<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">delete</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token comment"># 删除</span>
+
+<span class="token keyword">def</span> <span class="token function">update</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 更新</span>
+
+<span class="token keyword">def</span> <span class="token function">exists</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token comment"># 是否有结果</span>
+
+</code></pre></div></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/python/django/resquest、模块层.html" class="prev">
+        resquest、模块层
+      </a></span> <span class="next"><a href="/python/django/标签、自定义标签.html">
+        模块层之标签、自定义标签
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/64.a98fe86e.js" defer></script>
+  </body>
+</html>

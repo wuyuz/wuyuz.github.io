@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>常用模块（二） | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/103.16474d4b.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/104.ed58aef3.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/11.d4ec37c8.js"><link rel="prefetch" href="/assets/js/110.4144755a.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/34.8448d0fd.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/48.f591f360.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/50.b9ca2762.js"><link rel="prefetch" href="/assets/js/51.93672ee6.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/60.f40ac3ca.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/64.a98fe86e.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/80.f826f188.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/84.b940927c.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/87.5f9eb9ef.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/94.0ad7c41c.js"><link rel="prefetch" href="/assets/js/95.0e5ce618.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Python常用模块</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/python/pkg/常用模块.html" class="sidebar-link">常用模块</a></li><li><a href="/python/pkg/常用模块（二）.html" class="active sidebar-link">常用模块（二）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/python/pkg/常用模块（二）.html#hmac模块" class="sidebar-link">hmac模块</a></li><li class="sidebar-sub-header"><a href="/python/pkg/常用模块（二）.html#struct模块" class="sidebar-link">struct模块</a></li><li class="sidebar-sub-header"><a href="/python/pkg/常用模块（二）.html#itertools模块" class="sidebar-link">itertools模块</a></li><li class="sidebar-sub-header"><a href="/python/pkg/常用模块（二）.html#subprocess-模块" class="sidebar-link">subprocess 模块</a></li><li class="sidebar-sub-header"><a href="/python/pkg/常用模块（二）.html#依赖包打包工具" class="sidebar-link">依赖包打包工具</a></li><li class="sidebar-sub-header"><a href="/python/pkg/常用模块（二）.html#pip-常用命令" class="sidebar-link">pip 常用命令</a></li></ul></li><li><a href="/python/pkg/asyncio模块.html" class="sidebar-link">asyncio 模块</a></li><li><a href="/python/pkg/socketserver模块.html" class="sidebar-link">socketserver模块</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Django框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flask 框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python爬虫</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="常用模块-二"><a href="#常用模块-二" class="header-anchor">#</a> 常用模块（二）</h3> <h2 id="hmac模块"><a href="#hmac模块" class="header-anchor">#</a> hmac模块</h2> <p>实现了标准的Hmac算法</p> <ul><li><p>HMAC的一个典型应用是用在“挑战/响应”（Challenge/Response）身份认证中（应用场景）：</p> <ul><li><ol><li><p>客户端向服务器发出一个<strong>验证请求</strong></p></li> <li><p>服务器接到此请求后生成一个<strong>随机数</strong>并通过网络传输给客户端（此为挑战）</p></li> <li><p>客户端将收到的随机数提供给ePass，由<strong>ePass</strong>使用<strong>该随机数</strong>与<strong>存储在ePass中的密钥</strong>进行<strong>HMAC-MD5运算</strong>并得到一个结果作为认证证据传给服务器（此为响应）。</p></li> <li><p>与此同时，服务器也使用<strong>该随机数</strong>与<strong>存储在服务器数据库中的该客户密钥</strong>进行<strong>HMAC-MD5</strong>运算，如果服务器的运算结果与客户端传回的响应结果相同，则认为客户端是一个合法用户</p></li></ol></li></ul></li> <li><p><a href="http://www.cnblogs.com/shengulong/p/7474621.html" target="_blank" rel="noopener noreferrer">安全性<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>：</p> <ul><li><p>HMAC算法更象是一种加密算法，它引入了密钥，其安全性已经不完全依赖于所使用的HASH算法</p></li> <li><ol><li><p>使用的密钥是双方事先约定的，第三方不可能知道。能够得到的信息只有作为“挑战”的随机数和作为“响应”的HMAC结果，无法根据这两个数据推算出密钥。由于不知道密钥，所以无法仿造出一致的响应。</p></li> <li><p>HMAC与一般的加密重要的区别在于它具有“瞬时”性，即认证只在当时有效</p></li></ol></li></ul></li> <li><p><strong>代码实现</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#服务端</span>
+<span class="token keyword">from</span> socket <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">import</span> hmac<span class="token punctuation">,</span>os
+secret_key<span class="token operator">=</span><span class="token string">b'Jedan has a big key!'</span>  <span class="token comment">#密钥</span>
+<span class="token keyword">def</span> <span class="token function">conn_auth</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'开始验证新链接的合法性'</span><span class="token punctuation">)</span>
+    msg<span class="token operator">=</span>os<span class="token punctuation">.</span>urandom<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span>     <span class="token comment">#生成一个32字节的随机字符串</span>
+    conn<span class="token punctuation">.</span>sendall<span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+    h<span class="token operator">=</span>hmac<span class="token punctuation">.</span>new<span class="token punctuation">(</span>secret_key<span class="token punctuation">,</span>msg<span class="token punctuation">)</span> <span class="token comment">#第一个参数是key密钥，第二个参数是随机字符串，第三个参数默认为md5加密方式</span>
+    digest<span class="token operator">=</span>h<span class="token punctuation">.</span>digest<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment">#生成ascii格式的密文，还可以生成十六进制的 h.hexdigest()</span>
+    respone<span class="token operator">=</span>conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>digest<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> hmac<span class="token punctuation">.</span>compare_digest<span class="token punctuation">(</span>respone<span class="token punctuation">,</span>digest<span class="token punctuation">)</span>  <span class="token comment">#进行比较</span>
+
+<span class="token keyword">def</span> <span class="token function">data_handler</span><span class="token punctuation">(</span>conn<span class="token punctuation">,</span>bufsize<span class="token operator">=</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> conn_auth<span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'该链接不合法,关闭'</span><span class="token punctuation">)</span>
+        conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'链接合法,开始通信'</span><span class="token punctuation">)</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        data<span class="token operator">=</span>conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span>bufsize<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> data<span class="token punctuation">:</span><span class="token keyword">break</span>
+        conn<span class="token punctuation">.</span>sendall<span class="token punctuation">(</span>data<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">server_handler</span><span class="token punctuation">(</span>ip_port<span class="token punctuation">,</span>bufsize<span class="token punctuation">,</span>backlog<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tcp_socket_server<span class="token operator">=</span>socket<span class="token punctuation">(</span>AF_INET<span class="token punctuation">,</span>SOCK_STREAM<span class="token punctuation">)</span>
+    tcp_socket_server<span class="token punctuation">.</span>bind<span class="token punctuation">(</span>ip_port<span class="token punctuation">)</span>
+    tcp_socket_server<span class="token punctuation">.</span>listen<span class="token punctuation">(</span>backlog<span class="token punctuation">)</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        conn<span class="token punctuation">,</span>addr<span class="token operator">=</span>tcp_socket_server<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'新连接[%s:%s]'</span> <span class="token operator">%</span><span class="token punctuation">(</span>addr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>addr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        data_handler<span class="token punctuation">(</span>conn<span class="token punctuation">,</span>bufsize<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    ip_port<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">9999</span><span class="token punctuation">)</span>
+    bufsize<span class="token operator">=</span><span class="token number">1024</span>
+    server_handler<span class="token punctuation">(</span>ip_port<span class="token punctuation">,</span>bufsize<span class="token punctuation">)</span>
+ 
+<span class="token comment">#客服端</span>
+<span class="token keyword">from</span> socket <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">import</span> hmac<span class="token punctuation">,</span>os
+secret_key<span class="token operator">=</span><span class="token string">b'Jedan has a big key！'</span>
+<span class="token keyword">def</span> <span class="token function">conn_auth</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    msg<span class="token operator">=</span>conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span>
+    h<span class="token operator">=</span>hmac<span class="token punctuation">.</span>new<span class="token punctuation">(</span>secret_key<span class="token punctuation">,</span>msg<span class="token punctuation">)</span>
+    digest<span class="token operator">=</span>h<span class="token punctuation">.</span>digest<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>sendall<span class="token punctuation">(</span>digest<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">client_handler</span><span class="token punctuation">(</span>ip_port<span class="token punctuation">,</span>bufsize<span class="token operator">=</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tcp_socket_client<span class="token operator">=</span>socket<span class="token punctuation">(</span>AF_INET<span class="token punctuation">,</span>SOCK_STREAM<span class="token punctuation">)</span>
+    tcp_socket_client<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>ip_port<span class="token punctuation">)</span>
+    conn_auth<span class="token punctuation">(</span>tcp_socket_client<span class="token punctuation">)</span>
+
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        data<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'&gt;&gt;: '</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> data<span class="token punctuation">:</span><span class="token keyword">continue</span>
+        <span class="token keyword">if</span> data <span class="token operator">==</span> <span class="token string">'quit'</span><span class="token punctuation">:</span><span class="token keyword">break</span>
+        tcp_socket_client<span class="token punctuation">.</span>sendall<span class="token punctuation">(</span>data<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        respone<span class="token operator">=</span>tcp_socket_client<span class="token punctuation">.</span>recv<span class="token punctuation">(</span>bufsize<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>respone<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    tcp_socket_client<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    ip_port<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">9999</span><span class="token punctuation">)</span>
+    bufsize<span class="token operator">=</span><span class="token number">1024</span>
+    client_handler<span class="token punctuation">(</span>ip_port<span class="token punctuation">,</span>bufsize<span class="token punctuation">)</span>
+</code></pre></div></li></ul> <h2 id="struct模块"><a href="#struct模块" class="header-anchor">#</a> struct模块</h2> <ul><li><p>python中的struct模块就提供了这样的机制，该模块的主要作用就是对python基本类型值与用python字符串格式表示的C struct类型间的转化</p></li> <li><p>准确地讲，Python没有专门处理字节的数据类型。但由于<code>b'str'</code>可以表示字节，所以，字节数组＝二进制str。而在C语言中，我们可以很方便地用struct、union来处理字节，以及字节和int，float的转换。</p> <p>在Python中，比方说要把一个32位无符号整数变成字节，也就是4个长度的<code>bytes</code>，你得配合位运算符这么写：</p> <div class="language-python extra-class"><pre class="language-python"><code>n <span class="token operator">=</span> <span class="token number">10240099</span>
+b1 <span class="token operator">=</span> <span class="token punctuation">(</span>n <span class="token operator">&amp;</span> <span class="token number">0xff000000</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">24</span>  <span class="token comment">#&gt;&gt; 和 &lt;&lt;都是位运算，对二进制数进行移位操作，表示向右移动24位，并保留后面的</span>
+b2 <span class="token operator">=</span> <span class="token punctuation">(</span>n <span class="token operator">&amp;</span> <span class="token number">0xff0000</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">16</span>
+b3 <span class="token operator">=</span> <span class="token punctuation">(</span>n <span class="token operator">&amp;</span> <span class="token number">0xff00</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">8</span>
+b4 <span class="token operator">=</span> n <span class="token operator">&amp;</span> <span class="token number">0xff</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span> n <span class="token operator">&amp;</span> <span class="token number">0xff0000</span><span class="token punctuation">)</span>  <span class="token comment">#10223616,所以 0xff0000表示保留多少为二进制</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b1<span class="token punctuation">,</span>b2<span class="token punctuation">,</span>b3<span class="token punctuation">)</span>  <span class="token comment"># 0 156 64</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token punctuation">[</span>b1<span class="token punctuation">,</span> b2<span class="token punctuation">,</span> b3<span class="token punctuation">,</span> b4<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#b'\x00\x9c@c'</span>
+</code></pre></div></li> <li><p>上面的方法比较哦麻烦，而且不能准换浮点，所以python为我们提供了struct模块用于解决bytes和其他二进制数据类型的转换</p> <ul><li><p>基本用法pack和unpack：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#struct的pack函数把任意数据类型变成bytes：</span>
+<span class="token keyword">import</span> struct
+struct<span class="token punctuation">.</span>pack<span class="token punctuation">(</span><span class="token string">'&gt;I'</span><span class="token punctuation">,</span> <span class="token number">10240099</span><span class="token punctuation">)</span>   <span class="token comment">#b'\x00\x9c@c'</span>
+
+<span class="token comment">#pack的第一个参数是处理指令，'&gt;I'的意思是：&gt;表示字节顺序是big-endian，也就是网络序，I表示4字节无符号整数。后面的参数个数要和处理指令一致。</span>
+
+<span class="token comment">#unpack把bytes变成相应的数据类型：</span>
+struct<span class="token punctuation">.</span>unpack<span class="token punctuation">(</span><span class="token string">'&gt;IH'</span><span class="token punctuation">,</span> <span class="token string">b'\xf0\xf0\xf0\xf0\x80\x80'</span><span class="token punctuation">)</span>  <span class="token comment">#(4042322160, 32896）</span>
+
+<span class="token comment">#根据&gt;IH的说明，后面的bytes依次变为I：4字节无符号整数和H：2字节无符号整数</span>
+</code></pre></div></li></ul></li></ul> <h2 id="itertools模块"><a href="#itertools模块" class="header-anchor">#</a> itertools模块</h2> <ul><li><p>介绍：它是用于一些可迭代对象的处理工具，在做面试题时非常简单</p></li> <li><p>1、<code>combinations(iterable, r)</code> ：将可迭代对象中每r个元素按序进行组合，排列组合</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#例题：输入一个字符串，输出该字符串的所有组合，例如输入：'1，2，3',则输出为1，2，3，12，13，23，123</span>
+<span class="token keyword">from</span> itertools <span class="token keyword">import</span> combinations
+inp<span class="token operator">=</span><span class="token string">'1,2,3,4'</span>
+nums<span class="token operator">=</span>inp<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span>
+ret_1<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    ret <span class="token operator">=</span> combinations<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>i<span class="token punctuation">)</span>
+    <span class="token comment"># print(map(lambda x:x,ret))</span>
+    <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span>ret_1<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>ret<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret_1<span class="token punctuation">)</span>
+
+<span class="token comment">#源码</span>
+<span class="token keyword">def</span> <span class="token function">combinations</span><span class="token punctuation">(</span>iterable<span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># combinations('ABCD', 2) --&gt; AB AC AD BC BD CD</span>
+    <span class="token comment"># combinations(range(4), 3) --&gt; 012 013 023 123</span>
+    pool <span class="token operator">=</span> <span class="token builtin">tuple</span><span class="token punctuation">(</span>iterable<span class="token punctuation">)</span>
+    n <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>pool<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> r <span class="token operator">&gt;</span> n<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+    indices <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 索引</span>
+    <span class="token keyword">yield</span> <span class="token builtin">tuple</span><span class="token punctuation">(</span>pool<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> indices<span class="token punctuation">)</span>   <span class="token comment"># 最初返回一个字符长度的</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">reversed</span><span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> indices<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> i <span class="token operator">+</span> n <span class="token operator">-</span> r<span class="token punctuation">:</span>  <span class="token comment">#为了防止r=n</span>
+                <span class="token keyword">break</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span>
+        indices<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            indices<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> indices<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">yield</span> <span class="token builtin">tuple</span><span class="token punctuation">(</span>pool<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> indices<span class="token punctuation">)</span>
+        
+ <span class="token comment">#示例</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">from</span> itertools <span class="token keyword">import</span> combinations
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> comb <span class="token operator">=</span> combinations<span class="token punctuation">(</span><span class="token string">'abcd'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> comb<span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> 
+<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>2、<code>combinations_with_replacement(iterable, r)</code>  按照顺序从可迭代对象中取r个元素进行组合，允许使用重复的元素，功能相当于：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#源码分析</span>
+<span class="token keyword">def</span> <span class="token function">combinations_with_replacement</span><span class="token punctuation">(</span>iterable<span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># combinations_with_replacement('ABC', 2) --&gt; AA AB AC BB BC CC</span>
+    pool <span class="token operator">=</span> <span class="token builtin">tuple</span><span class="token punctuation">(</span>iterable<span class="token punctuation">)</span>
+    n <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>pool<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> n <span class="token keyword">and</span> r<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+    indices <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> r
+    <span class="token keyword">yield</span> <span class="token builtin">tuple</span><span class="token punctuation">(</span>pool<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> indices<span class="token punctuation">)</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">reversed</span><span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> indices<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">break</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span>
+        indices<span class="token punctuation">[</span>i<span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>indices<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>r <span class="token operator">-</span> i<span class="token punctuation">)</span>
+        <span class="token keyword">yield</span> <span class="token builtin">tuple</span><span class="token punctuation">(</span>pool<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> indices<span class="token punctuation">)</span>
+        
+ <span class="token comment">#示例</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">from</span> itertools <span class="token keyword">import</span> combinations_with_replacement
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a <span class="token operator">=</span> combinations_with_replacement<span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> a<span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> 
+<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>3、accumulate(iterable[, func]) 将一个二元操作的函数作用于一个可迭代对象上，每次循环计算时，函数的两个参数一个是可迭代对象中当前值，另一个是上次计算得到的结果。函数的返回值是一个由每次计算得到的结果组成的可迭代对象。也就是迭代对象的每个值作用于这个函数func（两个参数），返回一个，留一个等待辖有一个的操作，类似于reduce()</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#源码实现</span>
+<span class="token keyword">def</span> <span class="token function">accumulate</span><span class="token punctuation">(</span>iterable<span class="token punctuation">,</span> func<span class="token operator">=</span>operator<span class="token punctuation">.</span>add<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token string">'Return running totals'</span>
+    <span class="token comment"># accumulate([1,2,3,4,5]) --&gt; 1 3 6 10 15</span>
+    <span class="token comment"># accumulate([1,2,3,4,5], operator.mul) --&gt; 1 2 6 24 120</span>
+    it <span class="token operator">=</span> <span class="token builtin">iter</span><span class="token punctuation">(</span>iterable<span class="token punctuation">)</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        total <span class="token operator">=</span> <span class="token builtin">next</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span>
+    <span class="token keyword">except</span> StopIteration<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+    <span class="token keyword">yield</span> total
+    <span class="token keyword">for</span> element <span class="token keyword">in</span> it<span class="token punctuation">:</span>
+        total <span class="token operator">=</span> func<span class="token punctuation">(</span>total<span class="token punctuation">,</span> element<span class="token punctuation">)</span>
+        <span class="token keyword">yield</span> total
+        
+<span class="token comment">#二元操作的函数如下：</span>
+<span class="token builtin">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 计算最小值
+<span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 计算最大值
+operator<span class="token punctuation">.</span>mul<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 叠乘
+operator<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 叠加
+ 
+<span class="token comment">#示例</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">(</span>accumulate<span class="token punctuation">(</span>data<span class="token punctuation">,</span> operator<span class="token punctuation">.</span>mul<span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token comment"># 叠乘</span>
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">72</span><span class="token punctuation">,</span> <span class="token number">144</span><span class="token punctuation">,</span> <span class="token number">144</span><span class="token punctuation">,</span> <span class="token number">1296</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">(</span>accumulate<span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token builtin">max</span><span class="token punctuation">)</span><span class="token punctuation">)</span>              <span class="token comment"># 计算最大值</span>
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span>
+<span class="token comment"># 将上一个结果乘1.25,然后加上下一个迭代值</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> cashflows <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">90</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">(</span>accumulate<span class="token punctuation">(</span>cashflows<span class="token punctuation">,</span> <span class="token keyword">lambda</span> bal<span class="token punctuation">,</span> pmt<span class="token punctuation">:</span> bal<span class="token operator">*</span><span class="token number">1.05</span> <span class="token operator">+</span> pmt<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">960.0</span><span class="token punctuation">,</span> <span class="token number">918.0</span><span class="token punctuation">,</span> <span class="token number">873.9000000000001</span><span class="token punctuation">,</span> <span class="token number">827.5950000000001</span><span class="token punctuation">]</span>
+<span class="token comment"># 这个示例相当于单目迭代运算</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> logistic_map <span class="token operator">=</span> <span class="token keyword">lambda</span> x<span class="token punctuation">,</span> _<span class="token punctuation">:</span>  r <span class="token operator">*</span> x <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> x<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> r <span class="token operator">=</span> <span class="token number">3.8</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> x0 <span class="token operator">=</span> <span class="token number">0.4</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> inputs <span class="token operator">=</span> repeat<span class="token punctuation">(</span>x0<span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">)</span>     <span class="token comment"># 初始化值</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token builtin">format</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token string">'.2f'</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> accumulate<span class="token punctuation">(</span>inputs<span class="token punctuation">,</span> logistic_map<span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">'0.40'</span><span class="token punctuation">,</span> <span class="token string">'0.91'</span><span class="token punctuation">,</span> <span class="token string">'0.30'</span><span class="token punctuation">,</span> <span class="token string">'0.81'</span><span class="token punctuation">,</span> <span class="token string">'0.60'</span><span class="token punctuation">,</span> <span class="token string">'0.92'</span><span class="token punctuation">,</span> <span class="token string">'0.29'</span><span class="token punctuation">,</span> <span class="token string">'0.79'</span><span class="token punctuation">,</span> <span class="token string">'0.63'</span><span class="token punctuation">,</span>
+ <span class="token string">'0.88'</span><span class="token punctuation">,</span> <span class="token string">'0.39'</span><span class="token punctuation">,</span> <span class="token string">'0.90'</span><span class="token punctuation">,</span> <span class="token string">'0.33'</span><span class="token punctuation">,</span> <span class="token string">'0.84'</span><span class="token punctuation">,</span> <span class="token string">'0.52'</span><span class="token punctuation">,</span> <span class="token string">'0.95'</span><span class="token punctuation">,</span> <span class="token string">'0.18'</span><span class="token punctuation">,</span> <span class="token string">'0.57'</span><span class="token punctuation">,</span>
+ <span class="token string">'0.93'</span><span class="token punctuation">,</span> <span class="token string">'0.25'</span><span class="token punctuation">,</span> <span class="token string">'0.71'</span><span class="token punctuation">,</span> <span class="token string">'0.79'</span><span class="token punctuation">,</span> <span class="token string">'0.63'</span><span class="token punctuation">,</span> <span class="token string">'0.88'</span><span class="token punctuation">,</span> <span class="token string">'0.39'</span><span class="token punctuation">,</span> <span class="token string">'0.91'</span><span class="token punctuation">,</span> <span class="token string">'0.32'</span><span class="token punctuation">,</span>
+ <span class="token string">'0.83'</span><span class="token punctuation">,</span> <span class="token string">'0.54'</span><span class="token punctuation">,</span> <span class="token string">'0.95'</span><span class="token punctuation">,</span> <span class="token string">'0.20'</span><span class="token punctuation">,</span> <span class="token string">'0.60'</span><span class="token punctuation">,</span> <span class="token string">'0.91'</span><span class="token punctuation">,</span> <span class="token string">'0.30'</span><span class="token punctuation">,</span> <span class="token string">'0.80'</span><span class="token punctuation">,</span> <span class="token string">'0.60'</span><span class="token punctuation">]</span>
+</code></pre></div></li> <li><p><code>chain(*itables)</code> 将多个可迭代对象进行合并，相当于如下代码：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">chain</span><span class="token punctuation">(</span><span class="token operator">*</span>iterables<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># chain('ABC', 'DEF') --&gt; A B C D E F</span>
+    <span class="token keyword">for</span> it <span class="token keyword">in</span> iterables<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> element <span class="token keyword">in</span> it<span class="token punctuation">:</span>
+            <span class="token keyword">yield</span> element
+            
+<span class="token comment">#示例</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">from</span> itertools <span class="token keyword">import</span> chain
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> chain<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>itertools<span class="token punctuation">.</span>chain <span class="token builtin">object</span> at <span class="token number">0x7f751ad90b70</span><span class="token operator">&gt;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a <span class="token operator">=</span> chain<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> a<span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> 
+<span class="token number">1</span>
+<span class="token number">2</span>
+<span class="token number">3</span>
+<span class="token number">4</span>
+<span class="token number">5</span>
+<span class="token number">6</span>
+</code></pre></div></li> <li><p><code>compress(data, selectors)</code>  筛选根据slectors,它为True和False组成的列表或</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">compress</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> selectors<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># compress('ABCDEF', [1,0,1,0,1,1]) --&gt; A C E F</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>d <span class="token keyword">for</span> d<span class="token punctuation">,</span> s <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> selectors<span class="token punctuation">)</span> <span class="token keyword">if</span> s<span class="token punctuation">)</span>
+
+<span class="token comment">#示例</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">from</span> itertools <span class="token keyword">import</span> compress
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a <span class="token operator">=</span> compress<span class="token punctuation">(</span><span class="token string">'abcdef'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> a<span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> 
+a
+c
+e
+f
+</code></pre></div></li> <li><p>还有很多工具……</p></li></ul> <h2 id="subprocess-模块"><a href="#subprocess-模块" class="header-anchor">#</a> subprocess 模块</h2> <ul><li><p>我们学过的让系统中运行命令的方式：<code>os.system('命令')</code></p></li> <li><p>我们将写一个使用系统命令的模块：</p></li> <li><p>服务端：</p> <div class="language-python extra-class"><pre class="language-python"><code> <span class="token comment">#server服务器端</span>
+<span class="token keyword">import</span> socket
+<span class="token keyword">import</span> subprocess
+
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8080</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+conn<span class="token punctuation">,</span>addr <span class="token operator">=</span> sk<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    cmd <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    r <span class="token operator">=</span> subprocess<span class="token punctuation">.</span>Popen<span class="token punctuation">(</span>cmd<span class="token punctuation">,</span>shell<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>stdout<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>PIPE<span class="token punctuation">,</span>stderr<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>PIPE<span class="token punctuation">)</span>
+    stdout <span class="token operator">=</span> r<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    stderr <span class="token operator">=</span> r<span class="token punctuation">.</span>stderr<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> stderr<span class="token punctuation">:</span>
+        conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>stderr<span class="token punctuation">)</span><span class="token comment">#错误结果或不可执行的命令</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>stdout<span class="token punctuation">)</span><span class="token comment">#正确结果</span>
+
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>客户端</p> <div class="language-python extra-class"><pre class="language-python"><code> <span class="token comment">#client客户端</span>
+<span class="token keyword">import</span> socket
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+sk<span class="token punctuation">.</span>connect_ex<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8080</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    cmd <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入一个命令&gt;&gt;&gt;'</span><span class="token punctuation">)</span>
+    sk<span class="token punctuation">.</span>send<span class="token punctuation">(</span>cmd<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    result <span class="token operator">=</span> sk<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">102400</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'gbk'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+
+
+sk<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>注意编码格式</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> subprocess
+
+<span class="token keyword">def</span> <span class="token function">get_file_content</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># cmd = f&quot;ffmpeg -y  -i {filePath} -acodec pcm_s16le -f s16le -ac 1 -ar 16000 {filePath}.pcm&quot;</span>
+    cmd <span class="token operator">=</span> <span class="token string">'dir'</span>
+    r <span class="token operator">=</span> subprocess<span class="token punctuation">.</span>Popen<span class="token punctuation">(</span>cmd<span class="token punctuation">,</span>shell<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>stdout<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>PIPE<span class="token punctuation">,</span>stderr<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>PIPE<span class="token punctuation">,</span><span class="token punctuation">)</span>
+    stdout <span class="token operator">=</span> r<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'gbk'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>stdout<span class="token punctuation">)</span>
+    stderr <span class="token operator">=</span> r<span class="token punctuation">.</span>stderr<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    ret <span class="token operator">=</span> r<span class="token punctuation">.</span>communicate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token comment">#0xc7</span>
+
+get_file_content<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul> <h2 id="依赖包打包工具"><a href="#依赖包打包工具" class="header-anchor">#</a> 依赖包打包工具</h2> <p>项目开发的时候，总是要搭建和部署环境，这时，就需要一个python第三方包的list，一般叫做requirements.txt。如果项目使用virtualenv环境，直接使用pip freeze即可，但是如果项目的依赖没有维护，就会很麻烦，这时我们就需要一个叫pipreqs的工具，可以帮助我们自动生成requirements.txt文件。</p> <ul><li><h5 id="使用pip-freeze"><a href="#使用pip-freeze" class="header-anchor">#</a> 使用pip freeze</h5> <div class="language-shell extra-class"><pre class="language-shell"><code>$ pip freeze <span class="token operator">&gt;</span> requirements.txt这种方式配合virtualenv 才好使，否则把整个环境中的包都列出来了。
+</code></pre></div><p>pipreqs 这个工具的好处是可以通过对项目目录的扫描，自动发现使用了那些类库，自动生成依赖清单。缺点是可能会有些偏差，需要检查并自己调整下。</p></li> <li><p><strong>安装：</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code>pip3 <span class="token function">install</span> pipreqs
+</code></pre></div></li> <li><p><strong>用法：</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code>pipreqs ./    　<span class="token comment">#在项目的根目录下使用</span>
+
+	<span class="token comment">#如果是Windows系统，会报编码错误 (UnicodeDecodeError: 'gbk' codec can't decode byte 0xa8 in position 24: illegal multibyte sequence) 使用时，指定编码格式      </span>
+
+pipreqs ./ --encoding<span class="token operator">=</span>utf8　
+</code></pre></div><p>生成requirements.txt 文件后，可以根据这个文件下载所有的依赖</p> <div class="language-shell extra-class"><pre class="language-shell"><code>用法：pip <span class="token function">install</span> -r requriements.txt <span class="token comment">#即可</span>
+</code></pre></div></li></ul> <p></p> <ul><li><strong>附加：</strong></li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>详细用法：
+pipreqs <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token operator">&lt;</span>path<span class="token operator">&gt;</span>
+
+选项：
+--use-local仅使用本地包信息而不是查询PyPI
+--pypi-server <span class="token operator">&lt;</span>url<span class="token operator">&gt;</span>使用自定义PyPi服务器
+--proxy <span class="token operator">&lt;</span>url<span class="token operator">&gt;</span>使用Proxy，参数将传递给请求库。你也可以设置
+终端中的环境参数：
+$ <span class="token builtin class-name">export</span> HTTP_PROXY <span class="token operator">=</span>“http://10.10.1.10:3128”
+$ <span class="token builtin class-name">export</span> HTTPS_PROXY <span class="token operator">=</span>“https://10.10.1.10:1080”
+--debug打印调试信息
+--ignore <span class="token operator">&lt;</span>dirs<span class="token operator">&gt;</span> <span class="token punctuation">..</span>.忽略额外的目录
+--encoding <span class="token operator">&lt;</span>charset<span class="token operator">&gt;</span>使用编码参数打开文件
+--savepath <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span>保存给定文件中的需求列表
+--print输出标准输出中的需求列表
+--force覆盖现有的requirements.txt
+--diff <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span>将requirements.txt中的模块与项目导入进行比较。
+--clean <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span>通过删除未在项目中导入的模块来清理requirements.txt。
+</code></pre></div><ul><li><h2 id="pip-常用命令"><a href="#pip-常用命令" class="header-anchor">#</a> pip 常用命令</h2> <div class="language-python extra-class"><pre class="language-python"><code>pip的用法其实跟linux的yum很像，它可以帮我们安装python所需要的环境包，并且可以包解决依赖关系
+
+<span class="token number">1</span>、列出已安装的包 
+pip <span class="token builtin">list</span>
+
+<span class="token number">2</span>、安装要安装的包
+pip install xxx
+
+<span class="token number">3</span>、 安装特定版本
+pip install django<span class="token operator">==</span><span class="token number">1.1</span><span class="token number">.5</span>
+pip freeze <span class="token operator">&gt;</span> requestment<span class="token punctuation">.</span>txt
+
+<span class="token number">4</span>、 从导出的python环境中安装所需要的包
+pip install <span class="token operator">-</span>r requestment<span class="token punctuation">.</span>txt
+
+<span class="token number">5</span>、 卸载导出的python环境中的包
+pip uninstall <span class="token operator">-</span>r requestment<span class="token punctuation">.</span>txt
+
+<span class="token number">6</span>、 升级包 
+pip install <span class="token operator">-</span>U <span class="token operator">&lt;</span>包名<span class="token operator">&gt;</span>
+
+<span class="token number">7</span>、 显示包所在的目录
+pip show <span class="token operator">-</span>f <span class="token operator">&lt;</span>包名<span class="token operator">&gt;</span>
+
+<span class="token number">8</span>、 搜索包
+pip search <span class="token operator">&lt;</span>搜索关键字<span class="token operator">&gt;</span>
+
+<span class="token number">9</span>、 查询可升级的包 
+pip <span class="token builtin">list</span> <span class="token operator">-</span>o
+
+<span class="token number">10</span>、 下载包而不安装 
+pip install <span class="token operator">&lt;</span>包名<span class="token operator">&gt;</span> <span class="token operator">-</span>d <span class="token operator">&lt;</span>目录<span class="token operator">&gt;</span> 或 pip install <span class="token operator">-</span>d <span class="token operator">&lt;</span>目录<span class="token operator">&gt;</span> <span class="token operator">-</span>r requirements<span class="token punctuation">.</span>txt
+
+<span class="token number">11</span>、更换国内pypi镜像 
+阿里：https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>pypi<span class="token operator">/</span>simple 
+豆瓣：http<span class="token punctuation">:</span><span class="token operator">//</span>pypi<span class="token punctuation">.</span>douban<span class="token punctuation">.</span>com<span class="token operator">/</span>simple 
+中国科学技术大学：http<span class="token punctuation">:</span><span class="token operator">//</span>pypi<span class="token punctuation">.</span>mirrors<span class="token punctuation">.</span>ustc<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>simple<span class="token operator">/</span> 
+
+pip install <span class="token operator">&lt;</span>包名<span class="token operator">&gt;</span> <span class="token operator">-</span>i http<span class="token punctuation">:</span><span class="token operator">//</span>pypi<span class="token punctuation">.</span>v2ex<span class="token punctuation">.</span>com<span class="token operator">/</span>simple
+</code></pre></div></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/python/pkg/常用模块.html" class="prev">
+        常用模块
+      </a></span> <span class="next"><a href="/python/pkg/asyncio模块.html">
+        asyncio 模块
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/103.16474d4b.js" defer></script>
+  </body>
+</html>

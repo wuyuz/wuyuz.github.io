@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Web框架本质 | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/51.93672ee6.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/103.16474d4b.js"><link rel="prefetch" href="/assets/js/104.ed58aef3.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/11.d4ec37c8.js"><link rel="prefetch" href="/assets/js/110.4144755a.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/34.8448d0fd.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/48.f591f360.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/50.b9ca2762.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/60.f40ac3ca.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/64.a98fe86e.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/80.f826f188.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/84.b940927c.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/87.5f9eb9ef.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/94.0ad7c41c.js"><link rel="prefetch" href="/assets/js/95.0e5ce618.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python常用模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Django框架</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/python/django/Web框架本质.html" class="active sidebar-link">Web框架本质</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/python/django/Web框架本质.html#web框架本质" class="sidebar-link">Web框架本质</a></li><li class="sidebar-sub-header"><a href="/python/django/Web框架本质.html#简单的web框架" class="sidebar-link">简单的Web框架</a></li><li class="sidebar-sub-header"><a href="/python/django/Web框架本质.html#返回静态文件的高级web框架" class="sidebar-link">返回静态文件的高级Web框架</a></li><li class="sidebar-sub-header"><a href="/python/django/Web框架本质.html#wsgiref模块-与-wsgi" class="sidebar-link">wsgiref模块 与 WSGI</a></li><li class="sidebar-sub-header"><a href="/python/django/Web框架本质.html#完善web项目" class="sidebar-link">完善web项目</a></li><li class="sidebar-sub-header"><a href="/python/django/Web框架本质.html#起飞版web框架" class="sidebar-link">起飞版Web框架</a></li><li class="sidebar-sub-header"><a href="/python/django/Web框架本质.html#mvc模式" class="sidebar-link">MVC模式</a></li><li class="sidebar-sub-header"><a href="/python/django/Web框架本质.html#mtv模式" class="sidebar-link">MTV模式</a></li><li class="sidebar-sub-header"><a href="/python/django/Web框架本质.html#补充-http相关知识" class="sidebar-link">补充：HTTP相关知识</a></li></ul></li><li><a href="/python/django/resquest、模块层.html" class="sidebar-link">resquest、模块层</a></li><li><a href="/python/django/静态文件和ORM.html" class="sidebar-link">静态文件和ORM</a></li><li><a href="/python/django/标签、自定义标签.html" class="sidebar-link">模块层之标签、自定义标签</a></li><li><a href="/python/django/模版语法.html" class="sidebar-link">模版语法</a></li><li><a href="/python/django/模型层.html" class="sidebar-link">模型层</a></li><li><a href="/python/django/反向解析和视图函数.html" class="sidebar-link">反向解析和视图函数</a></li><li><a href="/python/django/单表操作.html" class="sidebar-link">单表操作</a></li><li><a href="/python/django/多表操作.html" class="sidebar-link">多表操作</a></li><li><a href="/python/django/中间件.html" class="sidebar-link">中间件</a></li><li><a href="/python/django/模型进阶.html" class="sidebar-link">模型进阶</a></li><li><a href="/python/django/缓存和信号.html" class="sidebar-link">缓存和信号</a></li><li><a href="/python/django/form组件.html" class="sidebar-link">form组件</a></li><li><a href="/python/django/csrf和Ajax.html" class="sidebar-link">csrf和Ajax</a></li><li><a href="/python/django/APIView使用和源码分析.html" class="sidebar-link">APIView使用和源码分析</a></li><li><a href="/python/django/REST framework之版本和解析器.html" class="sidebar-link">REST framework之版本和解析器</a></li><li><a href="/python/django/REST framework之分页和视图组件.html" class="sidebar-link">REST framework之分页和视图组件</a></li><li><a href="/python/django/REST framework之路由和渲染器.html" class="sidebar-link">REST framework之路由和渲染器</a></li><li><a href="/python/django/REST framework之序列化器.html" class="sidebar-link">REST framework之序列化器</a></li><li><a href="/python/django/REST framework版本图书管理系统.html" class="sidebar-link">REST framework版本图书管理系统</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flask 框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python爬虫</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="web框架本质"><a href="#web框架本质" class="header-anchor">#</a> Web框架本质</h2> <p>​	我们可以这样理解：所有的web应用本质就是一个socket服务端，而用户的浏览器就是一个socket客户端，基于请求做出响应，客户都先请求，服务端做出对应的响应。即客户端按照http协议的请求协议发送请求，服务端按照http协议的响应协议来响应请求，这样的网络通信，我们就可以自己实现Web框架了。</p> <p>​	准确的说，web框架就是基于socket实现的轮子，也可以比作一个建筑的钢筋混凝土，也就是为我们你提供好的架子。通过对socket的学习，我们知道网络通信，我们完全可以自己写了，因为socket就是做网络通信用的，下面我们就基于socket来自己实现一个web框架，写一个web服务端，让浏览器来请求，并通过自己的服务端把页面返回给浏览器，浏览器渲染出我们想要的效果。在后面的学习中，大家提前准备一些文件：</p> <h2 id="简单的web框架"><a href="#简单的web框架" class="header-anchor">#</a> 简单的Web框架</h2> <ul><li><p>一般来说，只要我们遵循了http（超文本传输协议，是不是和超文本标记语言HTML很熟啊？）那么我们的消息就一定会在浏览器中显示。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> socket
+<span class="token keyword">from</span> threading <span class="token keyword">import</span> Thread
+
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8001</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#默认浏览器端口8001</span>
+sk<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    from_b_msg <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    str_msg <span class="token operator">=</span> from_b_msg<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    <span class="token comment"># socket是应用层和传输层之间的抽象层，每次都有协议，协议就是消息格式，那么传输层的消息格式我们不用管，</span>
+    <span class="token comment"># 因为socket帮我们搞定了，但是应用层的协议还是需要咱们自己遵守的，所以再给浏览器发送消息的时候，如果没有按照应用层</span>
+    <span class="token comment"># 的消息格式来写，那么你返回给浏览器的信息，浏览器是没法识别的。而应用层的协议就是我们的HTTP协议，所以我们按照HTTP协议规定</span>
+    <span class="token comment"># 的消息格式来给浏览器返回消息就没有问题了，关于HTTP我们会细说，首先看一下直接写conn.send(b'hello')的效果，然后运行代码，</span>
+    <span class="token comment"># 通过浏览器来访问一下，然后再看这一句conn.send(b'HTTP/1.1 200 ok \r\n\r\nhello')的效果</span>
+    <span class="token comment"># 下面这句就是按照http协议来写的</span>
+    <span class="token comment"># conn.send(b'HTTP/1.1 200 ok \r\n\r\nhello')</span>
+    <span class="token comment"># 上面这句还可以分成下面两句来写</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">b'HTTP/1.1 200 ok \r\n\r\n'</span><span class="token punctuation">)</span>  <span class="token comment"># 这里的两个回车+换行就是消息头的格式（http知识）</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">b'hello'</span><span class="token punctuation">)</span>
+ 
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">,</span>addr <span class="token operator">=</span> sk<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    t <span class="token operator">=</span> Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>func<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>conn<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#实现并发</span>
+    t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>   
+<span class="token comment">#凡是有浏览器访问我的电脑的ip和8001端口，就会收到我的hello消息</span>
+</code></pre></div></li> <li><p>学会分析浏览器发送的消息（注意每一行都有\r\n，知道消息头结束有\r\n\r\n结束）</p></li> <li><p>**注意：**但我们使用最简单的方式以字节流的形式给浏览器发送一段以utf-8编码的字符的时候，如：’哈哈哈‘，会发现会乱码，解决方案：</p></li> <li><p>下面我们写一个html文件，将给来请求的浏览器返回一个html文件</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!--//这里引用了jd的图标，是一个网址，可以不必再本地--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>icon<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://www.jd.com/favicon.ico<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!--直接写在html页面里面的css样式是直接可以在浏览器上显示的--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">h1</span><span class="token punctuation">{</span>
+            <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+            <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>姑娘，你好，我是Jaden，请问约吗？嘻嘻~~<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!--直接写在html页面里面的img标签的src属性值如果是别人网站的地址（网络地址）是直接可以在浏览器上显示的--&gt;</span>
+<span class="token comment">&lt;!--&lt;img src=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1550395461724&amp;di=c2b971db12eef5d85aba410d1e2e8568&amp;imgtype=0&amp;src=http%3A%2F%2Fy0.ifengimg.com%2Fifengimcp%2Fpic%2F20140822%2Fd69e0188b714ee789e97_size87_w800_h1227.jpg&quot; alt=&quot;&quot;&gt;--&gt;</span>
+<span class="token comment">&lt;!--如果都是网络地址，那么只要你的电脑有网，就可以看到，不需要自己在后端写对应的读取文件，返回图片文件信息的代码，因为别人的网站就做了这个事情了--&gt;</span>
+
+<span class="token comment">&lt;!--直接写在html页面里面的js操作是直接可以在浏览器上显示的--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token comment">// 写在html中js、css可以直接有效果，否则需要把相应的应用文件读取传到浏览器的缓存区，以用来渲染</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'这是我们第一个网页'</span><span class="token punctuation">)</span>  
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li></ul> <h5 id="本地文件如何引用"><a href="#本地文件如何引用" class="header-anchor">#</a> 本地文件如何引用</h5> <ul><li><p>上面的html文件自带了css、js以及.ico文件(图标、图片)的样式，但在真正开发的文件中都是使用link来进行文件的引用，通过验证上例使用link引用，会使css、js失效，那么如何处理？</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>test.css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!--上一句失效、加上下面这句，那么我们看浏览器调试窗口中的那个network里面就没有那个favicon.ico的请求了，其实这就是页面title标签文字左边的那个页面图标,但是这个文件是我们自己本地的，所以我们需要在后端代码里面将这个文件数据读取出来返回给前端--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>icon<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>wechat.ico<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+
+当然我们可以使用网上的资源，这样link就会去网上找对应的资源，前提是能联网
+</code></pre></div></li> <li><p>当我们直接在浏览器上保存某个页面的时候，随便一个页面，我们到页面上点击右键另存为，然后存到本地的一个目录下，你会发现这个页面的html、css、js、图片等文件都跟着保存下来了，我保存了一下博客园首页的页面。也就是说我们哪能去下载一个页面时，浏览器会自动打包（为支持这个html页面的各种相应文件，包括图片、css、js等），否则无法显示出效果。</p></li> <li><p>我们将这些为正常显示html网页的加载文件叫做<strong>静态文件，</strong> 原来就是将html页面需要的css、js、图片等文件也发送给浏览器就可以了，并且这些静态文件都是浏览器单独过来请求的，其实和标签的属性有有关系，css文件是link标签的href属性：<link rel="stylesheet" href="test.css">，js文件是script标签的src属性：<script src="test.js"></script>，图片文件是img标签的src属性：&lt;img src=&quot;meinv.png&quot; alt=&quot;&quot; width=&quot;100&quot; height=&quot;100&quot;&gt; ，那个.ico文件是link标签的属性：<link rel="icon" href="wechat.ico">，其实这些属性都会在页面加载的时候，单独到自己对应的属性值里面取请求对应的文件数据，而且我们如果在值里面写的都是自己本地的路径，那么都会来自己的本地路径来找，如果我们写的是相对路径，就会到我们自己的网址+文件名称，这个路径来找它需要的文件，所以我们只需要将这些请求做一些响应，将对应的文件数据相应给浏览器就可以了！并且我们通过前面的查看，能够发现，浏览器url的请求路径我们知道是什么，静态文件不是也这样请求的吗，好，我们针对不同的路径给它返回不同的文件。</p></li> <li><p><strong>总结</strong>: 我们可以得知，所有含有link、src属性的标签都会独立的向服务器（相对路径时）或网址去取得数据，<strong>一般优先去本地找，没有时会查看缓存中是否有，最后再去网络找</strong>。根据这一点我们就可以判断浏览器返回的信息来返回相应的文件回去。</p></li></ul> <h2 id="返回静态文件的高级web框架"><a href="#返回静态文件的高级web框架" class="header-anchor">#</a> 返回静态文件的高级Web框架</h2> <ul><li><h5 id="简单版本"><a href="#简单版本" class="header-anchor">#</a> 简单版本</h5> <ul><li>通过切割发送到服务端的消息，得到浏览器最初读取html文件时link需要的文件，然后我们就能通过判断来打开相应的文件发送给浏览器</li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> socket
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8001</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">#首先浏览器相当于给我们发送了多个请求，一个是请求我们的html文件，而我们的html文件里面的引入文件的标签又给我们这个网站</span>
+<span class="token comment"># 发送了请求静态文件的请求，所以我们要将建立连接的过程循环起来，才能接受多个请求，没毛病</span>
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">,</span>addr <span class="token operator">=</span> sk<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    from_b_msg <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    str_msg <span class="token operator">=</span> from_b_msg<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    <span class="token comment">#通过http协议我们知道，浏览器请求的时候，有一个请求内容的路径，通过对请求信息的分析，</span>
+    <span class="token comment"># 这个路径我们在请求的所有请求信息中可以提炼出来，下面的path就是我们提炼出来的路径</span>
+    path <span class="token operator">=</span> str_msg<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\r\n'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'path&gt;&gt;&gt;'</span><span class="token punctuation">,</span>path<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">b'HTTP/1.1 200 ok \r\n\r\n'</span><span class="token punctuation">)</span>
+    <span class="token comment">#由于整个页面需要html、css、js、图片等一系列的文件，所以我们都需要给人家浏览器发送过去，浏览器才能有这些文件，才能很好的渲染你的页面</span>
+    <span class="token comment">#根据不同的路径来返回响应的内容</span>
+    <span class="token keyword">if</span> path <span class="token operator">==</span> <span class="token string">'/'</span><span class="token punctuation">:</span> <span class="token comment">#返回html文件</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>from_b_msg<span class="token punctuation">)</span>
+        <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'myhtml.html'</span><span class="token punctuation">,</span><span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">elif</span> path <span class="token operator">==</span> <span class="token string">'/my.css'</span><span class="token punctuation">:</span> <span class="token comment">#返回css文件</span>
+        <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'my.css'</span><span class="token punctuation">,</span><span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            css_data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>css_data<span class="token punctuation">)</span>
+        conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">elif</span> path <span class="token operator">==</span> <span class="token string">'/favicon.ico'</span><span class="token punctuation">:</span><span class="token comment">#返回页面的ico图标</span>
+        <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'favicon.ico'</span><span class="token punctuation">,</span><span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            ico_data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>ico_data<span class="token punctuation">)</span>
+        conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">elif</span> path <span class="token operator">==</span> <span class="token string">'/my.js'</span><span class="token punctuation">:</span> <span class="token comment">#返回js文件</span>
+        <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'my.js'</span><span class="token punctuation">,</span><span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            js_data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>js_data<span class="token punctuation">)</span>
+        conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">#注意：上面每一个请求处理完之后，都有一个conn.close()是因为，HTTP协议是短链接的，一次请求对应一次响应，这个请求就结束了，所以我们需要写上close，不然浏览器自己断了，你自己写的服务端没有断，就会出问题。（当然一般来说这个短链接是相对的，为了防止用户点击页面后马上跳转到本地的下一个文件中，从而增加连接次数，所以短暂停留3秒，来避免）</span>
+</code></pre></div></li> <li><h5 id="函数加多线程版本"><a href="#函数加多线程版本" class="header-anchor">#</a> 函数加多线程版本</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> socket
+<span class="token keyword">from</span> threading <span class="token keyword">import</span> Thread
+<span class="token comment">#注意一点，不开多线程完全是可以搞定的，在这里只是教大家要有并发编程的思想，所以我使用了多线程</span>
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8001</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">func1</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'myhtml.html'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        <span class="token comment"># with open('Python开发.html','rb') as f:</span>
+        data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">func3</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'my.css'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        css_data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>css_data<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">func4</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'favicon.ico'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        ico_data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>ico_data<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">func5</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'my.js'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        js_data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>js_data<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">,</span>addr <span class="token operator">=</span> sk<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    from_b_msg <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    str_msg <span class="token operator">=</span> from_b_msg<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    path <span class="token operator">=</span> str_msg<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\r\n'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'path&gt;&gt;&gt;'</span><span class="token punctuation">,</span>path<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">b'HTTP/1.1 200 ok \r\n\r\n'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>from_b_msg<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> path <span class="token operator">==</span> <span class="token string">'/'</span><span class="token punctuation">:</span>
+        t <span class="token operator">=</span> Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>func1<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>conn<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> path <span class="token operator">==</span> <span class="token string">'/my.css'</span><span class="token punctuation">:</span>
+        t <span class="token operator">=</span> Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>func3<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>conn<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> path <span class="token operator">==</span> <span class="token string">'/favicon.ico'</span><span class="token punctuation">:</span>
+        t <span class="token operator">=</span> Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>func4<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>conn<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> path <span class="token operator">==</span> <span class="token string">'/my.js'</span><span class="token punctuation">:</span>
+        t <span class="token operator">=</span> Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>func5<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>conn<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><h5 id="更高级版本"><a href="#更高级版本" class="header-anchor">#</a> 更高级版本</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> socket
+<span class="token keyword">from</span> threading <span class="token keyword">import</span> Thread
+
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8001</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">func1</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">b'HTTP/1.1 200 ok\r\ncontent-type:text/html\r\ncharset:utf-8\r\n\r\n'</span><span class="token punctuation">)</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'myhtml.html'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">func3</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">b'HTTP/1.1 200 ok\r\n\r\n'</span><span class="token punctuation">)</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'my.css'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        css_data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>css_data<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">func4</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">b'HTTP/1.1 200 ok\r\n\r\n'</span><span class="token punctuation">)</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'favicon.ico'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        ico_data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>ico_data<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">func5</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">b'HTTP/1.1 200 ok\r\n\r\n'</span><span class="token punctuation">)</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'my.js'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        js_data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>js_data<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#定义一个路径和执行函数的对应关系，不再写一堆的if判断了</span>
+l1 <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span>func1<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">'/my.css'</span><span class="token punctuation">,</span>func3<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">'/favicon.ico'</span><span class="token punctuation">,</span>func4<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">'/my.js'</span><span class="token punctuation">,</span>func5<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+
+<span class="token comment">#遍历路径和函数的对应关系列表，并开多线程高效的去执行路径对应的函数，</span>
+<span class="token keyword">def</span> <span class="token function">fun</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> l1<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> path<span class="token punctuation">:</span>
+            t <span class="token operator">=</span> Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>i<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>conn<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">,</span>addr <span class="token operator">=</span> sk<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># 看完这里面的代码之后，你就可以思考一个问题了，很多人要同时访问你的网站，</span>
+    <span class="token comment"># 你在请求这里是不是可以开起并发编程的思想了，多进程+多线程+协程，妥妥的支持高并发，再配合服务器集群，</span>
+    <span class="token comment"># 这个网页就支持大量的高并发了，有没有很激动，哈哈，但是咱们写的太low了，而且功能很差，容错能力也很差，当然了，</span>
+    <span class="token comment"># 如果你有能力，你现在完全可以自己写web框架了，写一个nb的，如果现在没有这个能力，那么我们就来好好学学别人写好的框架把，</span>
+    <span class="token comment"># 首先第一个就是咱们的django框架了，其实就是将这些功能封装起来，并且容错能力强，抗压能力强，总之一个字：吊。</span>
+    from_b_msg <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    str_msg <span class="token operator">=</span> from_b_msg<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    path <span class="token operator">=</span> str_msg<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\r\n'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'path&gt;&gt;&gt;'</span><span class="token punctuation">,</span>path<span class="token punctuation">)</span>
+    <span class="token comment"># 注意：因为开启的线程很快，可能导致你的文件还没有发送过去，其他文件的请求已经来了，导致你文件</span>
+    <span class="token comment"># 信息没有被浏览器正确的认识，所以需要将发送请求行和请求头的部分写道前面的每一个函数里面去，并且防止出现(http,只认识html，</span>
+    <span class="token comment"># 也就是说它只从html下口，浏览器可能不能识别你的html文件的情况，需要在发送html文件的那个函数里面的发送请求行和请求头的部分加上两个请求头</span>
+    <span class="token comment"># content-type:text/html\r\ncharset:utf-8\r\n</span>
+    <span class="token comment"># conn.send(b'HTTP/1.1 200 ok\r\n\r\n')  不这样写了</span>
+    <span class="token comment"># conn.send(b'HTTP/1.1 200 ok\r\ncontent-type:text/html\r\ncharset:utf-8\r\n\r\n')  不这样写了</span>
+    <span class="token comment">#执行这个fun函数并将路径和conn管道都作为参数传给他</span>
+    fun<span class="token punctuation">(</span>path<span class="token punctuation">,</span>conn<span class="token punctuation">)</span>
+</code></pre></div></li> <li><h5 id="返回动态页面的web框架"><a href="#返回动态页面的web框架" class="header-anchor">#</a> 返回动态页面的web框架</h5> <p>​		这网页能够显示出来了，但是都是静态的啊。页面的内容都不会变化的，我想要的是动态网站，动态网站的意思是里面有动态变化的数据（这里通过replace来代替，使页面动态），而不是页面里面有动态效果，这个大家要注意啊。没问题，我也有办法解决。我选择使用字符串替换来实现这个需求。（这里使用时间戳来模拟动态的数据，还是只给大家python代码吧）</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token triple-quoted-string string">&quot;&quot;&quot;
+根据URL中不同的路径返回不同的内容
+返回HTML页面
+让网页动态起来
+&quot;&quot;&quot;</span>
+<span class="token keyword">import</span> socket
+<span class="token keyword">import</span> time
+sk <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sk<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span> <span class="token number">8080</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 绑定IP和端口</span>
+sk<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 监听</span>
+
+<span class="token comment"># 将返回不同的内容部分封装成函数</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;index.html&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">&quot;utf8&quot;</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        s <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        now <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        s <span class="token operator">=</span> s<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">&quot;@@oo@@&quot;</span><span class="token punctuation">,</span> now<span class="token punctuation">)</span>  <span class="token comment"># 在网页中定义好特殊符号，用动态的数据去替换提前定义好的特殊符号</span>
+    <span class="token keyword">return</span> <span class="token builtin">bytes</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">&quot;utf8&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">home</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;home.html&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">&quot;utf8&quot;</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        s <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token builtin">bytes</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">&quot;utf8&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 定义一个url和实际要执行的函数的对应关系</span>
+list1 <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">(</span><span class="token string">&quot;/index/&quot;</span><span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">&quot;/home/&quot;</span><span class="token punctuation">,</span> home<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    <span class="token comment"># 等待连接</span>
+    conn<span class="token punctuation">,</span> add <span class="token operator">=</span> sk<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    data <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">8096</span><span class="token punctuation">)</span>  <span class="token comment"># 接收客户端发来的消息</span>
+    <span class="token comment"># 从data中取到路径</span>
+    data <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">&quot;utf8&quot;</span><span class="token punctuation">)</span>  <span class="token comment"># 把收到的字节类型的数据转换成字符串</span>
+    <span class="token comment"># 按\r\n分割</span>
+    data1 <span class="token operator">=</span> data<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&quot;\r\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    url <span class="token operator">=</span> data1<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token comment"># url是我们从浏览器发过来的消息中分离出的访问路径</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token string">b'HTTP/1.1 200 OK\r\n\r\n'</span><span class="token punctuation">)</span>  <span class="token comment"># 因为要遵循HTTP协议，所以回复的消息也要加状态行</span>
+    <span class="token comment"># 根据不同的路径返回不同内容</span>
+    func <span class="token operator">=</span> <span class="token boolean">None</span>  <span class="token comment"># 定义一个保存将要执行的函数名的变量</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> list1<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> url<span class="token punctuation">:</span>
+            func <span class="token operator">=</span> i<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">if</span> func<span class="token punctuation">:</span>
+        response <span class="token operator">=</span> func<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        response <span class="token operator">=</span> <span class="token string">b&quot;404 not found!&quot;</span>
+    <span class="token comment"># 返回具体的响应消息</span>
+    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p><strong>总结</strong>：我们可以在服务端根据浏览器的消息（请求路径，给予相应的文件回复）</p></li></ul> <h2 id="wsgiref模块-与-wsgi"><a href="#wsgiref模块-与-wsgi" class="header-anchor">#</a> wsgiref模块 与 WSGI</h2> <p>​			在以上的程序中不难发现有很多重复的代码格式，每个响应函数都会发送固定的格式（GET / HTTP/1.1……）以及每次都要对浏览器的请求，如地址path的拼接等，要知道目前我们还是使用最底层的基于socket的程序，实际上别人早就为我们封装好了这一系列的功能，我们只需要专注于业务逻辑开发既可以（wsgiref模块）。<strong>wsgiref模块其实就是将整个请求信息给封装了起来，就不需要你自己处理了</strong>，假如它将所有请求信息封装成了一个叫做request的对象，那么你直接request.path就能获取到用户这次请求的路径，request.method就能获取到本次用户请求的请求方式(get还是post)等，那这个模块用起来，我们再写web框架是不是就简单了好多啊。</p> <p>对于真实开发中的python web程序来说，一般会分为两部分：<strong>服务器程序和应用程序</strong>：</p> <div class="language- extra-class"><pre class="language-text"><code>服务器程序：负责对socket服务器进行封装，并在请求到来时，对请求的各种数据进行整理。
+
+应用程序：则负责具体的逻辑处理。为了方便应用程序的开发，就出现了众多的Web框架，例如：Django、Flask、web.py 等。不同的框架有不同的开发方式，但是无论如何，开发出的应用程序都要和服务器程序配合，才能为用户提供服务。
+
+那么为了实现服务器程序和应用程序解耦，即不同的服务器程序（Apance、nignx）都能和我们写的应用程序进行桥接，那么我们久需要定制一个规范：WSGI
+</code></pre></div><ul><li><p><strong>统一规范</strong>：正如上面说的众多web框架，不同的框架有不同的开发方式，这样服务器程序就需要为不同的框架提供不同的支持。这样混乱的局面无论对于服务器还是框架，都是不好的。对服务器来说，需要支持各种不同框架，对框架来说，只有支持它的服务器才能被开发出的应用使用。</p></li> <li><p>最简单的Web应用就是先把HTML用文件保存好，用一个现成的HTTP服务器软件，接收用户请求，从文件中读取HTML，返回。如果要动态生成HTML，就需要把上述步骤自己来实现。不过，接受HTTP请求、解析HTTP请求、发送HTTP响应都是苦力活，如果我们自己来写这些底层代码，还没开始写动态HTML呢，就得花个把月去读HTTP规范。</p></li> <li><p>正确的做法是底层代码由专门的服务器软件实现，我们用Python专注于生成HTML文档。因为我们不希望接触到TCP连接、HTTP原始请求和响应格式，所以，需要一个统一的接口协议来实现这样的服务器软件，让我们专心用Python编写Web业务。</p></li> <li><p>我们来设立一个标准：<strong>只要服务器程序支持这个标准，框架也支持这个标准，那么他们就可以配合使用。一旦标准确定，双方各自实现。这样，服务器可以支持更多支持标准的框架，框架也可以使用更多支持标准的服务器</strong>。</p></li> <li><p>WSGI（Web Server Gateway Interface）就是一种规范，它定义了使用Python编写的web应用程序与web服务器程序之间的接口格式（桥梁），实现web应用程序与web服务器程序间的解耦。</p></li> <li><p>常用的WSGI服务器有<strong>uwsgi、Gunicorn</strong>。而Python标准库提供的独立WSGI服务器叫<strong>wsgiref</strong>，Django开发环境用的就是这个模块来做服务器。</p></li> <li><p><strong>总的来说</strong>：WSGI服务器，是一种服务器应用程序，用于规范的收发整理客户端和服务端的消息，使我们能专注于逻辑开发。</p></li> <li><p>具体说明wsgiref怎么使用：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> wsgiref<span class="token punctuation">.</span>simple_server <span class="token keyword">import</span> make_server
+<span class="token comment"># wsgiref本身就是个web框架，提供了一些固定的功能（请求和响应信息的封装，不需要我们自己写原生的socket了也不需要咱们自己来完成请求信息的提取了，提取起来很方便）</span>
+<span class="token comment">#函数名字随便起</span>
+<span class="token keyword">def</span> <span class="token function">application</span><span class="token punctuation">(</span>environ<span class="token punctuation">,</span> start_response<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+    <span class="token triple-quoted-string string">'''
+    :param environ: 是全部加工好的请求信息，加工成了一个字典，通过字典取值的方式就能拿到很多你想要拿到的信息
+    :param start_response: 帮你封装响应信息的（响应行和响应头），注意下面的参数
+    :return:
+    '''</span>
+    start_response<span class="token punctuation">(</span><span class="token string">'200 OK'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'Content-Type'</span><span class="token punctuation">,</span> <span class="token string">'text/html'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">'k1'</span><span class="token punctuation">,</span><span class="token string">'v1'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 这里使我们可以定制消息头，以元组的形式，wsgiref以便做成字典,不写这句话会乱码</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>environ<span class="token punctuation">)</span>  <span class="token comment"># 一大堆整理的数据字典</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>environ<span class="token punctuation">[</span><span class="token string">'PATH_INFO'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">#输入地址127.0.0.1:8000，这个打印的是'/',输入的是127.0.0.1:8000/index，打印结果是'/index'</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token string">b'&lt;h1&gt;Hello, web!&lt;/h1&gt;'</span><span class="token punctuation">]</span>  <span class="token comment"># 用于返回数据，之前我们需要进行send，这里return，wsgiref帮我们发送</span>
+
+<span class="token comment">#和咱们学的socketserver那个模块很像啊</span>
+httpd <span class="token operator">=</span> make_server<span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span> <span class="token number">8080</span><span class="token punctuation">,</span> application<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Serving HTTP on port 8080...'</span><span class="token punctuation">)</span>
+<span class="token comment"># 开始监听HTTP请求:</span>
+httpd<span class="token punctuation">.</span>serve_forever<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul> <p><img src="C:%5CUsers%5Cwanglixing%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1557992417252.png" alt="1557992417252"></p> <h2 id="完善web项目"><a href="#完善web项目" class="header-anchor">#</a> 完善web项目</h2> <h6 id="简单的实现一个用户登陆认证的项目"><a href="#简单的实现一个用户登陆认证的项目" class="header-anchor">#</a> 简单的实现一个用户登陆认证的项目：</h6> <ul><li><p>通过上面的介绍我们知道wsgiref的简单用法，下面我们为了完善这个项目，需要用大数据库，让用户输入密码和用户名，合法则调整至登陆界面</p> <div class="language-sql extra-class"><pre class="language-sql"><code>mysql<span class="token operator">&gt;</span> <span class="token keyword">create</span> <span class="token keyword">database</span> db1<span class="token punctuation">;</span>
+mysql<span class="token operator">&gt;</span> <span class="token keyword">use</span> db1<span class="token punctuation">;</span>
+mysql<span class="token operator">&gt;</span> <span class="token keyword">insert</span> <span class="token keyword">into</span> userinfo<span class="token punctuation">(</span>username<span class="token punctuation">,</span>password<span class="token punctuation">)</span> <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token string">'chao'</span><span class="token punctuation">,</span><span class="token string">'666'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">'sb1'</span><span class="token punctuation">,</span><span class="token string">'222'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></li> <li><p>1、我们需要以下的几个文件：webmodel.py 用于操作数据库，给数据库进行操作。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">createtable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">import</span> pymysql
+    conn <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>
+        host <span class="token operator">=</span> <span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>
+        port <span class="token operator">=</span> <span class="token number">3306</span><span class="token punctuation">,</span>
+        user <span class="token operator">=</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+        password <span class="token operator">=</span> <span class="token string">'123'</span><span class="token punctuation">,</span>
+        database <span class="token operator">=</span> <span class="token string">'db1'</span><span class="token punctuation">,</span>
+        charset <span class="token operator">=</span> <span class="token string">'utf8'</span>
+    <span class="token punctuation">)</span>    <span class="token comment"># 连接数据库</span>
+    cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span>pymysql<span class="token punctuation">.</span>cursors<span class="token punctuation">.</span>DictCursor<span class="token punctuation">)</span> <span class="token comment"># 返回字典的游标</span>
+    <span class="token comment"># sql = '''</span>
+    <span class="token comment"># create table userinfo (id int primary key auto_increment,username char(20) not null unique,password char(20) not null);</span>
+    <span class="token comment"># '''</span>
+    
+    sql <span class="token operator">=</span> <span class="token triple-quoted-string string">'''
+    insert into userinfo (username,password) values('cha','666'),('sb','333')'''</span>
+    cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#createtable()，还未开发完整，具体什么时候调用这个函数，以及传入的参数还未完善</span>
+</code></pre></div></li> <li><p>2、一个名为webauth.py 文件，用于验证用户输入的密码是否合法</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">auth</span><span class="token punctuation">(</span>username<span class="token punctuation">,</span>password<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">import</span> pymysql
+    conn <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>
+        host <span class="token operator">=</span> <span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>
+        port <span class="token operator">=</span> <span class="token number">3306</span><span class="token punctuation">,</span>
+        user <span class="token operator">=</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+        password <span class="token operator">=</span> <span class="token string">'123'</span><span class="token punctuation">,</span>
+        database <span class="token operator">=</span> <span class="token string">'db1'</span><span class="token punctuation">,</span>
+        charset <span class="token operator">=</span> <span class="token string">'utf8'</span>
+    <span class="token punctuation">)</span>
+    
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'userinfo'</span><span class="token punctuation">,</span>username<span class="token punctuation">,</span>password<span class="token punctuation">)</span>
+    cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span>pymysql<span class="token punctuation">.</span>cursors<span class="token punctuation">.</span>DictCursor<span class="token punctuation">)</span>
+    sql <span class="token operator">=</span> <span class="token string">'select * from userinfo where username=%s and password=%s;'</span> <span class="token comment"># 为了防止注入将参数放在execute中</span>
+    res <span class="token operator">=</span> cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">,</span><span class="token punctuation">[</span>username<span class="token punctuation">,</span>password<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># res 是返回的查询到的条数</span>
+    <span class="token keyword">if</span> res<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span>  <span class="token comment"># 查询到者返回True</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+</code></pre></div></li> <li><p>3、用户输入用户名和密码的文件，名为web.html,内容如下：（也就是首页）</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>首页<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!--如果form表单里面的action什么值也没给，默认是往当前页面的url上提交你的数据，
+所以我们可以自己指定数据的提交路径--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://127.0.0.1:8080/auth<span class="token punctuation">&quot;</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>post<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        用户名：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>username<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        密码： <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>password<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">'</span>password<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>submit<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://127.0.0.1:8080/auth<span class="token punctuation">&quot;</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>post<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        用户名：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>username<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        密码： <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>password<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>password<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>submit<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>    
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li> <li><p>4、用户验证后跳转的页面，名为websuccess.html，内容如下</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>登陆成功页面<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">h1</span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>lightcoral<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>欢迎光临<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li> <li><p>5、最后就是我们的主逻辑程序了，前面都是在搭架子</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> urllib<span class="token punctuation">.</span>parse <span class="token keyword">import</span> parse_qs  <span class="token comment">#用于解析数据也就是将浏览器发过来的请求如带有&amp;的进行切割解析</span>
+<span class="token keyword">from</span> wsgiref<span class="token punctuation">.</span>simple_server <span class="token keyword">import</span> make_server
+<span class="token keyword">import</span> weauth
+<span class="token keyword">def</span> <span class="token function">application</span><span class="token punctuation">(</span>environ<span class="token punctuation">,</span>start_response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    start_response<span class="token punctuation">(</span><span class="token string">'200 OK'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'Content-Type'</span><span class="token punctuation">,</span> <span class="token string">'text/html'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#这个 方法会帮我们实现消息头的发送</span>
+    <span class="token comment"># print(environ) # 拿到请求消息</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>environ<span class="token punctuation">[</span><span class="token string">'PATH_INFO'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    path <span class="token operator">=</span> environ<span class="token punctuation">[</span><span class="token string">'PATH_INFO'</span><span class="token punctuation">]</span>
+    
+    <span class="token comment">#用户获取login页面的请求路径，进行区分</span>
+    <span class="token keyword">if</span> path <span class="token operator">==</span> <span class="token string">'/login'</span><span class="token punctuation">:</span>  <span class="token comment">#首页请求</span>
+        <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'web.html'</span><span class="token punctuation">,</span><span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+             
+    <span class="token keyword">elif</span> path <span class="token operator">==</span> <span class="token string">'/favicon.ico'</span><span class="token punctuation">:</span>  <span class="token comment"># 请求图标</span>
+        <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'favicon.ico'</span><span class="token punctuation">,</span><span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+              
+    <span class="token keyword">elif</span> path <span class="token operator">==</span> <span class="token string">'/auth'</span><span class="token punctuation">:</span>  <span class="token comment">#提交按钮触发，进行用户认证</span>
+        <span class="token comment"># 登陆认证</span>
+        <span class="token comment">#1.获取用户输入的用户名和密码</span>
+        <span class="token comment">#2.去数据库做数据的校验，查看用户提交的是否合法</span>
+        <span class="token keyword">if</span> environ<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">&quot;REQUEST_METHOD&quot;</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&quot;POST&quot;</span><span class="token punctuation">:</span>
+            <span class="token comment"># 获取请求体数据的长度,因为提交过来的数据需要用它来提取,注意POST请求和GET请求的获取数据的方式不同</span>
+            <span class="token keyword">try</span><span class="token punctuation">:</span>
+                request_body_size <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>environ<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'CONTENT_LENGTH'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">except</span> <span class="token punctuation">(</span>ValueError<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                request_body_size <span class="token operator">=</span> <span class="token number">0</span>
+            <span class="token comment"># POST请求获取数据的方式</span>
+            request_data <span class="token operator">=</span> environ<span class="token punctuation">[</span><span class="token string">'wsgi.input'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span>request_body_size<span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'&gt;&gt;&gt;&gt;&gt;'</span><span class="token punctuation">,</span> request_data<span class="token punctuation">)</span>  <span class="token comment"># &gt;&gt;&gt;&gt;&gt; b'username=chao&amp;password=123'，是个bytes类型数据</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'?????'</span><span class="token punctuation">,</span> environ<span class="token punctuation">[</span><span class="token string">'QUERY_STRING'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># ????? 空的，因为post请求只能按照上面这种方式取数据</span>
+            <span class="token comment"># parse_qs可以帮我们解析数据</span>
+            re_data <span class="token operator">=</span> parse_qs<span class="token punctuation">(</span>request_data<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">#post需要解码，传输的过程是接收的字节码</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'拆解后的数据'</span><span class="token punctuation">,</span> re_data<span class="token punctuation">)</span>  <span class="token comment"># 拆解后的数据 {b'password': [b'123'], b'username': [b'chao']}</span>
+            username <span class="token operator">=</span> re_data<span class="token punctuation">[</span><span class="token string">'username'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            password <span class="token operator">=</span> re_data<span class="token punctuation">[</span><span class="token string">'password'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span>
+            <span class="token comment"># 进行验证：</span>
+            status <span class="token operator">=</span> weauth<span class="token punctuation">.</span>auth<span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> status<span class="token punctuation">:</span>
+                <span class="token comment"># 3.将相应内容返回</span>
+                <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'websuccess.html'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+                    data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                data <span class="token operator">=</span> <span class="token string">b'auth error'</span>
+            
+        <span class="token keyword">if</span> environ<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">&quot;REQUEST_METHOD&quot;</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">:</span>
+            <span class="token comment"># GET请求获取数据的方式，只能按照这种方式取</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'?????'</span><span class="token punctuation">,</span> environ<span class="token punctuation">[</span><span class="token string">'QUERY_STRING'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># ????? username=chao&amp;password=123,是个字符串类型数据,返回用户输入的数据和密码</span>
+            request_data <span class="token operator">=</span> environ<span class="token punctuation">[</span><span class="token string">'QUERY_STRING'</span><span class="token punctuation">]</span>  <span class="token comment">#交给request_data 进行切割，数据解析</span>
+    
+            <span class="token comment"># parse_qs可以帮我们解析数据</span>
+            re_data <span class="token operator">=</span> parse_qs<span class="token punctuation">(</span>request_data<span class="token punctuation">)</span>    <span class="token comment"># 字符串</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'拆解后的数据'</span><span class="token punctuation">,</span> re_data<span class="token punctuation">)</span>        <span class="token comment"># 拆解后的数据 {'password': ['123'], 'username': ['chao']}</span>
+            username <span class="token operator">=</span> re_data<span class="token punctuation">[</span><span class="token string">'username'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            password <span class="token operator">=</span> re_data<span class="token punctuation">[</span><span class="token string">'password'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span>
+            <span class="token comment"># 进行验证：</span>
+            status <span class="token operator">=</span> weauth<span class="token punctuation">.</span>auth<span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> status<span class="token punctuation">:</span>
+                <span class="token comment"># 3.将相应内容返回</span>
+                <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'websuccess.html'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+                    data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                data <span class="token operator">=</span> <span class="token string">b'auth error'</span>
+        <span class="token comment"># 但是不管是post还是get请求都不能直接拿到数据，拿到的数据还需要我们来进行分解提取，所以我们引入urllib模块来帮我们分解</span>
+        <span class="token comment"># 注意昂，我们如果直接返回中文，没有给浏览器指定编码格式，默认是gbk，所以我们需要gbk来编码一下，浏览器才能识别</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>data<span class="token punctuation">]</span>
+
+httpd <span class="token operator">=</span> make_server<span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8080</span><span class="token punctuation">,</span>application<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Serving HTTP on port 8080……'</span><span class="token punctuation">)</span>
+httpd<span class="token punctuation">.</span>serve_forever<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul> <h2 id="起飞版web框架"><a href="#起飞版web框架" class="header-anchor">#</a> 起飞版Web框架</h2> <ul><li><p>上面的主逻辑代码使用的太多的if语句，显得很冗余，违背了Python的初衷，所以我们需要更进一步，我们将主逻辑程序的路径选择写在一个列表中。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> urllib<span class="token punctuation">.</span>parse <span class="token keyword">import</span> parse_qs  <span class="token comment">#用于解析数据也就是将浏览器发过来的请求如带有&amp;的进行切割解析</span>
+<span class="token keyword">from</span> wsgiref<span class="token punctuation">.</span>simple_server <span class="token keyword">import</span> make_server
+<span class="token keyword">import</span> weauth
+
+<span class="token keyword">def</span> <span class="token function">login</span><span class="token punctuation">(</span>environ<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment">#访问login会触发的函数</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'web.html'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> data
+
+<span class="token keyword">def</span> <span class="token function">auth</span><span class="token punctuation">(</span>environ<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 提交时触发的函数</span>
+    <span class="token keyword">if</span> environ<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">&quot;REQUEST_METHOD&quot;</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&quot;POST&quot;</span><span class="token punctuation">:</span>    
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            request_body_size <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>environ<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'CONTENT_LENGTH'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span> <span class="token punctuation">(</span>ValueError<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            request_body_size <span class="token operator">=</span> <span class="token number">0</span>
+        request_data <span class="token operator">=</span> environ<span class="token punctuation">[</span><span class="token string">'wsgi.input'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span>request_body_size<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'&gt;&gt;&gt;&gt;&gt;'</span><span class="token punctuation">,</span> request_data<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'?????'</span><span class="token punctuation">,</span> environ<span class="token punctuation">[</span><span class="token string">'QUERY_STRING'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        re_data <span class="token operator">=</span> parse_qs<span class="token punctuation">(</span>request_data<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'拆解后的数据'</span><span class="token punctuation">,</span> re_data<span class="token punctuation">)</span>
+        username <span class="token operator">=</span> re_data<span class="token punctuation">[</span><span class="token string">'username'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        password <span class="token operator">=</span> re_data<span class="token punctuation">[</span><span class="token string">'password'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span>
+        status <span class="token operator">=</span> weauth<span class="token punctuation">.</span>auth<span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> status<span class="token punctuation">:</span>
+            <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'websuccess.html'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+                data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            data <span class="token operator">=</span> <span class="token string">b'auth error'</span>
+    
+    <span class="token keyword">if</span> environ<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">&quot;REQUEST_METHOD&quot;</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'?????'</span><span class="token punctuation">,</span> environ<span class="token punctuation">[</span><span class="token string">'QUERY_STRING'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        request_data <span class="token operator">=</span> environ<span class="token punctuation">[</span><span class="token string">'QUERY_STRING'</span><span class="token punctuation">]</span>
+        
+        re_data <span class="token operator">=</span> parse_qs<span class="token punctuation">(</span>request_data<span class="token punctuation">)</span>  <span class="token comment"># 字符串</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'拆解后的数据'</span><span class="token punctuation">,</span> re_data<span class="token punctuation">)</span>  <span class="token comment"># 拆解后的数据 {'password': ['123'], 'username': ['chao']}</span>
+        username <span class="token operator">=</span> re_data<span class="token punctuation">[</span><span class="token string">'username'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        password <span class="token operator">=</span> re_data<span class="token punctuation">[</span><span class="token string">'password'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span>
+        status <span class="token operator">=</span> weauth<span class="token punctuation">.</span>auth<span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> status<span class="token punctuation">:</span>
+            <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'websuccess.html'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+                data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            data <span class="token operator">=</span> <span class="token string">b'auth error'</span>
+    <span class="token keyword">return</span> data
+
+<span class="token keyword">def</span> <span class="token function">favicon</span><span class="token punctuation">(</span>environ<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment">#图标触发的函数</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'favicon.ico'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> data
+
+urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>    <span class="token comment">#者就是用来判断请求地址时，于函数做映射，路由</span>
+    <span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span>login<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">'/auth'</span><span class="token punctuation">,</span>auth<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">'/favicon.ico'</span><span class="token punctuation">,</span>favicon<span class="token punctuation">)</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">application</span><span class="token punctuation">(</span>environ<span class="token punctuation">,</span>start_response<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment">#主逻辑函数</span>
+    start_response<span class="token punctuation">(</span><span class="token string">'200 OK'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'Content-Type'</span><span class="token punctuation">,</span> <span class="token string">'text/html'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#这个 方法会帮我们实现消息头的发送</span>
+    <span class="token comment"># print(environ) # 拿到请求消息</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>environ<span class="token punctuation">[</span><span class="token string">'PATH_INFO'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    path <span class="token operator">=</span> environ<span class="token punctuation">[</span><span class="token string">'PATH_INFO'</span><span class="token punctuation">]</span>
+    
+    <span class="token comment">#用户获取login页面的请求路径，进行区分</span>
+    <span class="token keyword">for</span> urlpattern <span class="token keyword">in</span> urlpatterns<span class="token punctuation">:</span> <span class="token comment">#循环路由</span>
+        <span class="token keyword">if</span> path <span class="token operator">==</span> urlpattern<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            data<span class="token operator">=</span>urlpattern<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">(</span>environ<span class="token punctuation">)</span>  <span class="token comment">#接收返回值</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        data <span class="token operator">=</span> <span class="token string">b'sorry 404!'</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>data<span class="token punctuation">]</span>
+
+httpd <span class="token operator">=</span> make_server<span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8080</span><span class="token punctuation">,</span>application<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Serving HTTP on port 8080……'</span><span class="token punctuation">)</span>
+httpd<span class="token punctuation">.</span>serve_forever<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul> <h6 id="飞升版web框架"><a href="#飞升版web框架" class="header-anchor">#</a> 飞升版web框架</h6> <ul><li><p>对之前主逻辑的文件进行拆分：不难发现其实之前的文件都可以不受影响，我们只需要将主逻辑文件分解成三个文件即可：view.py（负责业务逻辑，即浏览器请求网址对应的函数），urls.py（负责路由，分派网址对应的函数），main.py(主逻辑函数，负责具体的判断，筛选)</p></li> <li><p>1、main.py 简化的主逻辑文件</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> wsgiref<span class="token punctuation">.</span>simple_server <span class="token keyword">import</span> make_server
+<span class="token keyword">from</span> urls <span class="token keyword">import</span> urlpatterns
+
+<span class="token keyword">def</span> <span class="token function">application</span><span class="token punctuation">(</span>environ<span class="token punctuation">,</span>start_response<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment">#主逻辑函数</span>
+    start_response<span class="token punctuation">(</span><span class="token string">'200 OK'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'Content-Type'</span><span class="token punctuation">,</span> <span class="token string">'text/html'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#这个 方法会帮我们实现消息头的发送</span>
+    <span class="token comment"># print(environ) # 拿到请求消息</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>environ<span class="token punctuation">[</span><span class="token string">'PATH_INFO'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    path <span class="token operator">=</span> environ<span class="token punctuation">[</span><span class="token string">'PATH_INFO'</span><span class="token punctuation">]</span>
+    
+    <span class="token comment">#用户获取login页面的请求路径，进行区分</span>
+    <span class="token keyword">for</span> urlpattern <span class="token keyword">in</span> urlpatterns<span class="token punctuation">:</span> <span class="token comment">#循环路由</span>
+        <span class="token keyword">if</span> path <span class="token operator">==</span> urlpattern<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            data<span class="token operator">=</span>urlpattern<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">(</span>environ<span class="token punctuation">)</span>  <span class="token comment">#接收返回值</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        data <span class="token operator">=</span> <span class="token string">b'sorry 404!'</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>data<span class="token punctuation">]</span>
+
+httpd <span class="token operator">=</span> make_server<span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8080</span><span class="token punctuation">,</span>application<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Serving HTTP on port 8080……'</span><span class="token punctuation">)</span>
+httpd<span class="token punctuation">.</span>serve_forever<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>2、view.py 具体的业务逻辑</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> urllib<span class="token punctuation">.</span>parse <span class="token keyword">import</span> parse_qs  <span class="token comment">#用于解析数据也就是将浏览器发过来的请求如带有&amp;的进行切割解析</span>
+<span class="token keyword">import</span> weauth
+
+<span class="token keyword">def</span> <span class="token function">login</span><span class="token punctuation">(</span>environ<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 访问login会触发的函数</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'web.html'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> data
+
+<span class="token keyword">def</span> <span class="token function">auth</span><span class="token punctuation">(</span>environ<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 提交时触发的函数</span>
+    <span class="token keyword">if</span> environ<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">&quot;REQUEST_METHOD&quot;</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&quot;POST&quot;</span><span class="token punctuation">:</span> 
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            request_body_size <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>environ<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'CONTENT_LENGTH'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span> <span class="token punctuation">(</span>ValueError<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            request_body_size <span class="token operator">=</span> <span class="token number">0</span>       
+        request_data <span class="token operator">=</span> environ<span class="token punctuation">[</span><span class="token string">'wsgi.input'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span>request_body_size<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'&gt;&gt;&gt;&gt;&gt;'</span><span class="token punctuation">,</span> request_data<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'?????'</span><span class="token punctuation">,</span> environ<span class="token punctuation">[</span><span class="token string">'QUERY_STRING'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        re_data <span class="token operator">=</span> parse_qs<span class="token punctuation">(</span>request_data<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'拆解后的数据'</span><span class="token punctuation">,</span> re_data<span class="token punctuation">)</span>
+        username <span class="token operator">=</span> re_data<span class="token punctuation">[</span><span class="token string">'username'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        password <span class="token operator">=</span> re_data<span class="token punctuation">[</span><span class="token string">'password'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span>
+        status <span class="token operator">=</span> weauth<span class="token punctuation">.</span>auth<span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> status<span class="token punctuation">:</span>
+            <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'websuccess.html'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+                data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            data <span class="token operator">=</span> <span class="token string">b'auth error'</span>   
+    <span class="token keyword">if</span> environ<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">&quot;REQUEST_METHOD&quot;</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'?????'</span><span class="token punctuation">,</span> environ<span class="token punctuation">[</span><span class="token string">'QUERY_STRING'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        request_data <span class="token operator">=</span> environ<span class="token punctuation">[</span><span class="token string">'QUERY_STRING'</span><span class="token punctuation">]</span>
+        
+        re_data <span class="token operator">=</span> parse_qs<span class="token punctuation">(</span>request_data<span class="token punctuation">)</span>  <span class="token comment"># 字符串</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'拆解后的数据'</span><span class="token punctuation">,</span> re_data<span class="token punctuation">)</span>  <span class="token comment"># 拆解后的数据 {'password': ['123'], 'username': ['chao']}</span>
+        username <span class="token operator">=</span> re_data<span class="token punctuation">[</span><span class="token string">'username'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        password <span class="token operator">=</span> re_data<span class="token punctuation">[</span><span class="token string">'password'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span>
+        status <span class="token operator">=</span> weauth<span class="token punctuation">.</span>auth<span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> status<span class="token punctuation">:</span>
+            <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'websuccess.html'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+                data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            data <span class="token operator">=</span> <span class="token string">b'auth error'</span>
+    <span class="token keyword">return</span> data
+
+<span class="token keyword">def</span> <span class="token function">favicon</span><span class="token punctuation">(</span>environ<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 图标触发的函数</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'favicon.ico'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> data
+</code></pre></div></li> <li><p>3、<strong>urls.py 路由文件，映射逻辑</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> view <span class="token keyword">import</span> login<span class="token punctuation">,</span>auth<span class="token punctuation">,</span>favicon
+
+urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>    <span class="token comment">#者就是用来判断请求地址时，于函数做映射，路由</span>
+    <span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span>login<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">'/auth'</span><span class="token punctuation">,</span>auth<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">'/favicon.ico'</span><span class="token punctuation">,</span>favicon<span class="token punctuation">)</span>
+<span class="token punctuation">]</span>
+</code></pre></div></li></ul> <h2 id="mvc模式"><a href="#mvc模式" class="header-anchor">#</a> MVC模式</h2> <p>​	Web服务器开发领域里著名的MVC模式，所谓MVC就是把Web应用分为模型(M)，控制器(C)和视图(V)三层，他们之间以一种插件式的、松耦合的方式连接在一起，模型负责业务对象与数据库的映射(ORM)，视图负责与用户的交互(页面)，控制器接受用户的输入调用模型和视图完成用户的请求，其示意图如下所示：</p> <ul><li><p>M: model  模型</p></li> <li><p>V：view   视图   - HTML</p></li> <li><p>C: controller  控制器   ——路由 传递指令  业务逻辑，url和views</p></li></ul> <h2 id="mtv模式"><a href="#mtv模式" class="header-anchor">#</a> MTV模式</h2> <p>​		　Django的MTV模式本质上和MVC是一样的，也是为了各组件间保持松耦合关系，只是定义上有些许不同	Django的MTV分别是值：</p> <ul><li>M 代表模型（Model）： 负责业务对象和数据库的关系映射(ORM)。</li> <li>T 代表模板 (Template)：负责如何把页面展示给用户(html)。</li> <li>V 代表视图（View）：   负责业务逻辑，并在适当时候调用Model和Template。包括url和view</li></ul> <p>除了以上三层之外，还需要一个URL分发器，它的作用是将一个个URL的页面请求分发给不同的View处理，View再调用相应的Model和Template，MTV的响应模式如下所示：</p> <p>​		一般是用户通过浏览器向我们的服务器发起一个请求(request)，这个请求回去访问视图函数，（如果不涉及到数据调用，那么这个时候视图函数返回一个模板也就是一个网页给用户），视图函数调用模型，模型去数据库查找数据，然后逐级返回，视图函数把返回的数据填充到模板中空格中，最后返回网页给用户。</p> <h2 id="补充-http相关知识"><a href="#补充-http相关知识" class="header-anchor">#</a> 补充：HTTP相关知识</h2> <ul><li><p><strong>HTTP协议简介</strong></p> <ul><li>超文本传输协议（英文：<strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol，缩写：HTTP）是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP是万维网的数据通信的基础。</li> <li>通常，由HTTP客户端发起一个请求，创建一个到服务器指定端口（默认HTTP是80端口，https默认端口是443）的TCP连接。HTTP服务器则在那个端口监听客户端的请求。一旦收到请求，服务器会向客户端返回一个状态，比如&quot;HTTP/1.1 200 OK&quot;，以及返回的内容，如请求的文件、错误消息、或者其它信息。</li></ul></li> <li><p><strong>HTTP工作原理</strong></p> <ul><li><p>HTTP协议采用了请求/响应模型。客户端向服务器发送一个请求报文，请求报文包含请求的方法、URL、协议版本、请求头部和请求数据。服务器以一个状态行作为响应，响应的内容包括协议的版本、成功或者错误代码、服务器信息、响应头部和响应数据。</p> <div class="language- extra-class"><pre class="language-text"><code>以下是 HTTP 请求/响应的步骤：
+1. 客户端连接到Web服务器
+	一个HTTP客户端，通常是浏览器，与Web服务器的HTTP端口（默认为80）建立一个TCP套接字连接。例如，http://www.luffycity.com。
+
+2. 发送HTTP请求
+	通过TCP套接字，客户端向Web服务器发送一个文本的请求报文，一个请求报文由请求行、请求头部、空行和请求数据4部分组成。
+
+3. 服务器接受请求并返回HTTP响应
+	Web服务器解析请求，定位请求资源。服务器将资源复本写到TCP套接字，由客户端读取。一个响应由状态行、响应头部、空行和响应数据4部分组成。
+
+4. 释放连接TCP连接
+	若connection 模式为close，则服务器主动关闭TCP连接，客户端被动关闭连接，释放TCP连接;若connection 模式为keepalive，则该连接会保持一段时间，在该时间内可以继续接收请求;
+
+5. 客户端浏览器解析HTML内容
+	客户端浏览器首先解析状态行，查看表明请求是否成功的状态代码。然后解析每一个响应头，响应头告知以下为若干字节的HTML文档和文档的字符集。客户端浏览器读取响应数据HTML，根据HTML的语法对其进行格式化，并在浏览器窗口中显示。
+	
+
+面试题：在浏览器地址栏键入URL，按下回车之后会经历以下流程：
+   1、 浏览器向 DNS 服务器请求解析该 URL 中的域名所对应的 IP 地址;
+   2、 解析出 IP 地址后，根据该 IP 地址和默认端口 80，和服务器建立TCP连接;
+   3、 浏览器发出读取文件(URL 中域名后面部分对应的文件)的HTTP 请求，该请求报文作为 TCP 三次	 握手的第三个报文的数据发送给服务器;
+   4、 服务器对浏览器请求作出响应，并把对应的 html 文本发送给浏览器;
+   5、 释放 TCP连接;
+   6、 浏览器将该 html 文本并显示内容; 　
+</code></pre></div></li> <li><p><strong>HTTP的特点</strong></p> <div class="language- extra-class"><pre class="language-text"><code>1、基于请求-响应的模式，是基于TCP/IP协议之上的应用层协议
+2、无状态保存：我发什么来着？？我也不知？？
+3、无连接：无连接的含义是限制每次连接只处理一个请求
+</code></pre></div></li> <li><p><strong>HTTP的请求方法</strong></p> <div class="language- extra-class"><pre class="language-text"><code>1、GET：向指定的资源发出“显示”请求。使用GET方法应该只用在读取数据，而不应当被用于产生“副作用”的操作中，例如在Web Application中。其中一个原因是GET可能会被网络蜘蛛等随意访问。
+
+2、HEAD：与GET方法一样，都是向服务器发出指定资源的请求。只不过服务器将不传回资源的本文部分。它的好处在于，使用这个方法可以在不必传输全部内容的情况下，就可以获取其中“关于该资源的信息”（元信息或称元数据）。
+
+3、POST：向指定资源提交数据，请求服务器进行处理（例如提交表单或者上传文件）。数据被包含在请求本文中。这个请求可能会创建新的资源或修改现有资源，或二者皆有。
+
+4、PUT：向指定资源位置上传其最新内容。
+
+5、DELETE：请求服务器删除Request-URI所标识的资源。
+
+6、TRACE：回显服务器收到的请求，主要用于测试或诊断。
+
+7、OPTIONS：这个方法可使服务器传回该资源所支持的所有HTTP请求方法。用'*'来代替资源名称，向Web服务器发送OPTIONS请求，可以测试服务器功能是否正常运作。
+
+8、CONNECT：HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。通常用于SSL加密服务器的链接（经由非加密的HTTP代理服务器）。
+
+请求方式: get与post请求（通过form表单我们自己写写看）区别：
+    1、GET提交的数据会放在URL之后，也就是请求行里面，以?分割URL和传输数据，参数之间以&amp;相连，如EditBook?name=test1&amp;id=123456.（请求头里面那个content-type做的这种参数形式，后面讲） POST方法是把提交的数据放在HTTP包的请求体中.
+    2、GET提交的数据大小有限制（因为浏览器对URL的长度有限制），而POST方法提交的数据没有限制.
+</code></pre></div></li></ul></li> <li><p><strong>HTTP状态码</strong></p> <ul><li><p>所有HTTP响应的第一行都是状态行，依次是当前HTTP版本号，3位数字组成的状态代码，以及描述状态的短语，彼此由空格分隔。</p></li> <li><p>状态代码的第一个数字代表当前响应的类型：</p> <p><img src="C:%5CUsers%5Cwanglixing%5CDesktop%5C%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%8D%E4%B9%A0%5CDjango%5Cgif%5C1560222902096.png" alt="1560222902096"></p></li></ul></li> <li><p><strong>URL</strong></p> <ul><li><p>超文本传输协议（HTTP）的统一资源定位符将从因特网获取信息的五个基本元素包括在一个简单的地址中：</p> <div class="language- extra-class"><pre class="language-text"><code>1、传送协议。
+2、层级URL标记符号(为[//],固定不变)
+3、访问资源需要的凭证信息（可省略）
+4、服务器。（通常为域名，有时为IP地址）
+5、端口号。（以数字方式表示，若为HTTP的默认值“:80”可省略）
+6、路径。（以“/”字符区别路径中的每一个目录名称）
+7、查询。（GET模式的窗体参数，以“?”字符为起点，每个参数以“&amp;”隔开，再以“=”分开参数名称与数	  	据，通常以UTF8的URL编码，避开字符冲突的问题）
+8、片段。以“#”字符为起点
+
+以http://www.luffycity.com:80/news/index.html?id=250&amp;page=1 为例, 其中：
+http:传输协议;www.luffycity.com，是服务器；80，是服务器上的默认网络端口号，默认不显示；/news/index.html，是路径（URI：直接定位到对应的资源）；?id=250&amp;page=1，是查询。
+	大多数网页浏览器不要求用户输入网页中“http://”的部分，因为绝大多数网页内容是超文本传输协议文件。同样，“80”是超文本传输协议文件的常用端口号，因此一般也不必写明。一般来说用户只要键入统一资源定位符的一部分（www.luffycity.com:80/news/index.html?id=250&amp;page=1）就可以了;
+</code></pre></div></li></ul></li></ul> <h4 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h4> <div class="language- extra-class"><pre class="language-text"><code>将来要说的MVC框架是什么呢：
+　　　　M：model.py  就是和数据库打交道用的，创建表等操作
+　　　　V：View  视图（视图函数，html文件）
+　　　　C：controller  控制器（其实就是我百度云代码里面那个urls文件里面的内容，url（路径）分发与视图函数的逻辑处理）
+　　　　
+ 　　Django叫做MTV框架：
+　　　　M：model.py  就是和数据库打交道用的，创建表等操作（和上面一样）
+　　　　T：templates  存放HTML文件的
+　　　　V：View 视图函数（逻辑处理）
+　　　　其实你会发现MTV比MVC少一个url分发的部分
+　　　　所以我们学的django还要学一个叫做url控制器（路径分发）的东西，MTV+url控制器就是我们django要学的内容。 　　　　
+　　捋一下框架的整个流程吧~~~
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/python/origin/yield  from语法与协程.html" class="prev">
+        yield  from语法与协程
+      </a></span> <span class="next"><a href="/python/django/resquest、模块层.html">
+        resquest、模块层
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/51.93672ee6.js" defer></script>
+  </body>
+</html>

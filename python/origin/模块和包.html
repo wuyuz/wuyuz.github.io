@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>模块和包 | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/94.0ad7c41c.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/103.16474d4b.js"><link rel="prefetch" href="/assets/js/104.ed58aef3.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/11.d4ec37c8.js"><link rel="prefetch" href="/assets/js/110.4144755a.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/34.8448d0fd.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/48.f591f360.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/50.b9ca2762.js"><link rel="prefetch" href="/assets/js/51.93672ee6.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/60.f40ac3ca.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/64.a98fe86e.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/80.f826f188.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/84.b940927c.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/87.5f9eb9ef.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/95.0e5ce618.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python常用模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Python基础</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/python/origin/Python内置方法.html" class="sidebar-link">Python内置方法</a></li><li><a href="/python/origin/元类.html" class="sidebar-link">元类的深度理解</a></li><li><a href="/python/origin/函数部分.html" class="sidebar-link">函数</a></li><li><a href="/python/origin/数据类型.html" class="sidebar-link">数据类型</a></li><li><a href="/python/origin/面向对象.html" class="sidebar-link">面向对象</a></li><li><a href="/python/origin/模块和包.html" class="active sidebar-link">模块和包</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/python/origin/模块和包.html#模块和包" class="sidebar-link">模块和包</a></li><li class="sidebar-sub-header"><a href="/python/origin/模块和包.html#模块" class="sidebar-link">模块</a></li><li class="sidebar-sub-header"><a href="/python/origin/模块和包.html#三大问题" class="sidebar-link">三大问题</a></li><li class="sidebar-sub-header"><a href="/python/origin/模块和包.html#包" class="sidebar-link">包</a></li><li class="sidebar-sub-header"><a href="/python/origin/模块和包.html#绝对导入和相对导入" class="sidebar-link">绝对导入和相对导入</a></li><li class="sidebar-sub-header"><a href="/python/origin/模块和包.html#软件开发规范" class="sidebar-link">软件开发规范</a></li><li class="sidebar-sub-header"><a href="/python/origin/模块和包.html#补充" class="sidebar-link">补充</a></li></ul></li><li><a href="/python/origin/网络基础.html" class="sidebar-link">网络基础</a></li><li><a href="/python/origin/正则表达式.html" class="sidebar-link">正则表达式</a></li><li><a href="/python/origin/异常处理.html" class="sidebar-link">异常处理</a></li><li><a href="/python/origin/TCP和UDP.html" class="sidebar-link">TCP和UDP</a></li><li><a href="/python/origin/线程.html" class="sidebar-link">线程</a></li><li><a href="/python/origin/multiprocessing（上）.html" class="sidebar-link">multiprocessing（上）</a></li><li><a href="/python/origin/multiprocessing（中）.html" class="sidebar-link">multiprocessing（中）</a></li><li><a href="/python/origin/multiprocessing（下）.html" class="sidebar-link">multiprocessing（下）</a></li><li><a href="/python/origin/协程.html" class="sidebar-link">协程</a></li><li><a href="/python/origin/IO多路复用.html" class="sidebar-link">IO 多路复用</a></li><li><a href="/python/origin/C3算法.html" class="sidebar-link">C3算法</a></li><li><a href="/python/origin/yield  from语法与协程.html" class="sidebar-link">yield  from语法与协程</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Django框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flask 框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python爬虫</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="模块和包"><a href="#模块和包" class="header-anchor">#</a> 模块和包</h2> <h2 id="模块"><a href="#模块" class="header-anchor">#</a> 模块</h2> <div class="language- extra-class"><pre><code>1.  **常见的场景**：一个模块就是一个包含了python定义和声明的文件，文件名就是模块名字加上.py的后缀，但其实import加载的模块分为四个通用类别：
+        
+  - 使用python编写的代码（.py文件）
+  - 已被编译为共享或DLL的C或C++扩展
+  - 包好一组模块的包
+</code></pre></div><ul><li>使用C编写并链接到python解释器的内置函数</li></ul> <ol start="2"><li><p>如果你退出Python解释器然后再进入，那么你之前定义的函数或变量都将丢失，因此我们通常将程序写到文件中以便永久保存下来，需要时就通过python 文件.py ，此时执行的文件就叫做script。当文件脚本很多时，我们将程序分成一个个文件，这样程序的结构就更清晰，方便管理，这时我们不仅仅可以把这些文件当成脚本文件，还可以把他们当作模块来导入到其他模块，实现功能的**<u>重用</u>**</p></li> <li><p>使用模块：  我们可以从sys.modules中找到当前已经加载的模块</p> <ul><li><p>模块的导入相当于执行了整个文件</p></li> <li><p>一个模块不能被多次导入,一旦导入原文件中的修改也不会生效，且各个模块的变量于本模块不冲突</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#测试一:money与my_module.money不冲突</span>
+<span class="token keyword">import</span> my_module  <span class="token comment"># 默认有以下属性</span>
+money<span class="token operator">=</span><span class="token number">10</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_module<span class="token punctuation">.</span>money<span class="token punctuation">)</span> <span class="token comment">#属性和方法都可以my_moudle.方法()</span>
+my_moudle<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">'''
+执行结果：
+from the my_module.py
+1000
+'''</span>
+
+<span class="token keyword">import</span> my_moudle  <span class="token comment"># 次文件中有print('123')</span>
+<span class="token keyword">import</span> my_moudle
+<span class="token comment"># 打印一个 123</span>
+</code></pre></div></li> <li><p>一个模块不会被多次执行，<strong>只执行一遍</strong>，再两个模块相互调用时要分清：第一次导入后就将模块名加载到内存了，后续的import语句仅是对已经加载大内存中的模块对象增加了一次引用，不会重新执行模块内的语句。</p></li> <li><p>导入一个模块的时候命名空间的变化：</p> <ul><li>创建了一个要导入模块的命名空间</li> <li>创建一个变量指向这个命名空间，其实相当于加载文件类（个人理解）</li> <li>执行这个文件，注意这个关系是单向引用，也就是说，如果不是函数传参的形式，是不能把本文件的变量a传给模块中的变量a</li></ul></li> <li><p>模块虽然一行可以导入多个,但是不推荐这样使用。如：import time,os,random,my_module</p></li> <li><p><strong>as语法的使用</strong>：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#1、time这个名字就失效的,只剩下t了</span>
+<span class="token keyword">import</span> time <span class="token keyword">as</span> t
+t<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#2、用来做兼容，当要根据判断取模块时，我们可以先判断，再以同样的as名字</span>
+mode <span class="token operator">=</span> <span class="token string">'pickle'</span>  <span class="token comment">#不确定是 json还是 pickle</span>
+<span class="token keyword">if</span> mode <span class="token operator">==</span> <span class="token string">'pickle'</span><span class="token punctuation">:</span>
+    <span class="token keyword">import</span> pickle <span class="token keyword">as</span> mode
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">import</span> json <span class="token keyword">as</span> mode
+<span class="token keyword">def</span> <span class="token function">dump</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    mode<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>obj<span class="token punctuation">,</span>f<span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">load</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    mode<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+  
+<span class="token comment">#其他用法：</span>
+<span class="token comment">#1</span>
+<span class="token keyword">from</span> my_module <span class="token keyword">import</span> read1 <span class="token keyword">as</span> read
+<span class="token comment">#2</span>
+<span class="token keyword">from</span> my_module <span class="token keyword">import</span> <span class="token punctuation">(</span>read1<span class="token punctuation">,</span>
+                       read2<span class="token punctuation">,</span>
+                       money<span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>from …… import ……from 语句相当于import，也会创建新的名称空间，但是将my_module中的名字直接导入到当前的名称空间中，在当前名称空间中，直接使用名字就可以了</p></li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#1测试一：导入的函数read1，执行时仍然回到my_module.py中寻找全局变量money</span>
+<span class="token keyword">from</span> my_module <span class="token keyword">import</span> read1
+money<span class="token operator">=</span><span class="token number">1000</span>
+read1<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+执行结果:
+from the my_module.py
+spam-&gt;read1-&gt;money 1000
+'''</span>
+
+<span class="token comment">#测试二:导入的函数read2，执行时需要调用read1(),仍然回到my_module.py中找read1()</span>
+<span class="token keyword">from</span> my_module <span class="token keyword">import</span> read2
+<span class="token keyword">def</span> <span class="token function">read1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'=========='</span><span class="token punctuation">)</span>
+read2<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+执行结果:
+from the my_module.py
+my_module-&gt;read2 calling read1
+my_module-&gt;read1-&gt;money 1000
+'''</span>
+<span class="token comment">#测试三:导入的函数read1，被当前位置定义的read1覆盖掉了</span>
+
+<span class="token keyword">from</span> my_module <span class="token keyword">import</span> read1
+<span class="token keyword">def</span> <span class="token function">read1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'=========='</span><span class="token punctuation">)</span>
+read1<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+执行结果:
+from the my_module.py
+==========
+'''</span> 
+
+<span class="token comment">#from my_module import * 把my_module中所有的不是以下划线(_)开头的名字都导入到当前位置，大部分情况下我们的python程序不应该使用这种导入方式，因为*你不知道你导入什么名字，很有可能会覆盖掉你之前已经定义的名字。而且可读性极其的差，在交互式环境中导入时没有问题</span>
+
+<span class="token comment">#在my_module.py中新增一行：</span>
+__all__<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'money'</span><span class="token punctuation">,</span><span class="token string">'read1'</span><span class="token punctuation">]</span> 
+<span class="token comment">#这样在另外一个文件中用from my_module import *就这能导入列表中规定的两个名字</span>
+                   <span class="token comment">#__all__=[]  和 * 配合使用</span>
+
+<span class="token comment">#补充：</span>
+<span class="token comment">#如果my_module.py中的名字前加_,即_money，则from my_module import *,则_money不能被导入</span>
+</code></pre></div></li></ol> <h2 id="三大问题"><a href="#三大问题" class="header-anchor">#</a> 三大问题</h2> <ul><li><p><strong>模块的搜索路径:</strong></p> <ul><li><p>python解释器在启动时会自动加载一些模块，可以使用sys.modules查看,在第一次导入某个模块时（比如my_module），会先检查该模块是否已经被加载到内存中（当前执行文件的名称空间对应的内存），如果有则直接引用.如果没有，解释器则会查找同名的内建模块，如果还没有找到就从sys.path给出的目录列表中依次寻找my_module.py文件。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#1、所以总结模块的查找顺序是：内存中已经加载的模块 -&gt; 内置模块 -&gt; sys.path路径中包含的模块</span>
+<span class="token comment">#2、需要特别注意的是：我们自定义的模块名不应该与系统内置模块重名</span>
+<span class="token comment">#3、搜索时按照sys.path中从左到右的顺序查找，位于前的优先被查找，sys.path中还可能包含.zip归档文件和.egg文件，python会把.zip归档文件当成一个目录去处理。在pycharm中会自动为我们加载本地路径</span>
+<span class="token keyword">import</span> sys
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'/a/b/c/d'</span><span class="token punctuation">)</span>
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">'/x/y/z'</span><span class="token punctuation">)</span> <span class="token comment">#排在前的目录，优先被搜索</span>
+</code></pre></div></li></ul></li> <li><p>模块能不能被循环导入：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#能不能 在 a.py import b</span>
+       <span class="token comment">#在 b.py import a</span>
+<span class="token comment"># 以主程序为主，加载顺序从上至下，可引用</span>
+</code></pre></div></li> <li><p><strong>把模块当做脚本执行</strong>：</p> <ul><li>当做脚本运行：<code>__name__ 等于'__main__'</code>  ：<code>__name__</code> 等于模块名</li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>   
+    a<span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> b <span class="token operator">&lt;</span> n<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">)</span>
+        a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a<span class="token operator">+</span>b
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&quot;__main__&quot;</span><span class="token punctuation">:</span>  <span class="token comment">#只有在当前文件下执行，如果是模块调用则不会执行</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+    num <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'num :'</span><span class="token punctuation">)</span>
+    fib<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul> <h2 id="包"><a href="#包" class="header-anchor">#</a> 包</h2> <ul><li><p>包是一种通过使用'模块名'来组织python模块名称空间的方式。</p> <ul><li><p>在未来要使用包对外提供服务时，要是有相对导入，因为相对导入，只能在使用端可以导入使用，在本地是不能直接运行的</p></li> <li><p>无论是import形式还是from...import形式，凡是在导入语句中（而不是在使用时）遇到带点的，都要第一时间提高警觉：这是关于包才有的导入语法</p></li> <li><p>包是目录级的（文件夹级），文件夹是用来组成py文件（包的本质就是一个包含<code>__init__.py</code>文件的目录</p></li> <li><p>import导入文件时，产生名称空间中的名字来源于文件，import 包，产生的名称空间的名字同样来源于文件，即包下的<code>__init__.py</code>，导入包本质就是在导入该文件</p></li> <li><p>在python3中，即使包下没有<code>__init__.py</code>文件，import 包仍然不会报错，而在python2中，包下一定要有该文件，否则import 包报错</p></li> <li><p>创建包的目的不是为了运行，而是被导入使用，记住，包只是模块的一种形式而已，包即模块</p></li> <li><p>import 包：相当于执行了这个包下的init文件</p></li> <li><p>具体使用：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> glance<span class="token punctuation">.</span>api<span class="token punctuation">.</span>policy <span class="token keyword">as</span> policy  <span class="token comment">#假设glance是包，api是文件，policy是py文件 用别名</span>
+policy<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+	<span class="token comment">#也可以：import glance.api.policy.get() 但是太长了，每个都要写</span>
+<span class="token comment"># 根据包的导入要精确到模块名,不能精确到具体的函数或者变量，然后使用glance.api.policy或者重命名的方式，来使用这个模块中的所有名字</span>
+
+<span class="token comment">#from……import 在包中的用法</span>
+<span class="token keyword">from</span> glance<span class="token punctuation">.</span>api <span class="token keyword">import</span> policy  <span class="token comment">#import后面不能有. 且至少要精确到模块</span>
+policy<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#or</span>
+<span class="token keyword">from</span> glance<span class="token punctuation">.</span>api<span class="token punctuation">.</span>policy <span class="token keyword">import</span> get
+get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#使用from……import import后面至少是精确到模块的，import后面不能有。from后面可以有.,但是.的左边永远是包名</span>
+
+    
+<span class="token comment">#import 直接导入包时，再导入时执行了包中的__init__.py文件（类似于实例化），我们可以在__init__.py中写相应的路由，假如我想直接import 一个包，就需要配置__init__.py文件：</span>
+  <span class="token comment"># 1、现在glance(包)中的__init__.py,需要配置：</span>
+    
+</code></pre></div></li> <li><p><code>__init__.py</code>文件：不管是哪种方式，只要是第一次导入包或者是包的任何其他部分，都会依次执行包下的__init__.py文件(我们可以在每个包的文件内都打印一行内容来验证一下)，这个文件可以为空，但是也可以存放一些初始化包的代码</p></li> <li><p>首先要想使用import glance 里面的如api下的policy中的方法，先配置glance文件下的<code>__init__.py</code></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># /glance/__init__.py</span>
+<span class="token keyword">from</span> glance <span class="token keyword">import</span> api
+<span class="token keyword">from</span> glance <span class="token keyword">import</span> cmd
+<span class="token keyword">from</span> glance <span class="token keyword">import</span> db  <span class="token comment"># 此时在包外一个文件import glance，可以调用api,cmd,db,但是还不能导入其中的具体方法</span>
+
+<span class="token comment">#test/my_moudle</span>
+<span class="token keyword">import</span> glance
+<span class="token keyword">print</span><span class="token punctuation">(</span>glance<span class="token punctuation">)</span>  <span class="token comment"># &lt;moudle 'glance' from 'D:\\'&gt;</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>glance<span class="token punctuation">.</span>api<span class="token punctuation">)</span>   <span class="token comment">#&lt;moudle 'glance.api' from 'D：……&gt;</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>glance<span class="token punctuation">.</span>api<span class="token punctuation">.</span>policy<span class="token punctuation">)</span>  <span class="token comment">#不行 如何解决,因为没有在api文件的init中配置路径</span>
+
+<span class="token comment">#此时在api/__init__.py中输入</span>
+<span class="token keyword">from</span> api <span class="token keyword">import</span> policy  <span class="token comment"># 之后再运行还是报错，问题出在from api这里，找不到api，这时候可以通过sys.path 查看路径，显示只能查看能找到glance，也就是说能执行glance中的__init__.py文件，但是不能执行api中的init文件，所以这里有两种方法解决这个问题:</span>
+
+<span class="token comment">#方案一：  在api文件中的__init.py文件中添加路径</span>
+<span class="token keyword">import</span> sys
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">r'D:\……\glance'</span><span class="token punctuation">)</span> <span class="token comment">#将glace文件加载到系统路径中，于是会查找其中的各个文件</span>
+<span class="token keyword">from</span> api <span class="token keyword">import</span> policy  <span class="token comment"># 导入glance后，api文件就会被找到，一层一层的</span>
+<span class="token keyword">from</span> api <span class="token keyword">import</span> versions 
+ <span class="token comment">#此时api文件下的文件都可以使用了，但是如果要导入cmd文件下的文件，就还需要在它文件下的init文件做同样的处理。麻烦</span>
+    
+<span class="token comment">#方案二：绝对路径，不需要添加路经，使用绝对导入、</span>
+<span class="token comment">#/glance/api/__init__.py</span>
+<span class="token keyword">from</span> glance<span class="token punctuation">.</span>api <span class="token keyword">import</span> policy  <span class="token comment">#效果相同，不需要让api的上一级成为环境变量中</span>
+<span class="token keyword">from</span> glance<span class="token punctuation">.</span>api <span class="token keyword">import</span> versions
+
+
+<span class="token comment">#总结： 在包中的__init__.py文件中的就是在import时要执行的文件，各级子文件的__init__.py文件最好使用绝对导入，这样，想导入的时候才能找到</span>
+</code></pre></div><p>​</p></li></ul></li></ul> <h2 id="绝对导入和相对导入"><a href="#绝对导入和相对导入" class="header-anchor">#</a> 绝对导入和相对导入</h2> <ul><li><p><strong>绝对导入</strong>：以glance作为起始（即项目根目录）</p> <p><strong>相对导入</strong>：用.或者..的方式最为起始（只能在一个包中使用，不能用于不同目录内）</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#在glance/api/version.py</span>
+
+<span class="token comment">#绝对导入</span>
+<span class="token keyword">from</span> glance<span class="token punctuation">.</span>cmd <span class="token keyword">import</span> manage
+manage<span class="token punctuation">.</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#相对导入</span>
+<span class="token keyword">from</span> <span class="token punctuation">.</span><span class="token punctuation">.</span>cmd <span class="token keyword">import</span> manage
+manage<span class="token punctuation">.</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#可以用import导入内置或者第三方模块（已经在sys.path中），但是要绝对避免使用import来导入自定义包的子模块(没有在sys.path中)，应该使用from... import ...的绝对或者相对导入,且包的相对导入只能用from的形式。</span>
+</code></pre></div></li> <li><p>单独导入包：单独导入包名称时不会导入包中所有包含的所有子模块</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#在与glance同级的test.py中</span>
+<span class="token keyword">import</span> glance
+glance<span class="token punctuation">.</span>cmd<span class="token punctuation">.</span>manage<span class="token punctuation">.</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">'''
+执行结果：
+AttributeError: module 'glance' has no attribute 'cmd'
+
+'''</span>
+
+<span class="token comment">#解决办法： 规划路经，使用__init__.py,__all__是用于控制from...import * </span>
+<span class="token comment">#glance/__init__.py</span>
+<span class="token keyword">from</span> <span class="token punctuation">.</span> <span class="token keyword">import</span> cmd
+
+<span class="token comment">#glance/cmd/__init__.py</span>
+<span class="token keyword">from</span> <span class="token punctuation">.</span> <span class="token keyword">import</span> manage
+
+<span class="token comment">#执行</span>
+<span class="token comment">#在于glance同级的test.py中</span>
+<span class="token keyword">import</span> glance
+glance<span class="token punctuation">.</span>cmd<span class="token punctuation">.</span>manage<span class="token punctuation">.</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul> <h2 id="软件开发规范"><a href="#软件开发规范" class="header-anchor">#</a> 软件开发规范</h2> <h2 id="补充"><a href="#补充" class="header-anchor">#</a> 补充</h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 同一大文件下（项目目录），如何导入各个小文件中的py文件的导入： __file__:当前文件路径</span>
+<span class="token comment">#项目开始的文件中导入</span>
+<span class="token keyword">import</span> os
+start_path <span class="token operator">=</span> __file__
+bin_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>start_path<span class="token punctuation">)</span>  <span class="token comment"># 翻一层</span>
+project_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>bin_path<span class="token punctuation">)</span>  <span class="token comment"># 再翻</span>
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span>project_path<span class="token punctuation">)</span>  <span class="token comment"># 添加路径，可以迁移文件</span>
+
+<span class="token comment">#规定</span>
+Base_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span>
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span>project_path<span class="token punctuation">)</span>  
+<span class="token comment">#注意的是：在每个模块的开头，需要导入时，都需要使用from 父目录 import ……,也就是说现在项目的所有小目录能找到，所以，我们的子目录都是要记录这些小目录开始 from。</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/python/origin/面向对象.html" class="prev">
+        面向对象
+      </a></span> <span class="next"><a href="/python/origin/网络基础.html">
+        网络基础
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/94.0ad7c41c.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>REST framework之版本和解析器 | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/48.f591f360.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/103.16474d4b.js"><link rel="prefetch" href="/assets/js/104.ed58aef3.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/11.d4ec37c8.js"><link rel="prefetch" href="/assets/js/110.4144755a.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/34.8448d0fd.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/50.b9ca2762.js"><link rel="prefetch" href="/assets/js/51.93672ee6.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/60.f40ac3ca.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/64.a98fe86e.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/80.f826f188.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/84.b940927c.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/87.5f9eb9ef.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/94.0ad7c41c.js"><link rel="prefetch" href="/assets/js/95.0e5ce618.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python常用模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Django框架</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/python/django/Web框架本质.html" class="sidebar-link">Web框架本质</a></li><li><a href="/python/django/resquest、模块层.html" class="sidebar-link">resquest、模块层</a></li><li><a href="/python/django/静态文件和ORM.html" class="sidebar-link">静态文件和ORM</a></li><li><a href="/python/django/标签、自定义标签.html" class="sidebar-link">模块层之标签、自定义标签</a></li><li><a href="/python/django/模版语法.html" class="sidebar-link">模版语法</a></li><li><a href="/python/django/模型层.html" class="sidebar-link">模型层</a></li><li><a href="/python/django/反向解析和视图函数.html" class="sidebar-link">反向解析和视图函数</a></li><li><a href="/python/django/单表操作.html" class="sidebar-link">单表操作</a></li><li><a href="/python/django/多表操作.html" class="sidebar-link">多表操作</a></li><li><a href="/python/django/中间件.html" class="sidebar-link">中间件</a></li><li><a href="/python/django/模型进阶.html" class="sidebar-link">模型进阶</a></li><li><a href="/python/django/缓存和信号.html" class="sidebar-link">缓存和信号</a></li><li><a href="/python/django/form组件.html" class="sidebar-link">form组件</a></li><li><a href="/python/django/csrf和Ajax.html" class="sidebar-link">csrf和Ajax</a></li><li><a href="/python/django/APIView使用和源码分析.html" class="sidebar-link">APIView使用和源码分析</a></li><li><a href="/python/django/REST framework之版本和解析器.html" class="active sidebar-link">REST framework之版本和解析器</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/python/django/REST framework之版本和解析器.html#rest-framework之版本和解析器" class="sidebar-link">REST framework之版本和解析器</a></li></ul></li><li><a href="/python/django/REST framework之分页和视图组件.html" class="sidebar-link">REST framework之分页和视图组件</a></li><li><a href="/python/django/REST framework之路由和渲染器.html" class="sidebar-link">REST framework之路由和渲染器</a></li><li><a href="/python/django/REST framework之序列化器.html" class="sidebar-link">REST framework之序列化器</a></li><li><a href="/python/django/REST framework版本图书管理系统.html" class="sidebar-link">REST framework版本图书管理系统</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flask 框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python爬虫</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="rest-framework之版本和解析器"><a href="#rest-framework之版本和解析器" class="header-anchor">#</a> REST framework之版本和解析器</h2> <h4 id="版本-获取url中传入的版本"><a href="#版本-获取url中传入的版本" class="header-anchor">#</a> 版本（获取URL中传入的版本）</h4> <ul><li><p>简单通过url携带的参数，在后端进行获取</p> <div class="language-python extra-class"><pre class="language-python"><code> <span class="token comment">#url.py文件中</span>
+<span class="token keyword">from</span> django<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>urls <span class="token keyword">import</span> url
+<span class="token keyword">from</span> api <span class="token keyword">import</span> views
+urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>
+    url<span class="token punctuation">(</span><span class="token string">r'users/$'</span><span class="token punctuation">,</span>views<span class="token punctuation">.</span>UsersView<span class="token punctuation">.</span>as_view<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span>
+
+  <span class="token comment"># views.py文件中</span>
+<span class="token keyword">from</span> django<span class="token punctuation">.</span>shortcuts <span class="token keyword">import</span> render<span class="token punctuation">,</span>HttpResponse
+<span class="token keyword">from</span> rest_framework<span class="token punctuation">.</span>views <span class="token keyword">import</span> APIView
+
+<span class="token keyword">class</span> <span class="token class-name">UsersView</span><span class="token punctuation">(</span>APIView<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>request<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment">#version= request._request.GET.get('version')  # 通过_request获得参数</span>
+        version<span class="token operator">=</span> request<span class="token punctuation">.</span>query_params<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'version'</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>version<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">'用户列表'</span><span class="token punctuation">)</span>
+        
+</code></pre></div><ul><li><p><strong>小提示：</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token number">1</span>、通过rest_framework封装的reuqest函数，可以调用query_params属性获得原有request的参数
+<span class="token keyword">from</span> rest_framework<span class="token punctuation">.</span>request <span class="token keyword">import</span> Request
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token decorator annotation punctuation">@property</span>
+    <span class="token keyword">def</span> <span class="token function">query_params</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment"># 该函数用于返回原有的request的所有参数</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_request<span class="token punctuation">.</span>GET
+</code></pre></div></li></ul></li></ul> <h4 id="_1、简单自定义版本获取类-get传参-url后-version-v1"><a href="#_1、简单自定义版本获取类-get传参-url后-version-v1" class="header-anchor">#</a> 1、简单自定义版本获取类（GET传参：URL后?version=v1）</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> django<span class="token punctuation">.</span>shortcuts <span class="token keyword">import</span> render<span class="token punctuation">,</span>HttpResponse
+<span class="token keyword">from</span> rest_framework<span class="token punctuation">.</span>request <span class="token keyword">import</span> Request
+<span class="token keyword">from</span> rest_framework<span class="token punctuation">.</span>views <span class="token keyword">import</span> APIView
+
+<span class="token keyword">class</span> <span class="token class-name">ParamVersion</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">determine_version</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>request<span class="token punctuation">,</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        version <span class="token operator">=</span> request<span class="token punctuation">.</span>query_params<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'version'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> version
+
+<span class="token keyword">class</span> <span class="token class-name">UsersView</span><span class="token punctuation">(</span>APIView<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    versioning_class <span class="token operator">=</span> ParamVersion  <span class="token comment"># 不再是一个列表了，是一个类</span>
+    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>request<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>version<span class="token punctuation">)</span>   <span class="token comment"># 这样就可以获取url中的version对应得值了， api/users/?version=1</span>
+        <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">'用户列表'</span><span class="token punctuation">)</span>
+</code></pre></div><h5 id="restframework自带得版本获取器"><a href="#restframework自带得版本获取器" class="header-anchor">#</a> RESTframework自带得版本获取器</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> rest_framework<span class="token punctuation">.</span>views <span class="token keyword">import</span> APIView
+<span class="token keyword">from</span> rest_framework<span class="token punctuation">.</span>versioning <span class="token keyword">import</span> QueryParameterVersioning
+
+<span class="token keyword">class</span> <span class="token class-name">UsersView</span><span class="token punctuation">(</span>APIView<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+    versioning_class <span class="token operator">=</span> QueryParameterVersioning  <span class="token comment"># 直接就可以用了</span>
+    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>request<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>version<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">'用户列表'</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li><h5 id="源码分析"><a href="#源码分析" class="header-anchor">#</a> 源码分析：</h5> <div class="language-python extra-class"><pre class="language-python"><code>点击QueryParameterVersioning，查看原有代码，设计三个配置项，如下图
+
+<span class="token keyword">class</span> <span class="token class-name">BaseVersioning</span><span class="token punctuation">:</span>
+    default_version <span class="token operator">=</span> api_settings<span class="token punctuation">.</span>DEFAULT_VERSION
+    allowed_versions <span class="token operator">=</span> api_settings<span class="token punctuation">.</span>ALLOWED_VERSIONS
+    version_param <span class="token operator">=</span> api_settings<span class="token punctuation">.</span>VERSION_PARAM
+
+    <span class="token keyword">def</span> <span class="token function">determine_version</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        msg <span class="token operator">=</span> <span class="token string">'{cls}.determine_version() must be implemented.'</span>
+        <span class="token keyword">raise</span> NotImplementedError<span class="token punctuation">(</span>msg<span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>
+            cls<span class="token operator">=</span>self<span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__name__
+        <span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">reverse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> viewname<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> kwargs<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> request<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token builtin">format</span><span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token operator">**</span>extra<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> _reverse<span class="token punctuation">(</span>viewname<span class="token punctuation">,</span> args<span class="token punctuation">,</span> kwargs<span class="token punctuation">,</span> request<span class="token punctuation">,</span> <span class="token builtin">format</span><span class="token punctuation">,</span> <span class="token operator">**</span>extra<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">is_allowed_version</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> version<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> self<span class="token punctuation">.</span>allowed_versions<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>version <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span> <span class="token keyword">and</span> version <span class="token operator">==</span> self<span class="token punctuation">.</span>default_version<span class="token punctuation">)</span> <span class="token keyword">or</span>
+                <span class="token punctuation">(</span>version <span class="token keyword">in</span> self<span class="token punctuation">.</span>allowed_versions<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    
+
+<span class="token keyword">class</span> <span class="token class-name">QueryParameterVersioning</span><span class="token punctuation">(</span>BaseVersioning<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    invalid_version_message <span class="token operator">=</span> _<span class="token punctuation">(</span><span class="token string">'Invalid version in query parameter.'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">determine_version</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        version <span class="token operator">=</span> request<span class="token punctuation">.</span>query_params<span class="token punctuation">.</span>get<span class="token punctuation">(</span>self<span class="token punctuation">.</span>version_param<span class="token punctuation">,</span> self<span class="token punctuation">.</span>default_version<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> self<span class="token punctuation">.</span>is_allowed_version<span class="token punctuation">(</span>version<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> exceptions<span class="token punctuation">.</span>NotFound<span class="token punctuation">(</span>self<span class="token punctuation">.</span>invalid_version_message<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> version
+
+    <span class="token keyword">def</span> <span class="token function">reverse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> viewname<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> kwargs<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> request<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token builtin">format</span><span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token operator">**</span>extra<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        url <span class="token operator">=</span> <span class="token builtin">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reverse<span class="token punctuation">(</span>
+            viewname<span class="token punctuation">,</span> args<span class="token punctuation">,</span> kwargs<span class="token punctuation">,</span> request<span class="token punctuation">,</span> <span class="token builtin">format</span><span class="token punctuation">,</span> <span class="token operator">**</span>extra
+        <span class="token punctuation">)</span>
+        <span class="token keyword">if</span> request<span class="token punctuation">.</span>version <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> replace_query_param<span class="token punctuation">(</span>url<span class="token punctuation">,</span> self<span class="token punctuation">.</span>version_param<span class="token punctuation">,</span> request<span class="token punctuation">.</span>version<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> url
+  
+</code></pre></div><ul><li><p><strong>小提示：</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token number">1</span>、 self<span class="token punctuation">.</span>version_param<span class="token punctuation">:</span> <span class="token comment">#表示version得名称是什么？</span>
+    self<span class="token punctuation">.</span>default_version<span class="token punctuation">:</span> <span class="token comment"># 默认版本</span>
+	self<span class="token punctuation">.</span>is_allowed_version<span class="token punctuation">:</span> <span class="token comment">#用户判断是否是被允许的版本号</span>
+</code></pre></div></li></ul></li></ul> <h5 id="在settings中配置相关参数"><a href="#在settings中配置相关参数" class="header-anchor">#</a> 在settings中配置相关参数</h5> <div class="language-python extra-class"><pre class="language-python"><code>REST_FRAMEWORK <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'DEFAULT_VERSION'</span><span class="token punctuation">:</span><span class="token string">'v1'</span><span class="token punctuation">,</span>  <span class="token comment">#默认v1，不传的话</span>
+    <span class="token string">'ALLOWED_VERSIONS'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'v1'</span><span class="token punctuation">,</span><span class="token string">'v2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">'VERSION_PARAM'</span><span class="token punctuation">:</span><span class="token string">'version'</span>  <span class="token comment"># 允许得key；version=v1</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_2、在url中传参-如-api-v1-局部"><a href="#_2、在url中传参-如-api-v1-局部" class="header-anchor">#</a> 2、在URL中传参 （如：api/v1，局部)</h4> <p>通过在<code>URLPathVersioning</code>类进行版本获取</p> <div class="language-python extra-class"><pre class="language-python"><code> <span class="token comment"># url.py文件中</span>
+urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>
+    url<span class="token punctuation">(</span><span class="token string">r'(?P&lt;version&gt;[v1|v2]+)/users/$'</span><span class="token punctuation">,</span>views<span class="token punctuation">.</span>UsersView<span class="token punctuation">.</span>as_view<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span>
+
+ <span class="token comment"># 视图函数中</span>
+<span class="token keyword">from</span> rest_framework<span class="token punctuation">.</span>views <span class="token keyword">import</span> APIView
+<span class="token keyword">from</span> rest_framework<span class="token punctuation">.</span>versioning <span class="token keyword">import</span> URLPathVersioning
+
+<span class="token keyword">class</span> <span class="token class-name">UsersView</span><span class="token punctuation">(</span>APIView<span class="token punctuation">)</span><span class="token punctuation">:</span>   
+    versioning_class <span class="token operator">=</span> URLPathVersioning
+    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>request<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>version<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">'用户列表'</span><span class="token punctuation">)</span> 
+</code></pre></div><ul><li><p><strong>小提示：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>以上的方法对：8000/api/v1/users/ --&gt; 将会取出v1，注意也是要集合配置了settings中的配置REST_FRAMEWORK使用
+</code></pre></div></li></ul> <h5 id="全局配置"><a href="#全局配置" class="header-anchor">#</a> 全局配置</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token number">1</span>、只需要在settings中的配置项中添加，（在APIView中可以看见有个DEFAULT_VERSION_CLASS的选项）
+    REST_FRAMEWORK <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'DEFAULT_VERSION'</span><span class="token punctuation">:</span><span class="token string">'v1'</span><span class="token punctuation">,</span>
+        <span class="token string">'ALLOWED_VERSIONS'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'v1'</span><span class="token punctuation">,</span><span class="token string">'v2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">'VERSION_PARAM'</span><span class="token punctuation">:</span><span class="token string">'version'</span><span class="token punctuation">,</span>  <span class="token comment"># 允许得key；version=v1</span>
+        <span class="token string">'DEFAULT_VERSIONING__CLASS'</span><span class="token punctuation">:</span><span class="token string">'rest_framework.versioning.URLPathVersioning'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span> <span class="token comment"># 这样视图函数中什么也不用写了，所有的视图函数都可获取version了</span>
+
+</code></pre></div><h5 id="版本组件源码流程"><a href="#版本组件源码流程" class="header-anchor">#</a> 版本组件源码流程</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token number">1</span>、依旧从dispatch进入，封装request后，执行initial函数，在走认证之前
+		<span class="token keyword">def</span> <span class="token function">determine_version</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> self<span class="token punctuation">.</span>versioning_class <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+            scheme <span class="token operator">=</span> self<span class="token punctuation">.</span>versioning_class<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># versioning_class就是我们setting中配置的类的对象</span>
+            <span class="token keyword">return</span> <span class="token punctuation">(</span>scheme<span class="token punctuation">.</span>determine_version<span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">,</span> scheme<span class="token punctuation">)</span> <span class="token comment">#第一个返回版本</span>
+
+		<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+	    <span class="token keyword">def</span> <span class="token function">initial</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>format_kwarg <span class="token operator">=</span> self<span class="token punctuation">.</span>get_format_suffix<span class="token punctuation">(</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+
+            neg <span class="token operator">=</span> self<span class="token punctuation">.</span>perform_content_negotiation<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+            request<span class="token punctuation">.</span>accepted_renderer<span class="token punctuation">,</span> request<span class="token punctuation">.</span>accepted_media_type <span class="token operator">=</span> neg
+            
+            version<span class="token punctuation">,</span> scheme <span class="token operator">=</span> self<span class="token punctuation">.</span>determine_version<span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span> <span class="token comment">#处理版本对象</span>
+			request<span class="token punctuation">.</span>version<span class="token punctuation">,</span> request<span class="token punctuation">.</span>ver sioning_scheme <span class="token operator">=</span> version<span class="token punctuation">,</span> scheme
+			
+            self<span class="token punctuation">.</span>perform_authentication<span class="token punctuation">(</span>request<span class="token punctuation">)</span>  <span class="token comment"># 认证</span>
+            self<span class="token punctuation">.</span>check_permissions<span class="token punctuation">(</span>request<span class="token punctuation">)</span>  <span class="token comment"># 权限</span>
+        	self<span class="token punctuation">.</span>check_throttles<span class="token punctuation">(</span>request<span class="token punctuation">)</span>  <span class="token comment"># 节流</span>
+</code></pre></div><ul><li><p><strong>小提示:</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> rest_framework<span class="token punctuation">.</span>views <span class="token keyword">import</span> APIView
+
+<span class="token keyword">class</span> <span class="token class-name">UsersView</span><span class="token punctuation">(</span>APIView<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>request<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 获取版本</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>version<span class="token punctuation">)</span>
+        <span class="token comment"># 获取处理版本的对象</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>versioning_scheme<span class="token punctuation">)</span> <span class="token comment">#&lt;rest_framework.versioni58676438&gt;</span>
+        u1 <span class="token operator">=</span> request<span class="token punctuation">.</span>versioning_scheme<span class="token punctuation">.</span>reverse<span class="token punctuation">(</span>viewname<span class="token operator">=</span><span class="token string">'uuu'</span><span class="token punctuation">,</span>request<span class="token operator">=</span>request<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>u1<span class="token punctuation">)</span> <span class="token comment"># http://127.0.0.1:8000/api/v1/users/</span>
+        <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">'用户列表'</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul> <h4 id="版本总结"><a href="#版本总结" class="header-anchor">#</a> 版本总结</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token number">1</span>、配置settings<span class="token punctuation">.</span>py
+    REST_FRAMEWORK <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'DEFAULT_VERSION'</span><span class="token punctuation">:</span><span class="token string">'v1'</span><span class="token punctuation">,</span>
+        <span class="token string">'ALLOWED_VERSIONS'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'v1'</span><span class="token punctuation">,</span><span class="token string">'v2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">'VERSION_PARAM'</span><span class="token punctuation">:</span><span class="token string">'version'</span><span class="token punctuation">,</span>  <span class="token comment"># 允许得key；version=v1</span>
+        <span class="token string">'DEFAULT_VERSIONING__CLASS'</span><span class="token punctuation">:</span><span class="token string">'rest_framework.versioning.URLPathVersioning'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span> <span class="token comment"># 这样视图函数中什么也不用写了，所有的视图函数都可获取version了</span>
+
+<span class="token number">2</span>、视图中，只要没有重写versioning_class，那么就可以通过全局获取version
+</code></pre></div><hr> <h4 id="解析器-依靠请求头的content-type对请求体中的数据解析到request-data中"><a href="#解析器-依靠请求头的content-type对请求体中的数据解析到request-data中" class="header-anchor">#</a> 解析器（依靠请求头的Content-Type对请求体中的数据解析到request.data中）</h4> <ul><li><p><strong>前戏</strong>：</p> <div class="language-python extra-class"><pre class="language-python"><code>django中：request<span class="token punctuation">.</span>POST <span class="token operator">/</span> request<span class="token punctuation">.</span>body的区分？
+	我们可以来打印以下django中的request的类型，发现他是：django<span class="token punctuation">.</span>core<span class="token punctuation">.</span>handlers<span class="token punctuation">.</span>wsgi<span class="token punctuation">.</span>WSGIRequest的对象，我们点开WSGIRequeset来查看里面的方法，我们找到POST，点击_get_post方法<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">&gt;</span>再点击_load_post_and_files，在这个方法中有：
+	<span class="token keyword">if</span> self<span class="token punctuation">.</span>content_type <span class="token operator">==</span> <span class="token string">'multipart/form-data'</span><span class="token punctuation">:</span><span class="token keyword">pass</span>  <span class="token comment"># 表示上传文件</span>
+	<span class="token keyword">elif</span> self<span class="token punctuation">.</span>content_type <span class="token operator">==</span> <span class="token string">'application/x-www-form-urlencoded'</span><span class="token punctuation">:</span><span class="token keyword">pass</span> <span class="token comment"># 如果content_type是这个头，那么我们的request.POST中才有数据，并且是个QueryDict（去request.body中解析）</span>
+  
+<span class="token number">1</span>、要求请求头内容格式为：Content<span class="token operator">-</span>Type<span class="token punctuation">:</span>application<span class="token operator">/</span>x<span class="token operator">-</span>www<span class="token operator">-</span>form<span class="token operator">-</span>urlencoded 
+<span class="token number">2</span>、数据格式要求：name<span class="token operator">=</span>alex<span class="token operator">&amp;</span>age<span class="token operator">=</span><span class="token number">19</span><span class="token operator">&amp;</span>gender<span class="token operator">=</span>男
+</code></pre></div></li></ul> <p>如果上面两个要求都满足了，那么request.POST中才有值</p> <p>如：
+a. form表单提交,默认的请求头内容格式为：Content-Type：application/x-www-form-urlencoded
+&lt;form method ...&gt;  # 这里可以更改请求头内容格式
+<input>...
+</p> <div class="language- extra-class"><pre><code>  b. ajax提交,将下面的data转换为name=alex&amp;age=19&amp;gender=男类型，并带有Content-Type：application/x-www-form-urlencoded传到后端
+  
+      $.ajax({
+          url:...,
+          type:POST,
+          data:{name:alex,age:18}
+      })  # 默认这种传参会自动转换格式为name=alex&amp;age=19&amp;gender=男，所以POST中有数据
+
+      # ajax定制请求头内容格式
+      $.ajax({
+              url:...,
+              type:POST,
+          	headers:{'Content-Type':'application/json'}  #这种情况request.POST没有数据，body有
+              data:{name:alex,age:18}
+          })
+      
+      #ajax更改请求头，同时更改了data数据
+       $.ajax({
+              url:...,
+              type:POST,
+          	headers:{'Content-Type':'application/json'},  #这种情况request.POST没有数据，body有
+              data:JSON.stringfy({name:alex,age:18}), # 将字典转换为字符串了，格式也不是之前的格式
+          })  # body有值&quot;{'name':'alex','age':'18'}&quot;,POST没有值         
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>
+- **小提示：**
+
+  ```
+  通过上面的知识我们知道了，django对提交的数据只支持满足两种条件才能取出值，（1，固定的请求头格式；2，固定的传参方式）；所以我们需要一种解析器，用来解析数据。
+  
+  也是就说上面我们发的json数据，不满足传参格式，必须在body中获取并转换才行，比较麻烦
+  ```
+
+  ![1564141470719](C:\Users\RootUser\Desktop\知识点复习\Django\gif\1564141470719.png)
+
+#### REST framework解析器
+
+##### 简单使用解析器
+
+```python
+from rest_framework.parsers import JSONParser,FormParser
+class ParserView(APIView):
+  parser_classes = [JSONParser,FormParser,]
+  def post(self, request, *args, **kwargs):
+      '''
+      允许用户发送JSON格式数据
+          a.content-type:application/json
+          b.{'name':'alex','age':18}
+      JSONParser:表示只能解析content-type:application/json头的数据
+      FormParser:表示只能解析Content-Type：application/x-www-form-urlencoded头的数据
+      '''
+      print(request.data)
+      ret = {}
+      ret['name1'] = request.data['name']
+      return JsonResponse(ret)
+
+# 在postman的请求体中发送json数据：
+      {
+          &quot;name&quot;:&quot;alex&quot;,
+          &quot;age&quot;:18
+      }
+# 返回：{&quot;name1&quot;: &quot;alex&quot;}
+
+</code></pre></div><ul><li><p><strong>总结:</strong></p> <div class="language- extra-class"><pre class="language-text"><code>如果不使用解析器，那么后端拿到的数据是不会出现在POST中的，且格式混乱。
+</code></pre></div></li></ul> <h5 id="解析器流程分析"><a href="#解析器流程分析" class="header-anchor">#</a> 解析器流程分析</h5> <div class="language-python extra-class"><pre class="language-python"><code><span class="token number">1</span>、进入Request类，找到data属性
+	 <span class="token decorator annotation punctuation">@property</span>
+      <span class="token keyword">def</span> <span class="token function">data</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+          <span class="token keyword">if</span> <span class="token keyword">not</span> _hasattr<span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token string">'_full_data'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+              self<span class="token punctuation">.</span>_load_data_and_files<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">#此函数用于返回加载的数据</span>
+          <span class="token keyword">return</span> self<span class="token punctuation">.</span>_full_data
+<span class="token number">2</span>、进入_load_data_and_files函数后，执行self<span class="token punctuation">.</span>_parse<span class="token punctuation">(</span><span class="token punctuation">)</span> 函数，在此函数中
+	<span class="token number">2.1</span>、media_type <span class="token operator">=</span> self<span class="token punctuation">.</span>content_type  <span class="token comment"># 获取用户请求头格式</span>
+    
+    <span class="token number">2.2</span>、parser <span class="token operator">=</span> self<span class="token punctuation">.</span>negotiator<span class="token punctuation">.</span>select_parser<span class="token punctuation">(</span>self<span class="token punctuation">,</span>self<span class="token punctuation">.</span>parsers<span class="token punctuation">)</span> <span class="token comment"># parses是自己类中写的解析器列表，self是请求对象，包含了self.content_type，进行匹配，选择parser，即该选那个解析器</span>
+    
+    <span class="token number">2.3</span>、parsed <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse<span class="token punctuation">(</span>stream<span class="token punctuation">,</span> media_type<span class="token punctuation">,</span> self<span class="token punctuation">.</span>parser_context<span class="token punctuation">)</span> <span class="token comment">#执行各自的parse方法</span>
+
+<span class="token number">3</span>、假如此时进入的是JSONParser类中parser方法
+	 <span class="token keyword">def</span> <span class="token function">parse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> stream<span class="token punctuation">,</span> media_type<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> parser_context<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        parser_context <span class="token operator">=</span> parser_context <span class="token keyword">or</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        encoding <span class="token operator">=</span> parser_context<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'encoding'</span><span class="token punctuation">,</span> settings<span class="token punctuation">.</span>DEFAULT_CHARSET<span class="token punctuation">)</span>
+
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            decoded_stream <span class="token operator">=</span> codecs<span class="token punctuation">.</span>getreader<span class="token punctuation">(</span>encoding<span class="token punctuation">)</span><span class="token punctuation">(</span>stream<span class="token punctuation">)</span>  <span class="token comment"># 获取请求体</span>
+            parse_constant <span class="token operator">=</span> json<span class="token punctuation">.</span>strict_constant <span class="token keyword">if</span> self<span class="token punctuation">.</span>strict <span class="token keyword">else</span> <span class="token boolean">None</span>
+            <span class="token keyword">return</span> json<span class="token punctuation">.</span>load<span class="token punctuation">(</span>decoded_stream<span class="token punctuation">,</span> parse_constant<span class="token operator">=</span>parse_constant<span class="token punctuation">)</span> <span class="token comment"># 加载数据</span>
+        <span class="token keyword">except</span> ValueError <span class="token keyword">as</span> exc<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> ParseError<span class="token punctuation">(</span><span class="token string">'JSON parse error - %s'</span> <span class="token operator">%</span> <span class="token builtin">str</span><span class="token punctuation">(</span>exc<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            
+<span class="token number">4</span>、执行dispatch方法的是有，在封装Request的时候
+	<span class="token keyword">def</span> <span class="token function">initialize_request</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+        <span class="token keyword">return</span> Request<span class="token punctuation">(</span>
+                request<span class="token punctuation">,</span>
+                parsers<span class="token operator">=</span>self<span class="token punctuation">.</span>get_parsers<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment"># 这里触发一个列表生成式，将每个解析器封装在request中</span>
+                authenticators<span class="token operator">=</span>self<span class="token punctuation">.</span>get_authenticators<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">#认证对象</span>
+                negotiator<span class="token operator">=</span>self<span class="token punctuation">.</span>get_content_negotiator<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                parser_context<span class="token operator">=</span>parser_context
+            <span class="token punctuation">)</span>
+</code></pre></div><h5 id="全局配置解析器"><a href="#全局配置解析器" class="header-anchor">#</a> 全局配置解析器</h5> <div class="language-python extra-class"><pre class="language-python"><code> 通过上面的分析，我们也就可以在全局配置解析器器
+    REST_FRAMEWORK <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'DEFAULT_VERSION'</span><span class="token punctuation">:</span><span class="token string">'v1'</span><span class="token punctuation">,</span>
+        <span class="token string">'ALLOWED_VERSIONS'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'v1'</span><span class="token punctuation">,</span><span class="token string">'v2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">'VERSION_PARAM'</span><span class="token punctuation">:</span><span class="token string">'version'</span><span class="token punctuation">,</span>  <span class="token comment"># 允许得key；version=v1</span>
+        <span class="token string">'DEFAULT_VERSIONING_CLASS'</span><span class="token punctuation">:</span><span class="token string">'rest_framework.versioning.URLPathVersioning'</span><span class="token punctuation">,</span>
+        <span class="token string">'DEFAULT_PARSER_CLASSES'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'rest_framework.parsers.JSONParser'</span><span class="token punctuation">,</span> <span class="token comment"># 配置解析器</span>
+        							<span class="token string">'rest_framework.parsers.FormParser'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span> 
+    
+ <span class="token comment"># 也就是说我们的视图函数中只需要request.data即可</span>
+<span class="token keyword">class</span> <span class="token class-name">ParserView</span><span class="token punctuation">(</span>APIView<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">post</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+        ret <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        ret<span class="token punctuation">[</span><span class="token string">'name1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> JsonResponse<span class="token punctuation">(</span>ret<span class="token punctuation">)</span>
+  
+</code></pre></div><h5 id="总结"><a href="#总结" class="header-anchor">#</a> 总结：</h5> <div class="language- extra-class"><pre class="language-text"><code>1、直接在全局settings中配置DEFAULT_PARSER_CLASSES，和解析器即可
+2、如果某视图项逃逸某个解析器，既可以重新选择自己的解析器
+</code></pre></div><h5 id="源码流程-本质"><a href="#源码流程-本质" class="header-anchor">#</a> 源码流程 &amp; 本质</h5> <div class="language- extra-class"><pre class="language-text"><code>本质：
+	请求头：
+		1.1: Accept：浏览器可接受的MIME类型。
+		1.2: Accept-Charset：浏览器可接受的字符集。
+		1.3: Content-Length：表示请求消息正文的长度。
+		1.4: Cookie：这是最重要的请求头信息之一
+		1.5: Host：初始URL中的主机和端口。
+		1.6: User-Agent：浏览器类型，如果Servlet返回的内容与浏览器类型有关则该值非常有用。
+		1.7: Content-Type 表示后面的文档属于什么MIME类型
+	状态码：
+		2.2: 200 (成功) 服务器已成功处理了请求。 通常。
+		2.3: 304 (未修改) 自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。
+		2.4: 400 (错误请求) 服务器不理解请求的语法。
+		2.5: 403 (禁止) 服务器拒绝请求。可能是Forbiend，可能是crsf
+		2.6: 404 (未找到) 服务器找不到请求的网页。
+		2.7: 500 (服务器内部错误) 服务器遇到错误，无法完成请求。
+		2.8: 503 (服务不可用) 服务器目前无法使用(由于超载或停机维护)。 通常，这只是暂时状态。
+
+请求方法：
+1、GET方法
+ 	GET方法用于使用给定的URI从给定服务器中检索信息，即从指定资源中请求数据。使用GET方法的请求应该只是检索数据，并且不应对数据产生其他影响。在GET请求的URL中发送查询字符串（名称/值对），需要这样写：
+/test/demo_form.php?name1=value1&amp;name2=value2
+说明：
+	GET请求是可以缓存的，我们可以从浏览器历史记录中查找到GET请求，还可以把它收藏到书签中；且GET请求有长度限制，仅用于请求数据（不修改）。注：因GET请求的不安全性，在处理敏感数据时，绝不可以使用GET请求。
+
+2、POST方法
+	POST方法用于将数据发送到服务器以创建或更新资源，它要求服务器确认请求中包含的内容作为由URI区分的Web资源的另一个下属。POST请求永远不会被缓存，且对数据长度没有限制；我们无法从浏览器历史记录中查找到POST请求。
+
+3、HEAD方法
+	HEAD方法与GET方法相同，但没有响应体，仅传输状态行和标题部分。这对于恢复相应头部编写的元数据非常有用，而无需传输整个内容。
+
+4、PUT方法
+	PUT方法用于将数据发送到服务器以创建或更新资源，它可以用上传的内容替换目标资源中的所有当前内容。
+	它会将包含的元素放在所提供的URI下，如果URI指示的是当前资源，则会被改变。如果URI未指示当前资源，则服务器可以使用该URI创建资源。
+
+5、DELETE方法
+	DELETE方法用来删除指定的资源，它会删除URI给出的目标资源的所有当前内容。
+
+6、CONNECT方法
+	CONNECT方法用来建立到给定URI标识的服务器的隧道；它通过简单的TCP / IP隧道更改请求连接，通常实使用解码的HTTP代理来进行SSL编码的通信（HTTPS）。
+
+7、OPTIONS方法
+	OPTIONS方法用来描述了目标资源的通信选项，会返回服务器支持预定义URL的HTTP策略。
+
+8、TRACE方法
+	TRACE方法用于沿着目标资源的路径执行消息环回测试；它回应收到的请求，以便客户可以看到中间服务器进行了哪些（假设任何）进度或增量。
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/python/django/APIView使用和源码分析.html" class="prev">
+        APIView使用和源码分析
+      </a></span> <span class="next"><a href="/python/django/REST framework之分页和视图组件.html">
+        REST framework之分页和视图组件
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/48.f591f360.js" defer></script>
+  </body>
+</html>

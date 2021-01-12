@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>requests相关知识 | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/110.4144755a.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/103.16474d4b.js"><link rel="prefetch" href="/assets/js/104.ed58aef3.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/11.d4ec37c8.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/34.8448d0fd.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/48.f591f360.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/50.b9ca2762.js"><link rel="prefetch" href="/assets/js/51.93672ee6.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/60.f40ac3ca.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/64.a98fe86e.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/80.f826f188.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/84.b940927c.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/87.5f9eb9ef.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/94.0ad7c41c.js"><link rel="prefetch" href="/assets/js/95.0e5ce618.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link router-link-active">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python常用模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Django框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flask 框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Python爬虫</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/python/spider/HTTP和HTTPS协议.html" class="sidebar-link">HTTP和HTTPS协议</a></li><li><a href="/python/spider/request模块高级.html" class="sidebar-link">request模块高级</a></li><li><a href="/python/spider/requests相关知识.html" class="active sidebar-link">requests相关知识</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/python/spider/requests相关知识.html#requests相关知识" class="sidebar-link">requests相关知识</a></li><li class="sidebar-sub-header"><a href="/python/spider/requests相关知识.html#reqeust模块" class="sidebar-link">reqeust模块</a></li><li class="sidebar-sub-header"><a href="/python/spider/requests相关知识.html#反爬机制" class="sidebar-link">反爬机制</a></li></ul></li><li><a href="/python/spider/requests知识进阶.html" class="sidebar-link">requests知识进阶</a></li><li><a href="/python/spider/数据解析.html" class="sidebar-link">数据解析</a></li><li><a href="/python/spider/多任务协程.html" class="sidebar-link">多任务协程爬虫</a></li><li><a href="/python/spider/Scrapy运用与总结.html" class="sidebar-link">Scrapy运用与总结</a></li><li><a href="/python/spider/Selenium记录.html" class="sidebar-link">Selenium万能的自动化爬虫</a></li><li><a href="/python/spider/aiohttp使用详细.html" class="sidebar-link">aiohttp使用详细</a></li><li><a href="/python/spider/爬虫面试案例.html" class="sidebar-link">爬虫面试案例</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="requests相关知识"><a href="#requests相关知识" class="header-anchor">#</a> requests相关知识</h2> <ul><li><p>http:</p> <ul><li>概念： Clinet和Server进行数据交互的某种形式</li></ul></li> <li><p>常用的头信息：</p> <ul><li>User-Agent: 请求载体的身份标识，请求载体可以时浏览器/requests模块等</li> <li>Connection: keep-alive 长连接， close 短链接</li> <li>Content-Type: 响应格式</li></ul></li> <li><p>https:</p> <ul><li>概念： 安全的http协议
+<ul><li>证书
+<ul><li>证书密钥加密</li> <li>非对称密钥加密</li> <li>对称密钥加密</li></ul></li></ul></li></ul></li></ul> <h3 id="爬虫相关概述"><a href="#爬虫相关概述" class="header-anchor">#</a> 爬虫相关概述</h3> <ul><li><p>爬虫概念：</p> <ul><li>通过编写程序模拟浏览器上网，然后让其去互联网上爬取/抓取数据的过程
+<ul><li>模拟： 浏览器就是一款纯天然的原始的爬虫工具</li></ul></li></ul></li> <li><p>爬虫分类：</p> <ul><li>通用爬虫：爬取一整张页面中的数据，爬去数据（爬虫程序）</li> <li>聚焦爬虫： 爬取页面中局部的数据。一定是建立在通用爬虫的基础之上</li> <li>增量式爬虫： 用来检测网站数据更新的情况，以便爬取到网站最新更新出来的数据</li></ul></li> <li><p>风险分析：</p> <ul><li>合理的使用</li> <li>爬虫风险的体现：
+<ul><li>爬虫干扰了被访问网站的正常运营</li> <li>爬虫爬取了受到了法律保护的特定类型的数据和信息</li></ul></li> <li>避免风险：
+<ul><li>严格遵守网站设置robots协议；</li> <li>在规避反爬虫措施的同时， 需要优化自己的代码，避免干扰被访问网站的正常运行；</li> <li>在使用、传播抓取到的信息时，应审查所爬取的内容，如发现属于用户的个人信息、隐私或他人商务机密时，应及停止并删除</li></ul></li></ul></li> <li><p>反爬机制：门户网站通过相应的策略和技术手段，防止爬虫程序进行网站数据的爬取。</p></li> <li><p>反反爬策略： 爬虫程序通过相应的策略和技术手段，破解门户网站的反爬虫手段，从而爬取到相应的数据。</p></li> <li><p>robots.txt协议： 文本协议，在文本中指定了可爬和不可爬数据的说明</p></li></ul> <h2 id="reqeust模块"><a href="#reqeust模块" class="header-anchor">#</a> reqeust模块</h2> <ul><li><p>概念： 一个基于网络请求的模块，作用就是用来模拟浏览器发起请求。requests模块是python中原生的基于网络请求的模块，其主要作用是用来模拟浏览器发起请求。功能强大，用法简洁高效。在爬虫领域中占据着半壁江山的地位。</p></li> <li><p>编码流程：</p> <ul><li>指定url</li> <li>进行请求的发送</li> <li>获取相应数据(爬取到的数据)</li> <li>持久化存储</li></ul></li> <li><p>环境安装</p> <ul><li>pip install reqeusts</li></ul></li></ul> <h4 id="requests模块和urllib模块"><a href="#requests模块和urllib模块" class="header-anchor">#</a> requests模块和urllib模块</h4> <ul><li><p>requests和urllib模块对比</p> <div class="language- extra-class"><pre class="language-text"><code>因为在使用urllib模块的时候，会有诸多不便之处，总结如下：
+	1、手动处理url编码
+	2、手动处理post请求参数
+	3、处理cookie和代理操作繁琐
+	......
+	
+使用requests模块：
+	1、自动处理url编码
+	2、自动处理post请求参数
+	3、简化cookie和代理操作
+	......
+</code></pre></div></li></ul> <h3 id="爬取搜狗首页对应的页面源码数据"><a href="#爬取搜狗首页对应的页面源码数据" class="header-anchor">#</a> 爬取搜狗首页对应的页面源码数据</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> requests
+<span class="token comment">#step_1</span>
+url <span class="token operator">=</span> <span class="token string">'https://www.sogou.com'</span>
+
+<span class="token comment">#setp_2, shift+tab 打开提示, 返回值是一个响应对象</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">)</span>
+
+<span class="token comment">#step_3: text 返回的是字符串形式的响应数据</span>
+page_text <span class="token operator">=</span> response<span class="token punctuation">.</span>text
+
+<span class="token comment">#step_4：持久化保存</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./sogou.html'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>page_text<span class="token punctuation">)</span>
+</code></pre></div><h3 id="基于搜狗编写一个简易的网页采集器"><a href="#基于搜狗编写一个简易的网页采集器" class="header-anchor">#</a> 基于搜狗编写一个简易的网页采集器</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#想要将url携带的参数自行设定</span>
+wd <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'enter a key: '</span><span class="token punctuation">)</span>
+url <span class="token operator">=</span> <span class="token string">'https://www.sogou.com/web'</span>
+
+<span class="token comment">#存储的就是动态的请求参数</span>
+params <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'query'</span><span class="token punctuation">:</span>wd
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 一定需要将params作用到请求中</span>
+<span class="token comment"># params参数表示的是对请求url参数的封装</span>
+requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> params<span class="token operator">=</span>params<span class="token punctuation">)</span>
+
+<span class="token comment">#手动修改响应数据的编码，设置响应体以什么编码，</span>
+response<span class="token punctuation">.</span>encoding <span class="token operator">=</span> <span class="token string">'utf-8'</span>
+
+page_text <span class="token operator">=</span> response<span class="token punctuation">.</span>text
+
+fileName <span class="token operator">=</span> wd <span class="token operator">+</span> <span class="token string">'.html'</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>fileName<span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>page_text<span class="token punctuation">)</span>
+    
+<span class="token keyword">print</span><span class="token punctuation">(</span>wd<span class="token punctuation">,</span><span class="token string">'下载成功'</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre><code>enter a key: 邓紫棋
+邓紫棋 下载成功
+</code></pre></div><ul><li>上述程序出现的问题
+<ul><li><p>问题1：中文乱码？</p> <ul><li>手动修改响应数据的编码，设置响应体以什么编码
+response.encoding = 'utf-8'</li></ul></li> <li><p>问题2：遇到UA反爬机制？</p> <ul><li>添加headers，用来实现UA伪装</li></ul></li></ul></li></ul> <h2 id="反爬机制"><a href="#反爬机制" class="header-anchor">#</a> 反爬机制</h2> <ul><li><p>反爬机制： UA检测，某些门户网站会对访问该网站的请求中的User-Agent进行捕获和判断，如果该请求的UA为爬虫程序，则拒绝向该请求提供数据。</p> <div class="language- extra-class"><pre class="language-text"><code>User-Agent：请求载体身份标识，通过浏览器发起的请求，请求载体为浏览器，则该请求的User-Agent为浏览器的身份标识，使用爬虫程序发起的请求，则该请求的载体为爬虫程序，则该请求的User-Agent为爬虫程序的身份标识。可以通过判断该值来获知该请求的载体究竟是基于哪款浏览器还是基于爬虫程序。
+</code></pre></div></li> <li><p>反反爬机制: UA伪装，将爬虫程序的UA伪装成某一款浏览器的身份标识。</p></li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#想要将url携带的参数自行设定</span>
+wd <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'enter a key: '</span><span class="token punctuation">)</span>
+url <span class="token operator">=</span> <span class="token string">'https://www.sogou.com/web'</span>
+
+<span class="token comment">#存储的就是动态的请求参数</span>
+params <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'query'</span><span class="token punctuation">:</span>wd
+<span class="token punctuation">}</span>
+
+headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 一定需要将params作用到请求中</span>
+<span class="token comment"># params参数表示的是对请求url参数的封装</span>
+requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> params<span class="token operator">=</span>params<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+
+<span class="token comment">#手动修改响应数据的编码，设置响应体以什么编码，</span>
+response<span class="token punctuation">.</span>encoding <span class="token operator">=</span> <span class="token string">'utf-8'</span>
+
+page_text <span class="token operator">=</span> response<span class="token punctuation">.</span>text
+
+fileName <span class="token operator">=</span> wd <span class="token operator">+</span> <span class="token string">'.html'</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>fileName<span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>page_text<span class="token punctuation">)</span>
+    
+<span class="token keyword">print</span><span class="token punctuation">(</span>wd<span class="token punctuation">,</span><span class="token string">'下载成功'</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre><code>enter a key: 周杰伦
+周杰伦 下载成功
+</code></pre></div><h3 id="爬取豆瓣电影信息"><a href="#爬取豆瓣电影信息" class="header-anchor">#</a> 爬取豆瓣电影信息</h3> <ul><li><p>爬取电影的排行榜：
+https://movie.douban.com/typerank?type_name=%E5%96%9C%E5%89%A7&amp;type=24&amp;interval_id=100:90&amp;action=</p></li> <li><p>爬取豆瓣电影的电影详情数据电影</p> <ul><li>分析： 当滚轮滑动到底部的时候， 发起一个ajax请求，且该请求请求到一组数据，也就是说网站并没有变化，当我们打开浏览器的Network抓包工具，选中XHR时（用来检测ajax请求的），可以查看变化</li></ul></li> <li><p>动态加载的数据： 就是通过另一个额外的请求请求到的数据</p> <ul><li>ajax 生成动态加载的数据</li> <li>js 生成动态的数据</li></ul></li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 我们打开每次滚动后加载的XHR的ajax请求，看看每次ajax访问的是什么网址，发现都是对一个接口进行发送数据，如下</span>
+url <span class="token operator">=</span> <span class="token string">'https://movie.douban.com/j/chart/top_list'</span>
+
+headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'</span>
+<span class="token punctuation">}</span>
+
+start <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'enter a start: '</span><span class="token punctuation">)</span>
+
+limit <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'enter a limit: '</span><span class="token punctuation">)</span>
+
+<span class="token comment">#处理请求参数,参考具体的请求头数据，进行整合我们的参数</span>
+params <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'type'</span><span class="token punctuation">:</span><span class="token string">'5'</span><span class="token punctuation">,</span>
+    <span class="token string">'interval_id'</span><span class="token punctuation">:</span><span class="token string">'100:90'</span><span class="token punctuation">,</span>
+    <span class="token string">'action'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token string">'start'</span><span class="token punctuation">:</span>start<span class="token punctuation">,</span>
+    <span class="token string">'limit'</span><span class="token punctuation">:</span>limit
+<span class="token punctuation">}</span>
+
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> params<span class="token operator">=</span>params<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+
+<span class="token comment">#返回的是序列化好的对象</span>
+data_list <span class="token operator">=</span> response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'douban.txt'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> <span class="token builtin">dict</span> <span class="token keyword">in</span> data_list<span class="token punctuation">:</span>
+        name <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span>
+        score <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span>
+        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>name<span class="token operator">+</span><span class="token string">':'</span><span class="token operator">+</span> score<span class="token operator">+</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token string">'爬取成功'</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre><code>enter a start: 1
+enter a limit: 1
+</code></pre></div><h3 id="如何判定一张也页面中是否存在动态加载的数据"><a href="#如何判定一张也页面中是否存在动态加载的数据" class="header-anchor">#</a> 如何判定一张也页面中是否存在动态加载的数据</h3> <p><strong>什么是动态加载数据？</strong>
+- 访问一个网址，即发起一个请求，得到一个响应，但是当有些页面数据没有在返回的response中的时候，此时就是在加载页面的时候又其他respose中返回出的数据，可能是ajax、也可能是js返回的数据</p> <ul><li><p>爬取企业详细信息： http://125.35.6.84:81/xk/</p></li> <li><p>抓包工具进行局部搜索： 在response中ctrl+f搜索，没有搜到表示数据不是来自响应，而是动态加载</p></li> <li><p>如果判定出页面中又动态加载的数据如何进行数据定位？</p> <ul><li>使用抓包工具进行全局搜索，有个放大镜</li></ul></li> <li><p>具体操作：</p> <ul><li><p>我们访问上面的网址，发现每一个数据都是动态加载，再点击任意一个数据进入后，没有数据也是动态加载，也是就说里面的数据有些是局部搜不到的，表示是动态加载的，只能通过全局搜索</p></li> <li><p>我们取出每个企业页面的一条数据，进行全局搜索，我们找到生成数据的是一个xvasfdaf=dfafdaf(可能是一个ajax/js),我们点击它的 Header查看，发现是ajax(post)得到的，请求对应的url='http://125.35.6.84:81/xk/itownet/portalAction.do?method=getXkzsById'</p></li> <li><p>该请求携带了一个参数：id:xxxx</p></li> <li><p>发现规律：所有的企业都是针对上一个网址，拼接对应的id，获得的数据，那么我们只要知道对应的id，就可以得到响应的数据</p></li> <li><p>获取每一家企业的id值：</p> <ul><li>思路： 每一家企业的id值应该存储再首页对应的相关响应的数据中，只需要获得企业id即可</li> <li>我们打开首页，发现数据都是通过ajax的post方式请求的，且url='http://125.35.6.84:81/xk/itownet/portalAction.do?method=getXkzsList'</li> <li>我们可以通过提交相应的数据给这个url，从而获得id</li></ul></li></ul></li></ul> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 获取每家企业的对应id</span>
+url <span class="token operator">=</span> <span class="token string">'http://125.35.6.84:81/xk/itownet/portalAction.do?method=getXkzsList'</span>
+
+headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'</span>
+<span class="token punctuation">}</span>
+
+data<span class="token operator">=</span><span class="token punctuation">{</span>
+   <span class="token string">'on'</span><span class="token punctuation">:</span><span class="token string">'true'</span><span class="token punctuation">,</span>
+    <span class="token string">'page'</span><span class="token punctuation">:</span><span class="token string">'1'</span><span class="token punctuation">,</span>
+    <span class="token string">'pageSize'</span><span class="token punctuation">:</span><span class="token string">'15'</span><span class="token punctuation">,</span>
+    <span class="token string">'productName'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token string">'conditionType'</span><span class="token punctuation">:</span><span class="token string">'1'</span><span class="token punctuation">,</span>
+    <span class="token string">'applyname'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token string">'applysn'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+fp <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./company_detail.txt'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 该json() 的返回值中就有每一家企业的id</span>
+data_dic <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span>data<span class="token operator">=</span>data<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> dic <span class="token keyword">in</span> data_dic<span class="token punctuation">[</span><span class="token string">'list'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    _id <span class="token operator">=</span> dic<span class="token punctuation">[</span><span class="token string">'ID'</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>_id<span class="token punctuation">)</span>
+    
+    <span class="token comment">#对每一个id对应的企业详情数据进行捕获（发起请求）</span>
+    post_url <span class="token operator">=</span> <span class="token string">'http://125.35.6.84:81/xk/itownet/portalAction.do?method=getXkzsById'</span>
+    post_data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'id'</span><span class="token punctuation">:</span>_id
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment"># json返回值是某一家企业的详情信息</span>
+    detail_dic <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>post_url<span class="token punctuation">,</span>data<span class="token operator">=</span>post_data<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    company_title <span class="token operator">=</span> detail_dic<span class="token punctuation">[</span><span class="token string">'epsName'</span><span class="token punctuation">]</span>
+    address <span class="token operator">=</span> detail_dic<span class="token punctuation">[</span><span class="token string">'epsProductAddress'</span><span class="token punctuation">]</span> 
+    fp<span class="token punctuation">.</span>write<span class="token punctuation">(</span>company_title<span class="token operator">+</span><span class="token string">': '</span><span class="token operator">+</span>address<span class="token operator">+</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>company_title<span class="token punctuation">,</span><span class="token string">'爬取成功'</span><span class="token punctuation">)</span>
+
+fp<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="爬取国家药品监督管理总局中基于中华人民共和国化妆品生产许可证相关数据"><a href="#爬取国家药品监督管理总局中基于中华人民共和国化妆品生产许可证相关数据" class="header-anchor">#</a> 爬取国家药品监督管理总局中基于中华人民共和国化妆品生产许可证相关数据</h4> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> requests
+<span class="token keyword">from</span> fake_useragent <span class="token keyword">import</span> UserAgent
+
+ua <span class="token operator">=</span> UserAgent<span class="token punctuation">(</span>use_cache_server<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>verify_ssl<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">.</span>random
+headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'User-Agent'</span><span class="token punctuation">:</span>ua
+<span class="token punctuation">}</span>
+
+url <span class="token operator">=</span> <span class="token string">'http://125.35.6.84:81/xk/itownet/portalAction.do?method=getXkzsList'</span>
+pageNum <span class="token operator">=</span> <span class="token number">3</span>
+<span class="token keyword">for</span> page <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'on'</span><span class="token punctuation">:</span> <span class="token string">'true'</span><span class="token punctuation">,</span>
+        <span class="token string">'page'</span><span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">'pageSize'</span><span class="token punctuation">:</span> <span class="token string">'15'</span><span class="token punctuation">,</span>
+        <span class="token string">'productName'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'conditionType'</span><span class="token punctuation">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span>
+        <span class="token string">'applyname'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'applysn'</span><span class="token punctuation">:</span><span class="token string">''</span>
+    <span class="token punctuation">}</span>
+    
+    json_text <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span>data<span class="token operator">=</span>data<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    all_id_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> <span class="token builtin">dict</span> <span class="token keyword">in</span> json_text<span class="token punctuation">[</span><span class="token string">'list'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token builtin">id</span> <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">[</span><span class="token string">'ID'</span><span class="token punctuation">]</span><span class="token comment">#用于二级页面数据获取</span>
+        <span class="token comment">#下列详情信息可以在二级页面中获取</span>
+        <span class="token comment"># name = dict['EPS_NAME']</span>
+        <span class="token comment"># product = dict['PRODUCT_SN']</span>
+        <span class="token comment"># man_name = dict['QF_MANAGER_NAME']</span>
+        <span class="token comment"># d1 = dict['XC_DATE']</span>
+        <span class="token comment"># d2 = dict['XK_DATE']</span>
+        all_id_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">)</span>
+    <span class="token comment">#该url是一个ajax的post请求</span>
+    post_url <span class="token operator">=</span> <span class="token string">'http://125.35.6.84:81/xk/itownet/portalAction.do?method=getXkzsById'</span>
+    <span class="token keyword">for</span> <span class="token builtin">id</span> <span class="token keyword">in</span>  all_id_list<span class="token punctuation">:</span>
+        post_data <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">'id'</span><span class="token punctuation">:</span><span class="token builtin">id</span>
+        <span class="token punctuation">}</span>
+        response <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>post_url<span class="token punctuation">,</span>data<span class="token operator">=</span>post_data<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+        <span class="token comment">#该请求响应回来的数据有两个，一个是基于text，一个是基于json的，所以可以根据content-type,来获取指定的响应数据</span>
+        <span class="token keyword">if</span> response<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'Content-Type'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'application/json;charset=UTF-8'</span><span class="token punctuation">:</span>
+            <span class="token comment">#print(response.json())</span>
+            <span class="token comment">#进行json解析</span>
+            json_text <span class="token operator">=</span> response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>json_text<span class="token punctuation">[</span><span class="token string">'businessPerson'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/python/spider/request模块高级.html" class="prev">
+        request模块高级
+      </a></span> <span class="next"><a href="/python/spider/requests知识进阶.html">
+        requests知识进阶
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/110.4144755a.js" defer></script>
+  </body>
+</html>

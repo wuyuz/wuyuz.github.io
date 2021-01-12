@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>设计模式 | 独角兕大王</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.ccac5a78.css" as="style"><link rel="preload" href="/assets/js/app.51f2f156.js" as="script"><link rel="preload" href="/assets/js/2.8911ec45.js" as="script"><link rel="preload" href="/assets/js/11.d4ec37c8.js" as="script"><link rel="prefetch" href="/assets/js/10.6948c28b.js"><link rel="prefetch" href="/assets/js/100.276864ee.js"><link rel="prefetch" href="/assets/js/101.447ab1c7.js"><link rel="prefetch" href="/assets/js/102.f5b3c71d.js"><link rel="prefetch" href="/assets/js/103.16474d4b.js"><link rel="prefetch" href="/assets/js/104.ed58aef3.js"><link rel="prefetch" href="/assets/js/105.045203cd.js"><link rel="prefetch" href="/assets/js/106.be359e0b.js"><link rel="prefetch" href="/assets/js/107.7331bbca.js"><link rel="prefetch" href="/assets/js/108.76e1c800.js"><link rel="prefetch" href="/assets/js/109.e82166f3.js"><link rel="prefetch" href="/assets/js/110.4144755a.js"><link rel="prefetch" href="/assets/js/111.5864ab53.js"><link rel="prefetch" href="/assets/js/112.ca2aee84.js"><link rel="prefetch" href="/assets/js/113.641e7765.js"><link rel="prefetch" href="/assets/js/114.d69f8545.js"><link rel="prefetch" href="/assets/js/115.1b6a9f89.js"><link rel="prefetch" href="/assets/js/116.dde2c44e.js"><link rel="prefetch" href="/assets/js/117.4e79498c.js"><link rel="prefetch" href="/assets/js/12.7aac9c8d.js"><link rel="prefetch" href="/assets/js/13.abf127cd.js"><link rel="prefetch" href="/assets/js/14.aa4413a7.js"><link rel="prefetch" href="/assets/js/15.11a64e5b.js"><link rel="prefetch" href="/assets/js/16.f2d9a882.js"><link rel="prefetch" href="/assets/js/17.11c5bb7f.js"><link rel="prefetch" href="/assets/js/18.a522877b.js"><link rel="prefetch" href="/assets/js/19.6f31a972.js"><link rel="prefetch" href="/assets/js/20.b546c54e.js"><link rel="prefetch" href="/assets/js/21.6d055b7f.js"><link rel="prefetch" href="/assets/js/22.c48feceb.js"><link rel="prefetch" href="/assets/js/23.69941f78.js"><link rel="prefetch" href="/assets/js/24.6126dfc2.js"><link rel="prefetch" href="/assets/js/25.3475449c.js"><link rel="prefetch" href="/assets/js/26.96bb4643.js"><link rel="prefetch" href="/assets/js/27.da610e5d.js"><link rel="prefetch" href="/assets/js/28.b24ec15c.js"><link rel="prefetch" href="/assets/js/29.ec8af553.js"><link rel="prefetch" href="/assets/js/3.bec5f768.js"><link rel="prefetch" href="/assets/js/30.2e780db1.js"><link rel="prefetch" href="/assets/js/31.464c36ed.js"><link rel="prefetch" href="/assets/js/32.ad7d37c2.js"><link rel="prefetch" href="/assets/js/33.722f1ec5.js"><link rel="prefetch" href="/assets/js/34.8448d0fd.js"><link rel="prefetch" href="/assets/js/35.e5168ac9.js"><link rel="prefetch" href="/assets/js/36.edc404f1.js"><link rel="prefetch" href="/assets/js/37.5807602e.js"><link rel="prefetch" href="/assets/js/38.a519c89a.js"><link rel="prefetch" href="/assets/js/39.89af1b9a.js"><link rel="prefetch" href="/assets/js/4.5ed19beb.js"><link rel="prefetch" href="/assets/js/40.6c653db9.js"><link rel="prefetch" href="/assets/js/41.bc3b8b69.js"><link rel="prefetch" href="/assets/js/42.a0a02d9b.js"><link rel="prefetch" href="/assets/js/43.62f344e3.js"><link rel="prefetch" href="/assets/js/44.a7fd9d68.js"><link rel="prefetch" href="/assets/js/45.729c1c39.js"><link rel="prefetch" href="/assets/js/46.5b924aea.js"><link rel="prefetch" href="/assets/js/47.f3990404.js"><link rel="prefetch" href="/assets/js/48.f591f360.js"><link rel="prefetch" href="/assets/js/49.f7f213ad.js"><link rel="prefetch" href="/assets/js/5.2c5d28b5.js"><link rel="prefetch" href="/assets/js/50.b9ca2762.js"><link rel="prefetch" href="/assets/js/51.93672ee6.js"><link rel="prefetch" href="/assets/js/52.fb21314a.js"><link rel="prefetch" href="/assets/js/53.65343ccc.js"><link rel="prefetch" href="/assets/js/54.8081227d.js"><link rel="prefetch" href="/assets/js/55.e207659e.js"><link rel="prefetch" href="/assets/js/56.bde381df.js"><link rel="prefetch" href="/assets/js/57.f8eceb45.js"><link rel="prefetch" href="/assets/js/58.bef70bfd.js"><link rel="prefetch" href="/assets/js/59.7ab7562d.js"><link rel="prefetch" href="/assets/js/6.fc65a1ac.js"><link rel="prefetch" href="/assets/js/60.f40ac3ca.js"><link rel="prefetch" href="/assets/js/61.d2b463ab.js"><link rel="prefetch" href="/assets/js/62.cfdf1bcf.js"><link rel="prefetch" href="/assets/js/63.1e45ce59.js"><link rel="prefetch" href="/assets/js/64.a98fe86e.js"><link rel="prefetch" href="/assets/js/65.0234d7c5.js"><link rel="prefetch" href="/assets/js/66.724906f0.js"><link rel="prefetch" href="/assets/js/67.7806fda6.js"><link rel="prefetch" href="/assets/js/68.9f227dae.js"><link rel="prefetch" href="/assets/js/69.fdbc56ac.js"><link rel="prefetch" href="/assets/js/7.284de54e.js"><link rel="prefetch" href="/assets/js/70.04a9cc03.js"><link rel="prefetch" href="/assets/js/71.a6fa1dd9.js"><link rel="prefetch" href="/assets/js/72.2f8e3aa0.js"><link rel="prefetch" href="/assets/js/73.9bbb0cb6.js"><link rel="prefetch" href="/assets/js/74.9f122255.js"><link rel="prefetch" href="/assets/js/75.75e1fbd8.js"><link rel="prefetch" href="/assets/js/76.60ff3c3e.js"><link rel="prefetch" href="/assets/js/77.39a253ae.js"><link rel="prefetch" href="/assets/js/78.0e49712f.js"><link rel="prefetch" href="/assets/js/79.5f9c24a0.js"><link rel="prefetch" href="/assets/js/8.5c21a4cc.js"><link rel="prefetch" href="/assets/js/80.f826f188.js"><link rel="prefetch" href="/assets/js/81.b8995ea7.js"><link rel="prefetch" href="/assets/js/82.e9bf63e0.js"><link rel="prefetch" href="/assets/js/83.e3a00749.js"><link rel="prefetch" href="/assets/js/84.b940927c.js"><link rel="prefetch" href="/assets/js/85.ad46a9b2.js"><link rel="prefetch" href="/assets/js/86.190e0071.js"><link rel="prefetch" href="/assets/js/87.5f9eb9ef.js"><link rel="prefetch" href="/assets/js/88.cfaf7469.js"><link rel="prefetch" href="/assets/js/89.e64cc32c.js"><link rel="prefetch" href="/assets/js/9.0723805d.js"><link rel="prefetch" href="/assets/js/90.805edabe.js"><link rel="prefetch" href="/assets/js/91.6a1ab3f7.js"><link rel="prefetch" href="/assets/js/92.04ecd01e.js"><link rel="prefetch" href="/assets/js/93.e615470a.js"><link rel="prefetch" href="/assets/js/94.0ad7c41c.js"><link rel="prefetch" href="/assets/js/95.0e5ce618.js"><link rel="prefetch" href="/assets/js/96.b59cf9f4.js"><link rel="prefetch" href="/assets/js/97.2a327746.js"><link rel="prefetch" href="/assets/js/98.9c01ec88.js"><link rel="prefetch" href="/assets/js/99.952046bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccac5a78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://github.com/fluidicon.png" alt="独角兕大王" class="logo"> <span class="site-name can-hide">独角兕大王</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link router-link-active">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/rust/" class="nav-link">
+  Rust
+</a></div><div class="nav-item"><a href="/go/" class="nav-link router-link-active">
+  Go
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/lua/" class="nav-link">
+  Lua
+</a></div><div class="nav-item"><a href="/C/" class="nav-link">
+  C++
+</a></div><div class="nav-item"><a href="https://github.com/wuyuz" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.cnblogs.com/double-W/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  cnblogs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Go常用模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Go基础知识</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Go应用实例</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Go设计模式</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/go/go-mode/设计模式.html" class="active sidebar-link">设计模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/go/go-mode/设计模式.html#设计模式" class="sidebar-link">设计模式</a></li><li class="sidebar-sub-header"><a href="/go/go-mode/设计模式.html#工厂模式" class="sidebar-link">工厂模式</a></li><li class="sidebar-sub-header"><a href="/go/go-mode/设计模式.html#抽象工厂模式" class="sidebar-link">抽象工厂模式</a></li><li class="sidebar-sub-header"><a href="/go/go-mode/设计模式.html#建造者模式" class="sidebar-link">建造者模式</a></li><li class="sidebar-sub-header"><a href="/go/go-mode/设计模式.html#单例模式" class="sidebar-link">单例模式</a></li><li class="sidebar-sub-header"><a href="/go/go-mode/设计模式.html#创建型模式" class="sidebar-link">创建型模式</a></li><li class="sidebar-sub-header"><a href="/go/go-mode/设计模式.html#原型模式" class="sidebar-link">原型模式</a></li><li class="sidebar-sub-header"><a href="/go/go-mode/设计模式.html#适配器模式" class="sidebar-link">适配器模式</a></li><li class="sidebar-sub-header"><a href="/go/go-mode/设计模式.html#结构设计模式" class="sidebar-link">结构设计模式</a></li><li class="sidebar-sub-header"><a href="/go/go-mode/设计模式.html#代理模式" class="sidebar-link">代理模式</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Go源码解析</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Go微服务网关</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="设计模式"><a href="#设计模式" class="header-anchor">#</a> 设计模式</h2> <h2 id="工厂模式"><a href="#工厂模式" class="header-anchor">#</a> 工厂模式</h2> <p>工厂模式（Factory Pattern）是软件设计中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p> <p>在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。在每增加一种类型时，只需要修改工厂函数即可。 在产品较多时，工厂函数代码逻辑将会非常复杂。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> Restaurant <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	<span class="token function">GetFood</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> ChuanChuan <span class="token keyword">struct</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>d <span class="token operator">*</span>ChuanChuan<span class="token punctuation">)</span> <span class="token function">GetFood</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;串串的饭菜已经做好&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Qingfeng <span class="token keyword">struct</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>q <span class="token operator">*</span>Qingfeng<span class="token punctuation">)</span> <span class="token function">GetFood</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;庆风包子铺已经做好&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">NewRestaurant</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span>  Restaurant <span class="token punctuation">{</span>
+	<span class="token keyword">switch</span> name <span class="token punctuation">{</span>
+	<span class="token keyword">case</span> <span class="token string">&quot;d&quot;</span><span class="token punctuation">:</span>
+		<span class="token keyword">return</span> <span class="token operator">&amp;</span>ChuanChuan<span class="token punctuation">{</span><span class="token punctuation">}</span>
+	<span class="token keyword">case</span> <span class="token string">&quot;q&quot;</span><span class="token punctuation">:</span>
+		<span class="token keyword">return</span> <span class="token operator">&amp;</span>Qingfeng<span class="token punctuation">{</span><span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token boolean">nil</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 工厂模式：首先要规定你生成的商品的功能是什么，如上的Restaurant接口就是要求商品都能获得食物</span>
+	<span class="token comment">// 然后我们分别写能完成接口功能的结构体，然后通过NewRestaurant方法的select来通过不同的传参生产不同的商品</span>
+	<span class="token function">NewRestaurant</span><span class="token punctuation">(</span><span class="token string">&quot;d&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">GetFood</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token function">NewRestaurant</span><span class="token punctuation">(</span><span class="token string">&quot;q&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">GetFood</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="抽象工厂模式"><a href="#抽象工厂模式" class="header-anchor">#</a> 抽象工厂模式</h2> <p>抽象工厂模式（Abstract Factory Pattern）是围绕一个超级工厂创建其他工厂。该超级工厂又称为其他工厂的工厂。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。在抽象工厂模式中，接口是负责创建一个相关对象的工厂，不需要显式指定它们的类。每个生成的工厂都能按照工厂模式提供对象。 使用抽象工厂模式一般要满足以下条件。</p> <ul><li>系统中有多个产品族，每个具体工厂创建同一族但属于不同等级结构的产品。</li> <li>系统一次只可能消费其中某一族产品，即同族的产品一起使用。</li></ul> <p>抽象工厂模式除了具有工厂方法模式的优点外，其他主要优点如下。</p> <ul><li>可以在类的内部对产品族中相关联的多等级产品共同管理，而不必专门引入多个新的类来进行管理。</li> <li>当增加一个新的产品族时不需要修改原代码，满足开闭原则</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">// lunch是表示一个具有cook功能的商品，下面的rise米饭和tomato番茄都实现了可以cook</span>
+<span class="token keyword">type</span> Lunch <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	<span class="token function">Cook</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span>  Rise <span class="token keyword">struct</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>Rise<span class="token punctuation">)</span>  <span class="token function">Cook</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;it's rise&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Tomato <span class="token keyword">struct</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>t <span class="token operator">*</span>Tomato<span class="token punctuation">)</span> <span class="token function">Cook</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;it's Tomato&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> SimpleLunchFactory <span class="token keyword">struct</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// lunchFactory接口是表示具有createFood和Createvegetable功能的</span>
+<span class="token keyword">type</span> LunchFactory <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 抽象工厂在此体现：接口内的方法会返回一个接口，这使得实现了LunchFactory的类与实现了Lunch功能的类进行绑定</span>
+	<span class="token function">CreateFood</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Lunch
+	<span class="token function">CreateVegetable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Lunch
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">NewSimpleLunchFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> LunchFactory <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token operator">&amp;</span>SimpleLunchFactory<span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>SimpleLunchFactory<span class="token punctuation">)</span> <span class="token function">CreateFood</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Lunch <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token operator">&amp;</span>Rise<span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>SimpleLunchFactory<span class="token punctuation">)</span> <span class="token function">CreateVegetable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Lunch <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token operator">&amp;</span>Tomato<span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	factory <span class="token operator">:=</span> <span class="token function">NewSimpleLunchFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	food<span class="token operator">:=</span> factory<span class="token punctuation">.</span><span class="token function">CreateFood</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// 通过LunchFactory的接口的方法来具体的创建不同的类</span>
+	food<span class="token punctuation">.</span><span class="token function">Cook</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	vegetable <span class="token operator">:=</span> factory<span class="token punctuation">.</span><span class="token function">CreateVegetable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	vegetable<span class="token punctuation">.</span><span class="token function">Cook</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="建造者模式"><a href="#建造者模式" class="header-anchor">#</a> 建造者模式</h2> <p>建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p> <p>一个 Builder 类会一步一步构造最终的对象。该 Builder 类是独立于其他对象的。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;bytes&quot;</span>
+	<span class="token string">&quot;fmt&quot;</span>
+<span class="token punctuation">)</span>
+
+
+<span class="token comment">// builder设计模式，主要解决多变参数传递问题</span>
+<span class="token comment">// xorm就是使用了builder设计模式</span>
+<span class="token comment">// 故事： 平时去面馆吃面，有各种味道的面条（牛肉味、肥肠味等）</span>
+<span class="token comment">// 有各种配料（香菜、葱、姜、辣椒等）</span>
+<span class="token comment">// 第一个客人：一碗牛肉面 加葱、姜</span>
+<span class="token comment">// 第二个客人：一碗牛肉面 加葱、香菜</span>
+
+<span class="token comment">// 相当于面的材料</span>
+<span class="token keyword">type</span> MyBuilder <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	NoodlesType <span class="token builtin">string</span> <span class="token comment">// 面条口味</span>
+	Coriander   <span class="token builtin">bool</span>   <span class="token comment">// 是否加香菜</span>
+	Onion       <span class="token builtin">bool</span>   <span class="token comment">// 是否加葱</span>
+	Ginger      <span class="token builtin">bool</span>   <span class="token comment">// 是否加姜</span>
+	Pepper      <span class="token builtin">bool</span>   <span class="token comment">// 是否加辣椒</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 构造一个结构体</span>
+<span class="token keyword">func</span> <span class="token function">NewMyBuilder</span><span class="token punctuation">(</span>noodsType <span class="token builtin">string</span><span class="token punctuation">)</span> MyBuilder <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> MyBuilder<span class="token punctuation">{</span>NoodlesType<span class="token punctuation">:</span> noodsType<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 加香菜</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>myBuilder MyBuilder<span class="token punctuation">)</span> <span class="token function">withCoriander</span><span class="token punctuation">(</span><span class="token punctuation">)</span> MyBuilder <span class="token punctuation">{</span>
+	myBuilder<span class="token punctuation">.</span>Coriander <span class="token operator">=</span> <span class="token boolean">true</span>
+	<span class="token keyword">return</span> myBuilder
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 加葱</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>myBuilder MyBuilder<span class="token punctuation">)</span> <span class="token function">withOnion</span><span class="token punctuation">(</span><span class="token punctuation">)</span> MyBuilder <span class="token punctuation">{</span>
+	myBuilder<span class="token punctuation">.</span>Onion <span class="token operator">=</span> <span class="token boolean">true</span>
+	<span class="token keyword">return</span> myBuilder
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 加姜</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>myBuilder MyBuilder<span class="token punctuation">)</span> <span class="token function">withGinger</span><span class="token punctuation">(</span><span class="token punctuation">)</span> MyBuilder <span class="token punctuation">{</span>
+	myBuilder<span class="token punctuation">.</span>Ginger <span class="token operator">=</span> <span class="token boolean">true</span>
+	<span class="token keyword">return</span> myBuilder
+<span class="token punctuation">}</span>
+
+
+<span class="token comment">// 加辣椒</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>myBuilder MyBuilder<span class="token punctuation">)</span> <span class="token function">withPepper</span><span class="token punctuation">(</span><span class="token punctuation">)</span> MyBuilder <span class="token punctuation">{</span>
+	myBuilder<span class="token punctuation">.</span>Pepper <span class="token operator">=</span> <span class="token boolean">true</span>
+	<span class="token keyword">return</span> myBuilder
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>myBuilder MyBuilder<span class="token punctuation">)</span> <span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> buffer bytes<span class="token punctuation">.</span>Buffer
+	buffer<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span><span class="token string">&quot;要一碗&quot;</span> <span class="token operator">+</span> myBuilder<span class="token punctuation">.</span>NoodlesType <span class="token operator">+</span> <span class="token string">&quot;面，&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> myBuilder<span class="token punctuation">.</span>Coriander <span class="token punctuation">{</span>
+		buffer<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span><span class="token string">&quot;加香菜、&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		buffer<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span><span class="token string">&quot;不加香菜、&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+
+	<span class="token keyword">if</span> myBuilder<span class="token punctuation">.</span>Onion <span class="token punctuation">{</span>
+		buffer<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span><span class="token string">&quot;加葱、&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		buffer<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span><span class="token string">&quot;不加葱、&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+
+	<span class="token keyword">if</span> myBuilder<span class="token punctuation">.</span>Ginger <span class="token punctuation">{</span>
+		buffer<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span><span class="token string">&quot;加姜、&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		buffer<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span><span class="token string">&quot;不加姜、&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+
+	<span class="token keyword">if</span> myBuilder<span class="token punctuation">.</span>Pepper <span class="token punctuation">{</span>
+		buffer<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span><span class="token string">&quot;加辣椒、&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		buffer<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span><span class="token string">&quot;不加辣椒、&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	buffer<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span><span class="token string">&quot;\n&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">return</span> buffer<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	myBuilder <span class="token operator">:=</span> <span class="token function">NewMyBuilder</span><span class="token punctuation">(</span><span class="token string">&quot;牛肉&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+		<span class="token function">withCoriander</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+		<span class="token function">withGinger</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	str <span class="token operator">:=</span> myBuilder<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 要一碗牛肉面，加香菜、不加葱、加姜、不加辣椒、</span>
+</code></pre></div><h2 id="单例模式"><a href="#单例模式" class="header-anchor">#</a> 单例模式</h2> <p>单例模式（Singleton Pattern）是软件设计中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p> <p>这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;sync&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">type</span> Instance <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	Name    <span class="token builtin">string</span>
+	Counter <span class="token builtin">int</span> <span class="token comment">//详细参数</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 1、懒汉模式：非线程安全。，有线程来访问此时LazyInstance = nil就会再创建，单例类就会有多个实例了。当正在创建时</span>
+<span class="token keyword">var</span> LazyInstance <span class="token operator">*</span>Instance
+
+<span class="token keyword">func</span> <span class="token function">GetLazyInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>Instance <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> LazyInstance <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		LazyInstance <span class="token operator">=</span> <span class="token operator">&amp;</span>Instance<span class="token punctuation">{</span>
+			Counter<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+			Name<span class="token punctuation">:</span>    <span class="token string">&quot;LazyInstance&quot;</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> LazyInstance
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 改进型懒汉模式</span>
+<span class="token keyword">var</span> mu sync<span class="token punctuation">.</span>Mutex
+<span class="token keyword">var</span> LazyInsPlusPlus <span class="token operator">*</span>Instance
+
+<span class="token keyword">func</span> <span class="token function">GetLazyInsPlusPlus</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>Instance <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> LazyInsPlusPlus <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		mu<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token keyword">defer</span> mu<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		LazyInsPlusPlus <span class="token operator">=</span> <span class="token operator">&amp;</span>Instance<span class="token punctuation">{</span>
+			Counter<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+			Name<span class="token punctuation">:</span>    <span class="token string">&quot;LazyInsPlusPlus&quot;</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> LazyInsPlusPlus
+<span class="token punctuation">}</span>
+
+<span class="token comment">// sync.once实现</span>
+<span class="token keyword">var</span> once sync<span class="token punctuation">.</span>Once
+<span class="token keyword">var</span> SyncOnceInstance <span class="token operator">*</span>Instance
+
+<span class="token keyword">func</span> <span class="token function">GetInstanceSyncOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>Instance <span class="token punctuation">{</span>
+	once<span class="token punctuation">.</span><span class="token function">Do</span><span class="token punctuation">(</span><span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		SyncOnceInstance <span class="token operator">=</span> <span class="token operator">&amp;</span>Instance<span class="token punctuation">{</span>
+			Counter<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+			Name<span class="token punctuation">:</span>    <span class="token string">&quot;SyncOnceInstance&quot;</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token keyword">return</span> SyncOnceInstance
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>i <span class="token operator">*</span>Instance<span class="token punctuation">)</span> <span class="token function">Hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%s: my current counter is:%d\n&quot;</span><span class="token punctuation">,</span> i<span class="token punctuation">.</span>Name<span class="token punctuation">,</span> i<span class="token punctuation">.</span>Counter<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//省略实现</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//懒汉模式测试</span>
+	ls <span class="token operator">:=</span> <span class="token function">GetLazyInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	ls<span class="token punctuation">.</span><span class="token function">Hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	ls<span class="token punctuation">.</span>Counter <span class="token operator">+=</span> <span class="token number">1</span>
+	ls1 <span class="token operator">:=</span> <span class="token function">GetLazyInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	ls1<span class="token punctuation">.</span><span class="token function">Hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token comment">//饿汉模式测试</span>
+	lspp <span class="token operator">:=</span> <span class="token function">GetLazyInsPlusPlus</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	lspp<span class="token punctuation">.</span><span class="token function">Hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	lspp<span class="token punctuation">.</span>Counter <span class="token operator">+=</span> <span class="token number">1000</span>
+	lspp1 <span class="token operator">:=</span> <span class="token function">GetLazyInsPlusPlus</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	lspp1<span class="token punctuation">.</span><span class="token function">Hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token comment">//sync once 测试</span>
+	sc <span class="token operator">:=</span> <span class="token function">GetInstanceSyncOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	sc<span class="token punctuation">.</span><span class="token function">Hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	sc<span class="token punctuation">.</span>Counter <span class="token operator">+=</span> <span class="token number">10000</span>
+	sc1 <span class="token operator">:=</span> <span class="token function">GetInstanceSyncOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	sc1<span class="token punctuation">.</span><span class="token function">Hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*
+LazyInstance: my current counter is:0
+LazyInstance: my current counter is:1
+LazyInsPlusPlus: my current counter is:0
+LazyInsPlusPlus: my current counter is:1000
+SyncOnceInstance: my current counter is:0
+SyncOnceInstance: my current counter is:10000
+*/</span>
+</code></pre></div><h2 id="创建型模式"><a href="#创建型模式" class="header-anchor">#</a> 创建型模式</h2> <h2 id="原型模式"><a href="#原型模式" class="header-anchor">#</a> 原型模式</h2> <p>原型模式（Prototype Pattern）是用于创建重复的对象，同时又能保证性能。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> Cloneable <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	<span class="token function">Clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> Cloneable
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	Name <span class="token builtin">string</span>
+	Age <span class="token builtin">int</span>
+	Height <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>Person<span class="token punctuation">)</span> <span class="token function">Clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>Person <span class="token punctuation">{</span>
+	person <span class="token operator">:=</span> <span class="token operator">*</span>p
+	<span class="token keyword">return</span> <span class="token operator">&amp;</span>person
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span><span class="token punctuation">(</span>p <span class="token operator">*</span>Person<span class="token punctuation">)</span> <span class="token function">SetName</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	p<span class="token punctuation">.</span>Name <span class="token operator">=</span> name
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span><span class="token punctuation">(</span>p <span class="token operator">*</span>Person<span class="token punctuation">)</span> <span class="token function">SetAge</span><span class="token punctuation">(</span>age <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	p<span class="token punctuation">.</span>Age <span class="token operator">=</span> age
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	p <span class="token operator">:=</span> <span class="token operator">&amp;</span>Person<span class="token punctuation">{</span>
+		Name<span class="token punctuation">:</span> <span class="token string">&quot;zhang san&quot;</span><span class="token punctuation">,</span>
+		Age<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+		Height<span class="token punctuation">:</span> <span class="token number">175</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	p1 <span class="token operator">:=</span>p<span class="token punctuation">.</span><span class="token function">Clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	p1<span class="token punctuation">.</span><span class="token function">SetAge</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span>
+	p1<span class="token punctuation">.</span><span class="token function">SetName</span><span class="token punctuation">(</span><span class="token string">&quot;Li Si&quot;</span><span class="token punctuation">)</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;name:&quot;</span><span class="token punctuation">,</span> p1<span class="token punctuation">.</span>Name<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;age:&quot;</span><span class="token punctuation">,</span> p1<span class="token punctuation">.</span>Age<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;height:&quot;</span><span class="token punctuation">,</span> p1<span class="token punctuation">.</span>Height<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/*
+name: Li Si
+age: 30
+height: 175
+*/</span>
+</code></pre></div><h2 id="适配器模式"><a href="#适配器模式" class="header-anchor">#</a> 适配器模式</h2> <p>适配器模式（Adapter Pattern）是作为两个不兼容的接口之间的桥梁。这种类型的设计模式属于结构型模式，它结合了两个独立接口的功能。这种模式涉及到一个单一的类，该类负责加入独立的或不兼容的接口功能。例如： 在现实生活中，我们的笔记本电脑的工作电压大多数都是20V，而我国的家庭用电是220V，如何让20V的笔记本电脑能够工作在220V的电压下工作？答案：引入一个电源适配器，俗称变压器，有了这个电源适配器，生活用电和笔记本电脑即可兼容。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// 将一个类的接口转换成客户希望的另一个接口，Adapter模式使得原本由于接口</span>
+<span class="token comment">// 不兼容而不能一起工作的那些类可以一起工作</span>
+<span class="token comment">// 定义一个新的接口</span>
+<span class="token keyword">type</span> Target <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	<span class="token function">Process</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 定义一个老的接口</span>
+<span class="token keyword">type</span> Adaptee <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	<span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token function">Bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 定一个Adapter接口</span>
+<span class="token keyword">type</span> Adapter <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	adaptee Adaptee
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>a <span class="token operator">*</span>Adapter<span class="token punctuation">)</span> <span class="token function">Process</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;在Adapter中执行process()&quot;</span><span class="token punctuation">)</span>  <span class="token comment">// 在之前的基础上执行原有process函数</span>
+	a<span class="token punctuation">.</span>adaptee<span class="token punctuation">.</span><span class="token function">Bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	a<span class="token punctuation">.</span>adaptee<span class="token punctuation">.</span><span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 实现旧接口struct</span>
+<span class="token keyword">type</span> oldAdaptee <span class="token keyword">struct</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>o <span class="token operator">*</span>oldAdaptee<span class="token punctuation">)</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;在旧接口中执行foo()&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>o <span class="token operator">*</span>oldAdaptee<span class="token punctuation">)</span> <span class="token function">Bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;在旧的接口中执行bar()&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	oa <span class="token operator">:=</span> <span class="token function">new</span><span class="token punctuation">(</span>oldAdaptee<span class="token punctuation">)</span>
+	<span class="token comment">// 定一个适配器对象</span>
+	adapter <span class="token operator">:=</span> <span class="token function">new</span><span class="token punctuation">(</span>Adapter<span class="token punctuation">)</span>
+	adapter<span class="token punctuation">.</span>adaptee <span class="token operator">=</span> oa
+	adapter<span class="token punctuation">.</span><span class="token function">Process</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="结构设计模式"><a href="#结构设计模式" class="header-anchor">#</a> 结构设计模式</h2> <h2 id="代理模式"><a href="#代理模式" class="header-anchor">#</a> 代理模式</h2> <p>代理设计模式是一种结构设计模式。这种模式建议为控制和访问主要对象提供额外的间接层。</p> <p>在这种模式下，将创建一个新的代理类，该类实现与主对象相同的接口。这使您可以在主对象的实际逻辑之前或者之后执行某些行为。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">type</span> server <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	<span class="token function">handleRequest</span><span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">string</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> nginx <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	application       <span class="token operator">*</span>application
+	maxAllowedRequest <span class="token builtin">int</span>
+	rateLimiter       <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">newNginxServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>nginx <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token operator">&amp;</span>nginx<span class="token punctuation">{</span>
+		application<span class="token punctuation">:</span>       <span class="token operator">&amp;</span>application<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+		maxAllowedRequest<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+		rateLimiter<span class="token punctuation">:</span>       <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>n <span class="token operator">*</span>nginx<span class="token punctuation">)</span> <span class="token function">handleRequest</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> method <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	allowed <span class="token operator">:=</span> n<span class="token punctuation">.</span><span class="token function">checkRateLimiting</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> <span class="token operator">!</span>allowed <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token number">403</span><span class="token punctuation">,</span> <span class="token string">&quot;Not Allowed&quot;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> n<span class="token punctuation">.</span>application<span class="token punctuation">.</span><span class="token function">handleRequest</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> method<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>n <span class="token operator">*</span>nginx<span class="token punctuation">)</span> <span class="token function">checkRateLimiting</span><span class="token punctuation">(</span>url <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> n<span class="token punctuation">.</span>rateLimiter<span class="token punctuation">[</span>url<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		n<span class="token punctuation">.</span>rateLimiter<span class="token punctuation">[</span>url<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> n<span class="token punctuation">.</span>rateLimiter<span class="token punctuation">[</span>url<span class="token punctuation">]</span> <span class="token operator">&gt;</span> n<span class="token punctuation">.</span>maxAllowedRequest <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token boolean">false</span>
+	<span class="token punctuation">}</span>
+	n<span class="token punctuation">.</span>rateLimiter<span class="token punctuation">[</span>url<span class="token punctuation">]</span> <span class="token operator">=</span> n<span class="token punctuation">.</span>rateLimiter<span class="token punctuation">[</span>url<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span>
+	<span class="token keyword">return</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> application <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>a <span class="token operator">*</span>application<span class="token punctuation">)</span> <span class="token function">handleRequest</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> method <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> url <span class="token operator">==</span> <span class="token string">&quot;/app/status&quot;</span> <span class="token operator">&amp;&amp;</span> method <span class="token operator">==</span> <span class="token string">&quot;GET&quot;</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token string">&quot;Ok&quot;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> url <span class="token operator">==</span> <span class="token string">&quot;/create/user&quot;</span> <span class="token operator">&amp;&amp;</span> method <span class="token operator">==</span> <span class="token string">&quot;POST&quot;</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token number">201</span><span class="token punctuation">,</span> <span class="token string">&quot;User Created&quot;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token number">404</span><span class="token punctuation">,</span> <span class="token string">&quot;Not Ok&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	nginxServer <span class="token operator">:=</span> <span class="token function">newNginxServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	appStatusURL <span class="token operator">:=</span> <span class="token string">&quot;/app/status&quot;</span>
+	createuserURL <span class="token operator">:=</span> <span class="token string">&quot;/create/user&quot;</span>
+	httpCode<span class="token punctuation">,</span> body <span class="token operator">:=</span> nginxServer<span class="token punctuation">.</span><span class="token function">handleRequest</span><span class="token punctuation">(</span>appStatusURL<span class="token punctuation">,</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;\nUrl: %s\nHttpCode: %d\nBody: %s\n&quot;</span><span class="token punctuation">,</span> appStatusURL<span class="token punctuation">,</span> httpCode<span class="token punctuation">,</span> body<span class="token punctuation">)</span>
+	httpCode<span class="token punctuation">,</span> body <span class="token operator">=</span> nginxServer<span class="token punctuation">.</span><span class="token function">handleRequest</span><span class="token punctuation">(</span>appStatusURL<span class="token punctuation">,</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;\nUrl: %s\nHttpCode: %d\nBody: %s\n&quot;</span><span class="token punctuation">,</span> appStatusURL<span class="token punctuation">,</span> httpCode<span class="token punctuation">,</span> body<span class="token punctuation">)</span>
+	httpCode<span class="token punctuation">,</span> body <span class="token operator">=</span> nginxServer<span class="token punctuation">.</span><span class="token function">handleRequest</span><span class="token punctuation">(</span>appStatusURL<span class="token punctuation">,</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;\nUrl: %s\nHttpCode: %d\nBody: %s\n&quot;</span><span class="token punctuation">,</span> appStatusURL<span class="token punctuation">,</span> httpCode<span class="token punctuation">,</span> body<span class="token punctuation">)</span>
+	httpCode<span class="token punctuation">,</span> body <span class="token operator">=</span> nginxServer<span class="token punctuation">.</span><span class="token function">handleRequest</span><span class="token punctuation">(</span>createuserURL<span class="token punctuation">,</span> <span class="token string">&quot;POST&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;\nUrl: %s\nHttpCode: %d\nBody: %s\n&quot;</span><span class="token punctuation">,</span> createuserURL<span class="token punctuation">,</span> httpCode<span class="token punctuation">,</span> body<span class="token punctuation">)</span>
+	httpCode<span class="token punctuation">,</span> body <span class="token operator">=</span> nginxServer<span class="token punctuation">.</span><span class="token function">handleRequest</span><span class="token punctuation">(</span>createuserURL<span class="token punctuation">,</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;\nUrl: %s\nHttpCode: %d\nBody: %s\n&quot;</span><span class="token punctuation">,</span> createuserURL<span class="token punctuation">,</span> httpCode<span class="token punctuation">,</span> body<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*
+Url: /app/status
+HttpCode: 200
+Body: Ok
+
+Url: /app/status
+HttpCode: 200
+Body: Ok
+
+Url: /app/status
+HttpCode: 403
+Body: Not Allowed
+
+Url: /create/user
+HttpCode: 201
+Body: User Created
+
+Url: /create/user
+HttpCode: 404
+Body: Not Ok
+*/</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/go/tool/Go下载大文件.html" class="prev">
+        Go下载大文件io.Copy
+      </a></span> <span class="next"><a href="/go/project/Go微服务网关.html">
+        微服务网关
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51f2f156.js" defer></script><script src="/assets/js/2.8911ec45.js" defer></script><script src="/assets/js/11.d4ec37c8.js" defer></script>
+  </body>
+</html>
